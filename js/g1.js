@@ -217,5 +217,45 @@ window.SQ_GRADE.g1 = {
     steps:['Ask your family for photos of you as a baby, a toddler and now.','Stick them in order on your paper.','Ask: what could you do at each age? Write or draw it.','Draw what you think you will look like as a teenager and an adult.','Add one animal too, like a chick and a hen.'],
     notice:'How have you changed since you were a baby? Does your animal baby look like its parent, or very different?'}
   }
+  ,
+  {id:'g1-animals-2', topic:'animals', title:'Sami and Biscuit’s Healthy Week',
+   cast:'Sami and Biscuit the puppy', cover:['water','apple' ,'football'], badge:'Healthy Hero',
+   img:'img/stories/g1-animals-2/', coverImg:'cover.webp',
+   vocab:{
+     'survive':'To stay alive.',
+     'energy':'The power your body needs to move, think and play.',
+     'healthy':'Well and strong, not ill.',
+     'exercise':'Moving your body to keep it fit and strong, like running or swimming.',
+     'muscles':'The parts of your body that pull on your bones to make you move.',
+     'germs':'Tiny living things, too small to see, that can make you ill.',
+     'hygiene':'Keeping yourself clean to stay healthy.'
+   },
+   pages:[
+    {pic:'cover.webp', title:true, text:'Sami and Biscuit’s Healthy Week'},
+    {pic:'p1.webp', text:'Monday morning: Sami and his puppy, Biscuit, are feeling very sleepy after the weekend. Biscuit snoozes on a cushion, and Sami flops on the sofa. Mum smiles. "Let’s get a fresh start!" she says. "This week, let’s find out what bodies need."'},
+    {pic:'p2.webp', text:'"Every animal needs water, food and air to [[survive]]," says Mum, holding up one finger. Biscuit laps water from his bowl. Sami drinks a big glass of water. "Our bodies are mostly made of water," says Mum. "We need to drink it every day."'},
+    {pic:'p3.webp', text:'Tuesday: Sami is packing a healthy lunch with Mum’s help. A sandwich, an apple, carrot sticks and a yoghurt give him [[energy]] to learn and play. "We need the right food in the right amounts," says Mum. "Sweets are a treat, just sometimes." Biscuit has his own [[healthy]] food too.'},
+    {pic:'p4.webp', text:'Wednesday: at football club, Sami runs, dribbles and kicks the ball. Biscuit runs alongside, his floppy ears flying. Coach Nia cheers. "[[Exercise]] makes your heart and [[muscles]] strong!" she says. Sami can feel his heart beating fast. "That means it’s working hard!" says Coach Nia.'},
+    {pic:'p5.webp', text:'Thursday: Sami laughs as he throws a ball for Biscuit in the park. Biscuit races after it, splashing through a muddy puddle! "Dogs need exercise too," says Sami. When they get home, Biscuit needs a bath.'},
+    {pic:'p6.webp', text:'Friday: before lunch, Sami washes his hands with soap and water. "Washing gets rid of [[germs]]," says Mum. "Germs are tiny. You can’t see them, but they can make you ill." That night, Sami brushes his teeth for two whole minutes. Biscuit watches the sand timer with his head on one side.'},
+    {pic:'p7.webp', text:'Saturday: Sami makes a poster for the fridge. He draws water, a healthy meal, fresh air, running, fruit and vegetables, and soap and a toothbrush. At the bottom, he draws himself and Biscuit. "Water, food and air keep us alive," he says, pointing. "Exercise, healthy food and good [[hygiene]] keep us healthy!"'},
+    {pic:'p8.webp', text:'Sunday: Sami and Biscuit race joyfully around their sunny garden. Fresh air, tasty food, clean water, exercise and good hygiene help them grow strong, healthy and happy! "Healthy week complete!" cheers Sami. "Let’s do it every week!"'}
+   ],
+   understand:[
+    {q:'How did Sami and Biscuit feel on Monday morning?', o:['Very sleepy','Very excited','Very hungry'], a:0, type:'Find it', why:'On Monday morning, Sami and Biscuit were feeling very sleepy after the weekend.'},
+    {q:'What three things does every animal need to survive?', o:['Water, food and air','Toys, sweets and a bed','Shoes, a ball and a coat'], a:0, type:'Find it', why:'Mum says every animal needs water, food and air to survive.'},
+    {q:'What does germs mean?', o:['Tiny living things that can make you ill','Little pieces of food','Muddy paw prints'], a:0, type:'Word power', why:'Germs are too small to see, but they can make you ill. Washing with soap gets rid of them.'},
+    {q:'Why did Sami’s heart beat fast at football club?', o:['Exercise made it work hard','He was scared of the ball','He was sleepy'], a:0, type:'Think about it', why:'When you exercise, your heart works hard to pump blood around your body. That makes it stronger.'},
+    {q:'What did Sami do on Friday?', o:['Washed his hands and brushed his teeth','Played football','Made a poster'], a:0, type:'Order it', why:'Monday water, Tuesday lunch, Wednesday football, Thursday the park, Friday keeping clean, Saturday the poster.'}
+   ],
+   predict:{q:'Sami plays football on a hot day but forgets his water bottle. What do you think will happen?',
+    o:['He will feel thirsty and tired','He will feel full of energy','Nothing will change'], a:0,
+    discover:'Our bodies lose water when we exercise and get hot, especially through sweat. Without a drink, we feel thirsty, tired and wobbly. That is why water is one of the things every animal needs to survive. Always take a drink when you exercise!'},
+   sort:{title:'What does a body need?', bins:['Needs to stay alive','Helps to stay healthy','Just a treat, sometimes'],
+    items:[['Water',0,'water'],['Air',0,'sun'],['Food',0,'sandwich'],['Exercise',1,'football'],['Washing with soap',1,'soap'],['Brushing teeth',1,'toothbrush'],['Fruit and vegetables',1,'apple'],['Sweets',2,'sweets']]},
+   tryit:{title:'My healthy week chart', need:['An adult to help','Paper, a ruler and pencils'],
+    steps:['Draw a chart with seven rows, one for each day of the week.','Make columns for: drank water, ate fruit or vegetables, exercised, washed hands, brushed teeth.','Each day, tick each thing you did.','At the end of the week, count your ticks.','Talk to your adult: which healthy habit was easiest? Which was hardest?'],
+    notice:'Did you do all five every day? Which one will you try to do more of next week?'}
+  }
   ]
 };
