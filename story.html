@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/app.css?v=31">
+<link rel="stylesheet" href="css/app.css?v=32">
 </head>
 <body>
 <header class="top">
@@ -27,12 +27,12 @@
 
 <footer class="foot"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>Original stories and characters. Not affiliated with any publisher or exam board.</span></div></footer>
 
-<script src="js/art.js?v=31"></script>
-<script src="js/kg2.js?v=31"></script>
-<script src="js/g1.js?v=31"></script>
-<script src="js/g2.js?v=31"></script>
-<script src="js/g3.js?v=31"></script>
-<script src="js/store.js?v=31"></script>
+<script src="js/art.js?v=32"></script>
+<script src="js/kg2.js?v=32"></script>
+<script src="js/g1.js?v=32"></script>
+<script src="js/g2.js?v=32"></script>
+<script src="js/g3.js?v=32"></script>
+<script src="js/store.js?v=32"></script>
 <script>
 (function(){
   var A = window.SQ_ART, id = new URLSearchParams(location.search).get('s'), S = null;
@@ -53,9 +53,18 @@
   var RATES = {normal:.95, slow:.8, vslow:.65}, LABEL = {normal:'Normal', slow:'Slow', vslow:'Very slow'};
   var speed = load('sq-speed') || 'normal', speaking = false;
   var canSpeak = 'speechSynthesis' in window;
-  function voice(){
+  /* Pick the most natural-sounding lady's voice the device has. Novelty and robotic voices are never used. */
+  var BAD = /albert|bad news|bahh|bells|boing|bubbles|cellos|good news|jester|organ|superstar|trinoids|whisper|wobble|zarvox|fred|junior|ralph|kathy|grandma|grandpa|eddy|flo\b|reed|rocko|sandy|shelley|daniel|arthur|oliver|george|ryan|thomas|alfie|elliot|noah|guy|male\b|aaron|gordon|lee\b|rishi|nathan|tom\b|evan|alex\b|eloquence/i;
+  var PREF = [/libby.*natural/i,/maisie.*natural/i,/sonia.*natural/i,/mia.*natural/i,/aria.*natural/i,/jenny.*natural/i,/serena.*(premium|enhanced)/i,/stephanie.*(premium|enhanced)/i,/martha.*(premium|enhanced)/i,/kate.*(premium|enhanced)/i,/google uk english female/i,/serena/i,/stephanie/i,/martha/i,/hazel/i,/susan/i,/libby/i,/sonia/i,/kate/i,/samantha.*(premium|enhanced)/i,/ava.*(premium|enhanced)/i,/samantha/i,/karen/i,/moira/i,/tessa/i,/google us english/i];
+  function goodVoices(){
     var v = canSpeak ? speechSynthesis.getVoices() : [];
-    return v.filter(function(x){return /kate/i.test(x.name);})[0] || v.filter(function(x){return x.lang==='en-GB';})[0] || null;
+    return v.filter(function(x){ return /^en/i.test(x.lang) && !BAD.test(x.name); });
+  }
+  function voice(){
+    var v = goodVoices(), mine = load('sq-voice');
+    if (mine) { var m = v.filter(function(x){return x.name===mine;})[0]; if (m) return m; }
+    for (var i=0;i<PREF.length;i++){ var f = v.filter(function(x){return PREF[i].test(x.name);})[0]; if (f) return f; }
+    return v.filter(function(x){return x.lang==='en-GB';})[0] || v[0] || null;
   }
   if (canSpeak) speechSynthesis.onvoiceschanged = function(){};
   function stopTalk(){ if (canSpeak) speechSynthesis.cancel(); speaking = false; document.querySelectorAll('.w.hl').forEach(function(w){w.classList.remove('hl');}); var b=document.getElementById('listen'); if(b) b.setAttribute('aria-pressed','false'); }
@@ -63,7 +72,7 @@
     if (!canSpeak) return;
     stopTalk();
     var u = new SpeechSynthesisUtterance(text);
-    u.lang = 'en-GB'; u.rate = RATES[speed]; var v = voice(); if (v) u.voice = v;
+    var v = voice(); u.lang = v ? v.lang : 'en-GB'; u.rate = RATES[speed]; u.pitch = 1.08; if (v) u.voice = v;
     if (onWord) u.onboundary = function(e){ if (e.name==='word' || e.name===undefined) onWord(e.charIndex); };
     u.onend = function(){ speaking = false; if (onEnd) onEnd(); };
     speaking = true; speechSynthesis.speak(u);
@@ -110,7 +119,8 @@
       '<div class="reader" style="--fs:'+fs+'px">' +
         '<div class="tools">' +
           (canSpeak ? '<button class="chipbtn" id="listen" aria-pressed="false"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>Read to me</button>' +
-          '<button class="chipbtn" id="spd" title="Reading speed">🐢 '+LABEL[speed]+'</button>' : '') +
+          '<button class="chipbtn" id="spd" title="Reading speed">🐢 '+LABEL[speed]+'</button>' +
+          '<select class="chipbtn" id="vsel" title="Choose a voice" aria-label="Choose a voice" style="max-width:170px"></select>' : '') +
           '<span class="sp"></span><button class="chipbtn" id="fsm" aria-label="Smaller text">A−</button><button class="chipbtn" id="fsp" aria-label="Bigger text">A+</button>' +
         '</div>' +
         (P.title ? '<h2 class="story-title">'+t.html+'</h2><p style="margin:6px 0 0;color:var(--muted);font-weight:800">'+esc(S.cast)+'</p>' : '<p class="story-text" id="txt">'+t.html+'</p>') +
@@ -137,6 +147,10 @@
         if (hit) hit.classList.add('hl');
       }, function(){ spans.forEach(function(s){s.classList.remove('hl');}); L.setAttribute('aria-pressed','false'); });
     };
+    var VS = document.getElementById('vsel');
+    function fillVoices(){ if (!VS) return; var v = goodVoices(), cur = voice(); VS.innerHTML = v.map(function(x){ return '<option value="'+esc(x.name)+'"'+(cur&&cur.name===x.name?' selected':'')+'>🎙 '+esc(x.name.replace(/Microsoft |Online |\(Natural\)|Google /g,'').replace(/ - .*/,'').trim())+'</option>'; }).join(''); VS.hidden = v.length < 2; }
+    fillVoices(); if (canSpeak) speechSynthesis.onvoiceschanged = fillVoices;
+    if (VS) VS.onchange = function(){ store('sq-voice', VS.value); if (speaking) L.click(); say('Hello! I will read the story to you.'); };
     var SP = document.getElementById('spd');
     if (SP) SP.onclick = function(){ speed = speed==='normal'?'slow':speed==='slow'?'vslow':'normal'; store('sq-speed',speed); SP.textContent = '🐢 '+LABEL[speed]; if (speaking) L.click(); };
     function setFs(d){ var n = Math.max(18, Math.min(34, (+(load('sq-fs')||24)) + d)); store('sq-fs', n); stage.querySelector('.reader').style.setProperty('--fs', n+'px'); }
