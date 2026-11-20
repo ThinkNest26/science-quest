@@ -7,7 +7,7 @@
   var LS = 'sq-me', LSG = 'sq-guest';
   function lget(k, d){ try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } }
   function lset(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
-  function blank(){ return {badges:{}, stars:{}, hands:{}, journal:[]}; }
+  function blank(){ return {badges:{}, stars:{}, hands:{}, journal:[], look:{}}; }
   function clean(c){ return String(c||'').toUpperCase().replace(/[^A-Z0-9]/g,''); }
 
   async function rpc(fn, args){
@@ -37,12 +37,12 @@
       if (!d) return 'We could not find that code. Check it with your teacher.';
       if (d.error === 'wait') return 'Too many tries. Please wait 10 minutes, then try again.';
       me = {code:c, name:d.name, grade:d.grade, cls:d['class']}; lset(LS, me);
-      data = {badges:d.badges||{}, stars:d.stars||{}, hands:d.hands||{}, journal:d.journal||[]}; cache();
+      data = {badges:d.badges||{}, stars:d.stars||{}, hands:d.hands||{}, journal:d.journal||[], look:d.look||{}}; cache();
       return null;
     },
     refresh: async function(){
       if (!me) return;
-      try { var d = await rpc('sq_login', {p_code:me.code}); if (d && !d.error) { data = {badges:d.badges||{}, stars:d.stars||{}, hands:d.hands||{}, journal:d.journal||[]}; cache(); } } catch(e){}
+      try { var d = await rpc('sq_login', {p_code:me.code}); if (d && !d.error) { data = {badges:d.badges||{}, stars:d.stars||{}, hands:d.hands||{}, journal:d.journal||[], look:d.look||data.look||{}}; cache(); } } catch(e){}
     },
     logout: function(){ me = null; try{ localStorage.removeItem(LS); localStorage.removeItem(LS+'-cache'); }catch(e){} data = lget(LSG, blank()); },
     badge: function(id){ if (data.badges[id]) return; data.badges[id] = today(); cache(); if (me) rpc('sq_save',{p_code:me.code,p_part:'badges',p_key:id,p_val:today()}).catch(function(){}); },
@@ -55,6 +55,15 @@
       if (me) { try { await rpc('sq_journal_add',{p_code:me.code,p_entry:e}); } catch(x){} }
       return e;
     },
+    /* coins are worked out from learning, so they can never be lost:
+       welcome 40, every story badge 20, every quiz star 5, every mystery solved 10, every hands-on challenge 15 */
+    earned: function(){
+      var n = 40; n += Object.keys(data.badges).length * 20; n += Object.keys(data.hands).length * 15;
+      for (var k in data.stars) n += /^myst-/.test(k) ? 10 : (data.stars[k]||0) * 5;
+      return n;
+    },
+    look: function(){ data.look = data.look || {}; return data.look; },
+    saveLook: function(l){ data.look = l; cache(); if (me) rpc('sq_look',{p_code:me.code,p_look:l}).catch(function(){}); },
     unnote: function(id){ data.journal = data.journal.filter(function(e){ return e.id !== id; }); cache(); if (me) rpc('sq_journal_del',{p_code:me.code,p_id:id}).catch(function(){}); }
   };
 
@@ -63,7 +72,7 @@
     function draw(){
       var m = S.me();
       el.innerHTML = m
-        ? '<span class="chipbtn" style="cursor:default">👋 '+String(m.name).replace(/</g,'&lt;')+'</span> <button class="chipbtn" id="sqOut">Sign out</button>'
+        ? '<a class="chipbtn mechip" href="lab.html" title="My Scientist">'+(window.SQ_AV ? '<span class="mini">'+SQ_AV.headshot(data.look, 30)+'</span>' : '👋 ')+String(m.name).replace(/</g,'&lt;')+'</a> <button class="chipbtn" id="sqOut">Sign out</button>'
         : '<button class="chipbtn" id="sqIn">🔑 Sign in with my code</button>';
       var o = el.querySelector('#sqOut'); if (o) o.onclick = function(){ S.logout(); draw(); onChange && onChange(); };
       var i = el.querySelector('#sqIn'); if (i) i.onclick = open;

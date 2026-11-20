@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Scientist | Science Quest by Curious Nest</title>
+<link rel="icon" type="image/png" href="img/sq-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css?v=35">
+<style>
+  .labwrap{display:grid;grid-template-columns:340px minmax(0,1fr);gap:28px;margin-top:22px;align-items:start}
+  .me-card{position:sticky;top:84px;background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:18px;text-align:center;box-shadow:0 16px 34px -26px rgba(31,43,77,.5)}
+  .me-card .pic{width:100%;max-width:300px;margin:0 auto}
+  .me-card .pic svg{width:100%;height:auto}
+  .me-card h2{font-size:22px;margin-top:12px}
+  .coins{display:inline-flex;align-items:center;gap:8px;margin-top:10px;background:var(--sunL);border:1.5px solid #F4D28A;color:#8A5A00;font-weight:900;font-size:18px;border-radius:99px;padding:8px 16px}
+  .coinhow{font-size:13px;color:var(--muted);font-weight:700;margin-top:10px;line-height:1.5}
+  .tabs{display:flex;gap:8px;flex-wrap:wrap}
+  .tab{border:2px solid var(--line);background:#fff;border-radius:14px;padding:11px 18px;font-weight:900;font-size:16px;cursor:pointer;color:var(--ink2)}
+  .tab.on{background:var(--teal);border-color:var(--teal);color:#fff}
+  .sect{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:18px 20px;margin-top:16px}
+  .sect h3{font-size:17px;margin-bottom:12px}
+  .opts{display:flex;flex-wrap:wrap;gap:10px}
+  .opt2{border:2.5px solid var(--line);background:#fff;border-radius:14px;padding:9px 15px;font-weight:800;font-size:15px;cursor:pointer;color:var(--ink)}
+  .opt2.on{border-color:var(--teal);background:var(--tealL);color:var(--tealD)}
+  .sw{width:44px;height:44px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--line);cursor:pointer}
+  .sw.on{box-shadow:0 0 0 3px var(--teal)}
+  .shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+  .sitem{border:1.5px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+  .sitem .ip{aspect-ratio:1/1.1;overflow:hidden;background:#F7F9FB}
+  .sitem .ib{padding:10px 12px 12px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .sitem b{font-size:15px;line-height:1.2}
+  .sitem .pr{font-weight:900;color:#8A5A00;font-size:14px}
+  .sitem button{border:0;border-radius:12px;padding:9px;font-weight:900;font-size:14px;cursor:pointer;margin-top:auto}
+  .buy{background:var(--sun);color:#3A2600}
+  .buy[disabled]{background:#EEF1F5;color:var(--muted);cursor:default}
+  .use{background:var(--tealL);color:var(--tealD)}
+  .using{background:var(--teal);color:#fff}
+  .sitem.mine{border-color:#A9DCD8}
+  .cats{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 4px}
+  .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:var(--ink);color:#fff;font-weight:800;padding:12px 20px;border-radius:14px;z-index:60;opacity:0;transition:opacity .25s;pointer-events:none}
+  .toast.show{opacity:1}
+  @media (max-width:820px){.labwrap{grid-template-columns:1fr}.me-card{position:static}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><span class="mk"><img src="img/sq-bird.png" alt=""></span><span><b>Science Quest</b><small>by Curious Nest</small></span></a>
+    <div class="who"><a class="chipbtn" href="learn.html">📚 Library</a><a class="chipbtn" href="challenges.html">🧪 Challenges</a><a class="chipbtn" href="discoveries.html">⭐ My Discoveries</a><span id="who"></span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="lhead">
+    <h1>My Scientist</h1>
+    <p>Design your own scientist, then spend the coins you earn from reading and challenges on real science equipment.</p>
+  </div>
+  <div class="labwrap">
+    <aside class="me-card">
+      <div class="pic" id="pic"></div>
+      <h2 id="title">Dr Scientist</h2>
+      <div class="coins">🪙 <span id="coins">0</span> coins</div>
+      <p class="coinhow">Earn coins: every story badge 20 · every quiz star 5 · every mystery solved 10 · every hands-on challenge 15</p>
+    </aside>
+    <section>
+      <div class="tabs"><button class="tab on" data-t="build">🎨 Design my scientist</button><button class="tab" data-t="shop">🛒 Science shop</button><button class="tab" data-t="kit">🎒 My kit</button></div>
+      <div id="panel"></div>
+    </section>
+  </div>
+</main>
+<div class="toast" id="toast"></div>
+
+<footer class="foot"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>Original stories and characters. Not affiliated with any publisher or exam board.</span></div></footer>
+
+<script src="js/art.js?v=35"></script>
+<script src="js/avatar.js?v=35"></script>
+<script src="js/store.js?v=35"></script>
+<script>
+(function(){
+  var S = SQ_STORE, AV = SQ_AV, tab = 'build', cat = 'hand';
+  var CATS = [['hand','🔬 Lab kit'],['head','🥽 Headgear'],['neck','🩺 Around my neck'],['coat','🥼 Lab coats'],['pet','🐢 Companions'],['bg','🌋 Places']];
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function L(){ return AV.def(S.look()); }
+  function save(l){ S.saveLook(l); var mini = document.querySelector('#who .mini'); if (mini) mini.innerHTML = AV.headshot(l, 30); draw(); }
+  function left(l){ return S.earned() - AV.spent(l); }
+  function toast(t){ var e = document.getElementById('toast'); e.textContent = t; e.classList.add('show'); clearTimeout(toast.t); toast.t = setTimeout(function(){ e.classList.remove('show'); }, 2200); }
+
+  function draw(){
+    var l = L(), m = S.me();
+    document.getElementById('pic').innerHTML = AV.svg(l, 300);
+    document.getElementById('title').textContent = 'Dr ' + (m ? m.name : 'Scientist');
+    document.getElementById('coins').textContent = left(l);
+    document.querySelectorAll('.tab').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-t')===tab); });
+    ({build:build, shop:shop, kit:kit})[tab](l);
+  }
+
+  /* ---------- design ---------- */
+  function row(title, html){ return '<div class="sect"><h3>'+title+'</h3><div class="opts">'+html+'</div></div>'; }
+  function build(l){
+    var h = '';
+    h += row('I am a…', [['girl','👧 Girl scientist'],['boy','👦 Boy scientist']].map(function(k){ return '<button class="opt2'+(l.kind===k[0]?' on':'')+'" data-set="kind" data-v="'+k[0]+'">'+k[1]+'</button>'; }).join(''));
+    h += row('Skin', AV.SKIN.map(function(c,i){ return '<button class="sw'+(l.skin===i?' on':'')+'" style="background:'+c+'" data-set="skin" data-v="'+i+'" aria-label="Skin colour '+(i+1)+'"></button>'; }).join(''));
+    h += row('Hair', AV.HAIR[l.kind].map(function(k){ return '<button class="opt2'+(l.hair===k[0]?' on':'')+'" data-set="hair" data-v="'+k[0]+'">'+k[1]+'</button>'; }).join(''));
+    if (l.hair==='scarf') h += row('Headscarf colour', AV.SCARF.map(function(c,i){ return '<button class="sw'+(l.sc===i?' on':'')+'" style="background:'+c+'" data-set="sc" data-v="'+i+'" aria-label="Headscarf colour '+(i+1)+'"></button>'; }).join(''));
+    else h += row('Hair colour', AV.HAIRC.map(function(c,i){ return '<button class="sw'+(l.hc===i?' on':'')+'" style="background:'+c+'" data-set="hc" data-v="'+i+'" aria-label="Hair colour '+(i+1)+'"></button>'; }).join(''));
+    h += row('Face', AV.FACES.map(function(k){ return '<button class="opt2'+(l.face===k[0]?' on':'')+'" data-set="face" data-v="'+k[0]+'">'+k[1]+'</button>'; }).join('') +
+         '<button class="opt2'+(l.glasses?' on':'')+'" data-set="glasses" data-v="'+(!l.glasses)+'">👓 Glasses</button><button class="opt2'+(l.freckles?' on':'')+'" data-set="freckles" data-v="'+(!l.freckles)+'">✨ Freckles</button>');
+    h += row('T-shirt under my lab coat', AV.SHIRT.map(function(c,i){ return '<button class="sw'+(l.shirt===i?' on':'')+'" style="background:'+c+'" data-set="shirt" data-v="'+i+'" aria-label="T-shirt colour '+(i+1)+'"></button>'; }).join(''));
+    h += row('Lab coat', AV.SHOP.filter(function(x){return x.slot==='coat' && AV.owns(l,x.id);}).map(function(x){ return '<button class="sw'+(l.coat===x.id?' on':'')+'" style="background:'+x.col+'" data-set="coat" data-v="'+x.id+'" aria-label="'+x.name+'"></button>'; }).join('') +
+         '<button class="opt2" data-go="coat">🛒 More coats in the shop</button>');
+    var p = document.getElementById('panel'); p.innerHTML = h;
+    p.querySelectorAll('[data-set]').forEach(function(b){ b.onclick = function(){
+      var l = L(), k = b.getAttribute('data-set'), v = b.getAttribute('data-v');
+      l[k] = (k==='kind'||k==='hair'||k==='face'||k==='coat') ? v : (v==='true' ? true : v==='false' ? false : +v);
+      if (k==='kind') l.hair = v==='girl' ? 'long' : 'short';
+      save(l);
+    }; });
+    p.querySelectorAll('[data-go]').forEach(function(b){ b.onclick = function(){ tab = 'shop'; cat = b.getAttribute('data-go'); draw(); }; });
+  }
+
+  /* ---------- shop ---------- */
+  function card(l, x){
+    var mine = AV.owns(l, x.id), using = x.slot==='coat' ? l.coat===x.id : (l.wear[x.slot]===x.id), btn;
+    if (mine) btn = using ? (x.slot==='coat'||x.slot==='bg' ? '<button class="using" disabled>✓ Using</button>' : '<button class="using" data-off="'+x.id+'">✓ Using (tap to put away)</button>')
+                          : '<button class="use" data-use="'+x.id+'">Use it</button>';
+    else btn = '<button class="buy" data-buy="'+x.id+'"'+(left(l) < x.price ? ' disabled' : '')+'>'+(left(l) < x.price ? '🔒 Need '+(x.price-left(l))+' more' : 'Buy for 🪙 '+x.price)+'</button>';
+    return '<div class="sitem'+(mine?' mine':'')+'"><div class="ip">'+AV.item(x.id)+'</div><div class="ib"><b>'+esc(x.name)+'</b><span class="pr">'+(x.price ? '🪙 '+x.price : 'Free')+'</span>'+btn+'</div></div>';
+  }
+  function shop(l){
+    var h = '<div class="sect"><div class="cats">'+CATS.map(function(c){ return '<button class="opt2'+(cat===c[0]?' on':'')+'" data-cat="'+c[0]+'">'+c[1]+'</button>'; }).join('')+'</div></div>';
+    h += '<div class="sect"><div class="shelf">'+AV.SHOP.filter(function(x){return x.slot===cat;}).map(function(x){ return card(l,x); }).join('')+'</div></div>';
+    paint(h);
+  }
+  function kit(l){
+    var mine = AV.SHOP.filter(function(x){ return x.price && AV.owns(l,x.id); });
+    var h = mine.length ? '<div class="sect"><h3>Equipment I own</h3><div class="shelf">'+mine.map(function(x){ return card(l,x); }).join('')+'</div></div>'
+                        : '<div class="sect"><h3>Your kit bag is empty</h3><p style="color:var(--muted);font-weight:700;margin:0">Read stories and try challenges to earn coins, then visit the science shop.</p></div>';
+    paint(h);
+  }
+  function paint(h){
+    var p = document.getElementById('panel'); p.innerHTML = h; AV.fit(p);
+    p.querySelectorAll('[data-cat]').forEach(function(b){ b.onclick = function(){ cat = b.getAttribute('data-cat'); draw(); }; });
+    p.querySelectorAll('[data-buy]').forEach(function(b){ b.onclick = function(){
+      var l = L(), x = AV.BYID[b.getAttribute('data-buy')]; if (left(l) < x.price) return;
+      l.owned[x.id] = new Date().toISOString().slice(0,10); wear(l, x); save(l); toast('🎉 You bought the ' + x.name.toLowerCase() + '!');
+    }; });
+    p.querySelectorAll('[data-use]').forEach(function(b){ b.onclick = function(){ var l = L(); wear(l, AV.BYID[b.getAttribute('data-use')]); save(l); }; });
+    p.querySelectorAll('[data-off]').forEach(function(b){ b.onclick = function(){ var l = L(), x = AV.BYID[b.getAttribute('data-off')]; delete l.wear[x.slot]; save(l); }; });
+  }
+  function wear(l, x){ if (x.slot==='coat') l.coat = x.id; else l.wear[x.slot] = x.id; }
+
+  document.querySelectorAll('.tab').forEach(function(b){ b.onclick = function(){ tab = b.getAttribute('data-t'); draw(); }; });
+  S.chip(document.getElementById('who'), draw);
+  draw();
+})();
+</script>
+</body>
+</html>

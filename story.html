@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/app.css?v=34">
+<link rel="stylesheet" href="css/app.css?v=35">
 </head>
 <body>
 <header class="top">
@@ -27,12 +27,13 @@
 
 <footer class="foot"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>Original stories and characters. Not affiliated with any publisher or exam board.</span></div></footer>
 
-<script src="js/art.js?v=34"></script>
-<script src="js/kg2.js?v=34"></script>
-<script src="js/g1.js?v=34"></script>
-<script src="js/g2.js?v=34"></script>
-<script src="js/g3.js?v=34"></script>
-<script src="js/store.js?v=34"></script>
+<script src="js/art.js?v=35"></script>
+<script src="js/kg2.js?v=35"></script>
+<script src="js/g1.js?v=35"></script>
+<script src="js/g2.js?v=35"></script>
+<script src="js/g3.js?v=35"></script>
+<script src="js/avatar.js?v=35"></script>
+<script src="js/store.js?v=35"></script>
 <script>
 (function(){
   var A = window.SQ_ART, id = new URLSearchParams(location.search).get('s'), S = null;
@@ -307,6 +308,7 @@
     stage.innerHTML = '<div class="finish"><div class="medal">'+A.icon(S.cover[0],80)+'</div>' +
       '<h2>You earned the '+esc(S.badge)+' badge!</h2>' +
       '<p>You read the story, answered '+stars+' of '+S.understand.length+' questions first time, made a prediction and sorted like a real scientist.</p>' +
+      '<p class="coinwin">🪙 +20 coins! Spend them on science equipment for <a href="lab.html">My Scientist</a>.</p>' +
       '<a class="btn pri" href="learn.html">Back to the library</a> <button class="btn sec" id="again">Read it again</button></div>';
     document.getElementById('again').onclick = function(){ page = 0; qi = 0; stars = 0; prediction = null; go(0); };
   }
