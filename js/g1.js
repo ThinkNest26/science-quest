@@ -53,5 +53,46 @@ window.SQ_GRADE.g1 = {
     steps:['Label your papers: alive, once alive, never been alive.','Pick up each thing. Ask: does it move, grow, eat or breathe now?','If not, ask: was it ever part of a living thing, like a plant or an animal?','Put each thing on the right paper.','Look outside with your adult for something that is alive. Watch it, but do not touch it.'],
     notice:'Which things were tricky to sort? Why? Can you think of something made from a material that was once alive?'}
   }
+  ,
+  {id:'g1-living-2', topic:'living', title:'Ruby and the Hidden Homes',
+   cast:'Ruby and Sid the hedgehog', cover:['frog','woodlouse','kiki'], badge:'Habitat Explorer',
+   img:'img/stories/g1-living-2/', coverImg:'cover.webp',
+   vocab:{
+     'minibeasts':'Small creatures, like woodlice, slugs, beetles and spiders.',
+     'habitat':'The place where a living thing lives. It gives it food, water and shelter.',
+     'shelter':'A safe place to hide, rest and keep out of bad weather.',
+     'micro-habitat':'A very small habitat, like the space under a log or a stone.',
+     'damp':'A little bit wet.',
+     'frogspawn':'A clump of frog eggs, wrapped in clear jelly, floating in a pond.',
+     'food chain':'A list that shows what eats what. It always starts with a plant.',
+     'suit':'To be just right for something.'
+   },
+   pages:[
+    {pic:'cover.webp', title:true, text:'Ruby and the Hidden Homes'},
+    {pic:'p1.webp', text:'Ruby’s school had a new wildlife garden. Ruby was looking for [[minibeasts]] with her magnifying glass when she heard a snuffle. A hedgehog poked his nose out of the leaves. "I’m Sid," he said. "Every animal here has a home. Do you want to see them?"'},
+    {pic:'p2.webp', text:'"A [[habitat]] is the place where a living thing lives," said Sid. "It gives it food, water and [[shelter]]. My habitat is this hedge. I sleep in a cosy nest of leaves, and I find beetles and slugs to eat." A slug slid past, just in time for lunch!'},
+    {pic:'p3.webp', text:'Ruby lifted the end of a log. Underneath, it was dark and [[damp]]. Woodlice scurried about. "This is a [[micro-habitat]]," said Sid. "It’s a tiny habitat. Woodlice like dark, damp places. If it gets too dry, they hide."'},
+    {pic:'p4.webp', text:'At the pond, a frog swam under the water and a pond skater zoomed across the top. Ruby spotted a clump of [[frogspawn]]. "Frogs need water to lay their eggs," said Sid. "And the water plants give the pond animals food and places to hide." Ruby smiled. "So plants and animals need each other!"'},
+    {pic:'p5.webp', text:'On the hedge, a caterpillar munched holes in a leaf. A blue tit watched it from a branch. "That’s a [[food chain]]!" whispered Sid. "The leaf is food for the caterpillar. The caterpillar is food for the blue tit. Every food chain starts with a plant."'},
+    {pic:'p6.webp', text:'Ruby sat down and drew the food chain in her notebook: leaf, then caterpillar, then blue tit, with arrows in between. She added a sun at the top. "The arrow means ‘is eaten by’," said Sid. "Plants make their own food using sunlight. Animals have to eat to get their food."'},
+    {pic:'p7.webp', text:'"Why don’t fish live in the hedge?" giggled Ruby, as Sid snuggled up to her. "Because a habitat must [[suit]] the animal," said Sid. "Fish need water to breathe. Woodlice need damp. I need leaves to hide in. Each animal lives where it can get what it needs."'},
+    {pic:'p8.webp', text:'The bell rang. "Thank you, Sid," said Ruby. "I’ll ask my class to keep the log pile damp and the pond clean, so everyone keeps their home." She waved goodbye. But Sid was already fast asleep in his nest of leaves.'}
+   ],
+   understand:[
+    {q:'Where is Sid’s habitat?', o:['The hedge','The pond','Under a log'], a:0, type:'Find it', why:'Sid says, "My habitat is this hedge." He sleeps in a nest of leaves.'},
+    {q:'What does micro-habitat mean?', o:['A very small habitat','A habitat in the sea','A habitat with no animals'], a:0, type:'Word power', why:'A micro-habitat is a tiny habitat, like the dark, damp space under a log.'},
+    {q:'In the food chain, what eats the caterpillar?', o:['The blue tit','The leaf','The hedgehog'], a:0, type:'Find it', why:'Leaf, then caterpillar, then blue tit. The caterpillar is food for the blue tit.'},
+    {q:'Why don’t fish live in the hedge?', o:['Fish need water to breathe','Fish do not like leaves','The hedge is too small'], a:0, type:'Think about it', why:'A habitat must suit the animal. Fish need water, so they live in the pond.'},
+    {q:'Where did Ruby look straight after the log?', o:['The pond','The hedge','The school'], a:0, type:'Order it', why:'First the log, then the pond, then the hedge with the caterpillar.'}
+   ],
+   predict:{q:'Ruby leaves the log lifted up all afternoon, so the ground under it dries out in the sun. What do you think the woodlice will do?',
+    o:['Move away to find a dark, damp place','Stay and sunbathe','Turn into butterflies'], a:0,
+    discover:'Woodlice dry out easily, so they need dark, damp places. If their micro-habitat dries out, they move away to find a new one. That is why scientists always put logs and stones back gently after looking underneath!'},
+   sort:{title:'Which habitat suits each animal?', bins:['Pond','Under a log (dark and damp)','Tree or hedge'],
+    items:[['Frog',0,'frog'],['Fish',0,'trout'],['Woodlouse',1,'woodlouse'],['Snail',1,'moss'],['Blue tit',2,'kiki'],['Squirrel',2,'squirrel'],['Caterpillar on a leaf',2,'leaf']]},
+   tryit:{title:'Micro-habitat hunt', need:['An adult to come with you','A magnifying glass, if you have one','A notebook and pencil'],
+    steps:['Go into a garden, park or school field with your adult.','Gently lift a log or a large stone. Never pick up the animals.','Look closely. What minibeasts can you see? Is it dark? Is it damp?','Draw what you find in your notebook.','Put the log or stone back gently, exactly where it was, so the animals keep their home.'],
+    notice:'Were there more minibeasts in damp, dark places or dry, sunny places? Can you draw a food chain for one animal you saw?'}
+  }
   ]
 };
