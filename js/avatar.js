@@ -104,6 +104,7 @@
     l = l || {};
     var o = {kind:l.kind||'girl', skin:l.skin|0, hair:l.hair, hc:l.hc|0, sc:l.sc|0, glasses:!!l.glasses, freckles:!!l.freckles,
              face:l.face||'smile', shirt:l.shirt|0, coat:l.coat||'coat-white', wear:l.wear||{}, owned:l.owned||{}};
+    if (l.lab) o.lab = l.lab;   // the child's science lab travels with their scientist
     if (!o.hair || !HAIR[o.kind].some(function(h){return h[0]===o.hair;})) o.hair = o.kind==='girl' ? 'long' : 'short';
     if (!o.wear.bg) o.wear.bg = 'bg-lab';
     return o;

@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Science Lab | Science Quest by Curious Nest</title>
+<link rel="icon" type="image/png" href="img/sq-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css?v=37">
+<style>
+  .wallet{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 4px}
+  .pill{display:inline-flex;align-items:center;gap:8px;font-weight:900;font-size:17px;border-radius:99px;padding:8px 16px;border:1.5px solid}
+  .pill.lp{background:var(--plumL);border-color:#CBBEF2;color:#4B33A8}
+  .pill.cn{background:var(--sunL);border-color:#F4D28A;color:#8A5A00}
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+  .tab{border:2px solid var(--line);background:#fff;border-radius:14px;padding:11px 18px;font-weight:900;font-size:16px;cursor:pointer;color:var(--ink2)}
+  .tab.on{background:var(--plum);border-color:var(--plum);color:#fff}
+  .box{background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:20px;margin-top:16px}
+  .box h2{font-size:22px;margin-bottom:6px}
+  .box p.lead{color:var(--ink2);font-weight:700;margin:0 0 12px}
+  .labsvg{width:100%;height:auto;display:block}
+  .labsvg [data-r],.labsvg [data-f]{cursor:pointer}
+  .labsvg [data-f]:hover rect.slot{stroke:var(--plum)}
+  .opts{display:flex;flex-wrap:wrap;gap:10px}
+  .opt2{border:2.5px solid var(--line);background:#fff;border-radius:14px;padding:10px 16px;font-weight:800;font-size:16px;cursor:pointer;color:var(--ink);text-align:left}
+  .opt2.on{border-color:var(--plum);background:var(--plumL)}
+  .opt2.right{border-color:var(--leaf);background:var(--leafL)}
+  .opt2.wrong{border-color:var(--rose);background:var(--roseL)}
+  .qbig{font-size:21px;font-weight:900;margin:8px 0 14px;line-height:1.35}
+  .why{margin-top:14px;padding:12px 16px;border-radius:14px;background:var(--tealL);font-weight:700;color:var(--tealD)}
+  .why.no{background:var(--roseL);color:#9B2C4A}
+  .qbar{height:10px;background:#EEF1F5;border-radius:99px;overflow:hidden;margin:8px 0 4px}
+  .qbar b{display:block;height:100%;background:var(--plum);border-radius:99px;transition:width .3s}
+  .exgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+  .excard{border:1.5px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:8px;background:#fff}
+  .excard.ready{border-color:#CBBEF2;box-shadow:0 10px 24px -18px rgba(117,89,209,.8)}
+  .excard h3{font-size:18px}
+  .excard .extp{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:var(--plum)}
+  .req{list-style:none;padding:0;margin:0;font-size:14px;font-weight:700;color:var(--ink2)}
+  .req li{padding:3px 0}
+  .req .ok{color:var(--leaf)} .req .no{color:#B4405F}
+  .req a{color:var(--plum)}
+  .done{display:inline-block;background:var(--leafL);color:#2F8F57;font-weight:900;font-size:13px;border-radius:99px;padding:4px 10px}
+  .things{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:12px}
+  .thing{border:2px solid var(--line);background:#fff;border-radius:14px;padding:6px 10px 6px 6px;display:flex;align-items:center;gap:6px;font-weight:800;cursor:pointer}
+  .thing svg{width:40px;height:40px}
+  .thing.y{border-color:var(--leaf);background:var(--leafL)} .thing.n{border-color:#E7B4C2;background:var(--roseL)}
+  .thing[disabled]{cursor:default}
+  .result{font-size:20px;font-weight:900;text-align:center;margin-top:10px;min-height:28px}
+  .race{display:grid;gap:12px;margin-top:10px}
+  .rrow{display:grid;grid-template-columns:56px 200px 1fr;align-items:center;gap:12px}
+  .rrow svg{width:52px;height:52px}
+  .rrow .lb{font-weight:800}
+  .track{height:26px;background:#EEF1F5;border-radius:99px;overflow:hidden;position:relative}
+  .track b{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--plum),#A88BEB);border-radius:99px;transition:width 3s ease-out}
+  .track span{position:absolute;right:12px;top:3px;font-size:13px;font-weight:900;color:var(--ink);opacity:0;transition:opacity .4s 2.8s}
+  .track.show span{opacity:1}
+  .win{box-shadow:0 0 0 3px var(--sun);border-radius:12px}
+  input[type=range]{width:100%;max-width:520px;display:block;margin:14px auto 4px;accent-color:var(--plum);height:28px}
+  .rlabels{display:flex;justify-content:space-between;max-width:520px;margin:0 auto;font-weight:800;color:var(--muted);font-size:14px}
+  .stick{animation:stick .9s ease-in forwards}
+  @keyframes stick{to{transform:translateX(150px)}}
+  .wobble{animation:wob .6s}
+  @keyframes wob{25%{transform:translateX(6px)}50%{transform:translateX(-6px)}75%{transform:translateX(4px)}}
+  .fade{animation:fade 1.8s forwards}
+  @keyframes fade{to{opacity:0;transform:translateY(16px)}}
+  .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:var(--ink);color:#fff;font-weight:800;padding:12px 20px;border-radius:14px;z-index:60;opacity:0;transition:opacity .25s;pointer-events:none}
+  .toast.show{opacity:1}
+  .grades{margin:6px 0 14px}
+  @media (max-width:640px){.rrow{grid-template-columns:44px 1fr}.rrow .track{grid-column:1 / -1}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><span class="mk"><img src="img/sq-bird.png" alt=""></span><span><b>Science Quest</b><small>by Curious Nest</small></span></a>
+    <div class="who"><a class="chipbtn" href="learn.html">📚 Library</a><a class="chipbtn" href="lab.html">🥼 My Scientist</a><span id="who"></span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="lhead">
+    <h1>My Science Lab</h1>
+    <p>Answer science questions to earn lab points. Use them to build your lab, buy equipment with your coins, then run real experiments!</p>
+  </div>
+  <div class="wallet"><span class="pill lp">🧪 <span id="lp">0</span> lab points</span><span class="pill cn">🪙 <span id="cn">0</span> coins</span></div>
+  <div class="tabs"><button class="tab on" data-t="build">🏗️ Build my lab</button><button class="tab" data-t="earn">❓ Earn lab points</button><button class="tab" data-t="exp">⚗️ Experiments</button></div>
+  <div id="panel"></div>
+</main>
+<div class="toast" id="toast"></div>
+
+<footer class="foot"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>Original stories and characters. Not affiliated with any publisher or exam board.</span></div></footer>
+
+<script src="js/art.js?v=37"></script>
+<script src="js/kg2.js?v=37"></script>
+<script src="js/g1.js?v=37"></script>
+<script src="js/g2.js?v=37"></script>
+<script src="js/g3.js?v=37"></script>
+<script src="js/challenges.js?v=37"></script>
+<script src="js/avatar.js?v=37"></script>
+<script src="js/labgame.js?v=37"></script>
+<script src="js/store.js?v=37"></script>
+<script>
+(function(){
+  var S = SQ_STORE, AV = SQ_AV, LB = SQ_LAB, tab = 'build';
+  var GR = [['kg2','KG2'],['g1','Grade 1'],['g2','Grade 2'],['g3','Grade 3'],['g4','Grade 4'],['g5','Grade 5']];
+  var PER_RIGHT = 10, PER_EXP = 40;
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function shuffle(a){ a = a.slice(); for (var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)), t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+  function toast(t){ var e = document.getElementById('toast'); e.textContent = t; e.classList.add('show'); clearTimeout(toast.t); toast.t = setTimeout(function(){ e.classList.remove('show'); }, 2400); }
+
+  /* ---------- saved lab: inside the child's "look" so it follows them to any device ---------- */
+  function look(){ var l = AV.def(S.look()); l.lab = l.lab || {}; l.lab.pts = l.lab.pts|0; l.lab.built = l.lab.built || {}; l.lab.done = l.lab.done || {}; return l; }
+  function save(l){ S.saveLook(l); wallet(); }
+  function price(id){ var r = LB.ROOMS.filter(function(x){return x.id===id;})[0] || LB.FURN.filter(function(x){return x.id===id;})[0]; return r ? r.price : 0; }
+  function points(l){ var n = l.lab.pts; for (var k in l.lab.built) n -= price(k); return n; }
+  function coins(l){ return S.earned() - AV.spent(l); }
+  function built(l, id){ return id==='bench' || !!l.lab.built[id]; }
+  function wallet(){ var l = look(); document.getElementById('lp').textContent = points(l); document.getElementById('cn').textContent = coins(l); }
+  function draw(){ wallet(); document.querySelectorAll('.tab').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-t')===tab); }); ({build:build, earn:earn, exp:exps})[tab](); }
+
+  /* ---------- 1. build ---------- */
+  function build(){
+    var l = look(), m = S.me(), W = 900, H = 730, s = '';
+    s += '<rect width="'+W+'" height="'+H+'" fill="#EAF4FD"/><rect y="'+(H-30)+'" width="'+W+'" height="30" fill="#9AD27A"/>';
+    s += '<path d="M20 108 L450 18 L880 108Z" fill="#7559D1"/><rect x="300" y="52" width="300" height="40" rx="10" fill="#fff"/>';
+    s += '<text x="450" y="79" text-anchor="middle" font-family="Nunito,Arial" font-weight="900" font-size="20" fill="#4B33A8">'+esc('Dr ' + (m ? m.name : 'Scientist') + '’s Science Lab')+'</text>';
+    s += '<rect x="20" y="108" width="860" height="506" fill="#F7F3EC"/><rect x="410" y="604" width="80" height="10" fill="#B7834A"/>';
+    LB.ROOMS.forEach(function(r, i){
+      var x = 30 + (i%3)*283, y = 118 + Math.floor(i/3)*246, w = 274, h = 236, ok = built(l, r.id);
+      s += '<g transform="translate('+x+' '+y+')">';
+      s += '<rect width="'+w+'" height="'+h+'" rx="10" fill="'+r.wall+'" stroke="#D9CFC0" stroke-width="3"/><rect y="'+(h-46)+'" width="'+w+'" height="46" fill="'+r.floor+'"/>';
+      s += '<rect x="10" y="8" width="'+(w-20)+'" height="26" rx="8" fill="#fff" opacity=".9"/><text x="'+(w/2)+'" y="26" text-anchor="middle" font-family="Nunito,Arial" font-weight="900" font-size="14" fill="#1F2B4D">'+esc(r.name)+'</text>';
+      var fs = LB.FURN.filter(function(f){ return f.room===r.id; });
+      fs.forEach(function(f, j){
+        var fx = 4 + j*90, fy = 92;
+        if (ok && l.lab.built[f.id]) s += '<g transform="translate('+fx+' '+fy+')">'+LB.furn(f.id)+'</g>';
+        else if (ok) s += '<g data-f="'+f.id+'"><rect class="slot" x="'+(fx+6)+'" y="'+(fy+20)+'" width="78" height="78" rx="10" fill="#fff" fill-opacity=".6" stroke="#B9A9EC" stroke-width="2.5" stroke-dasharray="6 5"/>'+
+             '<text x="'+(fx+45)+'" y="'+(fy+52)+'" text-anchor="middle" font-family="Nunito,Arial" font-weight="900" font-size="11" fill="#4B33A8">'+esc(f.name)+'</text>'+
+             '<text x="'+(fx+45)+'" y="'+(fy+74)+'" text-anchor="middle" font-family="Nunito,Arial" font-weight="900" font-size="13" fill="#7559D1">+ '+f.price+' 🧪</text></g>';
+      });
+      if (!ok) s += '<g data-r="'+r.id+'"><rect width="'+w+'" height="'+h+'" rx="10" fill="#4A5677" opacity=".55"/><circle cx="'+(w/2)+'" cy="104" r="28" fill="#fff"/><text x="'+(w/2)+'" y="114" text-anchor="middle" font-size="28">🔒</text>'+
+             '<rect x="'+(w/2-82)+'" y="148" width="164" height="36" rx="12" fill="'+(points(l)>=r.price?'#F6B93B':'#fff')+'"/><text x="'+(w/2)+'" y="171" text-anchor="middle" font-family="Nunito,Arial" font-weight="900" font-size="15" fill="#3A2600">Build for '+r.price+' 🧪</text></g>';
+      s += '</g>';
+    });
+    // the child's scientist standing by the door
+    var me = AV.svg(l, 92).replace('<svg ', '<svg x="404" y="'+(H-118)+'" pointer-events="none" ');
+    s += me;
+    var p = document.getElementById('panel');
+    p.innerHTML = '<div class="box"><h2>Build my lab</h2><p class="lead">Tap a locked room to build it, then tap the dotted spaces to add furniture. Each experiment needs its own room and furniture.</p>'+
+      '<svg class="labsvg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="My science lab">'+s+'</svg></div>';
+    p.querySelectorAll('[data-r],[data-f]').forEach(function(g){ g.onclick = function(){
+      var id = g.getAttribute('data-r') || g.getAttribute('data-f'), l = look(), cost = price(id), name = (LB.ROOMS.concat(LB.FURN).filter(function(x){return x.id===id;})[0]||{}).name;
+      if (points(l) < cost) { toast('You need ' + (cost - points(l)) + ' more lab points. Answer questions to earn them!'); return; }
+      l.lab.built[id] = new Date().toISOString().slice(0,10); save(l); build(); toast('🎉 You built the ' + name.toLowerCase() + '!');
+    }; });
+  }
+
+  /* ---------- 2. earn lab points by answering questions ---------- */
+  var grade = null, round = null;
+  function pool(g){
+    var out = [], C = (window.SQ_CHAL||{})[g] || {}, G = (window.SQ_GRADE||{})[g];
+    Object.keys(C).forEach(function(t){ (C[t].quiz||[]).forEach(function(q){ out.push({q:q[0], o:q[1], a:0, why:q[2]}); }); });
+    if (G) G.stories.forEach(function(s){ s.understand.forEach(function(q){ if (q.type !== 'Order it') out.push({q:q.q, o:q.o, a:q.a, why:q.why}); }); });
+    return out;
+  }
+  function earn(){
+    var m = S.me(); if (!grade) grade = (m && pool(m.grade).length) ? m.grade : 'kg2';
+    var p = document.getElementById('panel');
+    if (!round) {
+      p.innerHTML = '<div class="box"><h2>Earn lab points</h2><p class="lead">Answer 5 science questions. Every correct answer earns '+PER_RIGHT+' lab points.</p>'+
+        '<div class="grades opts">'+GR.filter(function(g){ return pool(g[0]).length; }).map(function(g){ return '<button class="opt2'+(g[0]===grade?' on':'')+'" data-g="'+g[0]+'">'+g[1]+'</button>'; }).join('')+'</div>'+
+        '<button class="btn pri" id="go" style="background:var(--plum)">Start 5 questions</button></div>';
+      p.querySelectorAll('[data-g]').forEach(function(b){ b.onclick = function(){ grade = b.getAttribute('data-g'); earn(); }; });
+      document.getElementById('go').onclick = function(){
+        round = {qs: shuffle(pool(grade)).slice(0,5).map(function(q){ var idx = shuffle(q.o.map(function(_,i){return i;})); return {q:q.q, o:idx.map(function(i){return q.o[i];}), a:idx.indexOf(q.a), why:q.why}; }), i:0, right:0};
+        earn();
+      };
+      return;
+    }
+    if (round.i >= round.qs.length) {
+      var got = round.right * PER_RIGHT;
+      p.innerHTML = '<div class="box" style="text-align:center"><h2>'+(round.right>=4?'Brilliant work!':round.right>=2?'Well done!':'Good try!')+'</h2>'+
+        '<p class="qbig">You got '+round.right+' out of 5 right and earned '+got+' lab points.</p>'+
+        '<button class="btn pri" id="more" style="background:var(--plum)">5 more questions</button> <button class="btn sec" id="tobuild">Go and build</button></div>';
+      document.getElementById('more').onclick = function(){ round = null; earn(); document.getElementById('go').click(); };
+      document.getElementById('tobuild').onclick = function(){ round = null; tab = 'build'; draw(); };
+      return;
+    }
+    var Q = round.qs[round.i];
+    p.innerHTML = '<div class="box"><div style="font-weight:900;color:var(--muted)">Question '+(round.i+1)+' of 5</div><div class="qbar"><b style="width:'+(round.i*20)+'%"></b></div>'+
+      '<div class="qbig">'+esc(Q.q)+'</div><div class="opts" style="flex-direction:column">'+Q.o.map(function(o,i){ return '<button class="opt2" data-i="'+i+'">'+esc(o)+'</button>'; }).join('')+'</div><div id="fb"></div></div>';
+    p.querySelectorAll('[data-i]').forEach(function(b){ b.onclick = function(){
+      var i = +b.getAttribute('data-i'), ok = i === Q.a;
+      p.querySelectorAll('[data-i]').forEach(function(x){ x.disabled = true; if (+x.getAttribute('data-i')===Q.a) x.classList.add('right'); });
+      if (!ok) b.classList.add('wrong');
+      if (ok) { round.right++; var l = look(); l.lab.pts += PER_RIGHT; save(l); }
+      document.getElementById('fb').innerHTML = '<div class="why'+(ok?'':' no')+'">'+(ok?'✅ Correct! +'+PER_RIGHT+' lab points. ':'❌ Not quite. ')+esc(Q.why||'')+'</div>'+
+        '<p style="margin-top:14px"><button class="btn pri" id="nx" style="background:var(--plum)">'+(round.i<4?'Next question →':'See my score')+'</button></p>';
+      document.getElementById('nx').onclick = function(){ round.i++; earn(); };
+    }; });
+  }
+
+  /* ---------- 3. experiments ---------- */
+  function needs(l, e){
+    var room = LB.ROOMS.filter(function(r){return r.id===e.room;})[0], f = LB.FURN.filter(function(x){return x.id===e.furn;})[0];
+    var list = [{ok:built(l,e.room), t:'Room: '+room.name, go:'build'}, {ok:built(l,e.room) && !!l.lab.built[e.furn], t:'Furniture: '+f.name, go:'build'}];
+    e.kit.forEach(function(k){ list.push({ok:AV.owns(l,k), t:'Equipment: '+AV.BYID[k].name, go:'shop'}); });
+    return list;
+  }
+  function exps(){
+    var l = look(), p = document.getElementById('panel');
+    p.innerHTML = '<div class="box"><h2>Experiments</h2><p class="lead">Each experiment needs a room, a piece of furniture and some equipment. Finish an experiment to earn '+PER_EXP+' lab points!</p><div class="exgrid">'+
+      LB.EXP.map(function(e){
+        var n = needs(l,e), ready = n.every(function(x){return x.ok;});
+        return '<div class="excard'+(ready?' ready':'')+'"><span class="extp">'+esc(e.topic)+'</span><h3>'+esc(e.title)+'</h3>'+(l.lab.done[e.id]?'<span class="done">✓ Completed</span>':'')+
+          '<ul class="req">'+n.map(function(x){ return '<li class="'+(x.ok?'ok':'no')+'">'+(x.ok?'✅ ':'⬜ ')+esc(x.t)+(x.ok?'':(x.go==='shop'?' · <a href="lab.html">buy it in the shop</a>':' · <a href="#" data-build="1">build it</a>'))+'</li>'; }).join('')+'</ul>'+
+          '<button class="btn '+(ready?'pri':'sec')+'" data-x="'+e.id+'"'+(ready?' style="background:var(--plum);margin-top:auto"':' disabled style="margin-top:auto"')+'>'+(ready?(l.lab.done[e.id]?'Do it again':'Start experiment'):'🔒 Not ready yet')+'</button></div>';
+      }).join('')+'</div></div>';
+    p.querySelectorAll('[data-build]').forEach(function(a){ a.onclick = function(ev){ ev.preventDefault(); tab = 'build'; draw(); }; });
+    p.querySelectorAll('[data-x]').forEach(function(b){ b.onclick = function(){ run(LB.EXP.filter(function(e){return e.id===b.getAttribute('data-x');})[0]); }; });
+  }
+
+  var audio = null;
+  function beep(f){ try { audio = audio || new (window.AudioContext||window.webkitAudioContext)(); var o = audio.createOscillator(), g = audio.createGain();
+    o.type = 'triangle'; o.frequency.value = f; g.gain.setValueAtTime(.25, audio.currentTime); g.gain.exponentialRampToValueAtTime(.001, audio.currentTime + .6);
+    o.connect(g); g.connect(audio.destination); o.start(); o.stop(audio.currentTime + .6); } catch(e){} }
+
+  function run(e){
+    var p = document.getElementById('panel'), guess = null;
+    function head(step){ return '<div class="box"><button class="chipbtn" id="back">← All experiments</button><h2 style="margin-top:12px">'+esc(e.title)+'</h2><div style="font-weight:900;color:var(--plum);margin-bottom:6px">'+step+'</div>'; }
+    function back(){ document.getElementById('back').onclick = function(){ exps(); }; }
+    // step 1: predict
+    p.innerHTML = head('Step 1: Think like a scientist') + '<div class="qbig">'+esc(e.q)+'</div><p style="font-weight:700;color:var(--ink2);margin-top:-6px">What do you predict will happen?</p><div class="opts" style="flex-direction:column">'+
+      e.o.map(function(o,i){ return '<button class="opt2" data-i="'+i+'">'+esc(o)+'</button>'; }).join('')+'</div></div>';
+    back();
+    p.querySelectorAll('[data-i]').forEach(function(b){ b.onclick = function(){ guess = +b.getAttribute('data-i'); doit(); }; });
+
+    function doit(){
+      if (e.type === 'test') {
+        var tested = {};
+        p.innerHTML = head('Step 2: Test each one') + '<p style="font-weight:700;color:var(--ink2)">Tap each object to test it.</p><div id="sc">'+LB.testScene(e.scene,null)+'</div><div class="result" id="res"></div>'+
+          '<div class="things">'+e.things.map(function(t,i){ return '<button class="thing" data-t="'+i+'"><svg viewBox="0 0 120 120">'+LB.thing(t[1])+'</svg>'+esc(t[0])+'</button>'; }).join('')+'</div><div id="nxt"></div></div>';
+        back();
+        p.querySelectorAll('[data-t]').forEach(function(b){ b.onclick = function(){
+          if (b.disabled) return;
+          var t = e.things[+b.getAttribute('data-t')], sc = document.getElementById('sc'), res = document.getElementById('res');
+          p.querySelectorAll('[data-t]').forEach(function(x){ x.disabled = true; });
+          sc.innerHTML = LB.testScene(e.scene, t, 'placed'); res.textContent = 'Testing the ' + t[0].toLowerCase() + '…';
+          setTimeout(function(){
+            sc.innerHTML = LB.testScene(e.scene, t, 'result'); res.textContent = (t[2] ? '✅ ' + e.yes : '❌ ' + e.no);
+            tested[b.getAttribute('data-t')] = 1; b.classList.add(t[2] ? 'y' : 'n');
+            p.querySelectorAll('[data-t]').forEach(function(x){ if (!tested[x.getAttribute('data-t')]) x.disabled = false; });
+            if (Object.keys(tested).length === e.things.length) finish();
+          }, 700);
+        }; });
+      } else if (e.type === 'race') {
+        var mx = Math.max.apply(null, e.rows.map(function(r){return r[2];}));
+        p.innerHTML = head('Step 2: Run the experiment') + '<p style="font-weight:700;color:var(--ink2)">Measuring: '+esc(e.unit)+'</p><div class="race">'+
+          e.rows.map(function(r,i){ return '<div class="rrow" id="rr'+i+'"><svg viewBox="0 0 120 120">'+(window.SQ_ART.icon(r[1])||'')+'</svg><span class="lb">'+esc(r[0])+'</span><div class="track"><b></b><span>'+esc(r[3])+'</span></div></div>'; }).join('')+
+          '</div><p style="margin-top:16px"><button class="btn pri" id="go" style="background:var(--plum)">▶ '+esc(e.run)+'</button></p><div id="nxt"></div></div>';
+        back();
+        document.getElementById('go').onclick = function(){
+          this.disabled = true;
+          e.rows.forEach(function(r,i){ var tr = document.querySelector('#rr'+i+' .track'); tr.classList.add('show'); tr.querySelector('b').style.width = Math.max(6, r[2]/mx*100) + '%'; });
+          setTimeout(function(){
+            var vals = e.rows.map(function(r){return r[2];}), best = e.lowWins ? Math.min.apply(null, vals) : Math.max.apply(null, vals);
+            e.rows.forEach(function(r,i){ if (r[2]===best) document.getElementById('rr'+i).classList.add('win'); });
+            finish();
+          }, 3200);
+        };
+      } else {
+        var seen = {lo:false, hi:false}, v = .5, last = -1;
+        p.innerHTML = head('Step 2: Change one thing') + '<p style="font-weight:700;color:var(--ink2)">'+esc(e.label)+'. Try both ends of the slider!</p><div id="sc">'+LB.sliderScene(e.scene, v)+'</div>'+
+          '<input type="range" min="0" max="100" value="50" id="sl" aria-label="'+esc(e.label)+'"><div class="rlabels"><span>'+esc(e.minL)+'</span><span>'+esc(e.maxL)+'</span></div><div id="nxt"></div></div>';
+        back();
+        var sl = document.getElementById('sl');
+        sl.oninput = function(){
+          v = sl.value / 100; document.getElementById('sc').innerHTML = LB.sliderScene(e.scene, v);
+          if (v <= .1) seen.lo = true; if (v >= .9) seen.hi = true;
+          var step = Math.round(v*6); if (e.sound && step !== last) { last = step; beep(880 - v*620); }
+          if (seen.lo && seen.hi && !document.getElementById('nxt').innerHTML) finish();
+        };
+      }
+    }
+    function finish(){
+      var l = look(), first = !l.lab.done[e.id], right = guess === e.a;
+      if (first) { l.lab.done[e.id] = new Date().toISOString().slice(0,10); l.lab.pts += PER_EXP; save(l); }
+      if (first && S.note) S.note({title:'Lab experiment: ' + e.title, q:e.q, guess:e.o[guess], found:e.explain});
+      document.getElementById('nxt').innerHTML = '<div class="why'+(right?'':' no')+'" style="margin-top:18px"><b>Step 3: What happened?</b><br>'+(right?'Your prediction was right! ':'Your prediction was "'+esc(e.o[guess])+'". Scientists learn from surprises! ')+esc(e.explain)+'</div>'+
+        (first ? '<p class="coinwin" style="margin-top:14px">🧪 +'+PER_EXP+' lab points for finishing this experiment! It has been added to your science journal.</p>' : '<p style="font-weight:700;color:var(--muted)">You have done this experiment before, so there are no new points this time.</p>')+
+        '<p><button class="btn pri" id="fin" style="background:var(--plum)">Back to my experiments</button></p>';
+      document.getElementById('fin').onclick = function(){ exps(); window.scrollTo({top:0,behavior:'smooth'}); };
+    }
+  }
+
+  document.querySelectorAll('.tab').forEach(function(b){ b.onclick = function(){ tab = b.getAttribute('data-t'); round = null; draw(); }; });
+  S.chip(document.getElementById('who'), draw);
+  draw();
+})();
+</script>
+</body>
+</html>
