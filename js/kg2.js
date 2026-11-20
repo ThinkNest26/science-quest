@@ -61,6 +61,53 @@ window.SQ_GRADE.kg2 = {
     notice:'Is each tree deciduous or evergreen? Draw your favourite tree and label its trunk, branches and leaves.'}
   },
 
+  {id:'kg2-plants-2', topic:'plants', title:'Tariq’s Plant Hunt',
+   cast:'Tariq and Bea the bumblebee', cover:['dandelion','tulip','appletree'], badge:'Plant Hunter',
+   img:'img/stories/kg2-plants-2/', coverImg:'cover.webp',
+   vocab:{
+     'nature trail':'A walk where you look for things in nature and tick them off.',
+     'wild plants':'Plants that grow by themselves. Nobody planted them.',
+     'garden plants':'Plants that people plant and look after.',
+     'roots':'The part of a plant under the soil. Roots hold the plant in place and take in water.',
+     'stem':'The part that holds a plant up.',
+     'leaves':'The parts of a plant that use sunlight to make food.',
+     'petals':'The coloured parts of a flower.',
+     'bulb':'A round store of food under the soil. Some plants, like tulips, grow from a bulb.',
+     'trunk':'The thick, woody stem of a tree.',
+     'branches':'The arms of a tree that grow out from the trunk.',
+     'blossom':'The flowers on a tree.',
+     'deciduous':'A tree that drops its leaves in autumn and grows new ones in spring.',
+     'evergreen':'A tree or plant that keeps its leaves all year round.',
+     'shoot':'A new, young plant just starting to grow.'
+   },
+   pages:[
+    {pic:'cover.webp', title:true, text:'Tariq’s Plant Hunt'},
+    {pic:'p1.webp', text:'Tariq had a [[nature trail]] card. "Find ten plants," it said. "That’s easy!" said Tariq. Bzzz! A little bumblebee landed on his card. "I’m Bea," she said. "I know every plant in this park. Let’s hunt together!"'},
+    {pic:'p2.webp', text:'In the long grass, they found yellow dandelions, white daisies and pink clover. "These are [[wild plants]]," said Bea. "Nobody planted them. Look! Their seeds blow here on the wind." Tick, tick, tick!'},
+    {pic:'p3.webp', text:'In the flower beds, there were red roses, tall sunflowers and pink tulips. "These are [[garden plants]]," said Tariq. "A gardener planted them and waters them." Tick, tick, tick!'},
+    {pic:'p4.webp', text:'Bea flew into a tulip. "Every flowering plant has the same parts," she buzzed. "The [[roots]] hold it in the soil and drink water. This tulip grew from a [[bulb]]. The [[stem]] holds it up. The [[leaves]] make food from sunlight. And the [[petals]] are the bright part that bees like me can spot!"'},
+    {pic:'p5.webp', text:'Next, they came to an apple tree covered in [[blossom]]. "Is a tree a plant too?" asked Tariq. "Yes!" said Bea. "A tree has roots, a [[trunk]], [[branches]] and leaves. The blossom is its flowers. Later, the flowers will grow into apples, with seeds inside!"'},
+    {pic:'p6.webp', text:'In the meadow, they found two trees. One was a horse chestnut with big, wide leaves. The other was a fir tree with thin, sharp needles. Tariq held up a leaf from each. "In autumn, the horse chestnut will drop its leaves. It is [[deciduous]]," said Bea. "The fir tree will stay green all year. It is [[evergreen]]."'},
+    {pic:'p7.webp', text:'Tariq counted his ticks. "Nine plants! I need one more." He looked all around. Then he spotted something by his boots. A tiny green [[shoot]] was growing between the paving stones! "A wild plant!" laughed Tariq. "Plants can grow almost anywhere!"'},
+    {pic:'p8.webp', text:'"Ten plants!" cheered Tariq, holding up his card. "Thank you, Bea. You are the best plant hunter!" Bea did a happy loop in the air. "Now you know the names of plants and all their parts. You are a plant hunter too!"'}
+   ],
+   understand:[
+    {q:'Who helped Tariq on his plant hunt?', o:['Bea the bumblebee','A gardener','A squirrel'], a:0, type:'Find it', why:'Bea the bumblebee landed on his card and helped him hunt.'},
+    {q:'What does wild plant mean?', o:['A plant that grows by itself','A plant that is very big','A plant a gardener looks after'], a:0, type:'Word power', why:'Nobody plants wild plants. They grow by themselves.'},
+    {q:'Which job do the roots do?', o:['Hold the plant in the soil and drink water','Make food from sunlight','Bring the bees'], a:0, type:'Find it', why:'Roots hold the plant in the soil and take in water.'},
+    {q:'Why was the tiny shoot a wild plant?', o:['Nobody planted it between the stones','It was very small','Bea planted it'], a:0, type:'Think about it', why:'Nobody planted it there. It grew by itself, so it is a wild plant.'},
+    {q:'Where did Tariq and Bea find plants first?', o:['In the long grass','In the flower beds','Under the fir tree'], a:0, type:'Order it', why:'First the long grass, then the flower beds, then the trees.'}
+   ],
+   predict:{q:'Bea says the apple blossom will change later. What do you think the blossom flowers will grow into?',
+    o:['Apples with seeds inside','Pinecones','More leaves'], a:0,
+    discover:'After a bee visits, a blossom flower can grow into a fruit. On an apple tree, the fruit is an apple, and the seeds are inside. A seed can grow into a new apple tree!'},
+   sort:{title:'Wild plant or garden plant?', bins:['Wild plant','Garden plant'],
+    items:[['Dandelion',0,'dandelion'],['Daisy',0,'daisy'],['Clover',0,'clover'],['Rose',1,'rose'],['Sunflower',1,'sunflower'],['Tulip',1,'tulip']]},
+   tryit:{title:'Your own plant hunt', need:['An adult to come with you','Paper, a pencil and a clipboard or book to lean on'],
+    steps:['Draw ten boxes on your paper.','Go to a park, garden or school field with your adult.','Look for plants. Draw each one you find in a box.','Is it a wild plant or a garden plant? Write W or G.','Look closely at one flower. Can you find its stem, leaves and petals?'],
+    notice:'How many wild plants did you find? Did you find any plants growing in surprising places?'}
+  },
+
   /* ---------------- ANIMALS ---------------- */
   {id:'kg2-animals-1', topic:'animals', title:'Kiki’s Riverbank Roll Call',
    cast:'Kiki the kingfisher and friends', cover:['kiki','frog','otter'], badge:'Animal Expert',
@@ -189,6 +236,48 @@ window.SQ_GRADE.kg2 = {
    tryit:{title:'The great waterproof test', need:['An adult to help','A cup of water and a spoon','Paper towel, kitchen foil, a plastic bag and a piece of cloth','A tray'],
     steps:['Lay each material over the tray.','Put one spoonful of water on each material. Use the same amount each time to keep it fair.','Wait and count to 20.','Lift each material. Is the tray underneath wet or dry?'],
     notice:'Which materials are waterproof? Which would you use to make a raincoat for a teddy?'}
+  },
+
+  {id:'kg2-materials-2', topic:'materials', title:'Pip and the Lost Property Box',
+   cast:'Hana and Pip the parrot', cover:['key','spoon','scarf'], badge:'Material Detective',
+   img:'img/stories/kg2-materials-2/', coverImg:'cover.webp',
+   vocab:{
+     'lost property':'Things people have left behind and forgotten.',
+     'object':'A thing you can see and touch, like a spoon or a hat.',
+     'materials':'What objects are made from, like wood, metal or plastic.',
+     'fabric':'Cloth. Hats, scarves and coats are made from fabric.',
+     'see-through':'You can see through it, like a window.',
+     'squashy':'Soft and easy to squeeze.',
+     'bendy':'Easy to bend without breaking.',
+     'waterproof':'Does not let water through.',
+     'graphite':'The grey material in the middle of a pencil that makes marks.'
+   },
+   pages:[
+    {pic:'cover.webp', title:true, text:'Pip and the Lost Property Box'},
+    {pic:'p1.webp', text:'The [[lost property]] box was full to the top. "What a muddle!" sighed Mr Oduya, scratching his head. "Could someone sort it out?" "I will!" said Hana. "Squawk! Me too!" said Pip the parrot, flapping down from his perch.'},
+    {pic:'p2.webp', text:'Hana found three spoons. One was wood, one was metal and one was plastic. "Squawk! Three spoons!" said Pip. "They are the same [[object]], but they are made from different [[materials]]!"'},
+    {pic:'p3.webp', text:'"Let’s sort everything by material," said Hana. She made four piles on the rug: wood, metal, plastic and [[fabric]]. A ruler and a wooden block went on the wood pile. Spoons, a key and a paper clip went on the metal pile. A lunchbox and a toy car went on the plastic pile. A woolly hat, a scarf and a glove went on the fabric pile.'},
+    {pic:'p4.webp', text:'Hana found a glass marble. She held it up to the light. "Glass is hard, smooth and [[see-through]]. It needs a new pile!" Pip held up a smooth pebble. "Squawk! And this is rock. It is hard and heavy. That’s another new pile!"'},
+    {pic:'p5.webp', text:'"Now let’s sort a different way," said Pip. "Squawk! By how things feel!" Hana squeezed a sponge. "This is soft and [[squashy]]." She bent a straw. "This is [[bendy]]." The key, the pebble and the wooden block went in the hard tray. The feather and the woolly hat went in the soft tray.'},
+    {pic:'p6.webp', text:'Next, they tested which things were [[waterproof]]. Hana dripped water on a woolly glove. It soaked right in. Then she dripped water on a plastic raincoat. The drops sat on top and rolled off. "The raincoat is waterproof," said Hana. "That is why it is made of plastic!" Pip watched from inside a mug.'},
+    {pic:'p7.webp', text:'"Some objects are made from more than one material," said Hana. She held up a pencil. "The outside is wood. The middle is [[graphite]], which makes the marks." Pip hopped onto a backpack. "Squawk! Fabric, with a metal zip and plastic buckles!"'},
+    {pic:'p8.webp', text:'At last, the lost property was sorted into six neat baskets: fabric, glass, rock, wood, metal and plastic. "Wonderful!" said Mr Oduya, clapping his hands. "How did you do it?" "We looked at what each object was made from," said Hana, "and how each material feels." "Squawk!" said Pip. "Material detectives!"'}
+   ],
+   understand:[
+    {q:'Who helped Hana sort the lost property?', o:['Pip the parrot','Bolt the robot','Bea the bumblebee'], a:0, type:'Find it', why:'Pip the parrot flapped down from his perch to help.'},
+    {q:'What does material mean?', o:['What an object is made from','A kind of spoon','A box for lost things'], a:0, type:'Word power', why:'A material is what an object is made from, like wood, metal or plastic.'},
+    {q:'Why is a raincoat made of plastic?', o:['Plastic is waterproof','Plastic is see-through','Plastic is heavy'], a:0, type:'Think about it', why:'Plastic does not let water through, so it keeps you dry.'},
+    {q:'Which tray did the key go in?', o:['The hard tray','The soft tray','The bendy tray'], a:0, type:'Find it', why:'Metal is hard, so the key went in the hard tray.'},
+    {q:'What did Hana find first in the box?', o:['Three spoons','A glass marble','A pencil'], a:0, type:'Order it', why:'First the spoons, then the marble, and later the pencil.'}
+   ],
+   predict:{q:'Hana wants to keep her teddy dry in the rain. Which coat do you think she should put on him?',
+    o:['A plastic raincoat','A woolly coat','A paper coat'], a:0,
+    discover:'Plastic is waterproof, so the rain rolls off it. Wool and paper soak up water, so teddy would get wet. We choose materials because of what they are like.'},
+   sort:{title:'What is it made from?', bins:['Wood','Metal','Plastic','Fabric','Glass','Rock'],
+    items:[['Wooden block',0,'wood'],['Key',1,'key'],['Spoon',1,'spoon'],['Bucket',2,'bucket'],['Straw',2,'straw'],['Woolly hat and scarf',3,'scarf'],['Jar',4,'glass'],['Pebble',5,'rock']]},
+   tryit:{title:'Material hunt at home', need:['An adult to help','Paper and a pencil'],
+    steps:['Draw six boxes on your paper: wood, metal, plastic, fabric, glass and rock.','Walk around your home with your adult.','Find one object for each material. Draw it in the right box.','Do not touch anything sharp or hot.','Can you find an object made from two materials?'],
+    notice:'Which material did you find most of? Why do you think that material was chosen for those objects?'}
   },
 
   /* ---------------- SEASONS ---------------- */
