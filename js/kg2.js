@@ -105,6 +105,49 @@ window.SQ_GRADE.kg2 = {
     notice:'Which of your animals are herbivores, carnivores or omnivores? How did you know?'}
   },
 
+  {id:'kg2-animals-2', topic:'animals', title:'Nova Meets the Five Senses',
+   cast:'Nova from a faraway planet and Amira', cover:['feather','lemon','bell'], badge:'Super Senses',
+   img:'img/stories/kg2-animals-2/', coverImg:'cover.webp',
+   vocab:{
+     'senses':'The ways our bodies find out about the world: sight, hearing, smell, taste and touch.',
+     'sight':'The sense of seeing. We see with our eyes.',
+     'hearing':'The sense of hearing sounds. We hear with our ears.',
+     'smell':'The sense of smelling. We smell with our nose.',
+     'taste':'The sense of tasting. We taste with our tongue.',
+     'touch':'The sense of feeling. We feel with our skin.',
+     'tongue':'The part inside your mouth that tastes food.',
+     'sour':'A sharp taste, like a lemon.',
+     'skin':'The soft covering over your whole body. It feels things.',
+     'fingertips':'The very ends of your fingers. They are great at feeling.'
+   },
+   pages:[
+    {pic:'cover.webp', title:true, text:'Nova Meets the Five Senses'},
+    {pic:'p1.webp', text:'One sunny morning, something round and shiny landed in the school garden. Out jumped Nova, a little visitor from a faraway planet. Nova had two big eyes, but no ears and no nose! "Hello," said Nova. "I want to learn how humans find out about the world."'},
+    {pic:'p2.webp', text:'Amira sat down on the grass and held up five fingers. "We use our [[senses]]! We have five senses: [[sight]], [[hearing]], [[smell]], [[taste]] and [[touch]]. Each sense uses a different part of the body."'},
+    {pic:'p3.webp', text:'"I see with my eyes," said Amira. She pointed to a red ladybird on a leaf. "My eyes tell me its colour and its shape." Nova blinked its big eyes. "I can see it too! Seeing is called sight."'},
+    {pic:'p4.webp', text:'Ring-a-ling! The school bell rang. Amira cupped her hand by her ear. "I hear with my ears," she said. "My ears hear loud sounds, like the bell, and quiet sounds, like a whisper." Nova scratched its head. "I have no ears! I wish I could hear the bell."'},
+    {pic:'p5.webp', text:'Amira sniffed a rose. "I smell with my nose. This rose smells sweet!" Then they walked past the compost bin. "Phew!" said Amira, holding her nose. "My nose tells me that smell is not nice!" Nova giggled.'},
+    {pic:'p6.webp', text:'At snack time, Ms Lee gave everyone some fruit. "We only taste food that a grown-up says is safe," said Amira. She tasted a slice of lemon. "I taste with my [[tongue]]. Lemon is [[sour]]!" Then she picked a strawberry. "Strawberries are sweet!"'},
+    {pic:'p7.webp', text:'"I feel with my [[skin]]," said Amira. She stroked a feather. "This is soft and smooth." Nova picked up a pinecone. "Ooh! This is rough and prickly!" "Skin covers my whole body," said Amira, "but my [[fingertips]] are the best at feeling."'},
+    {pic:'p8.webp', text:'"Please tell me the names of your body parts," said Nova. "I want to draw a human for my planet!" Amira said them all: "Head, neck, shoulders, arms, elbows, hands, legs, knees and feet." She pointed to her knee. Nova held up a drawing with every part labelled. "Thank you, Amira! Now I know how humans find out about the world: with five senses!"'}
+   ],
+   understand:[
+    {q:'Who is Nova?', o:['A visitor from a faraway planet','A new girl in Class 1','A robot from the science corner'], a:0, type:'Find it', why:'Nova landed in the school garden from a faraway planet.'},
+    {q:'Which body part do we use to hear?', o:['Our ears','Our eyes','Our tongue'], a:0, type:'Find it', why:'Amira says, "I hear with my ears."'},
+    {q:'What does sour mean?', o:['A sharp taste, like a lemon','A soft feeling, like a feather','A loud sound, like a bell'], a:0, type:'Word power', why:'Lemon tastes sour. Sour is a sharp taste.'},
+    {q:'Why could Nova not hear the bell?', o:['Nova has no ears','The bell was too quiet','Nova was asleep'], a:0, type:'Think about it', why:'We hear with our ears, and Nova has no ears!'},
+    {q:'Which sense did Amira show Nova first?', o:['Sight, with the ladybird','Taste, with the lemon','Touch, with the feather'], a:0, type:'Order it', why:'First sight, then hearing, smell, taste and last of all touch.'}
+   ],
+   predict:{q:'Nova has no nose. Do you think Nova can smell the sweet rose like Amira does?',
+    o:['No, because Nova has no nose','Yes, with its big eyes','Yes, with its star antennae'], a:0,
+    discover:'Humans smell with their nose. Without a nose, Nova cannot smell the rose the way Amira does. Each sense needs its own body part: eyes to see, ears to hear, nose to smell, tongue to taste and skin to feel.'},
+   sort:{title:'Which sense would you use?', bins:['Sight (eyes)','Hearing (ears)','Smell (nose)','Taste (tongue)','Touch (skin)'],
+    items:[['The colour of a ladybird',0,'ladybird'],['The colour of an autumn leaf',0,'leaf'],['The school bell',1,'bell'],['A bird singing',1,'kiki'],['A flower',2,'tulip'],['A sour lemon',3,'lemon'],['A sweet strawberry',3,'strawberry'],['A soft feather',4,'feather'],['A prickly pinecone',4,'pinecone']]},
+   tryit:{title:'The mystery feely bag', need:['An adult to help','A cloth bag or pillowcase','Safe objects to feel, like a sponge, a spoon, a pinecone and a soft toy'],
+    steps:['Ask your adult to put one object in the bag without you seeing.','Put your hand in the bag. No peeking!','Feel the object with your fingertips. Is it rough or smooth? Hard or soft?','Guess what it is, then take it out to check.','Now use your eyes, ears and nose. What else can you find out about it?'],
+    notice:'Which sense helped you most to guess? Can you name the body part for each sense?'}
+  },
+
   /* ---------------- MATERIALS ---------------- */
   {id:'kg2-materials-1', topic:'materials', title:'Bolt and Maya Build a Den',
    cast:'Bolt the robot and Maya', cover:['bolt','maya','den'], badge:'Material Tester',
