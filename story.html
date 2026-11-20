@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/app.css?v=19">
+<link rel="stylesheet" href="css/app.css?v=20">
 </head>
 <body>
 <header class="top">
@@ -27,11 +27,11 @@
 
 <footer class="foot"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>Original stories and characters. Not affiliated with any publisher or exam board.</span></div></footer>
 
-<script src="js/art.js?v=19"></script>
-<script src="js/kg2.js?v=19"></script>
-<script src="js/g1.js?v=19"></script>
-<script src="js/g2.js?v=19"></script>
-<script src="js/store.js?v=19"></script>
+<script src="js/art.js?v=20"></script>
+<script src="js/kg2.js?v=20"></script>
+<script src="js/g1.js?v=20"></script>
+<script src="js/g2.js?v=20"></script>
+<script src="js/store.js?v=20"></script>
 <script>
 (function(){
   var A = window.SQ_ART, id = new URLSearchParams(location.search).get('s'), S = null;
@@ -104,7 +104,8 @@
   function read(){
     var P = S.pages[page], t = renderText(P.text), fs = load('sq-fs') || '24';
     stage.innerHTML =
-      (P.pic ? '<img class="page-pic" src="'+S.img+P.pic+'" alt="Story picture: page '+(page+1)+'">' : A.scene(P.art, P.bg)) +
+      '<div class="spread">' +
+      '<div class="spic">' + (P.pic ? '<img class="page-pic" src="'+S.img+P.pic+'" alt="Story picture: page '+(page+1)+'">' : A.scene(P.art, P.bg)) + '</div>' +
       '<div class="reader" style="--fs:'+fs+'px">' +
         '<div class="tools">' +
           (canSpeak ? '<button class="chipbtn" id="listen" aria-pressed="false"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>Read to me</button>' +
@@ -113,7 +114,7 @@
         '</div>' +
         (P.title ? '<h2 class="story-title">'+t.html+'</h2><p style="margin:6px 0 0;color:var(--muted);font-weight:800">'+esc(S.cast)+'</p>' : '<p class="story-text" id="txt">'+t.html+'</p>') +
         '<div class="def" id="def"></div>' +
-      '</div>' +
+      '</div></div>' +
       '<div class="pager"><button class="btn sec" id="prev"'+(page?'':' disabled')+'>← Back</button>' +
         '<div class="dots">'+S.pages.map(function(_,i){return '<i class="'+(i===page?'on':'')+'"></i>';}).join('')+'</div><span class="pcount">'+(page+1)+' / '+S.pages.length+'</span>' +
         '<button class="btn pri" id="next">'+(page<S.pages.length-1?'Next page →':'Questions →')+'</button></div>';

@@ -222,3 +222,12 @@ label.jl{display:block;font-weight:900;margin:14px 0 6px}
 .cert h1{font-size:40px;color:var(--teal)}
 .cert .nm{font-size:44px;font-weight:900;margin:18px 0;border-bottom:3px dotted var(--line);display:inline-block;padding:0 30px 6px}
 .cert p{font-size:18px;color:var(--ink2);line-height:1.6}
+
+/* book spread: picture and words side by side */
+.spread{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:center}
+.spread .spic{background:#F3E6CF}
+.spread .spic img,.spread .spic svg{width:100%;height:auto;display:block}
+.spread .reader{padding:22px 28px}
+.spread .story-text{font-size:calc(var(--fs,24px) - 4px);line-height:1.65}
+.pager{padding-top:18px;border-top:1px solid var(--line)}
+@media (max-width:860px){.spread{grid-template-columns:1fr}.spread .spic{position:static}.spread .story-text{font-size:calc(var(--fs,24px) - 3px)}}
