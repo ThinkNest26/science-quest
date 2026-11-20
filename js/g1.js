@@ -257,5 +257,47 @@ window.SQ_GRADE.g1 = {
     steps:['Draw a chart with seven rows, one for each day of the week.','Make columns for: drank water, ate fruit or vegetables, exercised, washed hands, brushed teeth.','Each day, tick each thing you did.','At the end of the week, count your ticks.','Talk to your adult: which healthy habit was easiest? Which was hardest?'],
     notice:'Did you do all five every day? Which one will you try to do more of next week?'}
   }
+  ,
+  {id:'g1-materials-1', topic:'materials', title:'Ella’s Playhouse Plan',
+   cast:'Ella, Uncle Dev and Nutmeg the robin', cover:['brick','window','wood'], badge:'Master Builder',
+   img:'img/stories/g1-materials-1/', coverImg:'cover.webp',
+   vocab:{
+     'plan':'A drawing that shows how something will be built.',
+     'materials':'What objects are made from, like wood, brick, metal or glass.',
+     'suit':'To be just right for something.',
+     'cardboard':'Thick, stiff paper used to make boxes.',
+     'clay':'A soft, sticky kind of earth. Bricks are made from clay that is baked hard.',
+     'see-through':'You can see through it, like a window.',
+     'hinges':'Metal joints that let a door swing open and shut.',
+     'gutter':'A channel along the edge of a roof that carries rainwater away.',
+     'waterproof':'Does not let water through.'
+   },
+   pages:[
+    {pic:'cover.webp', title:true, text:'Ella’s Playhouse Plan'},
+    {pic:'p1.webp', text:'Uncle Dev was building a playhouse for Ella. He unrolled a big [[plan]] on his workbench. Beside it, he laid a piece of wood, a brick and a stone block. "You can help me choose the [[materials]]," he said. "But each material must [[suit]] its job." Ella clapped her hands. "I’ll make the best playhouse ever!" Nutmeg the robin watched from the fence.'},
+    {pic:'p2.webp', text:'"First, the walls," said Uncle Dev. "Should we use [[cardboard]]?" Ella held up an old box. It had been left out in the rain, and it was soggy and dripping! "No!" laughed Ella. She pointed at the walls. "Bricks are hard and strong. They’re perfect for walls." Uncle Dev nodded. "Bricks are made from [[clay]] that is baked until it is hard."'},
+    {pic:'p3.webp', text:'Next, Uncle Dev fitted a glass window. Ella ran inside to look out. "I can see you!" she cheered, waving. "Glass is [[see-through]], so light can come in," said Uncle Dev, holding it steady. "But glass can break, so we must be very careful with it." Nutmeg watched closely from a branch.'},
+    {pic:'p4.webp', text:'"What about the door?" asked Ella. "Wood!" said Uncle Dev. "It’s strong, and we can cut it to the right shape." He fixed the door with metal [[hinges]]. "Metal is strong and hard. These hinges will open and close a thousand times." Ella swung the door open and shut. Creak, creak!'},
+    {pic:'p5.webp', text:'"Could we make the whole house from metal?" asked Ella. Uncle Dev held up a shiny metal sheet. It flashed in the sun. "We could," he said, "but metal gets very hot in the sun and very cold in winter. It’s heavy too." Ella fanned her face. "Too hot!" Nutmeg tweeted, as if he agreed.'},
+    {pic:'p6.webp', text:'For the path, Ella laid flat stone slabs. "Stone is a kind of rock. It is hard and lasts a long time," she said. "It won’t wear away when we walk on it." Up on the ladder, Uncle Dev fixed a plastic [[gutter]] along the roof. "Plastic is [[waterproof]] and light," he said. "It will carry the rain away."'},
+    {pic:'p7.webp', text:'Inside, Ella pinned up a paper sign saying "Ella’s Den". "Paper is good for this, because it’s inside where it stays dry," she said. "Paper outside would get ruined in the rain!" Uncle Dev smiled. Nutmeg peeped in through the window.'},
+    {pic:'p8.webp', text:'The playhouse was finished! It had brick walls, a glass window, a wooden door, metal hinges, a stone path and a plastic gutter. "Each material does the job it’s best at," said Ella proudly. Uncle Dev folded his arms and grinned. Nutmeg sat on the roof and sang.'}
+   ],
+   understand:[
+    {q:'Who was building the playhouse with Ella?', o:['Uncle Dev','Grandpa Joe','Mr Fenwick'], a:0, type:'Find it', why:'Uncle Dev was building the playhouse for Ella.'},
+    {q:'Why was cardboard no good for the walls?', o:['It went soggy in the rain','It was too heavy','It was see-through'], a:0, type:'Think about it', why:'Cardboard soaks up water. Ella’s box went soggy after the rain.'},
+    {q:'What does see-through mean?', o:['You can see through it, like a window','It is very heavy','It bends easily'], a:0, type:'Word power', why:'Glass is see-through, so Ella could see out and light could come in.'},
+    {q:'Why did they not build the whole house from metal?', o:['It gets very hot and very cold, and it is heavy','It is see-through','It goes soggy'], a:0, type:'Find it', why:'Uncle Dev said metal gets very hot in the sun, very cold in winter, and is heavy.'},
+    {q:'What did they work on just after the window?', o:['The door','The path','The sign'], a:0, type:'Order it', why:'Walls, window, door, the metal idea, then the path and gutter, and the sign last.'}
+   ],
+   predict:{q:'Ella wants to put her paper sign outside on the front door. What do you think will happen when it rains?',
+    o:['The paper will get soggy and ruined','The paper will stay dry','The paper will turn into plastic'], a:0,
+    discover:'Paper soaks up water, so outside in the rain it would go soggy and fall apart. That is why the sign belongs inside. If Ella wants an outdoor sign, she could choose a waterproof material, like plastic, or wood that has been painted.'},
+   sort:{title:'Which material suits each job?', bins:['Brick','Glass','Wood','Metal','Plastic','Paper'],
+    items:[['Strong walls',0,'brick'],['A window to see through',1,'window'],['A door cut to shape',2,'wood'],['Hinges that open and close',3,'hinge'],['A waterproof gutter',4,'gutter'],['A sign that stays inside',5,'sign']]},
+   tryit:{title:'Material detective at home', need:['An adult to help','Paper and a pencil'],
+    steps:['Walk around your home or school with your adult.','Find five objects, like a window, a door, a spoon, a chair and a raincoat.','For each one, write what material it is made from.','Ask yourself: why is that material good for this job?','Think of one silly swap, like a chocolate teapot! Why would it not work?'],
+    notice:'Did you find any objects made of more than one material? Which material did you find the most?'}
+  }
   ]
 };
