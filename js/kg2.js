@@ -106,11 +106,14 @@ window.SQ_GRADE.kg2 = {
   },
 
   /* ---------------- MATERIALS ---------------- */
-  {id:'kg2-materials-1', topic:'materials', title:'Bolt Builds a Den',
+  {id:'kg2-materials-1', topic:'materials', title:'Bolt and Maya Build a Den',
    cast:'Bolt the robot and Maya', cover:['bolt','maya','den'], badge:'Material Tester',
+   img:'img/stories/kg2-materials-1/', coverImg:'cover.webp',
    vocab:{
      'object':'A thing you can see and touch, like a cup or a den.',
      'material':'What an object is made from, like wood, metal or plastic.',
+     'materials':'What objects are made from, like wood, metal or plastic.',
+     'absorbs':'Soaks up, like a sponge soaks up water.',
      'waterproof':'Does not let water through.',
      'bendy':'Easy to bend without breaking.',
      'rough':'Bumpy, not smooth, when you touch it.',
@@ -118,21 +121,22 @@ window.SQ_GRADE.kg2 = {
      'heavy':'Hard to lift.'
    },
    pages:[
-    {art:['bolt','maya'], bg:'class', text:'Bolt was a little robot with one wobbly wheel. He lived in the science corner of Class 1. One day, the sky turned grey. "Rain is coming," said Maya. "Let’s build a den to keep us dry!"'},
-    {art:['bolt'], bg:'class', text:'"A den is an [[object]]," beeped Bolt. "An object is a thing. A [[material]] is what the thing is made from. To build the best den, we need the best materials!"'},
-    {art:['bolt','paper'], bg:'class', text:'Bolt held up a paper bag. He dripped some water on it. The paper went soft and soggy. Rip! "Paper is not [[waterproof]]," said Bolt. "It will not keep us dry."'},
-    {art:['bolt','plastic'], bg:'class', text:'Next, Bolt found a sheet of plastic. He dripped water on it. The water ran off. Drip, drip, drip! "Plastic is waterproof," said Bolt. "It is smooth and [[bendy]] too. It is perfect for the roof!"'},
-    {art:['maya','wood'], bg:'class', text:'"What about the walls?" asked Maya. Bolt knocked on a wooden plank. Knock, knock! "Wood is hard and strong," he said. "It feels a little [[rough]]. It is great for walls!"'},
-    {art:['metal','glass'], bg:'class', text:'Maya found a metal tray. "Metal is shiny and hard," said Bolt. Then he found a glass jar. "Glass is smooth and [[see-through]]. But glass can break. We will not use glass for our den."'},
-    {art:['rock','bolt'], bg:'garden', text:'Outside, they put rocks around the bottom of the den, so the wind could not blow it over. "Rock is hard and [[heavy]]," beeped Bolt. "It will hold everything still."'},
-    {art:['den','maya','bolt'], bg:'rain', text:'Pitter-patter went the rain. Maya and Bolt sat inside the den, cosy and dry. "Wood for the walls, plastic for the roof, and rocks to hold it down," said Maya. "The right material for the right job!" Bolt’s wobbly wheel spun with joy.'}
+    {pic:'cover.webp', title:true, text:'Bolt and Maya Build a Den'},
+    {pic:'p1.webp', text:'Bolt was a little robot with one wobbly wheel. He lived in the science corner of Class 1. One day, the sky turned grey. Maya pointed out of the window. "Rain is coming," she said. "Let’s build a den to keep us dry!"'},
+    {pic:'p2.webp', text:'"A den is an [[object]]," beeped Bolt. "An object is a thing. A [[material]] is what the thing is made from." He showed Maya a big box. Inside, there was paper, plastic, wood, metal, glass and rocks. "To build the best den, we need the best [[materials]]!"'},
+    {pic:'p3.webp', text:'Maya and Bolt tested a paper bag. Bolt added water. The bag went soggy and soft. It tore and dripped! "Oh no!" said Bolt. "Paper [[absorbs]] water. Paper is not [[waterproof]]. It will not keep us dry."'},
+    {pic:'p4.webp', text:'Next, Bolt tested a sheet of plastic. He dripped water on it. The water ran off. Drip, drip, drip! "Plastic is waterproof," said Bolt. "It is smooth and [[bendy]] too. It is perfect for the roof!"'},
+    {pic:'p5.webp', text:'"What about the walls?" asked Maya. She held up a wooden plank. Bolt knocked on it. Knock, knock! "Wood is hard and strong," he said. "It feels [[rough]] too. It is great for walls!"'},
+    {pic:'p6.webp', text:'Maya found a metal tray. "Metal is shiny and hard," said Bolt. Then he looked closely at a glass jar. "Glass is smooth and [[see-through]]. But glass can break. We will not use glass for our den."'},
+    {pic:'p7.webp', text:'Outside, they put rocks around the bottom of the den, so the wind could not blow it over. "Rock is hard and [[heavy]]," beeped Bolt. "It will hold everything still."'},
+    {pic:'p8.webp', text:'Pitter-patter went the rain. Maya and Bolt sat inside the den, cosy and dry. "Wood for the walls, plastic for the roof, and rocks to hold it down," said Maya. "The right material for the right job!" Bolt’s wobbly wheel spun with joy.'}
    ],
    understand:[
     {q:'Is a den an object or a material?', o:['An object','A material','A robot'], a:0, type:'Word power', why:'A den is a thing, so it is an object. It is made from materials.'},
-    {q:'Why was paper no good for the roof?', o:['It went soggy in the water','It was too heavy','It was see-through'], a:0, type:'Find it', why:'Paper is not waterproof. It went soft and soggy.'},
+    {q:'Why was paper no good for the roof?', o:['It absorbs water and went soggy','It was too heavy','It was see-through'], a:0, type:'Find it', why:'Paper absorbs water, so it went soft and soggy. It is not waterproof.'},
     {q:'Which material did they use for the walls?', o:['Wood','Glass','Paper'], a:0, type:'Find it', why:'Wood is hard and strong, so it is great for walls.'},
     {q:'Why did Bolt NOT use glass?', o:['Glass can break','Glass is soft','Glass is not shiny'], a:0, type:'Think about it', why:'Glass can break, so it would not be safe for a den.'},
-    {q:'What did Bolt test first?', o:['A paper bag','A metal tray','A sheet of plastic'], a:0, type:'Order it', why:'Bolt tested the paper first, then the plastic.'}
+    {q:'What did Maya and Bolt test first?', o:['A paper bag','A metal tray','A sheet of plastic'], a:0, type:'Order it', why:'They tested the paper first, then the plastic.'}
    ],
    predict:{q:'Bolt wants to make an umbrella. Which material do you think will keep the rain off best?',
     o:['Plastic','Paper','A sponge'], a:0,
