@@ -94,5 +94,47 @@ window.SQ_GRADE.g1 = {
     steps:['Go into a garden, park or school field with your adult.','Gently lift a log or a large stone. Never pick up the animals.','Look closely. What minibeasts can you see? Is it dark? Is it damp?','Draw what you find in your notebook.','Put the log or stone back gently, exactly where it was, so the animals keep their home.'],
     notice:'Were there more minibeasts in damp, dark places or dry, sunny places? Can you draw a food chain for one animal you saw?'}
   }
+  ,
+  {id:'g1-plants-1', topic:'plants', title:'Priya’s Seed and Bulb Race',
+   cast:'Priya and Mr Fenwick', cover:['beanpod','daffodil','bulb'], badge:'Super Grower',
+   img:'img/stories/g1-plants-1/', coverImg:'cover.webp',
+   vocab:{
+     'seed':'A small part of a plant that can grow into a new plant.',
+     'bulb':'A round store of food under the soil. Some plants, like daffodils, grow from a bulb.',
+     'germination':'When a seed starts to grow. A root grows down and a shoot grows up.',
+     'shoot':'A new, young part of a plant that grows up towards the light.',
+     'cane':'A long, thin stick that helps a climbing plant grow tall.',
+     'mature':'Fully grown up.',
+     'pods':'Long cases that grow on bean and pea plants. They hold the seeds.',
+     'faded':'Lost its bright colour and started to wither.',
+     'cycle':'Something that happens again and again, in the same order.'
+   },
+   pages:[
+    {pic:'cover.webp', title:true, text:'Priya’s Seed and Bulb Race'},
+    {pic:'p1.webp', text:'Mr Fenwick held out two things. In one hand was a small bean [[seed]]. In the other hand was a round, papery daffodil [[bulb]]. "Let’s have a race," he said. "Which one will grow into a big plant first?" Priya thought hard. Then she grinned. "Ready, steady, grow!"'},
+    {pic:'p2.webp', text:'In autumn, when the leaves were turning golden, they planted the bulb deep in the soil. "A bulb is like a lunchbox," said Mr Fenwick. "It is full of food for the new plant. Its roots will grow, and it will rest underground all winter." Priya patted the soil. "Sleep well, bulb!"'},
+    {pic:'p3.webp', text:'In spring, Priya planted the bean seed in a pot in the greenhouse and watered it. A few days later, the seed cracked open. A tiny root grew down. Then a little green [[shoot]] pushed up! "That’s called [[germination]]," said Mr Fenwick, pointing. "It’s when a seed starts to grow."'},
+    {pic:'p4.webp', text:'Out in the garden, green leaves poked up where the bulb was buried. Soon, there was a bright yellow daffodil! "Look! The bulb woke up!" said Priya, clasping her hands. "Plants that grow from bulbs often flower in spring," said Mr Fenwick.'},
+    {pic:'p5.webp', text:'Priya planted her bean in the garden. It grew taller and taller. Mr Fenwick gave it a [[cane]] to climb and tied it on gently. It grew big leaves, and then little white flowers. "Now it is a [[mature]] plant," said Mr Fenwick. "Mature means grown-up."'},
+    {pic:'p6.webp', text:'In summer, the bean flowers turned into long green [[pods]]. Priya opened one. Inside were plump new beans! "These are seeds," said Mr Fenwick. "Each one can grow into a new bean plant."'},
+    {pic:'p7.webp', text:'Soon, the daffodil flowers [[faded]], and the leaves turned yellow. Priya rested her chin on her hand. "Is it dying?" she asked sadly. "No," said Mr Fenwick kindly. "It’s storing food in the bulb again. Next spring, it will flower again."'},
+    {pic:'p8.webp', text:'"So who won the race?" asked Priya. Mr Fenwick laughed. "They both did! A seed and a bulb both grow into mature plants. Then the [[cycle]] starts again." Priya planted her new beans in a long row. Mr Fenwick cheered. "Ready, steady, grow!"'}
+   ],
+   understand:[
+    {q:'What did Mr Fenwick hold in his hands?', o:['A bean seed and a daffodil bulb','Two bean seeds','A daffodil and a watering can'], a:0, type:'Find it', why:'He held a small bean seed in one hand and a daffodil bulb in the other.'},
+    {q:'What does germination mean?', o:['When a seed starts to grow','When a flower fades','When a plant is fully grown'], a:0, type:'Word power', why:'Germination is when a seed cracks open, a root grows down and a shoot grows up.'},
+    {q:'Why did Mr Fenwick say a bulb is like a lunchbox?', o:['It is full of food for the new plant','You can eat it at lunch','It has a lid'], a:0, type:'Think about it', why:'A bulb stores food that the new plant uses to grow.'},
+    {q:'What was inside the bean pod?', o:['New bean seeds','A daffodil bulb','Water'], a:0, type:'Find it', why:'Priya opened a pod and found new beans. They are seeds!'},
+    {q:'What did Priya and Mr Fenwick plant first?', o:['The daffodil bulb, in autumn','The bean seed, in spring','The new beans, in summer'], a:0, type:'Order it', why:'The bulb went in first, in autumn. The bean seed was planted in spring.'}
+   ],
+   predict:{q:'Priya plants one of her new beans and waters it. What do you think will grow first?',
+    o:['A root, growing down','A flower','A pod'], a:0,
+    discover:'When a seed germinates, a root grows down first to find water and hold the plant in the soil. Then a shoot grows up towards the light. Leaves come next, then flowers, and then pods full of new seeds. Round and round goes the cycle!'},
+   sort:{title:'Does it grow from a seed or a bulb?', bins:['Seed','Bulb'],
+    items:[['Bean plant',0,'beanpod'],['Sunflower',0,'sunflower'],['Apple tree',0,'appletree'],['Daffodil',1,'daffodil'],['Tulip',1,'tulip'],['Onion',1,'bulb']]},
+   tryit:{title:'Grow a bean in a jar', need:['An adult to help','A clear jar','Paper towels','A dried bean, like a broad bean or runner bean','Water'],
+    steps:['Fold some paper towels and line the inside of the jar.','Push the bean between the paper and the glass, so you can see it.','Add a little water to the bottom of the jar to keep the paper damp.','Put the jar somewhere warm and light. Keep the paper damp.','Look every day and draw what you see.'],
+    notice:'Which grew first, the root or the shoot? How many days did it take to germinate?'}
+  }
   ]
 };
