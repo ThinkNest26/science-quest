@@ -299,5 +299,47 @@ window.SQ_GRADE.g1 = {
     steps:['Walk around your home or school with your adult.','Find five objects, like a window, a door, a spoon, a chair and a raincoat.','For each one, write what material it is made from.','Ask yourself: why is that material good for this job?','Think of one silly swap, like a chocolate teapot! Why would it not work?'],
     notice:'Did you find any objects made of more than one material? Which material did you find the most?'}
   }
+  ,
+  {id:'g1-materials-2', topic:'materials', title:'Squash, Bend, Twist and Stretch',
+   cast:'Jay, Jess and Gran', cover:['playdough','pipecleaner','elastic'], badge:'Shape Changer',
+   img:'img/stories/g1-materials-2/', coverImg:'cover.webp',
+   vocab:{
+     'inventors':'People who think up and make new things.',
+     'squash':'Press hard on something to make it flatter.',
+     'bend':'Make something curve or fold.',
+     'twist':'Turn the ends of something in opposite directions.',
+     'stretch':'Pull something to make it longer.',
+     'twisting':'Turning the ends of something in opposite directions.',
+     'stiff':'Hard to bend.',
+     'rubber':'A stretchy, waterproof material.',
+     'waterproof':'Does not let water through.'
+   },
+   pages:[
+    {pic:'cover.webp', title:true, text:'Squash, Bend, Twist and Stretch'},
+    {pic:'p1.webp', text:'It was raining, so Jay and Jess stayed at Gran’s house. "Let’s be [[inventors]]," said Gran. She tipped a box out onto the kitchen table: playdough, sponges, pipe cleaners, elastic bands, a metal spoon and a wooden ruler. "Today, we’ll find out which materials can change shape."'},
+    {pic:'p2.webp', text:'Jay rolled some playdough into a ball. Then he pressed it flat with both hands. "I can [[squash]] it!" he said. "Squashing changes the shape," said Gran. "But it’s still playdough. It’s the same material."'},
+    {pic:'p3.webp', text:'Jess picked up a pipe cleaner. She made it into a zigzag. "I can [[bend]] it!" Then she wound two pipe cleaners round and round each other to make a little person. "Bending and [[twisting]] change the shape too," said Gran, as Jay watched.'},
+    {pic:'p4.webp', text:'Jay picked up an elastic band. He pulled it long and thin. "I can [[stretch]] it!" When he let go, ping! It sprang back. Jess squeezed a sponge, then opened her hands. It sprang back too! "Some materials go back to their shape after you stretch or squash them," said Gran.'},
+    {pic:'p5.webp', text:'Jess gently bent the wooden ruler. Creak! "Careful!" said Gran, holding the end. "If you bend wood too much, it snaps." Jay pulled hard on the metal spoon. It didn’t change at all! "Some materials are too hard or [[stiff]] to change shape with our hands," said Gran.'},
+    {pic:'p6.webp', text:'Gran opened a big book. "Let me tell you about a real inventor," she said. "Long ago, a Scottish scientist called Charles Macintosh wanted to keep people dry in the rain. He put a layer of [[rubber]] between two pieces of cloth. He made some of the first [[waterproof]] coats! Some people still call raincoats ‘macs’."'},
+    {pic:'p7.webp', text:'"Rubber is stretchy and waterproof," said Jess. "That’s why it was a good material to choose!" The twins invented a raincoat for their teddy. Jay cut a blue plastic bag into shapes, and Jess folded and taped them together. Gran smiled. "Plastic is waterproof too!"'},
+    {pic:'p8.webp', text:'The rain slowed down, and the twins ran outside with teddy in his new raincoat. Splash! "Squash, bend, twist and stretch!" they sang, jumping in the puddles. Gran waved from the door. "You think like real inventors!" Teddy stayed perfectly dry.'}
+   ],
+   understand:[
+    {q:'Why did Jay and Jess stay at Gran’s house?', o:['It was raining','It was their birthday','Gran was ill'], a:0, type:'Find it', why:'It was raining, so they stayed inside at Gran’s house.'},
+    {q:'What does stretch mean?', o:['Pull something to make it longer','Press something flat','Turn something round'], a:0, type:'Word power', why:'Jay stretched the elastic band by pulling it long and thin.'},
+    {q:'Was the squashed playdough still playdough?', o:['Yes, only the shape changed','No, it turned into rubber','No, it turned into a sponge'], a:0, type:'Think about it', why:'Squashing changes the shape of an object, but not the material it is made from.'},
+    {q:'Which object did not change shape when Jay pulled it?', o:['The metal spoon','The elastic band','The playdough'], a:0, type:'Find it', why:'The metal spoon is too hard and stiff to change shape with our hands.'},
+    {q:'What did the twins make at the end?', o:['A raincoat for teddy','A playdough house','A pipe-cleaner car'], a:0, type:'Order it', why:'After hearing about Charles Macintosh, they made teddy a waterproof raincoat.'}
+   ],
+   predict:{q:'Jess squeezes a sponge in her hand and then lets go. What do you think the sponge will do?',
+    o:['Spring back to its shape','Stay squashed flat','Turn into playdough'], a:0,
+    discover:'A sponge springs back after you squeeze it, just like an elastic band springs back after you stretch it. Playdough stays in its new shape. A metal spoon hardly changes at all. Different materials behave in different ways, and inventors choose materials because of how they behave.'},
+   sort:{title:'How can you change its shape?', bins:['Squash','Bend','Twist','Stretch','Too stiff to change'],
+    items:[['Playdough',0,'playdough'],['Sponge',0,'sponge'],['Pipe cleaner zigzag',1,'pipecleaner'],['Two pipe cleaners wound together',2,'pipecleaner'],['Elastic band',3,'elastic'],['Metal spoon',4,'spoon'],['Pebble',4,'rock']]},
+   tryit:{title:'The shape-changing test', need:['An adult to help','Playdough, a sponge, a pipe cleaner, an elastic band, a metal spoon and a pebble','Paper and a pencil'],
+    steps:['Make a table with four columns: squash, bend, twist, stretch.','Try each action on each object, gently.','Put a tick if the shape changes, and a cross if it does not.','Let go of each object. Does it spring back, or stay in its new shape?','Never bend anything hard enough to snap it.'],
+    notice:'Which objects sprang back? Which kept their new shape? Which would you use to make a teddy’s raincoat, and why?'}
+  }
   ]
 };
