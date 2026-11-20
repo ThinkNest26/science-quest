@@ -197,3 +197,10 @@ revoke all on function public.sq_new_code() from public, anon, authenticated;
 grant execute on function public.sq_login(text), public.sq_save(text,text,text,jsonb),
   public.sq_journal_add(text,jsonb), public.sq_journal_del(text,text) to anon, authenticated;
 grant execute on function public.sq_add_students(uuid,text[]), public.sq_new_code_for(uuid) to authenticated;
+
+-- table access for signed-in teachers (row security above still limits them to their own classes)
+grant usage on schema public to anon, authenticated;
+grant select, insert, update, delete on public.sq_classes to authenticated;
+grant select, insert, update, delete on public.sq_students to authenticated;
+grant select on public.sq_progress to authenticated;
+notify pgrst, 'reload schema';
