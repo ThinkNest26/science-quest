@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Science Quest by Curious Nest — science stories that build readers and scientists</title>
+<meta name="description" content="Science Quest by Curious Nest: original science stories for KG2 to Grade 5 (National Curriculum Years 1–6) that build reading comprehension and scientific thinking together.">
+<meta property="og:title" content="Science Quest by Curious Nest">
+<meta property="og:description" content="Every story starts a discovery. Science and reading, together, for KG2 to Grade 5.">
+<meta property="og:image" content="https://science.thinknest.education/img/sq-bird.png">
+<link rel="icon" type="image/png" href="img/sq-favicon.png">
+<link rel="apple-touch-icon" href="img/sq-bird.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1E2A4A;--ink2:#46527A;--muted:#66708F;--leaf:#2E9E6B;--leafL:#E4F5EC;--sky:#3D8BE0;--skyL:#E6F1FC;--sun:#FFC83D;--sunL:#FFF4D6;--coral:#F2704E;--coralL:#FDEBE5;--plum:#7B5BD6;--plumL:#EFE9FB;--bg:#FBFAF6;--line:#ECE7DC}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Nunito,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%}
+h1,h2,h3{font-family:Fredoka,Nunito,sans-serif;margin:0;letter-spacing:-.01em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+section{scroll-margin-top:84px}
+.kick{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--leaf);background:var(--leafL);padding:6px 14px;border-radius:999px;margin-bottom:16px}
+.lead{font-size:18px;line-height:1.75;color:var(--ink2);margin:0}
+.ic{display:block;flex:none}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:16px;border-radius:16px;padding:15px 24px;transition:transform .15s,box-shadow .15s;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn.go{background:var(--leaf);color:#fff;box-shadow:0 6px 0 #22805A}
+.btn.go:active{transform:translateY(2px);box-shadow:0 2px 0 #22805A}
+.btn.ghost{background:#fff;color:var(--ink);box-shadow:0 0 0 2px var(--line) inset}
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(251,250,246,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:22px;height:78px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand .mark{position:relative;width:54px;height:54px;border-radius:16px;background:var(--skyL);display:flex;align-items:center;justify-content:center}
+.brand .mark img{width:46px}
+.brand .mark .lens{position:absolute;right:-4px;bottom:-4px;width:24px;height:24px;border-radius:50%;background:var(--sun);display:flex;align-items:center;justify-content:center;color:var(--ink);box-shadow:0 0 0 3px var(--bg)}
+.brand b{display:block;font-family:Fredoka,sans-serif;font-size:22px;line-height:1}
+.brand small{display:block;font-weight:800;font-size:12px;color:var(--leaf);margin-top:3px}
+.links{display:flex;gap:22px;margin-left:auto;font-weight:700;font-size:15px}
+.links a{text-decoration:none;color:var(--ink2)}.links a:hover{color:var(--leaf)}
+.nav .btn{padding:11px 18px;font-size:15px;box-shadow:0 4px 0 #22805A}
+.menu{display:none;margin-left:auto;background:#fff;border:2px solid var(--line);border-radius:12px;padding:9px 12px;font:inherit;font-weight:800;color:var(--ink)}
+/* hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(900px 500px at 90% 10%,#E6F1FC 0,rgba(230,241,252,0) 60%),radial-gradient(700px 500px at 0% 100%,#E4F5EC 0,rgba(228,245,236,0) 60%),var(--bg)}
+.hgrid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding:72px 24px 90px}
+.hero h1{font-size:clamp(42px,5.6vw,70px);line-height:1.05;font-weight:700}
+.hero h1 .hl{color:var(--leaf);position:relative;white-space:nowrap}
+.hero h1 .hl:after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.22em;background:var(--sun);opacity:.55;z-index:-1;border-radius:6px}
+.hero .lead{margin:22px 0 30px;max-width:540px}
+.ctas{display:flex;flex-wrap:wrap;gap:14px}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.facts span{display:inline-flex;align-items:center;gap:8px;background:#fff;border:2px solid var(--line);border-radius:999px;padding:7px 14px;font-weight:800;font-size:13.5px;color:var(--ink2)}
+.facts .ic{color:var(--leaf)}
+/* storybook visual */
+.book{position:relative;max-width:520px;margin:0 auto;width:100%}
+.page{background:#fff;border-radius:28px;padding:22px;box-shadow:0 24px 60px rgba(30,42,74,.12);position:relative;z-index:2}
+.stage{position:relative;height:250px;border-radius:20px;background:linear-gradient(#2A3866,#3B4C85);overflow:hidden}
+.stage .wall{position:absolute;right:6%;top:8%;bottom:16%;width:46%;background:#F4EDDC;border-radius:10px;box-shadow:inset 0 0 30px rgba(0,0,0,.12)}
+.stage .floor{position:absolute;left:0;right:0;bottom:0;height:16%;background:#2F3E6E}
+.torch{position:absolute;left:8%;bottom:24%;width:62px;height:22px;background:#FFC83D;border-radius:6px 12px 12px 6px;transform:rotate(-8deg);animation:torch 5s ease-in-out infinite}
+.torch:before{content:"";position:absolute;left:-14px;top:5px;width:16px;height:12px;background:#E0A21A;border-radius:4px}
+.beam{position:absolute;left:12%;bottom:12%;width:62%;height:70%;background:linear-gradient(90deg,rgba(255,236,170,.55),rgba(255,236,170,.08));clip-path:polygon(0 70%,100% 0,100% 100%,0 80%);animation:torch 5s ease-in-out infinite;transform-origin:0 75%}
+.puppet{position:absolute;left:37%;bottom:30%;width:30px;height:46px;animation:pup 5s ease-in-out infinite}
+.shadow{position:absolute;right:17%;top:24%;width:70px;height:110px;filter:blur(1px);opacity:.82;animation:shad 5s ease-in-out infinite;transform-origin:50% 100%}
+@keyframes torch{0%,100%{transform:rotate(-8deg) translateX(0)}50%{transform:rotate(-8deg) translateX(34px)}}
+@keyframes shad{0%,100%{transform:scale(.72)}50%{transform:scale(1.18)}}
+@keyframes pup{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.stitle{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:18px 4px 6px}
+.stitle b{font-family:Fredoka,sans-serif;font-size:22px}
+.stitle span{font-weight:800;font-size:12.5px;color:var(--plum);background:var(--plumL);padding:5px 10px;border-radius:999px;white-space:nowrap}
+.sline{margin:0 4px;color:var(--ink2);line-height:1.6;font-size:15.5px}
+.listen{display:flex;align-items:center;gap:10px;margin:14px 4px 2px;font-weight:800;font-size:14px;color:var(--sky)}
+.listen i{width:36px;height:36px;border-radius:50%;background:var(--skyL);display:flex;align-items:center;justify-content:center}
+.chip{position:absolute;z-index:3;display:flex;align-items:center;gap:8px;background:#fff;border-radius:14px;padding:10px 14px;font-weight:800;font-size:13.5px;box-shadow:0 12px 26px rgba(30,42,74,.12);animation:float 6s ease-in-out infinite}
+.chip i{width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.c1{left:-26px;top:16%}.c1 i{background:var(--sunL);color:#B47C00}
+.c2{right:-24px;top:42%;animation-delay:-2s}.c2 i{background:var(--leafL);color:var(--leaf)}
+.c3{right:-22px;top:6%;animation-delay:-4s}.c3 i{background:var(--coralL);color:var(--coral)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.birdpeek{position:absolute;right:-30px;bottom:-34px;width:110px;z-index:4;animation:float 5s ease-in-out infinite}
+/* sections */
+.sec{padding:96px 0}
+.sec.alt{background:#fff}
+.shead{max-width:720px;margin-bottom:44px}
+.shead h2{font-size:clamp(32px,4vw,46px);line-height:1.12;margin-bottom:14px}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;counter-reset:s}
+.step{background:var(--bg);border:2px solid var(--line);border-radius:24px;padding:22px 20px;position:relative}
+.step .si{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.step b{font-family:Fredoka,sans-serif;font-size:19px;display:block;margin-bottom:6px}
+.step p{margin:0;color:var(--muted);line-height:1.6;font-size:15px}
+.step:before{counter-increment:s;content:counter(s);position:absolute;right:16px;top:14px;font-family:Fredoka,sans-serif;font-weight:700;font-size:28px;color:#E6E1D5}
+/* two skills */
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.skill{border-radius:28px;padding:32px}
+.skill.read{background:var(--skyL)}.skill.sci{background:var(--leafL)}
+.skill h3{font-size:26px;display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.skill h3 i{width:46px;height:46px;border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center}
+.skill.read h3 i{color:var(--sky)}.skill.sci h3 i{color:var(--leaf)}
+.skill p{margin:0 0 18px;color:var(--ink2);line-height:1.65}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills span{background:#fff;border-radius:999px;padding:8px 14px;font-weight:800;font-size:14px}
+.and{display:flex;align-items:center;justify-content:center;margin:-8px 0}
+/* topics */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.tab{font-family:inherit;font-weight:800;font-size:15px;border:2px solid var(--line);background:#fff;color:var(--ink2);border-radius:14px;padding:10px 16px;cursor:pointer}
+.tab small{display:block;font-weight:700;font-size:11.5px;color:var(--muted)}
+.tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}.tab[aria-selected="true"] small{color:#C9D0E6}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.topic{background:#fff;border:2px solid var(--line);border-radius:22px;padding:20px;display:flex;flex-direction:column;gap:12px;min-height:150px}
+.topic .ti{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+.topic b{font-family:Fredoka,sans-serif;font-size:19px;line-height:1.2}
+.topic span{margin-top:auto;font-weight:800;font-size:12.5px;color:var(--muted)}
+.ws{margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;background:var(--sunL);border-radius:20px;padding:16px 20px;font-weight:700;color:#6B5200}
+.ws b{font-family:Fredoka,sans-serif}
+/* preview */
+.pv{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:start}
+.story{background:#fff;border-radius:28px;padding:34px;box-shadow:0 18px 44px rgba(30,42,74,.08)}
+.story .ch{font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--plum)}
+.story h3{font-size:30px;margin:6px 0 16px}
+.story p{font-size:17.5px;line-height:1.85;color:#2E3A5C;margin:0 0 14px}
+.story mark{background:var(--sunL);color:inherit;border-radius:6px;padding:0 4px;cursor:help;border-bottom:2px dotted #D9A300}
+.quiz{background:var(--ink);color:#fff;border-radius:28px;padding:30px}
+.quiz .qk{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#FFD86B}
+.quiz h3{font-size:24px;line-height:1.3;margin:10px 0 18px}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{font-family:inherit;text-align:left;font-weight:800;font-size:16px;background:rgba(255,255,255,.08);color:#fff;border:2px solid rgba(255,255,255,.16);border-radius:16px;padding:14px 16px;cursor:pointer;transition:background .15s}
+.opt:hover{background:rgba(255,255,255,.16)}
+.opt.right{background:#2E9E6B;border-color:#2E9E6B}.opt.wrong{background:rgba(242,112,78,.25);border-color:#F2704E}
+.fb{margin-top:16px;min-height:52px;line-height:1.6;color:#DCE3F5}
+.fb b{color:#FFD86B}
+.qnote{margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14);font-size:14px;color:#AEB8D6}
+/* audiences */
+.aud{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{border-radius:28px;padding:30px;display:flex;flex-direction:column;gap:12px}
+.card h3{font-size:24px}
+.card ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.card li{display:flex;gap:10px;line-height:1.55;color:var(--ink2)}
+.card li .ic{margin-top:3px}
+.k1{background:var(--sunL)}.k1 .ic{color:#B47C00}.k2{background:var(--skyL)}.k2 .ic{color:var(--sky)}.k3{background:var(--coralL)}.k3 .ic{color:var(--coral)}
+.badge{display:inline-flex;align-self:flex-start;width:56px;height:56px;border-radius:18px;background:#fff;align-items:center;justify-content:center}
+/* promise */
+.promise{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.pr{background:#fff;border:2px solid var(--line);border-radius:22px;padding:22px}
+.pr .pi{width:44px;height:44px;border-radius:13px;background:var(--leafL);color:var(--leaf);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.pr b{font-family:Fredoka,sans-serif;font-size:18px;display:block;margin-bottom:6px}
+.pr p{margin:0;color:var(--muted);line-height:1.6;font-size:15px}
+/* cta */
+.cta{background:linear-gradient(135deg,#1E2A4A,#2E3F70);color:#fff;border-radius:34px;padding:56px 44px;display:grid;grid-template-columns:1.4fr 1fr;gap:30px;align-items:center;position:relative;overflow:hidden}
+.cta h2{font-size:clamp(30px,3.6vw,42px);line-height:1.15;margin-bottom:12px}
+.cta p{margin:0;color:#C9D0E6;font-size:17px;line-height:1.7}
+.cta .btns{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.cta .btn.ghost{background:transparent;color:#fff;box-shadow:0 0 0 2px rgba(255,255,255,.3) inset}
+.cta img{position:absolute;right:28px;bottom:-12px;width:120px;opacity:.95}
+/* footer */
+footer{padding:46px 0 40px;color:var(--muted);font-size:14.5px}
+.fgrid{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+footer a{color:var(--ink2);font-weight:700}
+.fine{margin-top:18px;font-size:13px;line-height:1.6;color:#8A92AD;max-width:820px}
+@media (max-width:1060px){.steps{grid-template-columns:repeat(3,1fr)}.promise{grid-template-columns:1fr 1fr}}
+@media (max-width:960px){.links,.nav .btn{display:none}.menu{display:block}.links.open{display:flex;position:absolute;top:78px;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:8px 24px}.links.open a{padding:14px 0;border-top:1px solid #F1ECE2}
+.hgrid,.pv,.cta{grid-template-columns:1fr}.hgrid{gap:70px}.skills,.aud{grid-template-columns:1fr}.cta img{display:none}}
+@media (max-width:640px){.steps{grid-template-columns:1fr 1fr}.sec{padding:72px 0}.c1{left:-6px}.c2{right:-6px}.c3{right:-6px}.birdpeek{right:-6px;width:84px}.story{padding:24px}.cta{padding:40px 26px}}
+@media (max-width:440px){.steps,.promise{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="wrap nav">
+<a class="brand" href="#top" aria-label="Science Quest by Curious Nest, home">
+<span class="mark"><img src="img/sq-bird.png" alt=""><span class="lens"><svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span></span>
+<span><b>Science Quest</b><small>by Curious Nest</small></span>
+</a>
+<nav class="links" id="links" aria-label="Main">
+<a href="#how">How it works</a><a href="#topics">Topics</a><a href="#preview">Try a story</a><a href="#who">For schools</a>
+</nav>
+<a class="btn go" href="#join">Join the pilot</a>
+<button class="menu" id="menu" aria-expanded="false" aria-controls="links">Menu</button>
+</div>
+</header>
+
+<main>
+<section class="hero" id="top">
+<div class="wrap hgrid">
+<div>
+<div class="kick">KG2 to Grade 5 · National Curriculum Years 1–6</div>
+<h1>Every story starts a <span class="hl">discovery.</span></h1>
+<p class="lead">Science Quest turns every science topic into an original story that children can’t wait to finish. As they read, they solve a real science mystery, building reading comprehension and scientific thinking at the same time.</p>
+<div class="ctas">
+<a class="btn go" href="#preview">Try a story <svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+<a class="btn ghost" href="#how">How it works</a>
+</div>
+<div class="facts">
+<span><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>28 topics</span>
+<span><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.4 18.4a9 9 0 0 0 0-12.7"/></svg>Read aloud by Kate</span>
+<span><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Original stories only</span>
+</div>
+</div>
+
+<div class="book" aria-label="A preview of the story The Shadow Thief">
+<div class="page">
+<div class="stage" aria-hidden="true">
+<div class="wall"></div><div class="floor"></div>
+<div class="beam"></div><div class="torch"></div>
+<svg class="puppet" viewBox="0 0 30 46"><path d="M15 2c-5 0-8 4-8 8 0 3 2 5 3 6l-4 6h18l-4-6c1-1 3-3 3-6 0-4-3-8-8-8z" fill="#1E2A4A"/><path d="M8 4 5 0M22 4l3-4" stroke="#1E2A4A" stroke-width="3" stroke-linecap="round"/><rect x="13" y="22" width="4" height="24" rx="2" fill="#8B6A3E"/></svg>
+<svg class="shadow" viewBox="0 0 30 46"><path d="M15 2c-5 0-8 4-8 8 0 3 2 5 3 6l-4 6h18l-4-6c1-1 3-3 3-6 0-4-3-8-8-8z" fill="#3A3A4A"/><path d="M8 4 5 0M22 4l3-4" stroke="#3A3A4A" stroke-width="3" stroke-linecap="round"/><rect x="13" y="22" width="4" height="24" rx="2" fill="#3A3A4A"/></svg>
+</div>
+<div class="stitle"><b>The Shadow Thief</b><span>Grade 2 · Light</span></div>
+<p class="sline">Every afternoon, Zara’s puppet show went wrong. Her fox’s shadow grew huge, then shrank to the size of a button…</p>
+<div class="listen"><i><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></i>Listen with Kate</div>
+</div>
+<div class="chip c1"><i><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></i>Predict</div>
+<div class="chip c2"><i><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6l-5 9a3 3 0 0 0 2.6 4.5h10.8A3 3 0 0 0 20 17l-5-9V2"/><path d="M8 2h8"/><path d="M6.5 15h11"/></svg></i>Fair test</div>
+<div class="chip c3"><i><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></i>New word: <em>opaque</em></div>
+<img class="birdpeek" src="img/sq-bird.png" alt="">
+</div>
+</div>
+</section>
+
+<section class="sec alt" id="how">
+<div class="wrap">
+<div class="shead center"><div class="kick">How it works</div><h2>Read it. Think it. Discover it.</h2><p class="lead">Every topic is a short adventure in five steps, so children practise reading and science thinking in one go.</p></div>
+<div class="steps">
+<div class="step"><div class="si" style="background:var(--plumL);color:var(--plum)"><svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></div><b>Read the story</b><p>A mystery or problem in short chapters. Read alone, or listen to Kate at Fast, Slow or Very slow.</p></div>
+<div class="step"><div class="si" style="background:var(--skyL);color:var(--sky)"><svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div><b>Understand it</b><p>Questions on finding facts, new words, reading between the lines and predicting.</p></div>
+<div class="step"><div class="si" style="background:var(--leafL);color:var(--leaf)"><svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6l-5 9a3 3 0 0 0 2.6 4.5h10.8A3 3 0 0 0 20 17l-5-9V2"/><path d="M8 2h8"/><path d="M6.5 15h11"/></svg></div><b>Think like a scientist</b><p>Predict, plan a fair test, read a results table and draw a conclusion.</p></div>
+<div class="step"><div class="si" style="background:var(--sunL);color:#B47C00"><svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div><b>Discover the answer</b><p>The last chapter solves the mystery with the real science, plus “Did you know?” facts.</p></div>
+<div class="step"><div class="si" style="background:var(--coralL);color:var(--coral)"><svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg></div><b>Try it yourself</b><p>A safe mini investigation for home or the classroom, with things you already have.</p></div>
+</div>
+</div>
+</section>
+
+<section class="sec">
+<div class="wrap">
+<div class="shead"><div class="kick">Two skills, one adventure</div><h2>Building strong readers and curious scientists.</h2></div>
+<div class="skills">
+<div class="skill read"><h3><i><svg class="ic" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></i>Reading comprehension</h3><p>Stories are written at the right level for each grade, with science vocabulary taught in context and questions that grow real reading skills.</p>
+<div class="pills"><span>Finding facts</span><span>Vocabulary</span><span>Inference</span><span>Prediction</span><span>Summarising</span><span>Explaining</span></div></div>
+<div class="skill sci"><h3><i><svg class="ic" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6l-5 9a3 3 0 0 0 2.6 4.5h10.8A3 3 0 0 0 20 17l-5-9V2"/><path d="M8 2h8"/><path d="M6.5 15h11"/></svg></i>Scientific thinking</h3><p>Every story is linked to National Curriculum objectives and the “Working scientifically” skills, so children think, test and explain like scientists.</p>
+<div class="pills"><span>Asking questions</span><span>Predicting</span><span>Fair testing</span><span>Observing</span><span>Recording results</span><span>Concluding</span></div></div>
+</div>
+</div>
+</section>
+
+<section class="sec alt" id="topics">
+<div class="wrap">
+<div class="shead"><div class="kick">The topics</div><h2>Every National Curriculum topic, one story at a time.</h2><p class="lead">Each topic has its own story and its own characters. Choose a grade to see what’s inside.</p></div>
+<div class="tabs" role="tablist" aria-label="Grades" id="tabs"></div>
+<div class="tgrid" id="tgrid" role="tabpanel"></div>
+<div class="ws"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6l-5 9a3 3 0 0 0 2.6 4.5h10.8A3 3 0 0 0 20 17l-5-9V2"/><path d="M8 2h8"/></svg><b>Working scientifically</b> runs through every topic: questions, predictions, fair tests, observations, results and conclusions.</div>
+</div>
+</section>
+
+<section class="sec" id="preview">
+<div class="wrap">
+<div class="shead"><div class="kick">Try a story</div><h2>Read a little. Then you decide.</h2><p class="lead">Here is the start of one of our stories. Tap the highlighted words to see what they mean, then make your prediction.</p></div>
+<div class="pv">
+<div class="story">
+<div class="ch">Chapter 1 · Grade 2 · Light</div>
+<h3>The Shadow Thief</h3>
+<p>Every afternoon, Zara set up her puppet theatre in the garage. She pinned an old white sheet to the wall, switched on her torch and held up Rusty, her cardboard fox.</p>
+<p>But something strange was happening. On Monday, Rusty’s shadow was as tall as the door. On Tuesday, it was smaller than Zara’s hand. On Wednesday, it vanished completely when her little brother Omar stood in the way.</p>
+<p>“It’s a shadow thief,” Omar whispered. “It comes when the lights go off.”</p>
+<p>Zara wasn’t so sure. She looked at the <mark title="Opaque: you cannot see through it, so it blocks light.">opaque</mark> cardboard fox, then at the bright <mark title="Light source: something that gives out its own light, like a torch or the Sun.">light source</mark> in her hand. She had a feeling the answer was right in front of her…</p>
+</div>
+<div class="quiz" id="quiz">
+<div class="qk"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/></svg>Think like a scientist</div>
+<h3>Zara moves the torch closer to Rusty the fox. What do you predict will happen to the shadow?</h3>
+<div class="opts">
+<button class="opt" data-a="big">The shadow gets bigger</button>
+<button class="opt" data-a="small">The shadow gets smaller</button>
+<button class="opt" data-a="same">The shadow stays the same</button>
+</div>
+<div class="fb" id="fb" aria-live="polite"></div>
+<div class="qnote">In the full story, children test their prediction, record results in a table and find out who the “shadow thief” really is.</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec alt" id="who">
+<div class="wrap">
+<div class="shead center"><div class="kick">Made for everyone</div><h2>Something for every member of the nest.</h2></div>
+<div class="aud">
+<div class="card k1"><span class="badge"><svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B47C00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M8 10h8"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg></span><h3>Children</h3>
+<ul><li><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Stories with mysteries to solve</li><li><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Read alone or listen to Kate</li><li><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Stars and a badge for every topic</li><li><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Log in with a simple code, no email or password</li></ul></div>
+<div class="card k2"><span class="badge"><svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3D8BE0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg></span><h3>Teachers</h3>
+<ul><li><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Every topic linked to National Curriculum objectives</li><li><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Assign stories to your class</li><li><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>See results for reading and science thinking</li><li><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Ready-made investigations for class</li></ul></div>
+<div class="card k3"><span class="badge"><svg class="ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F2704E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span><h3>Parents</h3>
+<ul><li><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>See which stories your child has read</li><li><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Simple home investigations to do together</li><li><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Questions to talk about at dinner</li><li><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Safe, carefully checked content</li></ul></div>
+</div>
+</div>
+</section>
+
+<section class="sec">
+<div class="wrap">
+<div class="shead"><div class="kick">Our story promise</div><h2>Thoughtful stories you can trust.</h2></div>
+<div class="promise">
+<div class="pr"><div class="pi"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.4 3.6a2.1 2.1 0 1 1 3 3L7 19l-4 1 1-4Z"/></svg></div><b>Original</b><p>Every story and character is written for Science Quest. No borrowed characters.</p></div>
+<div class="pr"><div class="pi"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6l-5 9a3 3 0 0 0 2.6 4.5h10.8A3 3 0 0 0 20 17l-5-9V2"/><path d="M8 2h8"/></svg></div><b>Accurate</b><p>The science matches the National Curriculum and is checked before it is published.</p></div>
+<div class="pr"><div class="pi"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div><b>Age-appropriate</b><p>Written for each grade’s reading level and free from religious or political content.</p></div>
+<div class="pr"><div class="pi"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg></div><b>Fun</b><p>Mysteries, humour and characters children want to read about again and again.</p></div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="join" style="padding-top:20px">
+<div class="wrap">
+<div class="cta">
+<div><h2>Be one of our first pilot schools.</h2><p>Science Quest is coming soon. Join the pilot to try the first stories with your classes and help shape the platform.</p></div>
+<div class="btns">
+<a class="btn go" href="mailto:thinknest2026@gmail.com?subject=Science%20Quest%20pilot">Join the pilot <svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+<a class="btn ghost" href="https://thinknest.education">Explore ThinkNest Education</a>
+</div>
+<img src="img/sq-bird.png" alt="">
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="fgrid">
+<span><b style="color:var(--ink)">Science Quest</b> by Curious Nest · part of <a href="https://thinknest.education">ThinkNest Education</a></span>
+<span>Powered by <a href="https://thinknest.education">ThinkNest</a> · <a href="mailto:thinknest2026@gmail.com">thinknest2026@gmail.com</a></span>
+</div>
+<p class="fine">© 2026 ThinkNest Education. All stories and characters are original. Science Quest follows the National Curriculum in England for science (Years 1–6) and is not affiliated with, or endorsed by, the Department for Education or any other organisation.</p>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById('menu'),l=document.getElementById('links');b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o)});l.addEventListener('click',function(e){if(e.target.tagName==='A'){l.classList.remove('open');b.setAttribute('aria-expanded','false')}})})();
+(function(){
+var C={leaf:['#E4F5EC','#2E9E6B'],sky:['#E6F1FC','#3D8BE0'],sun:['#FFF4D6','#B47C00'],coral:['#FDEBE5','#F2704E'],plum:['#EFE9FB','#7B5BD6']};
+var I={plant:'<path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/>',
+animal:'<circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/>',
+material:'<path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/>',
+season:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>',
+habitat:'<path d="M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z"/><path d="M7 16v6"/><path d="M13 19v3"/><path d="M12 19h8.3a1 1 0 0 0 .7-1.7L18 14h.3a1 1 0 0 0 .7-1.7L16 9h.2a1 1 0 0 0 .8-1.7L13 3l-1.4 1.5"/>',
+rock:'<path d="m8 3 4 8 5-5 5 15H2L8 3z"/>',
+light:'<path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/>',
+magnet:'<path d="m6 15-4-4 6.75-6.77a7.79 7.79 0 0 1 11 11L13 22l-4-4 6.39-6.36a2.14 2.14 0 0 0-3-3L6 15"/><path d="m5 8 4 4"/><path d="m12 15 4 4"/>',
+states:'<path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>',
+sound:'<path d="M11 4.7a.7.7 0 0 0-1.2-.5L6.4 7.6A1.4 1.4 0 0 1 5.4 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.4a1.4 1.4 0 0 1 1 .4l3.4 3.4a.7.7 0 0 0 1.2-.5z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.4 18.4a9 9 0 0 0 0-12.7"/>',
+elec:'<path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>',
+space:'<circle cx="12" cy="12" r="5"/><path d="M4.5 16.5c-1.5 1.5-1.9 3-1 3.5 1.5 1 6-1.5 10-5.5s6.5-8.5 5.5-10c-.5-.9-2-.5-3.5 1"/>',
+force:'<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/><path d="M3 5v14"/>',
+dna:'<path d="M2 15c6.667-6 13.333 0 20-6"/><path d="M9 22c1.798-1.998 2.518-3.995 2.807-5.993"/><path d="M15 2c-1.798 1.998-2.518 3.995-2.807 5.993"/><path d="m17 6-2.5-2.5"/><path d="m14 8-1-1"/><path d="m7 18 2.5 2.5"/><path d="m3.5 14.5.5.5"/><path d="m20 9 .5.5"/><path d="m6.5 12.5 1 1"/><path d="m16.5 10.5 1 1"/><path d="m10 16 1.5 1.5"/>'};
+var G=[['KG2','Year 1',[['Plants','plant','leaf'],['Animals, including humans','animal','coral'],['Everyday materials','material','plum'],['Seasonal changes','season','sun']]],
+['Grade 1','Year 2',[['Living things and their habitats','habitat','leaf'],['Plants','plant','leaf'],['Animals, including humans','animal','coral'],['Uses of everyday materials','material','plum']]],
+['Grade 2','Year 3',[['Plants','plant','leaf'],['Animals, including humans','animal','coral'],['Rocks','rock','plum'],['Light','light','sun'],['Forces and magnets','magnet','sky']]],
+['Grade 3','Year 4',[['Living things and their habitats','habitat','leaf'],['Animals, including humans','animal','coral'],['States of matter','states','sky'],['Sound','sound','plum'],['Electricity','elec','sun']]],
+['Grade 4','Year 5',[['Living things and their habitats','habitat','leaf'],['Animals, including humans','animal','coral'],['Properties and changes of materials','material','plum'],['Earth and space','space','sky'],['Forces','force','sun']]],
+['Grade 5','Year 6',[['Living things and their habitats','habitat','leaf'],['Animals, including humans','animal','coral'],['Evolution and inheritance','dna','plum'],['Light','light','sun'],['Electricity','elec','sky']]]];
+var tabs=document.getElementById('tabs'),grid=document.getElementById('tgrid');
+function show(i){[].forEach.call(tabs.children,function(t,j){t.setAttribute('aria-selected',j===i)});
+grid.innerHTML=G[i][2].map(function(t){var c=C[t[2]];return '<div class="topic"><span class="ti" style="background:'+c[0]+';color:'+c[1]+'"><svg class="ic" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+I[t[1]]+'</svg></span><b>'+t[0]+'</b><span>Story coming soon</span></div>'}).join('')}
+G.forEach(function(g,i){var b=document.createElement('button');b.className='tab';b.setAttribute('role','tab');b.innerHTML=g[0]+'<small>'+g[1]+'</small>';b.onclick=function(){show(i)};tabs.appendChild(b)});
+show(2);
+})();
+(function(){var q=document.getElementById('quiz'),fb=document.getElementById('fb');q.querySelectorAll('.opt').forEach(function(o){o.addEventListener('click',function(){q.querySelectorAll('.opt').forEach(function(x){x.classList.remove('right','wrong')});
+if(o.dataset.a==='big'){o.classList.add('right');fb.innerHTML='<b>Great prediction!</b> The closer the light source is to the fox, the more light it blocks, so the shadow grows bigger. Now, can you explain why the shadow vanished on Wednesday?'}
+else{o.classList.add('wrong');fb.innerHTML='<b>Good thinking, but try again.</b> Hint: imagine holding your hand very close to a torch. How much of the wall does your hand’s shadow cover?'}})})})();
+</script>
+</body>
+</html>
