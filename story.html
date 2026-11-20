@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Story | Science Quest by Curious Nest</title>
+<link rel="icon" type="image/png" href="img/sq-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><span class="mk"><img src="img/sq-bird.png" alt=""></span><span><b>Science Quest</b><small>by Curious Nest</small></span></a>
+    <a class="chipbtn" href="learn.html">
+      <svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Library</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1 id="title" style="font-size:clamp(24px,3.4vw,34px);margin-top:22px"></h1>
+  <div class="steps" id="steps"></div>
+  <div class="stage" id="stage"></div>
+</main>
+
+<footer class="foot"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>Original stories and characters. Not affiliated with any publisher or exam board.</span></div></footer>
+
+<script src="js/art.js"></script>
+<script src="js/kg2.js"></script>
+<script>
+(function(){
+  var A = window.SQ_ART, id = new URLSearchParams(location.search).get('s'), S = null;
+  Object.keys(window.SQ_GRADE).forEach(function(g){ window.SQ_GRADE[g].stories.forEach(function(s){ if (s.id===id) S = s; }); });
+  var stage = document.getElementById('stage');
+  if (!S) { stage.innerHTML = '<div class="panel"><h2>Story not found</h2><p><a href="learn.html">Back to the library</a></p></div>'; return; }
+  document.title = S.title + ' | Science Quest';
+  document.getElementById('title').textContent = S.title;
+
+  var STEPS = ['Read it','Understand it','Think like a scientist','Discover','Try it yourself'];
+  var step = 0, page = 0, qi = 0, stars = 0, prediction = null;
+  function store(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+  function load(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+  function esc(t){ return t.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+  function shuffle(a){ a = a.slice(); for (var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)), t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+
+  /* ---------- optional read-aloud (UK English, Kate when available) ---------- */
+  var RATES = {normal:.95, slow:.8, vslow:.65}, LABEL = {normal:'Normal', slow:'Slow', vslow:'Very slow'};
+  var speed = load('sq-speed') || 'normal', speaking = false;
+  var canSpeak = 'speechSynthesis' in window;
+  function voice(){
+    var v = canSpeak ? speechSynthesis.getVoices() : [];
+    return v.filter(function(x){return /kate/i.test(x.name);})[0] || v.filter(function(x){return x.lang==='en-GB';})[0] || null;
+  }
+  if (canSpeak) speechSynthesis.onvoiceschanged = function(){};
+  function stopTalk(){ if (canSpeak) speechSynthesis.cancel(); speaking = false; document.querySelectorAll('.w.hl').forEach(function(w){w.classList.remove('hl');}); var b=document.getElementById('listen'); if(b) b.setAttribute('aria-pressed','false'); }
+  function say(text, onWord, onEnd){
+    if (!canSpeak) return;
+    stopTalk();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-GB'; u.rate = RATES[speed]; var v = voice(); if (v) u.voice = v;
+    if (onWord) u.onboundary = function(e){ if (e.name==='word' || e.name===undefined) onWord(e.charIndex); };
+    u.onend = function(){ speaking = false; if (onEnd) onEnd(); };
+    speaking = true; speechSynthesis.speak(u);
+  }
+
+  /* ---------- steps bar ---------- */
+  function drawSteps(){
+    document.getElementById('steps').innerHTML = STEPS.map(function(n,i){
+      return '<div class="stp'+(i===step?' on':i<step?' done':'')+'"><span class="n">'+(i<step?'✓':i+1)+'</span><span class="l">'+n+'</span></div>';
+    }).join('');
+  }
+  function go(n){ stopTalk(); step = n; drawSteps(); [read,understand,think,discover,tryit,finish][n](); window.scrollTo({top:0,behavior:'smooth'}); }
+
+  /* ---------- 1. Read ---------- */
+  function vocabDef(word){
+    var k = Object.keys(S.vocab).filter(function(x){return x.toLowerCase()===word.toLowerCase();})[0];
+    return k ? S.vocab[k] : '';
+  }
+  function renderText(raw){
+    // split into plain + vocab segments, wrap every word in a span with its character offset
+    var plain = '', html = '', re = /\[\[(.+?)\]\]/g, last = 0, m;
+    function words(seg){
+      var out = '';
+      seg.split(/(\s+)/).forEach(function(tok){
+        if (!tok) return;
+        if (/^\s+$/.test(tok)) { out += tok; plain += tok; return; }
+        out += '<span class="w" data-i="'+plain.length+'">'+esc(tok)+'</span>'; plain += tok;
+      });
+      return out;
+    }
+    while ((m = re.exec(raw))) {
+      html += words(raw.slice(last, m.index));
+      html += '<button class="vocab" type="button" data-word="'+esc(m[1])+'">'+words(m[1])+'</button>';
+      last = re.lastIndex;
+    }
+    html += words(raw.slice(last));
+    return {html:html, plain:plain};
+  }
+  function read(){
+    var P = S.pages[page], t = renderText(P.text), fs = load('sq-fs') || '24';
+    stage.innerHTML =
+      A.scene(P.art, P.bg) +
+      '<div class="reader" style="--fs:'+fs+'px">' +
+        '<div class="tools">' +
+          (canSpeak ? '<button class="chipbtn" id="listen" aria-pressed="false"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>Read to me</button>' +
+          '<button class="chipbtn" id="spd" title="Reading speed">🐢 '+LABEL[speed]+'</button>' : '') +
+          '<span class="sp"></span><button class="chipbtn" id="fsm" aria-label="Smaller text">A−</button><button class="chipbtn" id="fsp" aria-label="Bigger text">A+</button>' +
+        '</div>' +
+        '<p class="story-text" id="txt">'+t.html+'</p>' +
+        '<div class="def" id="def"></div>' +
+      '</div>' +
+      '<div class="pager"><button class="btn sec" id="prev"'+(page?'':' disabled')+'>← Back</button>' +
+        '<div class="dots">'+S.pages.map(function(_,i){return '<i class="'+(i===page?'on':'')+'"></i>';}).join('')+'</div><span class="pcount">'+(page+1)+' / '+S.pages.length+'</span>' +
+        '<button class="btn pri" id="next">'+(page<S.pages.length-1?'Next page →':'Questions →')+'</button></div>';
+    var spans = [].slice.call(stage.querySelectorAll('.w'));
+    stage.querySelectorAll('.vocab').forEach(function(b){
+      b.onclick = function(){
+        var w = b.getAttribute('data-word'), d = document.getElementById('def');
+        d.innerHTML = '<b>'+esc(w)+'</b>: '+vocabDef(w); d.classList.add('show');
+        if (canSpeak) say(w + '. ' + vocabDef(w));
+      };
+    });
+    var L = document.getElementById('listen');
+    if (L) L.onclick = function(){
+      if (speaking) { stopTalk(); return; }
+      L.setAttribute('aria-pressed','true');
+      say(t.plain, function(ci){
+        spans.forEach(function(s){ s.classList.remove('hl'); });
+        var hit = null; spans.forEach(function(s){ if (+s.getAttribute('data-i') <= ci) hit = s; });
+        if (hit) hit.classList.add('hl');
+      }, function(){ spans.forEach(function(s){s.classList.remove('hl');}); L.setAttribute('aria-pressed','false'); });
+    };
+    var SP = document.getElementById('spd');
+    if (SP) SP.onclick = function(){ speed = speed==='normal'?'slow':speed==='slow'?'vslow':'normal'; store('sq-speed',speed); SP.textContent = '🐢 '+LABEL[speed]; if (speaking) L.click(); };
+    function setFs(d){ var n = Math.max(18, Math.min(34, (+(load('sq-fs')||24)) + d)); store('sq-fs', n); stage.querySelector('.reader').style.setProperty('--fs', n+'px'); }
+    document.getElementById('fsm').onclick = function(){ setFs(-2); };
+    document.getElementById('fsp').onclick = function(){ setFs(2); };
+    document.getElementById('prev').onclick = function(){ stopTalk(); page--; read(); };
+    document.getElementById('next').onclick = function(){ stopTalk(); if (page < S.pages.length-1) { page++; read(); } else go(1); };
+  }
+
+  /* ---------- 2. Understand ---------- */
+  function understand(){
+    var Q = S.understand[qi], order = shuffle(Q.o.map(function(_,i){return i;})), tries = 0, done = false;
+    stage.innerHTML = '<div class="panel"><span class="tag">'+Q.type+'</span>' +
+      '<h2 class="qtitle">'+esc(Q.q)+'</h2><div class="opts">' +
+      order.map(function(i){ return '<button class="opt" data-i="'+i+'">'+esc(Q.o[i])+'</button>'; }).join('') +
+      '</div><p class="fb" id="fb" aria-live="polite"></p>' +
+      '<div class="row"><span class="stars">Question '+(qi+1)+' of '+S.understand.length+' · ★ '+stars+'</span>' +
+      '<span>'+(canSpeak?'<button class="chipbtn" id="sayq">🔊 Read the question</button> ':'')+'<button class="btn pri" id="nx" disabled>Next →</button></span></div></div>';
+    var fb = document.getElementById('fb'), nx = document.getElementById('nx');
+    var sq = document.getElementById('sayq'); if (sq) sq.onclick = function(){ say(Q.q + ' ' + order.map(function(i){return Q.o[i];}).join('. ')); };
+    stage.querySelectorAll('.opt').forEach(function(b){
+      b.onclick = function(){
+        if (done) return;
+        var i = +b.getAttribute('data-i'); tries++;
+        if (i === Q.a) {
+          done = true; b.classList.add('right'); if (tries===1) stars++;
+          fb.innerHTML = '<b>'+(tries===1?'Brilliant!':'You got there!')+'</b> '+esc(Q.why);
+          nx.disabled = false;
+          stage.querySelector('.stars').textContent = 'Question '+(qi+1)+' of '+S.understand.length+' · ★ '+stars;
+        } else {
+          b.classList.add('wrong'); b.disabled = true;
+          fb.innerHTML = '<b>Not quite.</b> Have another look at the story and try again.';
+        }
+      };
+    });
+    nx.onclick = function(){ stopTalk(); if (qi < S.understand.length-1) { qi++; understand(); } else go(2); };
+  }
+
+  /* ---------- 3. Think like a scientist ---------- */
+  function think(){
+    var Q = S.predict, order = shuffle(Q.o.map(function(_,i){return i;}));
+    stage.innerHTML = '<div class="panel"><span class="tag">Make a prediction</span>' +
+      '<h2 class="qtitle">'+esc(Q.q)+'</h2><p style="margin:-6px 0 16px;color:var(--muted);font-weight:700">Scientists make a good guess first, then they find out. There is no wrong prediction!</p><div class="opts">' +
+      order.map(function(i){ return '<button class="opt" data-i="'+i+'">'+esc(Q.o[i])+'</button>'; }).join('') +
+      '</div><div class="row"><span></span><span>'+(canSpeak?'<button class="chipbtn" id="sayq">🔊 Read it to me</button> ':'')+'<button class="btn pri" id="nx" disabled>Find out →</button></span></div></div>';
+    var nx = document.getElementById('nx');
+    var sq = document.getElementById('sayq'); if (sq) sq.onclick = function(){ say(Q.q + ' ' + order.map(function(i){return Q.o[i];}).join('. ')); };
+    stage.querySelectorAll('.opt').forEach(function(b){
+      b.onclick = function(){
+        stage.querySelectorAll('.opt').forEach(function(x){x.classList.remove('pick');});
+        b.classList.add('pick'); prediction = +b.getAttribute('data-i'); nx.disabled = false;
+      };
+    });
+    nx.onclick = function(){ go(3); };
+  }
+
+  /* ---------- 4. Discover ---------- */
+  function discover(){
+    var Q = S.predict, right = prediction === Q.a, srt = S.sort;
+    var items = shuffle(srt.items.map(function(it,i){return i;})), placed = 0, sel = null;
+    stage.innerHTML = '<div class="panel"><span class="tag">Discover</span>' +
+      '<h2 class="qtitle">'+(right ? 'Your prediction was right!' : 'Great thinking! Let’s find out.')+'</h2>' +
+      '<p class="disc">You predicted: <b>'+esc(Q.o[prediction])+'</b>.<br>'+esc(Q.discover)+(right?'':' Scientists often change their ideas when they find new evidence. That is how science works!')+'</p>' +
+      '<div class="sorter"><h3>'+esc(srt.title)+'</h3><p>Tap a card, then tap the group it belongs in.</p>' +
+      '<div class="pool" id="pool">'+items.map(function(i){ var it = srt.items[i]; return '<button class="item" data-i="'+i+'">'+A.icon(it[2],38)+esc(it[0])+'</button>'; }).join('')+'</div>' +
+      '<div class="bins">'+srt.bins.map(function(b,i){ return '<div class="bin" data-b="'+i+'" role="button" tabindex="0"><h4>'+esc(b)+'</h4><div class="in"></div></div>'; }).join('')+'</div>' +
+      '<p class="fb" id="fb"></p></div>' +
+      '<div class="row"><span class="stars" id="cnt">0 of '+srt.items.length+' sorted</span><button class="btn pri" id="nx" disabled>Try it yourself →</button></div></div>';
+    var fb = document.getElementById('fb'), nx = document.getElementById('nx'), cnt = document.getElementById('cnt');
+    if (canSpeak) say((right ? 'Your prediction was right! ' : 'Great thinking! ') + Q.discover);
+    stage.querySelectorAll('#pool .item').forEach(function(b){
+      b.onclick = function(){ stage.querySelectorAll('#pool .item').forEach(function(x){x.classList.remove('sel');}); b.classList.add('sel'); sel = b; fb.textContent=''; };
+    });
+    stage.querySelectorAll('.bin').forEach(function(bin){
+      bin.onclick = function(){
+        if (!sel) { fb.innerHTML = 'Tap a card first.'; return; }
+        var it = srt.items[+sel.getAttribute('data-i')], bi = +bin.getAttribute('data-b');
+        if (it[1] === bi) {
+          bin.querySelector('.in').appendChild(sel); sel.classList.remove('sel'); sel.onclick = null; sel = null; placed++;
+          cnt.textContent = placed + ' of ' + srt.items.length + ' sorted';
+          fb.innerHTML = '<b>Yes!</b> ' + esc(it[0]) + ' goes in ' + esc(srt.bins[bi]) + '.';
+          if (placed === srt.items.length) { fb.innerHTML = '<b>All sorted. Super science!</b>'; nx.disabled = false; }
+        } else {
+          var s = sel; s.classList.add('shake'); setTimeout(function(){ s.classList.remove('shake'); }, 450);
+          fb.innerHTML = '<b>Hmm, not that one.</b> Think about the story and try another group.';
+        }
+      };
+      bin.onkeydown = function(e){ if (e.key==='Enter' || e.key===' ') { e.preventDefault(); bin.click(); } };
+    });
+    nx.onclick = function(){ go(4); };
+  }
+
+  /* ---------- 5. Try it yourself ---------- */
+  function tryit(){
+    var T = S.tryit;
+    stage.innerHTML = '<div class="panel"><span class="tag">Try it yourself</span><h2 class="qtitle">'+esc(T.title)+'</h2>' +
+      '<div class="try"><div class="box"><h4>You will need</h4><ul>'+T.need.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>' +
+      '<p class="safety">⚠ Always ask an adult before you start.</p></div>' +
+      '<div class="box"><h4>What to do</h4><ol>'+T.steps.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ol></div>' +
+      '<div class="note">🔍 '+esc(T.notice)+'</div></div>' +
+      '<div class="row"><span>'+(canSpeak?'<button class="chipbtn" id="sayq">🔊 Read it to me</button>':'')+'</span><button class="btn pri" id="nx">Collect my badge ★</button></div></div>';
+    var sq = document.getElementById('sayq'); if (sq) sq.onclick = function(){ say(T.title + '. You will need: ' + T.need.join('. ') + '. What to do: ' + T.steps.join(' ') + ' ' + T.notice); };
+    document.getElementById('nx').onclick = function(){ go(5); };
+  }
+
+  /* ---------- badge ---------- */
+  function finish(){
+    var got = {}; try { got = JSON.parse(load('sq-badges') || '{}'); } catch(e) {}
+    got[S.id] = Date.now(); store('sq-badges', JSON.stringify(got));
+    document.querySelectorAll('.stp').forEach(function(s){ s.className = 'stp done'; s.querySelector('.n').textContent = '✓'; });
+    stage.innerHTML = '<div class="finish"><div class="medal">'+A.icon(S.cover[0],80)+'</div>' +
+      '<h2>You earned the '+esc(S.badge)+' badge!</h2>' +
+      '<p>You read the story, answered '+stars+' of '+S.understand.length+' questions first time, made a prediction and sorted like a real scientist.</p>' +
+      '<a class="btn pri" href="learn.html">Back to the library</a> <button class="btn sec" id="again">Read it again</button></div>';
+    document.getElementById('again').onclick = function(){ page = 0; qi = 0; stars = 0; prediction = null; go(0); };
+  }
+
+  drawSteps(); read();
+})();
+</script>
+</body>
+</html>
