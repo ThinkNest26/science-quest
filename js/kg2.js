@@ -151,6 +151,7 @@ window.SQ_GRADE.kg2 = {
   /* ---------------- SEASONS ---------------- */
   {id:'kg2-seasons-1', topic:'seasons', title:'Pebble and Whirl’s Weather Year',
    cast:'Pebble the squirrel and Whirl the weathervane', cover:['squirrel','vane','sun'], badge:'Weather Watcher',
+   img:'img/stories/kg2-seasons-1/', coverImg:'cover.webp',
    vocab:{
      'weathervane':'A pointer on a roof that turns to show which way the wind is blowing.',
      'seasons':'The four parts of the year: spring, summer, autumn and winter.',
@@ -160,20 +161,21 @@ window.SQ_GRADE.kg2 = {
      'cosy':'Warm and comfortable.'
    },
    pages:[
-    {art:['squirrel','vane'], bg:'spring', text:'Pebble the squirrel lived in a tall tree beside a school. Every morning, he chatted with Whirl, the [[weathervane]] on the school roof. Whirl spun around in the wind. "I know all about the weather and the [[seasons]]," said Whirl proudly.'},
-    {art:['bud','nest'], bg:'spring', text:'"Spring is here!" said Whirl. "The days are getting longer. There are sunny days and [[showers]]." Pebble saw [[buds]] on the branches and new green leaves. Baby birds cheeped in their nests.'},
-    {art:['sun','sunhat'], bg:'summer', text:'"Summer!" said Whirl. "This is the warmest season. The days are long, and the sun sets late in the evening." The children played outside in sunhats and drank lots of water.'},
-    {art:['leaf','acorn','squirrel'], bg:'autumn', text:'"Autumn!" said Whirl. "It is getting cooler, and it is often windy." Whoosh! Whirl spun fast. The leaves turned orange and fell. Pebble was busy hiding nuts. "The days are getting shorter," said Whirl. "It gets dark earlier now."'},
-    {art:['snow','scarf'], bg:'winter', text:'"Winter!" said Whirl. "This is the coldest season. The days are short and the nights are long." In some places, snowflakes fall. The children wore coats, hats and gloves. Pebble curled up in his [[cosy]] nest.'},
-    {art:['squirrel','vane'], bg:'winter', text:'Pebble yawned. "Whirl, why are some days long and some days short?" "[[Day length]] changes with the seasons," said Whirl. "The days are longest in summer and shortest in winter."'},
-    {art:['vane','sun'], bg:'spring', text:'"Will spring come back?" asked Pebble. "Always!" said Whirl. "Spring, summer, autumn, winter, and then spring again. The seasons go round and round, just like me!"'},
-    {art:['squirrel','diary'], bg:'spring', text:'"Then I will keep a weather diary," said Pebble. "Every day, I will draw the weather. Then I can see the seasons change for myself!" Whirl spun with delight. "Spoken like a true scientist!"'}
+    {pic:'cover.webp', title:true, text:'Pebble and Whirl’s Weather Year'},
+    {pic:'p1.webp', text:'Pebble the squirrel lived in a tall tree beside a school. Every morning, he waved to Whirl, the [[weathervane]] on the school roof. Whirl spun around in the wind. "I know all about the weather and the [[seasons]]," said Whirl proudly.'},
+    {pic:'p2.webp', text:'"Spring is here!" said Whirl. "The days are getting longer. There are sunny days and [[showers]]." Pebble saw [[buds]] on the branches and new green leaves. Baby birds cheeped in their nest.'},
+    {pic:'p3.webp', text:'"Summer!" said Whirl. "This is the warmest season. The days are long, and the sun sets late in the evening." The children played outside in sunhats and drank lots of water. Pebble lay back on his branch in the shade.'},
+    {pic:'p4.webp', text:'"Autumn!" said Whirl. "It is getting cooler, and it is often windy." Whoosh! Whirl spun fast. The leaves turned orange and fell. Pebble was busy burying nuts. "The days are getting shorter," said Whirl. "It gets dark earlier now."'},
+    {pic:'p5.webp', text:'"Winter!" said Whirl. "This is the coldest season. The days are short and the nights are long." In some places, snowflakes fall, just like here. The branches were bare. Pebble curled up in his [[cosy]] nest and went to sleep.'},
+    {pic:'p6.webp', text:'Pebble peeped out of his tree. "Whirl, the sun is setting already! Why are some days long and some days short?" "[[Day length]] changes with the seasons," said Whirl. "The days are longest in summer and shortest in winter."'},
+    {pic:'p7.webp', text:'"Will spring come back?" asked Pebble. "Always!" said Whirl. "Spring, summer, autumn, winter, and then spring again. The seasons go round and round, just like me!"'},
+    {pic:'p8.webp', text:'"Then I will keep a weather diary," said Pebble. "Every day, I will draw the weather: sunny, rainy or windy. Then I can see the seasons change for myself!" Whirl spun with delight. "Spoken like a true scientist!"'}
    ],
    understand:[
     {q:'Who is Whirl?', o:['A weathervane on the school roof','A bird in a nest','A cloud in the sky'], a:0, type:'Find it', why:'Whirl is the weathervane on the school roof. It turns in the wind.'},
     {q:'Which season is the warmest?', o:['Summer','Winter','Autumn'], a:0, type:'Find it', why:'Whirl says summer is the warmest season.'},
     {q:'What does day length mean?', o:['How many hours it is light each day','How long a day at school is','How tall a tree is'], a:0, type:'Word power', why:'Day length is how many hours of light there are in a day.'},
-    {q:'Why was Pebble hiding nuts in autumn?', o:['To have food for the cold winter','To play a game with Whirl','Because nuts do not like the rain'], a:0, type:'Think about it', why:'Winter is cold and there is less food, so squirrels save nuts in autumn.'},
+    {q:'Why was Pebble burying nuts in autumn?', o:['To have food for the cold winter','To play a game with Whirl','Because nuts do not like the rain'], a:0, type:'Think about it', why:'Winter is cold and there is less food, so squirrels save nuts in autumn.'},
     {q:'Which season comes after winter?', o:['Spring','Summer','Autumn'], a:0, type:'Order it', why:'Spring, summer, autumn, winter, and then spring again!'}
    ],
    predict:{q:'Pebble writes down when it gets dark each evening. In winter, do you think it will get dark earlier or later than in summer?',
