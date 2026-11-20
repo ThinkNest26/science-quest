@@ -136,5 +136,45 @@ window.SQ_GRADE.g1 = {
     steps:['Fold some paper towels and line the inside of the jar.','Push the bean between the paper and the glass, so you can see it.','Add a little water to the bottom of the jar to keep the paper damp.','Put the jar somewhere warm and light. Keep the paper damp.','Look every day and draw what you see.'],
     notice:'Which grew first, the root or the shoot? How many days did it take to germinate?'}
   }
+  ,
+  {id:'g1-plants-2', topic:'plants', title:'Kofi’s Cress Experiment',
+   cast:'Kofi, his sister Ama and Pepper the cat', cover:['cress','cresspale','cressdry'], badge:'Fair Tester',
+   img:'img/stories/g1-plants-2/', coverImg:'cover.webp',
+   vocab:{
+     'cress':'A small plant with tiny green leaves that grows very quickly. You can eat it.',
+     'fair test':'An experiment where you change only one thing, so you know what made the difference.',
+     'experiment':'A test that scientists do to find something out.',
+     'prediction':'A good guess about what will happen.',
+     'results':'What you find out at the end of an experiment.',
+     'healthy':'Strong and growing well.',
+     'temperature':'How hot or cold something is.'
+   },
+   pages:[
+    {pic:'cover.webp', title:true, text:'Kofi’s Cress Experiment'},
+    {pic:'p1.webp', text:'Kofi wanted to grow [[cress]] for his sandwiches. He held up a packet of seeds. "What do plants need to grow?" he asked. His big sister Ama pushed up her sleeves. "Let’s find out like real scientists," she said. "We’ll do a [[fair test]]!"'},
+    {pic:'p2.webp', text:'They took four pots and put the same amount of cotton wool in each one. Kofi sprinkled the same number of seeds into every pot. "To make it fair, we only change one thing for each pot," said Ama. The pots were labelled A, B, C and D. Pepper the cat came to watch.'},
+    {pic:'p3.webp', text:'Pot A went on the sunny windowsill, with water every day. Pot B went on the windowsill too, but with no water at all. Pot C got water every day, but it went inside a dark cupboard. Pot D got water every day, but it went in the cold fridge. Pepper followed them everywhere!'},
+    {pic:'p4.webp', text:'Kofi wrote a [[prediction]] in his notebook. "I think pot A will grow best," he said. "It has water, light and warmth." Then he looked up. Pepper was sniffing pot A on the windowsill! "No, Pepper!" laughed Ama. "Don’t touch our [[experiment]]!"'},
+    {pic:'p5.webp', text:'After one week, they looked at the pots. Pot A was full of tall, green cress. Kofi pointed at pot B. It had no shoots at all. The seeds were dry and had not grown. "Plants need water!" said Kofi.'},
+    {pic:'p6.webp', text:'Ama took pot C out of the dark cupboard. The cress had grown tall and thin, but it was pale yellow, not green! "It grew, but it isn’t [[healthy]]," said Ama. "Plants need light to stay green and strong." Pot D from the fridge had only a few tiny shoots. "It was too cold," said Kofi.'},
+    {pic:'p7.webp', text:'Kofi drew their [[results]] in his notebook. "Plants need water, light and the right [[temperature]] to grow and stay healthy," he read out. "My prediction was right!" Ama gave him a high five. Pepper meowed, as if she agreed.'},
+    {pic:'p8.webp', text:'Kofi snipped some cress from pot A and made a sandwich. "Delicious!" he said. Then they gave all the pots water, light and warmth. Soon pots B and D were growing well too. Kofi put pot C on the sunny windowsill. "Don’t worry," he told it. "With some light, you’ll soon be green." Pepper curled up in the sunshine.'}
+   ],
+   understand:[
+    {q:'Why did Kofi want to grow cress?', o:['To put in his sandwiches','To give to Pepper','To sell at school'], a:0, type:'Find it', why:'Kofi wanted to grow cress for his sandwiches.'},
+    {q:'What does fair test mean?', o:['You change only one thing','You change everything','Everyone gets a turn'], a:0, type:'Word power', why:'In a fair test you change just one thing, so you know what made the difference.'},
+    {q:'Where did pot C go?', o:['In a dark cupboard','In the fridge','On the sunny windowsill'], a:0, type:'Find it', why:'Pot C got water, but it went inside a dark cupboard.'},
+    {q:'Why was the cress in pot C pale yellow?', o:['It had no light','It had no water','It was too hot'], a:0, type:'Think about it', why:'Plants need light to stay green and healthy. Pot C was in the dark.'},
+    {q:'What did Kofi do straight after setting up the pots?', o:['Wrote a prediction','Ate a sandwich','Gave Ama a high five'], a:0, type:'Order it', why:'First he made a prediction. The results and the high five came a week later.'}
+   ],
+   predict:{q:'Kofi puts a fifth pot on the windowsill. It gets light and warmth, but he forgets to water it for a week. What do you think will happen?',
+    o:['The seeds will not grow','The cress will grow tall and green','The cress will turn yellow'], a:0,
+    discover:'Without water, seeds cannot germinate, just like pot B. Plants need water, light and the right temperature. Take one away and the plant cannot grow well or stay healthy. That is what Kofi’s fair test showed!'},
+   sort:{title:'Will the cress grow well?', bins:['Grows well and stays healthy','Does not grow well'],
+    items:[['Water, light and warmth',0,'cress'],['Watered on a warm, sunny windowsill',0,'sun'],['No water at all',1,'cressdry'],['Watered, but in a dark cupboard',1,'cresspale'],['Watered, but in the cold fridge',1,'snow']]},
+   tryit:{title:'Your own cress fair test', need:['An adult to help','Two small pots or yoghurt pots','Cotton wool and cress seeds','Water'],
+    steps:['Put the same amount of cotton wool in each pot.','Sprinkle the same number of seeds on each one.','Water both pots the same amount.','Put one pot on a sunny windowsill and one in a dark cupboard.','Check them every day for a week and draw what you see.'],
+    notice:'Which pot grew green, healthy cress? What was the one thing you changed? Why does that make it a fair test?'}
+  }
   ]
 };
