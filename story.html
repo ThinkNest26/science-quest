@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/app.css?v=32">
+<link rel="stylesheet" href="css/app.css?v=33">
 </head>
 <body>
 <header class="top">
@@ -27,12 +27,12 @@
 
 <footer class="foot"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>Original stories and characters. Not affiliated with any publisher or exam board.</span></div></footer>
 
-<script src="js/art.js?v=32"></script>
-<script src="js/kg2.js?v=32"></script>
-<script src="js/g1.js?v=32"></script>
-<script src="js/g2.js?v=32"></script>
-<script src="js/g3.js?v=32"></script>
-<script src="js/store.js?v=32"></script>
+<script src="js/art.js?v=33"></script>
+<script src="js/kg2.js?v=33"></script>
+<script src="js/g1.js?v=33"></script>
+<script src="js/g2.js?v=33"></script>
+<script src="js/g3.js?v=33"></script>
+<script src="js/store.js?v=33"></script>
 <script>
 (function(){
   var A = window.SQ_ART, id = new URLSearchParams(location.search).get('s'), S = null;
@@ -67,15 +67,47 @@
     return v.filter(function(x){return x.lang==='en-GB';})[0] || v[0] || null;
   }
   if (canSpeak) speechSynthesis.onvoiceschanged = function(){};
-  function stopTalk(){ if (canSpeak) speechSynthesis.cancel(); speaking = false; document.querySelectorAll('.w.hl').forEach(function(w){w.classList.remove('hl');}); var b=document.getElementById('listen'); if(b) b.setAttribute('aria-pressed','false'); }
+  /* Expressive reading: the text is split into sentences and phrases, each spoken separately,
+     with real pauses after full stops and commas, a brighter voice for speech in quotation marks,
+     a lift for questions and extra energy for exclamations. */
+  var talkId = 0, timer = null;
+  function stopTalk(){ talkId++; clearTimeout(timer); if (canSpeak) speechSynthesis.cancel(); speaking = false; document.querySelectorAll('.w.hl').forEach(function(w){w.classList.remove('hl');}); var b=document.getElementById('listen'); if(b) b.setAttribute('aria-pressed','false'); }
+  function chunks(text){
+    var out = [], re = /[^.!?,;:…“”"]+[.!?,;:…]*["”]?\s*|["“”]\s*/g, m, inQ = false;
+    while ((m = re.exec(text))) {
+      var seg = m[0], start = m.index;
+      if (/^["“”]\s*$/.test(seg)) { inQ = !inQ; continue; }
+      var t = seg.replace(/["“”]/g,'').trim(); if (!/[A-Za-z0-9]/.test(t)) continue;
+      var endQ = /["”]\s*$/.test(seg);
+      var lead = seg.search(/\S/); if (lead < 0) lead = 0;
+      var p = /[.!?…]["”]?\s*$/.test(seg) ? 'full' : /[,;:]["”]?\s*$/.test(seg) ? 'comma' : 'none';
+      out.push({t:t, at:start+lead, q:inQ, end:p, ex:/!/.test(seg), ask:/\?/.test(seg)});
+      if (endQ) inQ = false;
+    }
+    return out.length ? out : [{t:text, at:0, q:false, end:'full'}];
+  }
   function say(text, onWord, onEnd){
     if (!canSpeak) return;
     stopTalk();
-    var u = new SpeechSynthesisUtterance(text);
-    var v = voice(); u.lang = v ? v.lang : 'en-GB'; u.rate = RATES[speed]; u.pitch = 1.08; if (v) u.voice = v;
-    if (onWord) u.onboundary = function(e){ if (e.name==='word' || e.name===undefined) onWord(e.charIndex); };
-    u.onend = function(){ speaking = false; if (onEnd) onEnd(); };
-    speaking = true; speechSynthesis.speak(u);
+    var my = ++talkId, list = chunks(text), i = 0, v = voice(), base = RATES[speed];
+    var gap = {full: speed==='normal'?420:speed==='slow'?560:700, comma: speed==='normal'?170:speed==='slow'?240:320, none: 60};
+    speaking = true;
+    (function next(){
+      if (my !== talkId) return;
+      if (i >= list.length) { speaking = false; if (onEnd) onEnd(); return; }
+      var c = list[i++], u = new SpeechSynthesisUtterance(c.t.replace(/\b[A-Z]{3,}\b/g, function(w){ return w.charAt(0) + w.slice(1).toLowerCase(); }));
+      if (v) u.voice = v; u.lang = v ? v.lang : 'en-GB';
+      var pitch = 1.08, rate = base;
+      if (c.q) { pitch += 0.12; rate += 0.03; }          // a character speaking
+      if (c.ask) { pitch += 0.08; }                       // a question lifts
+      if (c.ex) { pitch += 0.1; rate += 0.05; }           // excitement
+      if (/^(then|suddenly|just then|at last|but)\b/i.test(c.t)) rate -= 0.05; // build a little suspense
+      u.pitch = Math.min(pitch, 1.5); u.rate = rate;
+      if (onWord) { onWord(c.at); u.onboundary = function(e){ if (e.name==='word' || e.name===undefined) onWord(c.at + e.charIndex); }; }
+      u.onend = function(){ if (my !== talkId) return; var g = gap[c.end]; if (c.q && list[i] && !list[i].q && /^[a-z]/.test(list[i].t)) g = gap.comma; timer = setTimeout(next, g); };
+      u.onerror = u.onend;
+      speechSynthesis.speak(u);
+    })();
   }
 
   /* ---------- steps bar ---------- */
@@ -140,7 +172,7 @@
     var L = document.getElementById('listen');
     if (L) L.onclick = function(){
       if (speaking) { stopTalk(); return; }
-      L.setAttribute('aria-pressed','true');
+      setTimeout(function(){ L.setAttribute('aria-pressed','true'); }, 0);
       say(t.plain, function(ci){
         spans.forEach(function(s){ s.classList.remove('hl'); });
         var hit = null; spans.forEach(function(s){ if (+s.getAttribute('data-i') <= ci) hit = s; });
