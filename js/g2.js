@@ -1,0 +1,66 @@
+/* Science Quest by Curious Nest: Grade 2 (National Curriculum Year 3) stories. Longer stories. */
+window.SQ_GRADE = window.SQ_GRADE || {};
+window.SQ_GRADE.g2 = {
+  name: 'Grade 2', year: 'Year 3',
+  topics: [
+    {id:'plants', name:'Plants', portal:'Living Wonders', color:'leaf',
+     nc:['Identify and describe the functions of different parts of flowering plants: roots, stem/trunk, leaves and flowers','Explore the requirements of plants for life and growth (air, light, water, nutrients from soil, and room to grow) and how they vary from plant to plant','Investigate the way in which water is transported within plants','Explore the part that flowers play in the life cycle of flowering plants, including pollination, seed formation and seed dispersal']},
+    {id:'animals', name:'Animals, including humans', portal:'Living Wonders', color:'rose',
+     nc:['Identify that animals, including humans, need the right types and amount of nutrition, and that they cannot make their own food','Identify that humans and some other animals have skeletons and muscles for support, protection and movement']},
+    {id:'rocks', name:'Rocks', portal:'Matter & Magic', color:'sun',
+     nc:['Compare and group together different kinds of rocks on the basis of their appearance and simple physical properties','Describe in simple terms how fossils are formed when things that have lived are trapped within rock','Recognise that soils are made from rocks and organic matter']},
+    {id:'light', name:'Light', portal:'Power & Motion', color:'sky',
+     nc:['Recognise that they need light in order to see things and that dark is the absence of light','Notice that light is reflected from surfaces','Recognise that light from the sun can be dangerous and that there are ways to protect their eyes','Recognise that shadows are formed when the light from a light source is blocked by an opaque object','Find patterns in the way that the size of shadows change']},
+    {id:'forces', name:'Forces and magnets', portal:'Power & Motion', color:'plum',
+     nc:['Compare how things move on different surfaces','Notice that some forces need contact between two objects, but magnetic forces can act at a distance','Observe how magnets attract or repel each other and attract some materials and not others','Describe magnets as having two poles','Predict whether two magnets will attract or repel each other, depending on which poles are facing']}
+  ],
+  stories: [
+  {id:'g2-light-1', topic:'light', title:'The Shadow Thief',
+   cast:'Zara, Kai, Theo and Rusty the cardboard fox', cover:['sun','window','wood'], badge:'Light Detective',
+   img:'img/stories/g2-light-1/', coverImg:'cover.webp',
+   vocab:{
+     'screen':'A flat surface that a picture or shadow can be shown on.',
+     'dark':'When there is no light at all. Dark is the absence of light.',
+     'light source':'Something that gives out its own light, like the Sun, a torch or a lamp.',
+     'shadow':'A dark shape made when an object blocks light.',
+     'opaque':'Does not let any light through, like cardboard or wood.',
+     'investigate':'To find out about something carefully, like a detective or a scientist.',
+     'fair test':'An experiment where you change only one thing and keep everything else the same.',
+     'pattern':'Something that happens in the same way again and again.',
+     'transparent':'Lets almost all light through, so you can see clearly through it, like glass.',
+     'translucent':'Lets some light through, but you cannot see clearly through it, like tissue paper.',
+     'reflection':'When light bounces off a surface.',
+     'damage':'To harm something so it does not work properly.'
+   },
+   pages:[
+    {pic:'cover.webp', title:true, text:'The Shadow Thief'},
+    {pic:'p1.webp', text:'On Monday, Ms Okafor made an announcement. "On Friday, we will have a Shadow Puppet Show for your families!" Zara and Kai looked at each other and grinned. They spent all of lunchtime cutting a fox out of thick cardboard. They gave him pointy ears, a bushy tail and a stick to hold him up. "We’ll call him Rusty," said Kai. Zara’s little brother Theo was spending the week in the nursery next door, and he kept popping in to help. Ms Okafor handed them a torch and an old white sheet. "Every shadow puppet needs a light and a [[screen]]," she said. "Go and practise in the storeroom."'},
+    {pic:'p2.webp', text:'The storeroom had no windows. Kai closed the door behind them, and everything went black. "Zara, I can’t see ANYTHING," he wailed. "I think my eyes have stopped working!" Zara laughed. "Your eyes are fine. We need light to see. There’s no light in here, so it’s completely [[dark]]. Dark isn’t a thing. It’s just what we call it when there is no light at all." She felt for the torch and clicked it on. A torch is a [[light source]]: it gives out its own light. Zara held up Rusty, and a fox-shaped shadow leapt onto the wall. Kai waved his hands in delight. "Eyes working again!"'},
+    {pic:'p3.webp', text:'They pinned the sheet up like a screen and set the torch on the floor, pointing at it. Kai held Rusty up in front of the light. A fox-shaped [[shadow]] appeared on the sheet, with pointy ears and a bushy tail! "How does that work?" asked Kai. "Light travels in straight lines," said Zara, opening her notebook. "When it hits Rusty, it can’t get through, because cardboard is [[opaque]]. Opaque means light can’t pass through it. So there’s a patch on the sheet where the light can’t reach. That patch is the shadow." Kai wiggled Rusty, and the shadow wiggled too. "Hello, Shadow Rusty!" he growled.'},
+    {pic:'p4.webp', text:'On Wednesday, they practised again in the classroom, with Rusty standing on a stick in front of the torch. But something strange happened. Rusty’s shadow suddenly grew enormous, as tall as a giant! "Someone is stealing Rusty’s shadow!" gasped Kai, pointing. "A shadow thief!" Theo clapped his hands, and Ms Okafor smiled as if she knew a secret. Zara frowned and opened her notebook. "There’s no such thing as a shadow thief," she said. "But something is changing the shadow. Let’s [[investigate]] like scientists." She wrote at the top of a page: What changes the size of a shadow?'},
+    {pic:'p5.webp', text:'Zara planned a [[fair test]]. "We’ll put Rusty on a stand, so he stays in exactly the same place. I’ll only change one thing: how far away the torch is." First, she held the torch close to Rusty. The shadow was huge! Kai measured it with a metre stick: 80 centimetres. Then Zara moved back, and the shadow shrank to 40 centimetres. She moved back again, and it was only 20 centimetres. Zara drew a table in her notebook. "Look at the [[pattern]]," she said. "The closer the light is to the puppet, the bigger the shadow. The further away the light, the smaller the shadow." Kai’s eyes went wide. "So the thief must be moving the torch!"'},
+    {pic:'p6.webp', text:'"Can we make Rusty some friends?" asked Kai. He cut a second fox out of tissue paper, and a third out of clear plastic from an old food box. They stood all three in front of the light. Rusty made a dark shadow. The tissue paper fox made a pale, glowing one. The plastic fox hardly made a shadow at all. Zara tapped her chin. "The plastic is [[transparent]]. Light goes straight through it. Tissue paper is [[translucent]]. It lets some light through, but not all of it." Kai held up the plastic fox. "Opaque, translucent, transparent," he chanted. "Dark shadow, faint shadow, no shadow!"'},
+    {pic:'p7.webp', text:'Kai stuck a shiny foil star onto Rusty’s tail. Ms Okafor held Rusty up while Zara shone the torch at him. A spot of light bounced up onto the ceiling! "Whoa! Rusty has a magic star!" cried Kai, pointing up. Theo squealed with delight. "It’s not magic, it’s [[reflection]]," said Ms Okafor. "Smooth, shiny surfaces bounce light off them, like a mirror." Zara had another thought. "We can only see Rusty because light reflects off him too. Light bounces off the cardboard and into our eyes. That’s how we see everything!" Kai looked around in amazement. "Everything is bouncing light at me!"'},
+    {pic:'p8.webp', text:'At lunchtime, they took Rusty out to the playground, and Theo came too. Their shadows lay on the ground beside them. "The Sun is a light source too," said Zara, "just like our torch, but much, much bigger." Kai squinted up at the sky. "Don’t!" said Ms Okafor quickly, holding up a finger. "Never look straight at the Sun, not even for a moment. Its light is so strong it can [[damage]] your eyes. That’s why we wear sunglasses and sun hats, and sit in the shade." Zara noticed something else. "This morning our shadows were long. Now, at lunchtime, the Sun is higher in the sky, and our shadows are short!"'},
+    {pic:'p9.webp', text:'On Friday evening, the hall was full of families. Zara and Kai began their show, and Rusty’s shadow trotted across the sheet. Then, suddenly, the shadow grew HUGE! The audience gasped. Zara peeked round the edge of the sheet. There was Theo, kneeling right beside Rusty and holding a second torch up close. "Theo!" whispered Zara. "You’re the shadow thief!" Theo grinned. "I wanted to help!" Zara laughed and turned to the audience. "Our mystery is solved! When the light moves closer to the puppet, the shadow grows bigger. Theo was our shadow thief all along!"'},
+    {pic:'p10.webp', text:'After the show, everybody clapped and cheered. Theo took a bow too. Ms Okafor gave Zara and Kai a badge each: a little gold torch. "For two brilliant Light Detectives," she said. That night, Kai sat up in bed in the dark. He wasn’t scared. "Dark is just no light," he whispered. Then he clicked on his torch, held up his hands and made a shadow rabbit hop across the wall. Across town, Zara sat at her desk under her lamp, with her badge pinned to her cardigan. She wrote the last line in her notebook: Light helps us see. Shadows show us where the light can’t go.'}
+   ],
+   understand:[
+    {q:'Why could Kai not see anything in the storeroom?', o:['There was no light','His eyes had stopped working','The fox was in the way'], a:0, type:'Find it', why:'The storeroom had no windows. We need light to see, and dark is when there is no light at all.'},
+    {q:'What does opaque mean?', o:['Light cannot pass through it','Light passes straight through it','It bounces light like a mirror'], a:0, type:'Word power', why:'Cardboard is opaque. It blocks the light, which is why Rusty makes a shadow.'},
+    {q:'Why did Rusty’s shadow suddenly grow enormous at the show?', o:['Theo held a torch close to Rusty','Rusty grew bigger','The sheet moved further away'], a:0, type:'Think about it', why:'The closer the light is to the puppet, the bigger the shadow. Theo was holding a torch right next to Rusty.'},
+    {q:'Which fox made the faintest shadow?', o:['The clear plastic fox','The cardboard fox','The tissue paper fox'], a:0, type:'Find it', why:'Clear plastic is transparent. Light goes straight through it, so it hardly makes a shadow.'},
+    {q:'Why did Ms Okafor tell Kai not to look at the Sun?', o:['Its light can damage your eyes','It would make him sneeze','It would make his shadow disappear'], a:0, type:'Think about it', why:'The Sun’s light is so strong it can damage your eyes. Never look straight at it.'},
+    {q:'What did Zara and Kai do just after measuring the shadows?', o:['Made foxes from tissue paper and plastic','Performed the show','Went out to the playground'], a:0, type:'Order it', why:'The fair test came first, then the new foxes, the foil star, the playground and finally the show.'}
+   ],
+   predict:{q:'Zara holds the torch 1 metre from Rusty and the shadow is 20 cm tall. She moves the torch much closer. What do you think will happen to the shadow?',
+    o:['It will get bigger','It will get smaller','It will stay the same'], a:0,
+    discover:'When the light source moves closer to the object, the object blocks more of the light, so the shadow gets bigger. When the light moves further away, the shadow gets smaller. Zara found this pattern by doing a fair test: she moved only the torch and kept Rusty in the same place.'},
+   sort:{title:'Opaque, translucent or transparent?', bins:['Opaque (no light through)','Translucent (some light through)','Transparent (light goes straight through)'],
+    items:[['Cardboard',0,'cardboard'],['Wooden block',0,'wood'],['Brick',0,'brick'],['Metal key',0,'key'],['Tissue paper',1,'paper'],['Frosted plastic bag',1,'plastic'],['Glass window',2,'window'],['Glass jar',2,'glass']]},
+   tryit:{title:'Make your own shadow puppet show', need:['An adult to help','Card, scissors, tape and a straw or lolly stick','A torch','A pale wall or a white sheet','A tape measure or ruler'],
+    steps:['Draw an animal on card and ask your adult to help you cut it out. Tape it to a stick.','Make the room dark, then shine the torch at the wall.','Hold your puppet between the torch and the wall. Look at its shadow.','Keep the puppet still. Move the torch closer, then further away. Measure the shadow each time.','Write your results in a table.'],
+    notice:'What pattern did you find? Try a puppet made of tissue paper too. Is its shadow darker or fainter? Why?'}
+  }
+  ]
+};
