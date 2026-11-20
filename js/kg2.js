@@ -64,6 +64,7 @@ window.SQ_GRADE.kg2 = {
   /* ---------------- ANIMALS ---------------- */
   {id:'kg2-animals-1', topic:'animals', title:'Kiki’s Riverbank Roll Call',
    cast:'Kiki the kingfisher and friends', cover:['kiki','frog','otter'], badge:'Animal Expert',
+   img:'img/stories/kg2-animals-1/', coverImg:'cover.webp',
    vocab:{
      'fins':'Flat parts that help a fish swim and steer.',
      'scales':'Small, hard plates that cover the skin of fish and reptiles.',
@@ -77,14 +78,15 @@ window.SQ_GRADE.kg2 = {
      'omnivore':'An animal that eats plants and animals.'
    },
    pages:[
-    {art:['kiki'], bg:'river', text:'Kiki the kingfisher was the bossiest bird on the riverbank. Every morning, she did the roll call. "Time to check that everyone is here!" she called, flashing her bright blue feathers.'},
-    {art:['trout','kiki'], bg:'river', text:'"First, the fish!" Splash! Finn the trout poked his head out of the water. "Here!" he bubbled. "I have [[fins]] to swim and [[scales]] on my skin. I breathe under water with my [[gills]]."'},
-    {art:['frog'], bg:'river', text:'"Next, the [[amphibians]]!" Fern the frog hopped onto a lily pad. "Here! I have smooth, damp skin. I began life as a tadpole in the water. Now I can live in the water and on land too."'},
-    {art:['lizard'], bg:'rock', text:'"Now, the [[reptiles]]!" Sunny the lizard was lying on a warm rock. "Here!" she yawned. "I have dry, scaly skin. I hatched from an egg, and I love to warm up in the sun."'},
-    {art:['kiki'], bg:'river', text:'"Birds!" Kiki puffed out her chest. "That’s me! I have [[feathers]], two wings and a long beak. I hatched from an egg too."'},
-    {art:['otter','rabbit'], bg:'river', text:'"And last, the [[mammals]]!" Ollie the otter rolled over in the water. "Here! I have thick fur to keep me warm. When I was a baby, I drank milk from my mum." Rosie the rabbit twitched her nose. "Me too! I am a mammal as well."'},
-    {art:['rabbit','otter','badger'], bg:'river', text:'Then it was lunchtime. Rosie munched clover and grass. "I only eat plants. I am a [[herbivore]]." Ollie crunched a fish. "I eat other animals. I am a [[carnivore]]." Bramble the badger trundled past with worms and blackberries. "I eat plants AND animals. I am an [[omnivore]]!"'},
-    {art:['leo','kiki'], bg:'river', text:'Kiki counted everyone. "Fish, amphibian, reptile, bird and mammal. Everyone is here!" Then a small voice said, "What about me?" A boy called Leo was sitting by the river with his sandwich. Kiki laughed. "You are a mammal too! And with cheese and tomato in your sandwich, you are an omnivore!"'}
+    {pic:'cover.webp', title:true, text:'Kiki’s Riverbank Roll Call'},
+    {pic:'p1.webp', text:'Kiki the kingfisher was the bossiest bird on the riverbank. Every morning, she did the roll call. "Time to check that everyone is here!" she called, flashing her bright blue feathers.'},
+    {pic:'p2.webp', text:'"First, the fish!" Splash! Finn the trout leapt out of the water. "Here!" he bubbled. "I have [[fins]] to swim and [[scales]] on my skin. I breathe under water with my [[gills]]."'},
+    {pic:'p3.webp', text:'"Next, the [[amphibians]]!" Fern the frog hopped onto a lily pad. "Here! I have smooth, damp skin. I began life as a tadpole in the water. Now I can live in the water and on land too."'},
+    {pic:'p4.webp', text:'"Now, the [[reptiles]]!" Sunny the lizard was lying on a warm rock. "Here!" she yawned. "I have dry, scaly skin. I hatched from an egg, and I love to warm up in the sun."'},
+    {pic:'p5.webp', text:'"Birds!" Kiki puffed out her chest and spread her wings. "That’s me! I have [[feathers]], two wings and a long beak. I hatched from an egg too."'},
+    {pic:'p6.webp', text:'"And last, the [[mammals]]!" Ollie the otter rolled over in the water. "Here! I have thick fur to keep me warm. When I was a baby, I drank milk from my mum." Rosie the rabbit twitched her nose. "Me too! I am a mammal as well."'},
+    {pic:'p7.webp', text:'Then it was lunchtime. Rosie munched clover and grass. "I only eat plants. I am a [[herbivore]]." Ollie crunched a fish. "I eat other animals. I am a [[carnivore]]." Bramble the badger sat by the bushes with worms and blackberries. "I eat plants AND animals. I am an [[omnivore]]!"'},
+    {pic:'p8.webp', text:'Kiki counted everyone. "Fish, amphibian, reptile, bird and mammal. Everyone is here!" Then a small voice said, "What about me?" It was Leo, who had been watching from the riverbank all morning. He was eating his sandwich. Kiki laughed. "You are a mammal too! And with cheese and tomato in your sandwich, you are an omnivore!"'}
    ],
    understand:[
     {q:'Which animal has fins and breathes with gills?', o:['Finn the trout','Fern the frog','Sunny the lizard'], a:0, type:'Find it', why:'Finn is a fish. Fish have fins and breathe with gills.'},
