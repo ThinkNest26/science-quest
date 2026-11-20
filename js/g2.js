@@ -388,5 +388,49 @@ window.SQ_GRADE.g2 = {
     notice:'Which soil would be best for a plant that likes damp roots? Which would dry out fastest on a sunny day?'}
   }
 
+  ,
+  {id:'g2-light-2', topic:'light', title:'The Light Lab',
+   cast:'Yusuf, Hana and Mr Okoro', cover:['torch','mirror','sunglasses'], badge:'Reflection Ranger',
+   img:'img/stories/g2-light-2/', coverImg:'cover.webp',
+   vocab:{
+     'dark':'When there is no light at all.',
+     'light source':'Something that makes its own light, like a torch or the sun.',
+     'reflection':'When light bounces off something.',
+     'reflect':'To bounce light back.',
+     'reflector':'A shiny object that reflects light very well, to help people be seen.',
+     'periscope':'A tube with two mirrors inside that lets you see over things.',
+     'surface':'The outside or top layer of something.'
+   },
+   pages:[
+    {pic:'cover.webp', title:true, text:'The Light Lab'},
+    {pic:'p1.webp', text:'On Saturday, Grandma took Yusuf and Hana to the science centre. Over one doorway, glowing letters said The Light Lab. A tall man in a navy coat, with a little torch badge on his pocket, smiled and waved them over. "I’m Mr Okoro," he said. "Today you’ll find out how light helps us see." Hana held up her torch. "I always bring this," she said. "Good thinking," laughed Mr Okoro. "You might need it." He pointed to a heavy black curtain. "Behind here is the darkest room in the building. Are you brave enough?" Yusuf pushed his glasses up his nose. "We’re scientists," he said.'},
+    {pic:'p2.webp', text:'They stepped through the curtain, and it swished shut behind them. Everything went black. Yusuf held his hand up in front of his face. He couldn’t see it at all. "Where did everything go?" whispered Hana, holding her torch tightly. "Nothing has gone," said Mr Okoro’s voice. "The room is full of things. But there is no light in here. [[Dark]] is what we have when there is no light at all. And without light, our eyes cannot see anything." Yusuf blinked and blinked. He waited for his eyes to get used to it. But it stayed completely black. "So we need light to see," he said slowly.'},
+    {pic:'p3.webp', text:'"Now, Hana," said Mr Okoro. "Switch on your torch." Click! A beam of light shot across the room. Suddenly they could see a round table with a teddy bear, a colourful ball and a shiny spoon. "How does that work?" asked Yusuf. "Your torch is a [[light source]]. It makes its own light," said Mr Okoro, pointing. "Light travels in straight lines. When it hits the teddy, some of the light bounces off and travels into your eyes. That’s how you see the teddy. Light bouncing off things is called [[reflection]]." Hana swung the torch towards Yusuf. "I can see you now!" she giggled.'},
+    {pic:'p4.webp', text:'Next, Mr Okoro put a black cat ornament on the table. Hana shone her torch at it, and its eyes glowed like two golden lamps. "Its eyes are glowing!" she gasped. "Turn your torch off," said Mr Okoro. Click. The eyes disappeared into the dark. "The cat’s eyes don’t make their own light," he explained. "They [[reflect]] light really well. No light, no glow. The moon is the same. It reflects light from the sun." Then he held up a red [[reflector]], like the one on the cat’s collar. It flashed bright red in the beam. "Reflectors help drivers see cyclists at night."'},
+    {pic:'p5.webp', text:'Mr Okoro led them to a long table. On it were two mirrors, a foil tray, a shiny spoon, a wooden block, a woolly sock and a piece of black card. "Some surfaces reflect light better than others," he said. "Let’s test them." Hana shone her torch at each one. When she pointed it at a mirror, a bright oval of light jumped onto the wall! The foil tray and the spoon shone and sparkled. The wooden block hardly shone. The sock and the black card reflected almost nothing. Yusuf wrote in his notebook: "Smooth, shiny [[surface]]s reflect the most light. Dark, rough ones reflect the least."'},
+    {pic:'p6.webp', text:'"Now for my favourite part," said Mr Okoro. He opened a door to the mirror maze. Everywhere they looked, there were more Yusufs, more Hanas and more Mr Okoros! Hana waved, and lots of Hanas waved back. Yusuf held up his notebook to a mirror. The writing in the mirror was back to front! "A flat mirror reflects light very neatly," said Mr Okoro, "so you see a clear picture of yourself. But left and right swap over." Yusuf raised his right hand. His reflection raised its left. "Mirrors are tricky," he said, and walked straight into one. "Ouch!"'},
+    {pic:'p7.webp', text:'Near the end of the maze, a tall cardboard tube was fixed to a wall, with a hole at the top and a hole at the bottom. "This is a [[periscope]]," said Mr Okoro. "There are two mirrors inside, tilted at an angle." Hana knelt down and looked into the bottom hole. Yusuf stood near the top and waved. "I can see your hand waving up high!" she squealed. Mr Okoro pointed to the picture on the wall. "Light from Yusuf goes into the top hole and hits the top mirror. It bounces down to the bottom mirror, then out into Hana’s eye." Yusuf quickly drew the arrows in his notebook.'},
+    {pic:'p8.webp', text:'Then they went out into the science centre garden. The sun was shining brightly, and their shadows stretched across the path. Mr Okoro stopped beside a big sign. "Here’s something very important," he said. "Never look straight at the sun, not even for a second, not even with sunglasses. Its light is so strong that it can damage your eyes forever." He pointed to the pictures on the sign. "To protect your eyes, wear sunglasses that block harmful sunlight, wear a hat with a wide brim, and sit in the shade." Hana tipped her straw sunhat proudly. "I’m already protected," she said.'},
+    {pic:'p9.webp', text:'They stayed until the evening, when it began to get dark. Mr Okoro handed Yusuf a yellow high-vis vest. "Put this on," he said. "Hana, shine your torch at your brother." The silver strips on the vest flashed bright white! "Why do they shine like that?" asked Yusuf. "The strips are made of special material that reflects light, just like the bicycle reflector," said Mr Okoro, giving a thumbs up. "When car headlights shine on them, they light up, so drivers can see people in the dark." Yusuf grinned. "So reflective things keep people safe on dark winter mornings!"'},
+    {pic:'p10.webp', text:'That night, in their bedroom, Yusuf read out his notes. "We need light to see. Dark is when there is no light. Light travels in straight lines and bounces off things into our eyes. Smooth, shiny things reflect the most light. Mirrors swap left and right. And never, ever look at the sun." Outside the window, the moon shone, reflecting light from the sun. Hana sat on her bed and shone her torch at her mirror. A bright spot of light bounced up and danced on the ceiling. "Goodnight, light," she yawned. Then she clicked off her torch.'}
+   ],
+   understand:[
+    {q:'Why couldn’t Yusuf see his hand in the dark room?', o:['There was no light','His glasses were dirty','His eyes were closed'], a:0, type:'Find it', why:'Without light, our eyes cannot see anything.'},
+    {q:'What is a light source?', o:['Something that makes its own light','Something that reflects light','Something that blocks light'], a:0, type:'Word power', why:'A torch and the sun are light sources. They make their own light.'},
+    {q:'Why did the cat’s eyes stop glowing?', o:['Hana switched off her torch','The batteries ran out','The cat closed its eyes'], a:0, type:'Think about it', why:'The eyes only reflect light. No light, no glow.'},
+    {q:'Which object reflected the least light?', o:['The black card','The mirror','The foil tray'], a:0, type:'Find it', why:'Dark, rough surfaces reflect very little light.'},
+    {q:'How many mirrors are inside a periscope?', o:['Two','One','Ten'], a:0, type:'Find it', why:'Two tilted mirrors bounce the light down to your eye.'},
+    {q:'What did they do just after the mirror maze?', o:['Looked through the periscope','Went into the dark room','Tested the sock and spoon'], a:0, type:'Order it', why:'Dark room, torch, cat, testing table, mirror maze, then the periscope.'}
+   ],
+   predict:{q:'Hana shines her torch at a mirror, a woolly sock and a piece of black card. Which one will reflect the most light?',
+    o:['The mirror','The woolly sock','The black card'], a:0,
+    discover:'Smooth, shiny surfaces like mirrors reflect almost all the light that hits them, so you can even see a bright spot bounce onto the wall. Rough, dark things like the sock and black card soak up most of the light and reflect very little. That is why high-vis strips are shiny, and why dark clothes are hard to see at night.'},
+   sort:{title:'Good reflector or poor reflector?', bins:['Good reflector (smooth and shiny)','Poor reflector (dull or dark)'],
+    items:[['Mirror',0,'mirror'],['Foil tray',0,'foil'],['Shiny spoon',0,'spoon'],['Bike reflector',0,'reflector'],['High-vis vest',0,'hivis'],['Woolly sock',1,'sock'],['Black card',1,'blackcard'],['Wooden block',1,'wood']]},
+   tryit:{title:'Reflection hunt', need:['An adult to help','A torch','A dark room or a cupboard','Objects from around the house'],
+    steps:['Collect 6 objects: some shiny, some dull, some dark.','Make the room as dark as you can.','Shine the torch at each object from the same distance.','Look at how much light bounces back. Can you see a bright spot on the wall?','Sort your objects into good reflectors and poor reflectors.'],
+    notice:'Which object was the best reflector? What do the good reflectors have in common?'}
+  }
+
   ]
 };
