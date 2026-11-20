@@ -239,48 +239,6 @@ window.SQ_GRADE.kg2 = {
   },
 
   {id:'kg2-materials-2', topic:'materials', title:'Pip and the Lost Property Box',
-   cast:'Hana and Pip the parrot', cover:['key','spoon','scarf'], badge:'Material Detective',
-   img:'img/stories/kg2-materials-2/', coverImg:'cover.webp',
-   vocab:{
-     'lost property':'Things people have left behind and forgotten.',
-     'object':'A thing you can see and touch, like a spoon or a hat.',
-     'materials':'What objects are made from, like wood, metal or plastic.',
-     'fabric':'Cloth. Hats, scarves and coats are made from fabric.',
-     'see-through':'You can see through it, like a window.',
-     'squashy':'Soft and easy to squeeze.',
-     'bendy':'Easy to bend without breaking.',
-     'waterproof':'Does not let water through.',
-     'graphite':'The grey material in the middle of a pencil that makes marks.'
-   },
-   pages:[
-    {pic:'cover.webp', title:true, text:'Pip and the Lost Property Box'},
-    {pic:'p1.webp', text:'The [[lost property]] box was full to the top. "What a muddle!" sighed Mr Oduya, scratching his head. "Could someone sort it out?" "I will!" said Hana. "Squawk! Me too!" said Pip the parrot, flapping down from his perch.'},
-    {pic:'p2.webp', text:'Hana found three spoons. One was wood, one was metal and one was plastic. "Squawk! Three spoons!" said Pip. "They are the same [[object]], but they are made from different [[materials]]!"'},
-    {pic:'p3.webp', text:'"Let’s sort everything by material," said Hana. She made four piles on the rug: wood, metal, plastic and [[fabric]]. A ruler and a wooden block went on the wood pile. Spoons, a key and a paper clip went on the metal pile. A lunchbox and a toy car went on the plastic pile. A woolly hat, a scarf and a glove went on the fabric pile.'},
-    {pic:'p4.webp', text:'Hana found a glass marble. She held it up to the light. "Glass is hard, smooth and [[see-through]]. It needs a new pile!" Pip held up a smooth pebble. "Squawk! And this is rock. It is hard and heavy. That’s another new pile!"'},
-    {pic:'p5.webp', text:'"Now let’s sort a different way," said Pip. "Squawk! By how things feel!" Hana squeezed a sponge. "This is soft and [[squashy]]." She bent a straw. "This is [[bendy]]." The key, the pebble and the wooden block went in the hard tray. The feather and the woolly hat went in the soft tray.'},
-    {pic:'p6.webp', text:'Next, they tested which things were [[waterproof]]. Hana dripped water on a woolly glove. It soaked right in. Then she dripped water on a plastic raincoat. The drops sat on top and rolled off. "The raincoat is waterproof," said Hana. "That is why it is made of plastic!" Pip watched from inside a mug.'},
-    {pic:'p7.webp', text:'"Some objects are made from more than one material," said Hana. She held up a pencil. "The outside is wood. The middle is [[graphite]], which makes the marks." Pip hopped onto a backpack. "Squawk! Fabric, with a metal zip and plastic buckles!"'},
-    {pic:'p8.webp', text:'At last, the lost property was sorted into six neat baskets: fabric, glass, rock, wood, metal and plastic. "Wonderful!" said Mr Oduya, clapping his hands. "How did you do it?" "We looked at what each object was made from," said Hana, "and how each material feels." "Squawk!" said Pip. "Material detectives!"'}
-   ],
-   understand:[
-    {q:'Who helped Hana sort the lost property?', o:['Pip the parrot','Bolt the robot','Bea the bumblebee'], a:0, type:'Find it', why:'Pip the parrot flapped down from his perch to help.'},
-    {q:'What does material mean?', o:['What an object is made from','A kind of spoon','A box for lost things'], a:0, type:'Word power', why:'A material is what an object is made from, like wood, metal or plastic.'},
-    {q:'Why is a raincoat made of plastic?', o:['Plastic is waterproof','Plastic is see-through','Plastic is heavy'], a:0, type:'Think about it', why:'Plastic does not let water through, so it keeps you dry.'},
-    {q:'Which tray did the key go in?', o:['The hard tray','The soft tray','The bendy tray'], a:0, type:'Find it', why:'Metal is hard, so the key went in the hard tray.'},
-    {q:'What did Hana find first in the box?', o:['Three spoons','A glass marble','A pencil'], a:0, type:'Order it', why:'First the spoons, then the marble, and later the pencil.'}
-   ],
-   predict:{q:'Hana wants to keep her teddy dry in the rain. Which coat do you think she should put on him?',
-    o:['A plastic raincoat','A woolly coat','A paper coat'], a:0,
-    discover:'Plastic is waterproof, so the rain rolls off it. Wool and paper soak up water, so teddy would get wet. We choose materials because of what they are like.'},
-   sort:{title:'What is it made from?', bins:['Wood','Metal','Plastic','Fabric','Glass','Rock'],
-    items:[['Wooden block',0,'wood'],['Key',1,'key'],['Spoon',1,'spoon'],['Bucket',2,'bucket'],['Straw',2,'straw'],['Woolly hat and scarf',3,'scarf'],['Jar',4,'glass'],['Pebble',5,'rock']]},
-   tryit:{title:'Material hunt at home', need:['An adult to help','Paper and a pencil'],
-    steps:['Draw six boxes on your paper: wood, metal, plastic, fabric, glass and rock.','Walk around your home with your adult.','Find one object for each material. Draw it in the right box.','Do not touch anything sharp or hot.','Can you find an object made from two materials?'],
-    notice:'Which material did you find most of? Why do you think that material was chosen for those objects?'}
-  },
-
-  {id:'kg2-materials-2', topic:'materials', title:'Pip and the Lost Property Box',
    cast:'Hana and Pip the parrot', cover:['spoon','hat','marble'], badge:'Material Detective',
    img:'img/stories/kg2-materials-2/', coverImg:'cover.webp',
    vocab:{
@@ -361,6 +319,48 @@ window.SQ_GRADE.kg2 = {
    tryit:{title:'Keep a weather diary', need:['A notebook','Crayons','An adult to help with the time'],
     steps:['Each day, look out of the window at the same time.','Draw the weather: sunny, cloudy, rainy or windy.','Is it hot, warm, cool or cold?','Once a week, ask an adult what time it gets dark.','After a few weeks, look back at your diary.'],
     notice:'What changed? Is it getting dark earlier or later than when you started?'}
+  }
+  ,
+  {id:'kg2-seasons-2', topic:'seasons', title:'Mila’s Weather Station',
+   cast:'Mila, Grandpa Joe and Skip the dog', cover:['raingauge','windsock','thermometer'], badge:'Weather Scientist',
+   img:'img/stories/kg2-seasons-2/', coverImg:'cover.webp',
+   vocab:{
+     'weather station':'A place with tools for measuring the weather.',
+     'measure':'To find out how much, how big or how hot something is.',
+     'rain gauge':'A see-through tube with lines on it. It collects rain so you can measure how much fell.',
+     'windsock':'A fabric tube on a pole. It fills with air and shows how strong the wind is.',
+     'thermometer':'A tool that shows how hot or cold it is.',
+     'mild':'Not too hot and not too cold.',
+     'showery':'With short bursts of rain.',
+     'frost':'Tiny ice crystals that cover things on very cold mornings.',
+     'chart':'A big sheet that shows information so we can compare it.'
+   },
+   pages:[
+    {pic:'cover.webp', title:true, text:'Mila’s Weather Station'},
+    {pic:'p1.webp', text:'Mila loved staying with Grandpa Joe. One day, he carried a box out into the garden. Inside were a jar, a ruler, some bright fabric, string and a thermometer. "Let’s build a [[weather station]]," he said. "Then we can [[measure]] the weather all year long!" Skip the dog sniffed the box.'},
+    {pic:'p2.webp', text:'They made a [[rain gauge]] with lines like a ruler, so they could measure the rain. They made a [[windsock]] from bright fabric, so they could see the wind. And they hung a [[thermometer]] on the fence to show how hot or cold it was. Grandpa Joe fixed the rain gauge in place. Woof! said Skip.'},
+    {pic:'p3.webp', text:'In spring, it was [[mild]] and [[showery]]. The rain gauge filled up a little each day. "Look, Grandpa! Blossom on the apple tree!" said Mila. Grandpa Joe checked his watch. "And the sun is setting a bit later every evening. The days are getting longer." Skip splashed in the puddles.'},
+    {pic:'p4.webp', text:'In summer, the thermometer showed the highest number of the year. Mila put on her sunhat and checked the rain gauge. It was nearly empty! Grandpa Joe rested on the bench, and Skip lay by his water bowl. "The sun sets so late now," said Mila. "It’s still light at bedtime!"'},
+    {pic:'p5.webp', text:'In autumn, the windsock stood straight out in the strong wind. "Very windy today!" laughed Mila, as leaves whirled around the garden. Grandpa Joe held on to his hat, and Skip chased the leaves. The thermometer showed a cooler number. "It’s getting dark before teatime now," said Grandpa Joe.'},
+    {pic:'p6.webp', text:'In winter, the thermometer showed the lowest number of the year. One morning, [[frost]] covered the whole garden! Mila wore her coat, hat, scarf and gloves, and Skip wore his woolly jumper. "It’s dark when I wake up and dark at teatime," said Mila. "The days are so short."'},
+    {pic:'p7.webp', text:'Mila and Grandpa Joe looked at their weather [[chart]]. "Summer was the hottest," said Mila. "Winter was the coldest. Autumn was the windiest." She pointed to the yellow bars. "These show the light part of each day. The days were longest in summer and shortest in winter."'},
+    {pic:'p8.webp', text:'Spring came back to the garden. "Now we can see the seasons change," said Grandpa Joe, "because we measured them!" Mila lifted the rain gauge and smiled. "Can we start our chart again?" Skip jumped up and wagged his tail. Woof!'}
+   ],
+   understand:[
+    {q:'What did Mila and Grandpa Joe build?', o:['A weather station','A bird house','A garden shed'], a:0, type:'Find it', why:'They built a weather station to measure the weather all year.'},
+    {q:'What does a thermometer show?', o:['How hot or cold it is','How much rain fell','How strong the wind is'], a:0, type:'Word power', why:'A thermometer shows how hot or cold it is.'},
+    {q:'Which season had the highest number on the thermometer?', o:['Summer','Winter','Spring'], a:0, type:'Find it', why:'Summer was the hottest season.'},
+    {q:'How did Mila know autumn was windy?', o:['The windsock stood straight out','The rain gauge was full','The thermometer was high'], a:0, type:'Think about it', why:'A strong wind fills the windsock and makes it stand straight out.'},
+    {q:'Which season came after summer in the story?', o:['Autumn','Spring','Winter'], a:0, type:'Order it', why:'Spring, summer, autumn, winter, and then spring again!'}
+   ],
+   predict:{q:'Mila looks at the yellow day-length bars on her chart. Which season do you think has the shortest yellow bar?',
+    o:['Winter','Summer','Spring'], a:0,
+    discover:'Winter has the shortest days, so its yellow bar is the shortest. Summer has the longest days and the longest bar. When we measure the weather and record it on a chart, we can compare the seasons and spot patterns, just like real scientists.'},
+   sort:{title:'Which tool would you use?', bins:['Thermometer','Rain gauge','Windsock'],
+    items:[['Is it hot or cold?',0,'thermometer'],['Is it warmer than yesterday?',0,'sun'],['How much rain fell?',1,'raingauge'],['Was it a showery day?',1,'plastic'],['Is it windy?',2,'windsock'],['Is the wind strong?',2,'leaf']]},
+   tryit:{title:'Build a mini weather station', need:['An adult to help','A clear plastic bottle or jar and a ruler','A strip of fabric or ribbon and a stick','A notebook'],
+    steps:['Ask your adult to cut the top off a plastic bottle. Stand the bottle outside where rain can fall in.','Tape a ruler to the side so you can measure the rain.','Tie a ribbon to a stick and push it into the ground. Watch how it moves in the wind.','Each day at the same time, check your rain gauge and ribbon. Draw what you see.','Empty the bottle after each check, so every day is a fair test.'],
+    notice:'Which day had the most rain? Which day was the windiest? Keep going all year to see the seasons change!'}
   }
   ]
 };
