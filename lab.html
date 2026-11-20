@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/app.css?v=35">
+<link rel="stylesheet" href="css/app.css?v=36">
 <style>
   .labwrap{display:grid;grid-template-columns:340px minmax(0,1fr);gap:28px;margin-top:22px;align-items:start}
   .me-card{position:sticky;top:84px;background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:18px;text-align:center;box-shadow:0 16px 34px -26px rgba(31,43,77,.5)}
@@ -75,13 +75,13 @@
 
 <footer class="foot"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>Original stories and characters. Not affiliated with any publisher or exam board.</span></div></footer>
 
-<script src="js/art.js?v=35"></script>
-<script src="js/avatar.js?v=35"></script>
-<script src="js/store.js?v=35"></script>
+<script src="js/art.js?v=36"></script>
+<script src="js/avatar.js?v=36"></script>
+<script src="js/store.js?v=36"></script>
 <script>
 (function(){
-  var S = SQ_STORE, AV = SQ_AV, tab = 'build', cat = 'hand';
-  var CATS = [['hand','🔬 Lab kit'],['head','🥽 Headgear'],['neck','🩺 Around my neck'],['coat','🥼 Lab coats'],['pet','🐢 Companions'],['bg','🌋 Places']];
+  var S = SQ_STORE, AV = SQ_AV, tab = 'build', cat = 'measure';
+  var CATS = [['measure','📏 Measuring'],['chem','🧪 Chemistry'],['bio','🔬 Living things'],['phys','🧲 Forces, light and electricity'],['earth','🌍 Earth, weather and space'],['gear','🥽 Safety and headgear'],['coat','🥼 Lab coats'],['pet','🐢 Companions'],['bg','🌋 Places']];
   function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
   function L(){ return AV.def(S.look()); }
   function save(l){ S.saveLook(l); var mini = document.querySelector('#who .mini'); if (mini) mini.innerHTML = AV.headshot(l, 30); draw(); }
@@ -131,7 +131,7 @@
   }
   function shop(l){
     var h = '<div class="sect"><div class="cats">'+CATS.map(function(c){ return '<button class="opt2'+(cat===c[0]?' on':'')+'" data-cat="'+c[0]+'">'+c[1]+'</button>'; }).join('')+'</div></div>';
-    h += '<div class="sect"><div class="shelf">'+AV.SHOP.filter(function(x){return x.slot===cat;}).map(function(x){ return card(l,x); }).join('')+'</div></div>';
+    h += '<div class="sect"><div class="shelf">'+AV.SHOP.filter(function(x){return x.cat===cat;}).map(function(x){ return card(l,x); }).join('')+'</div></div>';
     paint(h);
   }
   function kit(l){

@@ -14,47 +14,89 @@
 
   /* shop: id, name, slot, price, colour (for coats) */
   var SHOP = [
-    // lab kit (held in the hand)
-    {id:'magnifier', name:'Magnifying glass', slot:'hand', price:20},
-    {id:'notebook',  name:'Lab notebook',     slot:'hand', price:15},
-    {id:'testtube',  name:'Test tube',        slot:'hand', price:25},
-    {id:'thermo',    name:'Thermometer',      slot:'hand', price:25},
-    {id:'magnet',    name:'Horseshoe magnet', slot:'hand', price:30},
-    {id:'flask',     name:'Bubbling flask',   slot:'hand', price:40},
-    {id:'hammer',    name:'Rock hammer',      slot:'hand', price:35},
-    {id:'net',       name:'Bug net',          slot:'hand', price:40},
-    {id:'circuit',   name:'Battery and bulb', slot:'hand', price:45},
-    {id:'telescope', name:'Telescope',        slot:'hand', price:70},
-    {id:'microscope',name:'Microscope',       slot:'hand', price:90},
-    // headgear
-    {id:'goggles',   name:'Safety goggles',   slot:'head', price:30},
-    {id:'headlamp',  name:'Cave headlamp',    slot:'head', price:45},
-    {id:'hardhat',   name:'Hard hat',         slot:'head', price:40},
-    {id:'explorer',  name:'Explorer hat',     slot:'head', price:45},
-    {id:'helmet',    name:'Space helmet',     slot:'head', price:120},
-    // around the neck
-    {id:'stetho',    name:'Stethoscope',      slot:'neck', price:50},
-    {id:'lanyard',   name:'Lab pass',         slot:'neck', price:20},
+    // measuring and recording
+    {id:'notebook',  name:'Lab notebook',      slot:'hand', cat:'measure', price:15},
+    {id:'ruler',     name:'Ruler',             slot:'hand', cat:'measure', price:15},
+    {id:'tape',      name:'Tape measure',      slot:'hand', cat:'measure', price:20},
+    {id:'thermo',    name:'Thermometer',       slot:'hand', cat:'measure', price:25},
+    {id:'jug',       name:'Measuring jug',     slot:'hand', cat:'measure', price:25},
+    {id:'stopwatch', name:'Stopwatch',         slot:'hand', cat:'measure', price:30},
+    {id:'forcemeter',name:'Force meter',       slot:'hand', cat:'measure', price:35},
+    {id:'scales',    name:'Weighing scales',   slot:'hand', cat:'measure', price:40},
+    {id:'datalogger',name:'Data logger',       slot:'hand', cat:'measure', price:60},
+    // chemistry and materials
+    {id:'testtube',  name:'Test tube',         slot:'hand', cat:'chem', price:25},
+    {id:'pipette',   name:'Pipette',           slot:'hand', cat:'chem', price:20},
+    {id:'beaker',    name:'Beaker',            slot:'hand', cat:'chem', price:25},
+    {id:'funnel',    name:'Funnel and filter', slot:'hand', cat:'chem', price:25},
+    {id:'petri',     name:'Petri dish',        slot:'hand', cat:'chem', price:25},
+    {id:'litmus',    name:'Indicator paper',   slot:'hand', cat:'chem', price:30},
+    {id:'mortar',    name:'Pestle and mortar', slot:'hand', cat:'chem', price:35},
+    {id:'rack',      name:'Test tube rack',    slot:'hand', cat:'chem', price:40},
+    {id:'flask',     name:'Bubbling flask',    slot:'hand', cat:'chem', price:40},
+    {id:'burner',    name:'Bunsen burner',     slot:'hand', cat:'chem', price:60},
+    // living things
+    {id:'magnifier', name:'Magnifying glass',  slot:'hand', cat:'bio', price:20},
+    {id:'tweezers',  name:'Tweezers',          slot:'hand', cat:'bio', price:15},
+    {id:'bugpot',    name:'Bug viewer pot',    slot:'hand', cat:'bio', price:25},
+    {id:'seedtray',  name:'Seed tray',         slot:'hand', cat:'bio', price:30},
+    {id:'net',       name:'Bug net',           slot:'hand', cat:'bio', price:40},
+    {id:'quadrat',   name:'Quadrat',           slot:'hand', cat:'bio', price:35},
+    {id:'skull',     name:'Skeleton model',    slot:'hand', cat:'bio', price:55},
+    {id:'stetho',    name:'Stethoscope',       slot:'neck', cat:'bio', price:50},
+    {id:'binoculars',name:'Binoculars',        slot:'neck', cat:'bio', price:50},
+    {id:'microscope',name:'Microscope',        slot:'hand', cat:'bio', price:90},
+    // forces, light, sound and electricity
+    {id:'magnet',    name:'Horseshoe magnet',  slot:'hand', cat:'phys', price:30},
+    {id:'barmagnet', name:'Bar magnet',        slot:'hand', cat:'phys', price:25},
+    {id:'spring',    name:'Spring',            slot:'hand', cat:'phys', price:20},
+    {id:'torchkit',  name:'Torch',             slot:'hand', cat:'phys', price:25},
+    {id:'mirrorkit', name:'Mirror',            slot:'hand', cat:'phys', price:25},
+    {id:'tuningfork',name:'Tuning fork',       slot:'hand', cat:'phys', price:30},
+    {id:'toycar',    name:'Toy car and ramp',  slot:'hand', cat:'phys', price:35},
+    {id:'pulley',    name:'Pulley',            slot:'hand', cat:'phys', price:40},
+    {id:'circuit',   name:'Battery and bulb',  slot:'hand', cat:'phys', price:45},
+    {id:'buzzer',    name:'Buzzer circuit',    slot:'hand', cat:'phys', price:45},
+    {id:'solar',     name:'Solar panel',       slot:'hand', cat:'phys', price:60},
+    // earth, weather and space
+    {id:'hammer',    name:'Rock hammer',       slot:'hand', cat:'earth', price:35},
+    {id:'fossil',    name:'Fossil',            slot:'hand', cat:'earth', price:40},
+    {id:'compass',   name:'Compass',           slot:'hand', cat:'earth', price:30},
+    {id:'raingauge', name:'Rain gauge',        slot:'hand', cat:'earth', price:30},
+    {id:'windsock',  name:'Windsock',          slot:'hand', cat:'earth', price:30},
+    {id:'vane',      name:'Weather vane',      slot:'hand', cat:'earth', price:35},
+    {id:'globe',     name:'Globe',             slot:'hand', cat:'earth', price:50},
+    {id:'telescope', name:'Telescope',         slot:'hand', cat:'earth', price:70},
+    {id:'rocket',    name:'Model rocket',      slot:'hand', cat:'earth', price:80},
+    // safety and headgear
+    {id:'goggles',   name:'Safety goggles',    slot:'head', cat:'gear', price:30},
+    {id:'gloves',    name:'Safety gloves',     slot:'hand', cat:'gear', price:20},
+    {id:'earmuffs',  name:'Ear defenders',     slot:'head', cat:'gear', price:35},
+    {id:'headlamp',  name:'Cave headlamp',     slot:'head', cat:'gear', price:45},
+    {id:'hardhat',   name:'Hard hat',          slot:'head', cat:'gear', price:40},
+    {id:'explorer',  name:'Explorer hat',      slot:'head', cat:'gear', price:45},
+    {id:'lanyard',   name:'Lab pass',          slot:'neck', cat:'gear', price:20},
+    {id:'helmet',    name:'Space helmet',      slot:'head', cat:'gear', price:120},
     // lab coats (two are free)
-    {id:'coat-white',name:'White lab coat',   slot:'coat', price:0,  col:'#FFFFFF'},
-    {id:'coat-sky',  name:'Sky lab coat',     slot:'coat', price:0,  col:'#DCEBFB'},
-    {id:'coat-mint', name:'Mint lab coat',    slot:'coat', price:40, col:'#CFF1E2'},
-    {id:'coat-lilac',name:'Lilac lab coat',   slot:'coat', price:40, col:'#E6DEFA'},
-    {id:'coat-sun',  name:'Sunny lab coat',   slot:'coat', price:40, col:'#FFF0B8'},
-    {id:'coat-coral',name:'Coral lab coat',   slot:'coat', price:40, col:'#FFD6CF'},
+    {id:'coat-white',name:'White lab coat',    slot:'coat', cat:'coat', price:0,  col:'#FFFFFF'},
+    {id:'coat-sky',  name:'Sky lab coat',      slot:'coat', cat:'coat', price:0,  col:'#DCEBFB'},
+    {id:'coat-mint', name:'Mint lab coat',     slot:'coat', cat:'coat', price:40, col:'#CFF1E2'},
+    {id:'coat-lilac',name:'Lilac lab coat',    slot:'coat', cat:'coat', price:40, col:'#E6DEFA'},
+    {id:'coat-sun',  name:'Sunny lab coat',    slot:'coat', cat:'coat', price:40, col:'#FFF0B8'},
+    {id:'coat-coral',name:'Coral lab coat',    slot:'coat', cat:'coat', price:40, col:'#FFD6CF'},
     // companions
-    {id:'plant',     name:'Potted seedling',  slot:'pet',  price:30},
-    {id:'beetle',    name:'Pet beetle',       slot:'pet',  price:50},
-    {id:'tortoise',  name:'Tortoise',         slot:'pet',  price:70},
-    {id:'owl',       name:'Owl',              slot:'pet',  price:90},
-    {id:'robot',     name:'Robot helper',     slot:'pet',  price:100},
+    {id:'plant',     name:'Potted seedling',   slot:'pet', cat:'pet', price:30},
+    {id:'beetle',    name:'Pet beetle',        slot:'pet', cat:'pet', price:50},
+    {id:'tortoise',  name:'Tortoise',          slot:'pet', cat:'pet', price:70},
+    {id:'owl',       name:'Owl',               slot:'pet', cat:'pet', price:90},
+    {id:'robot',     name:'Robot helper',      slot:'pet', cat:'pet', price:100},
     // places (backgrounds); the lab is free
-    {id:'bg-lab',    name:'Science lab',      slot:'bg',   price:0},
-    {id:'bg-garden', name:'Nature garden',    slot:'bg',   price:60},
-    {id:'bg-ocean',  name:'Under the sea',    slot:'bg',   price:80},
-    {id:'bg-forest', name:'Rainforest',       slot:'bg',   price:80},
-    {id:'bg-volcano',name:'Volcano',          slot:'bg',   price:90},
-    {id:'bg-space',  name:'Outer space',      slot:'bg',   price:100}
+    {id:'bg-lab',    name:'Science lab',       slot:'bg', cat:'bg', price:0},
+    {id:'bg-garden', name:'Nature garden',     slot:'bg', cat:'bg', price:60},
+    {id:'bg-ocean',  name:'Under the sea',     slot:'bg', cat:'bg', price:80},
+    {id:'bg-forest', name:'Rainforest',        slot:'bg', cat:'bg', price:80},
+    {id:'bg-volcano',name:'Volcano',           slot:'bg', cat:'bg', price:90},
+    {id:'bg-space',  name:'Outer space',       slot:'bg', cat:'bg', price:100}
   ];
   var BYID = {}; SHOP.forEach(function(x){ BYID[x.id] = x; });
 
@@ -68,7 +110,7 @@
   }
   function owns(l, id){ var it = BYID[id]; return it && (it.price === 0 || !!(l.owned||{})[id]); }
   function spent(l){ var n = 0, o = (l && l.owned) || {}; for (var k in o) if (BYID[k]) n += BYID[k].price; return n; }
-  function icon(k, x, y, s){ return (window.SQ_ART && SQ_ART.icon) ? '<g transform="translate('+x+' '+y+') scale('+s+')">'+SQ_ART.icon(k)+'</g>' : ''; }
+  function icon(k, x, y, s){ return (window.SQ_ART && window.SQ_ART.icon) ? '<g transform="translate('+x+' '+y+') scale('+s+')">'+window.SQ_ART.icon(k)+'</g>' : ''; }
 
   /* ---------- places ---------- */
   function bg(id){
@@ -164,7 +206,7 @@
   /* ---------- equipment ---------- */
   var HAND = {x:150, y:184};
   function handItem(id, skin){
-    var h = '<circle cx="'+HAND.x+'" cy="'+HAND.y+'" r="9" fill="'+skin+'" stroke="rgba(0,0,0,.12)"/>', s = '';
+    var h = skin ? '<circle cx="'+HAND.x+'" cy="'+HAND.y+'" r="9" fill="'+skin+'" stroke="rgba(0,0,0,.12)"/>' : '', s = '';
     switch(id){
       case 'magnifier': s = '<path d="M152 178 L160 160" stroke="#7A4A2A" stroke-width="7" stroke-linecap="round"/><circle cx="166" cy="146" r="16" fill="#CFEFFF" fill-opacity=".7" stroke="#6B7280" stroke-width="5"/><path d="M158 140 q4 -6 10 -6" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>'; break;
       case 'notebook': s = '<rect x="140" y="150" width="34" height="42" rx="3" fill="#F6B93B" stroke="#C98A12" stroke-width="2"/><rect x="146" y="158" width="22" height="3" fill="#fff"/><rect x="146" y="165" width="16" height="3" fill="#fff"/><path d="M140 154 h-3 M140 162 h-3 M140 170 h-3 M140 178 h-3" stroke="#6B7280" stroke-width="2"/>'; break;
@@ -176,6 +218,43 @@
       case 'net': s = '<path d="M150 188 L170 112" stroke="#B7834A" stroke-width="5" stroke-linecap="round"/><ellipse cx="176" cy="98" rx="18" ry="14" fill="#fff" fill-opacity=".5" stroke="#4A5677" stroke-width="3"/><path d="M162 98 h28 M176 84 v28 M166 88 l20 20 M186 88 l-20 20" stroke="#9AA3AE" stroke-width="1.2"/>'; break;
       case 'circuit': s = '<rect x="140" y="160" width="14" height="28" rx="3" fill="#2B2E34"/><rect x="140" y="160" width="14" height="10" fill="#F6B93B"/><path d="M147 160 C147 140 172 150 172 136 M154 184 C180 184 180 150 176 140" stroke="#E2453A" stroke-width="2.5" fill="none"/><circle cx="174" cy="126" r="10" fill="#FFE58A" stroke="#C98A12" stroke-width="2"/><rect x="169" y="134" width="10" height="6" fill="#9AA3AE"/><path d="M174 106 v-6 M160 112 l-4 -4 M188 112 l4 -4" stroke="#F6B93B" stroke-width="2.5" stroke-linecap="round"/>'; break;
       case 'telescope': s = '<g transform="rotate(-38 160 160)"><rect x="140" y="152" width="58" height="14" rx="4" fill="#3D8BE0"/><rect x="190" y="148" width="12" height="22" rx="3" fill="#2F4B8C"/><rect x="134" y="155" width="10" height="8" rx="2" fill="#2F4B8C"/></g>'; break;
+      case 'ruler': s = '<rect x="156" y="104" width="14" height="84" rx="2" fill="#F6D365" stroke="#C98A12" stroke-width="2"/><path d="M156 114 h6 M156 124 h4 M156 134 h6 M156 144 h4 M156 154 h6 M156 164 h4 M156 174 h6" stroke="#8A5A00" stroke-width="2"/>'; break;
+      case 'tape': s = '<circle cx="164" cy="160" r="18" fill="#F6B93B" stroke="#C98A12" stroke-width="2.5"/><circle cx="164" cy="160" r="6" fill="#4A5677"/><path d="M182 168 h16 v8 h-16z" fill="#FFF3B0" stroke="#C98A12" stroke-width="1.5"/>'; break;
+      case 'jug': s = '<path d="M144 132 h34 l-4 52 h-26z" fill="#fff" fill-opacity=".8" stroke="#9AA3AE" stroke-width="2.5"/><path d="M146 156 h30 l-2 28 h-26z" fill="#9ED6F5"/><path d="M178 140 c10 0 10 20 -2 22" stroke="#9AA3AE" stroke-width="3" fill="none"/><path d="M148 142 h6 M148 152 h8 M148 162 h6 M148 172 h8" stroke="#4A5677" stroke-width="1.6"/><path d="M144 132 l-6 -4" stroke="#9AA3AE" stroke-width="3"/>'; break;
+      case 'stopwatch': s = '<circle cx="164" cy="156" r="20" fill="#fff" stroke="#E2453A" stroke-width="5"/><rect x="160" y="128" width="8" height="8" rx="2" fill="#E2453A"/><path d="M164 156 V142 M164 156 l9 6" stroke="#2B2E34" stroke-width="3" stroke-linecap="round"/>'; break;
+      case 'forcemeter': s = '<path d="M164 98 v10" stroke="#6B7280" stroke-width="3"/><rect x="156" y="108" width="16" height="56" rx="4" fill="#E8ECEF" stroke="#6B7280" stroke-width="2"/><path d="M160 116 h8 M160 126 h8 M160 136 h8 M160 146 h8 M160 156 h8" stroke="#3D8BE0" stroke-width="2"/><path d="M164 164 v12 a5 5 0 1 1 -6 4" stroke="#6B7280" stroke-width="3" fill="none"/>'; break;
+      case 'scales': s = '<rect x="138" y="168" width="52" height="16" rx="5" fill="#4A5677"/><rect x="144" y="160" width="40" height="8" rx="3" fill="#BFC7D2"/><rect x="152" y="171" width="24" height="9" rx="2" fill="#9EE3B8"/><text x="164" y="179" font-size="8" font-family="Arial" font-weight="bold" text-anchor="middle" fill="#1F2B4D">125g</text><circle cx="164" cy="150" r="10" fill="#E2453A"/>'; break;
+      case 'datalogger': s = '<rect x="140" y="130" width="40" height="52" rx="7" fill="#2F4B8C"/><rect x="146" y="136" width="28" height="22" rx="3" fill="#CFF1E2"/><path d="M148 154 l6 -8 l6 4 l6 -10 l6 6" stroke="#16918C" stroke-width="2" fill="none"/><circle cx="152" cy="168" r="4" fill="#F6B93B"/><circle cx="168" cy="168" r="4" fill="#E0607E"/><path d="M180 140 c14 0 14 -24 4 -30" stroke="#6B7280" stroke-width="2.5" fill="none"/>'; break;
+      case 'pipette': s = '<g transform="rotate(20 164 150)"><rect x="160" y="112" width="8" height="64" rx="3" fill="#fff" stroke="#9AA3AE" stroke-width="2"/><path d="M162 176 l2 12 l2 -12z" fill="#9AA3AE"/><ellipse cx="164" cy="108" rx="8" ry="10" fill="#E2453A"/><rect x="161" y="150" width="6" height="24" fill="#7DD3FC"/></g><circle cx="176" cy="196" r="3" fill="#7DD3FC"/>'; break;
+      case 'beaker': s = '<path d="M144 132 h36 v46 a6 6 0 0 1 -6 6 h-24 a6 6 0 0 1 -6 -6z" fill="#fff" fill-opacity=".85" stroke="#9AA3AE" stroke-width="2.5"/><path d="M146 156 h32 v22 a4 4 0 0 1 -4 4 h-24 a4 4 0 0 1 -4 -4z" fill="#F6B93B"/><path d="M144 132 l-5 -4" stroke="#9AA3AE" stroke-width="3"/><path d="M150 142 h8 M150 150 h6" stroke="#4A5677" stroke-width="1.6"/>'; break;
+      case 'funnel': s = '<path d="M140 120 h48 l-18 30 v24 h-12 v-24z" fill="#fff" fill-opacity=".85" stroke="#9AA3AE" stroke-width="2.5"/><path d="M146 124 h36 l-18 22z" fill="#F7F1E3" stroke="#D9B98A" stroke-width="1.5"/><circle cx="164" cy="182" r="2.5" fill="#7DD3FC"/>'; break;
+      case 'petri': s = '<ellipse cx="164" cy="166" rx="26" ry="9" fill="#fff" fill-opacity=".8" stroke="#9AA3AE" stroke-width="2.5"/><ellipse cx="164" cy="164" rx="20" ry="6" fill="#FDE7B0"/><circle cx="156" cy="163" r="2.5" fill="#47A86A"/><circle cx="168" cy="165" r="3" fill="#E0607E"/><circle cx="172" cy="162" r="2" fill="#3D8BE0"/>'; break;
+      case 'litmus': s = '<rect x="148" y="118" width="10" height="56" rx="2" fill="#F2789B"/><rect x="148" y="146" width="10" height="28" fill="#3D8BE0"/><rect x="164" y="122" width="10" height="52" rx="2" fill="#F6D365"/><rect x="164" y="150" width="10" height="24" fill="#47A86A"/>'; break;
+      case 'mortar': s = '<path d="M140 156 h48 c0 18 -10 28 -24 28 c-14 0 -24 -10 -24 -28z" fill="#E8ECEF" stroke="#9AA3AE" stroke-width="2.5"/><path d="M150 156 c4 -4 24 -4 28 0" fill="#C9A66A"/><path d="M170 160 L184 120" stroke="#BFC7D2" stroke-width="9" stroke-linecap="round"/>'; break;
+      case 'rack': s = '<rect x="132" y="150" width="60" height="8" rx="2" fill="#B7834A"/><rect x="132" y="180" width="60" height="6" rx="2" fill="#B7834A"/><path d="M136 158 v22 M188 158 v22" stroke="#B7834A" stroke-width="4"/>'+[[144,'#E0607E'],[158,'#47A86A'],[172,'#3D8BE0'],[186,'#F6B93B']].map(function(t){ return '<rect x="'+(t[0]-5)+'" y="132" width="10" height="44" rx="5" fill="#fff" stroke="#9AA3AE" stroke-width="1.6"/><rect x="'+(t[0]-4)+'" y="158" width="8" height="17" rx="4" fill="'+t[1]+'"/>'; }).join(''); break;
+      case 'burner': s = '<rect x="146" y="176" width="36" height="8" rx="3" fill="#4A5677"/><rect x="158" y="136" width="12" height="42" rx="2" fill="#9AA3AE"/><path d="M164 136 c-10 -10 -4 -22 0 -30 c4 8 10 20 0 30z" fill="#3D8BE0" opacity=".85"/><path d="M164 132 c-4 -6 -2 -12 0 -16 c2 4 4 10 0 16z" fill="#9EE3F5"/>'; break;
+      case 'tweezers': s = '<path d="M154 182 L172 118 M160 184 L176 120" stroke="#9AA3AE" stroke-width="4" stroke-linecap="round"/><ellipse cx="174" cy="114" rx="4" ry="6" fill="#47A86A"/>'; break;
+      case 'bugpot': s = '<rect x="142" y="140" width="40" height="40" rx="6" fill="#fff" fill-opacity=".7" stroke="#9AA3AE" stroke-width="2.5"/><rect x="140" y="130" width="44" height="12" rx="4" fill="#E2453A"/><circle cx="162" cy="136" r="5" fill="#CFEFFF" stroke="#9AA3AE"/>'+icon('ladybird',148,150,.25); break;
+      case 'seedtray': s = '<rect x="132" y="164" width="60" height="20" rx="3" fill="#2B2E34"/><rect x="134" y="160" width="56" height="8" fill="#7A4A2A"/>'+[142,156,170,184].map(function(x){ return '<path d="M'+x+' 160 v-10" stroke="#47A86A" stroke-width="2.5"/><ellipse cx="'+(x-4)+'" cy="150" rx="5" ry="3" fill="#5BBE7C"/><ellipse cx="'+(x+4)+'" cy="149" rx="5" ry="3" fill="#47A86A"/>'; }).join(''); break;
+      case 'quadrat': s = '<rect x="136" y="122" width="52" height="52" fill="none" stroke="#F6B93B" stroke-width="5"/><path d="M162 122 v52 M136 148 h52" stroke="#F6B93B" stroke-width="2"/><circle cx="148" cy="136" r="3" fill="#fff" stroke="#F6B93B"/><circle cx="176" cy="160" r="3" fill="#E0607E"/>'; break;
+      case 'skull': s = '<circle cx="164" cy="134" r="16" fill="#F7F1E3" stroke="#C9C1AE" stroke-width="2"/><circle cx="158" cy="134" r="4" fill="#4A5677"/><circle cx="170" cy="134" r="4" fill="#4A5677"/><path d="M164 150 v34 M152 158 h24 M154 166 h20 M156 174 h16" stroke="#F7F1E3" stroke-width="4" stroke-linecap="round"/>'; break;
+      case 'barmagnet': s = '<g transform="rotate(-30 164 150)"><rect x="140" y="140" width="24" height="20" fill="#E2453A"/><rect x="164" y="140" width="24" height="20" fill="#3D8BE0"/><text x="152" y="155" font-size="11" font-family="Arial" font-weight="bold" fill="#fff" text-anchor="middle">N</text><text x="176" y="155" font-size="11" font-family="Arial" font-weight="bold" fill="#fff" text-anchor="middle">S</text></g>'; break;
+      case 'spring': var sp=''; for (var y=120;y<172;y+=8) sp += '<ellipse cx="164" cy="'+y+'" rx="12" ry="4" fill="none" stroke="#9AA3AE" stroke-width="3"/>'; s = sp; break;
+      case 'torchkit': s = icon('torch', 140, 116, .5) + '<path d="M196 136 l18 -12 v40z" fill="#FFF3B0" opacity=".7"/>'; break;
+      case 'mirrorkit': s = icon('mirror', 134, 104, .55); break;
+      case 'tuningfork': s = '<path d="M156 110 v34 q0 10 8 10 q8 0 8 -10 v-34" stroke="#9AA3AE" stroke-width="6" fill="none"/><path d="M164 154 v30" stroke="#9AA3AE" stroke-width="6"/><path d="M148 116 q-6 6 0 12 M180 116 q6 6 0 12" stroke="#7559D1" stroke-width="2.5" fill="none"/>'; break;
+      case 'toycar': s = '<path d="M128 184 L196 150 V184Z" fill="#D9B98A"/><g transform="rotate(-26 168 156)"><rect x="152" y="146" width="34" height="12" rx="4" fill="#E2453A"/><path d="M158 146 l4 -8 h14 l4 8z" fill="#E2453A"/><circle cx="160" cy="160" r="5" fill="#2B2E34"/><circle cx="178" cy="160" r="5" fill="#2B2E34"/></g>'; break;
+      case 'pulley': s = '<path d="M136 112 h56" stroke="#7A4A2A" stroke-width="5"/><path d="M164 112 v10" stroke="#6B7280" stroke-width="3"/><circle cx="164" cy="132" r="11" fill="#BFC7D2" stroke="#6B7280" stroke-width="3"/><path d="M153 132 v32 M175 132 v40" stroke="#B7834A" stroke-width="2"/><rect x="146" y="164" width="14" height="14" fill="#4A5677"/>'; break;
+      case 'buzzer': s = '<rect x="138" y="160" width="14" height="26" rx="3" fill="#2B2E34"/><rect x="138" y="160" width="14" height="9" fill="#F6B93B"/><path d="M145 160 C145 140 168 150 170 140 M152 182 C186 182 186 150 180 144" stroke="#3D8BE0" stroke-width="2.5" fill="none"/><circle cx="176" cy="134" r="11" fill="#4A5677"/><circle cx="176" cy="134" r="4" fill="#BFC7D2"/><path d="M192 124 q6 10 0 20 M198 118 q10 16 0 32" stroke="#7559D1" stroke-width="2.5" fill="none"/>'; break;
+      case 'solar': s = '<g transform="rotate(-15 164 140)"><rect x="136" y="116" width="56" height="38" rx="3" fill="#2F4B8C" stroke="#BFC7D2" stroke-width="3"/><path d="M150 116 v38 M164 116 v38 M178 116 v38 M136 128 h56 M136 141 h56" stroke="#5C7FC9" stroke-width="1.6"/></g><path d="M164 154 v22" stroke="#9AA3AE" stroke-width="4"/><circle cx="196" cy="108" r="8" fill="#FFD966"/>'; break;
+      case 'fossil': s = icon('ammonite', 134, 126, .5); break;
+      case 'compass': s = '<circle cx="164" cy="156" r="20" fill="#F7F1E3" stroke="#B7834A" stroke-width="5"/><path d="M164 140 l5 16 l-5 4 l-5 -4z" fill="#E2453A"/><path d="M164 172 l5 -16 l-5 -4 l-5 4z" fill="#4A5677"/><text x="164" y="139" font-size="8" font-family="Arial" font-weight="bold" text-anchor="middle" fill="#1F2B4D" dy="-1">N</text>'; break;
+      case 'raingauge': s = icon('raingauge', 134, 118, .52); break;
+      case 'windsock': s = icon('windsock', 136, 112, .52); break;
+      case 'vane': s = icon('vane', 134, 104, .56); break;
+      case 'globe': s = '<circle cx="164" cy="144" r="22" fill="#3D8BE0"/><path d="M152 132 c6 -4 12 2 8 8 c-4 6 -12 2 -12 8 c0 6 6 6 4 12 M170 126 c6 2 10 8 6 14 c-4 4 -8 0 -6 8" fill="none" stroke="#47A86A" stroke-width="5" stroke-linecap="round"/><path d="M140 144 a24 24 0 0 0 48 0" stroke="#B7834A" stroke-width="3" fill="none"/><path d="M164 168 v10 M152 182 h24" stroke="#B7834A" stroke-width="4"/>'; break;
+      case 'rocket': s = '<path d="M164 96 c12 12 14 36 10 60 h-20 c-4 -24 -2 -48 10 -60z" fill="#F7F9FB" stroke="#9AA3AE" stroke-width="2.5"/><circle cx="164" cy="124" r="6" fill="#3D8BE0" stroke="#2F4B8C" stroke-width="2"/><path d="M154 140 l-10 18 h10z M174 140 l10 18 h-10z" fill="#E2453A"/><path d="M158 156 h12 l-6 14z" fill="#F6B93B"/>'; break;
+      case 'gloves': s = icon('glove', 134, 128, .5); break;
       case 'microscope': return '<rect x="150" y="196" width="44" height="8" rx="3" fill="#4A5677"/><path d="M182 196 C190 170 186 150 172 138" stroke="#4A5677" stroke-width="8" fill="none" stroke-linecap="round"/><rect x="160" y="128" width="12" height="40" rx="3" fill="#E8ECEF" stroke="#4A5677" stroke-width="2.5" transform="rotate(-20 166 148)"/><rect x="156" y="180" width="30" height="4" fill="#4A5677"/><circle cx="160" cy="124" r="5" fill="#2B2E34"/>' + h;
     }
     return s + h;
@@ -186,12 +265,14 @@
       case 'headlamp': return '<path d="M58 76 Q100 62 142 76" stroke="#2B2E34" stroke-width="7" fill="none"/><rect x="88" y="58" width="24" height="16" rx="5" fill="#4A5677"/><circle cx="100" cy="66" r="6" fill="#FFE58A"/><path d="M94 52 l-6 -10 M100 50 v-12 M106 52 l6 -10" stroke="#F6B93B" stroke-width="3" stroke-linecap="round"/>';
       case 'hardhat': return '<path d="M56 82 C56 38 144 38 144 82Z" fill="#F6B93B"/><rect x="46" y="78" width="108" height="10" rx="5" fill="#E09E1A"/><rect x="94" y="44" width="12" height="36" rx="5" fill="#E09E1A"/>';
       case 'explorer': return '<ellipse cx="100" cy="70" rx="62" ry="11" fill="#C9A66A"/><path d="M68 70 C66 34 134 34 132 70Z" fill="#D9B98A"/><rect x="68" y="58" width="64" height="9" fill="#7A4A2A"/>';
+      case 'earmuffs': return '<path d="M58 100 C56 46 144 46 142 100" stroke="#2B2E34" stroke-width="7" fill="none"/><rect x="46" y="86" width="20" height="34" rx="9" fill="#F6B93B" stroke="#C98A12" stroke-width="2"/><rect x="134" y="86" width="20" height="34" rx="9" fill="#F6B93B" stroke="#C98A12" stroke-width="2"/>';
       case 'helmet': return '<circle cx="100" cy="100" r="62" fill="#BFE3F7" fill-opacity=".28" stroke="#DDE3EA" stroke-width="6"/><path d="M62 70 Q74 50 96 44" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity=".9"/>';
     }
     return '';
   }
   function neckItem(id){
     if (id==='stetho') return '<path d="M84 146 C80 172 96 184 104 172 M116 146 C120 160 116 170 108 172" stroke="#2B2E34" stroke-width="3.5" fill="none"/><circle cx="104" cy="178" r="7" fill="#9AA3AE" stroke="#2B2E34" stroke-width="2.5"/>';
+    if (id==='binoculars') return '<path d="M86 146 L92 176 M114 146 L108 176" stroke="#4A5677" stroke-width="3"/><rect x="84" y="172" width="14" height="24" rx="5" fill="#2B2E34"/><rect x="102" y="172" width="14" height="24" rx="5" fill="#2B2E34"/><rect x="96" y="178" width="8" height="8" fill="#4A5677"/><circle cx="91" cy="196" r="5" fill="#9EE3F5"/><circle cx="109" cy="196" r="5" fill="#9EE3F5"/>';
     if (id==='lanyard') return '<path d="M88 146 L98 186 M112 146 L102 186" stroke="#16918C" stroke-width="4"/><rect x="88" y="184" width="24" height="20" rx="3" fill="#fff" stroke="#16918C" stroke-width="2.5"/><rect x="92" y="188" width="8" height="8" rx="2" fill="#F6B93B"/><rect x="102" y="190" width="7" height="2.4" fill="#9AA3AE"/><rect x="102" y="195" width="6" height="2.4" fill="#9AA3AE"/>';
     return '';
   }
