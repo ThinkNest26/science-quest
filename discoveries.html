@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Discoveries | Science Quest by Curious Nest</title>
+<link rel="icon" type="image/png" href="img/sq-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css?v=18">
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><span class="mk"><img src="img/sq-bird.png" alt=""></span><span><b>Science Quest</b><small>by Curious Nest</small></span></a>
+    <div class="who"><a class="chipbtn" href="learn.html">📚 Library</a><a class="chipbtn" href="challenges.html">🧪 Challenges</a><span id="who"></span></div>
+  </div>
+</header>
+
+<main class="wrap" id="main"></main>
+<div id="certwrap" hidden></div>
+
+<footer class="foot"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>Original content. Not affiliated with any publisher or exam board.</span></div></footer>
+
+<script src="js/art.js?v=18"></script>
+<script src="js/kg2.js?v=18"></script>
+<script src="js/g1.js?v=18"></script>
+<script src="js/challenges.js?v=18"></script>
+<script src="js/store.js?v=18"></script>
+<script>
+(function(){
+  var S = SQ_STORE, C = SQ_CHAL, G = SQ_GRADE, A = SQ_ART;
+  var NAMES = {kg2:'KG2 (Year 1)', g1:'Grade 1 (Year 2)', g2:'Grade 2 (Year 3)', g3:'Grade 3 (Year 4)', g4:'Grade 4 (Year 5)', g5:'Grade 5 (Year 6)'};
+  var main = document.getElementById('main');
+  function esc(t){ return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+  S.chip(document.getElementById('who'), draw);
+
+  function topicState(g, tp, d){
+    var st = G[g].stories.filter(function(s){ return s.topic===tp.id; });
+    var got = st.filter(function(s){ return d.badges[s.id]; }).length;
+    var ch = C[g] && C[g][tp.id];
+    var q = ch ? (d.stars['quiz-'+g+'-'+tp.id]||0) : 0;
+    var m = ch ? ch.mystery.filter(function(x){ return d.stars['myst-'+x.id]; }).length : 0;
+    var h = ch ? !!d.hands[ch.hands.id] : false;
+    return {stories:st.length, got:got, quiz:q, myst:m, mystN:ch?ch.mystery.length:0, hand:h, complete: st.length && got===st.length && q>=1 && h};
+  }
+
+  function draw(){
+    document.getElementById('certwrap').hidden = true; main.hidden = false;
+    var d = S.data(), me = S.me();
+    var nb = Object.keys(d.badges).length, ns = Object.keys(d.stars).reduce(function(a,k){ return a+(d.stars[k]||0); },0), nh = Object.keys(d.hands).length;
+    var h = '<div class="lhead"><h1>'+(me?esc(me.name)+'’s Discoveries':'My Discoveries')+'</h1>'+
+      '<p>'+(me?'Everything you discover is saved with your code. Your teacher can see how you are getting on.':'You are playing as a guest, so your discoveries are saved on this device only. Sign in with your code card to save them for your teacher.')+'</p></div>'+
+      '<div class="dhead"><div class="stat"><b>'+nb+'</b><span>Badges</span></div><div class="stat"><b>'+ns+'</b><span>Challenge stars</span></div>'+
+      '<div class="stat"><b>'+nh+'</b><span>Hands-on challenges</span></div><div class="stat"><b>'+d.journal.length+'</b><span>Journal entries</span></div></div>';
+
+    // topic progress
+    h += '<h2 class="sec-h">My topics</h2>';
+    Object.keys(G).forEach(function(g){
+      if (me && me.grade && g !== me.grade && !G[g].stories.some(function(s){return d.badges[s.id];})) return;
+      h += '<h3 style="margin:18px 0 10px;font-size:18px">'+NAMES[g]+'</h3><div class="tprog">';
+      G[g].topics.forEach(function(tp){
+        var t = topicState(g, tp, d);
+        h += '<div class="tp"><h4>'+esc(tp.name)+'</h4><ul>'+
+          '<li class="'+(t.got===t.stories?'ok':'no')+'">'+(t.got===t.stories?'✅':'📖')+' Stories: '+t.got+' of '+t.stories+'</li>'+
+          '<li class="'+(t.quiz?'ok':'no')+'">'+(t.quiz?'✅':'🧠')+' Quiz stars: '+('★★★'.slice(0,t.quiz)+'☆☆☆'.slice(0,3-t.quiz))+'</li>'+
+          '<li class="'+(t.myst===t.mystN&&t.mystN?'ok':'no')+'">'+(t.myst===t.mystN&&t.mystN?'✅':'🔍')+' Mysteries: '+t.myst+' of '+t.mystN+'</li>'+
+          '<li class="'+(t.hand?'ok':'no')+'">'+(t.hand?'✅':'✋')+' Hands-on challenge</li></ul>'+
+          (t.complete ? '<button class="btn pri" data-cert="'+g+'|'+tp.id+'" style="padding:10px 16px;font-size:14px">🏅 My certificate</button>'
+                      : '<span style="font-size:13px;color:var(--muted);font-weight:700">Read every story, earn a quiz star and do the hands-on challenge to unlock your certificate.</span>')+
+          '</div>';
+      });
+      h += '</div>';
+    });
+
+    // badges
+    h += '<h2 class="sec-h">My badges</h2><div class="shelf">';
+    Object.keys(G).forEach(function(g){ G[g].stories.forEach(function(s){
+      var on = d.badges[s.id];
+      h += '<a class="bgd'+(on?'':' off')+'" href="story.html?s='+s.id+'" style="text-decoration:none;color:inherit"><span class="m">'+A.icon(s.cover[0],30)+'</span><span>'+esc(s.badge)+'<small>'+esc(s.title)+'</small></span></a>';
+    }); });
+    h += '</div>';
+
+    // journal
+    h += '<h2 class="sec-h">My science journal</h2>'+
+      '<div class="jentry"><h4>Add a new discovery</h4>'+
+      '<label class="jl" for="jt">What were you finding out?</label><input class="jt" id="jt" style="width:100%;font:700 16px Nunito,sans-serif;border:2px solid var(--line);border-radius:14px;padding:12px" placeholder="For example: Which materials are waterproof?">'+
+      '<label class="jl" for="jg">What did you predict?</label><textarea class="jt" id="jg" placeholder="I think..."></textarea>'+
+      '<label class="jl" for="jf">What did you find out?</label><textarea class="jt" id="jf" placeholder="I found out that..."></textarea>'+
+      '<p class="fb" id="jfb"></p><button class="btn pri" id="jsave">Save to my journal</button></div>';
+    if (!d.journal.length) h += '<p style="color:var(--muted);font-weight:700;margin-top:14px">Your journal is empty. Finish a story or a hands-on challenge, or add your own discovery above.</p>';
+    d.journal.forEach(function(e){
+      h += '<div class="jentry"><button class="jdel" data-del="'+esc(e.id)+'" aria-label="Delete entry">✕ Delete</button><h4>'+esc(e.title||'My discovery')+'</h4><span class="d">'+esc(e.at)+'</span>'+
+        (e.q?'<p><b>Question:</b> '+esc(e.q)+'</p>':'')+(e.guess?'<p><b>I predicted:</b> '+esc(e.guess)+'</p>':'')+(e.found?'<p><b>I found out:</b> '+esc(e.found)+'</p>':'')+'</div>';
+    });
+    main.innerHTML = h;
+
+    document.getElementById('jsave').onclick = async function(){
+      var t = document.getElementById('jt').value.trim(), g = document.getElementById('jg').value.trim(), f = document.getElementById('jf').value.trim();
+      if (!t || !f){ document.getElementById('jfb').innerHTML = '<b>Almost!</b> Write what you were finding out and what you found.'; return; }
+      this.disabled = true; await S.note({title:t, guess:g, found:f}); draw();
+    };
+    main.querySelectorAll('[data-del]').forEach(function(b){ b.onclick = function(){ if (confirmDel(b)) { S.unnote(b.getAttribute('data-del')); draw(); } }; });
+    main.querySelectorAll('[data-cert]').forEach(function(b){ b.onclick = function(){ var p = b.getAttribute('data-cert').split('|'); cert(p[0], p[1]); }; });
+  }
+  function confirmDel(b){ if (b.dataset.sure) return true; b.dataset.sure = 1; b.textContent = 'Tap again to delete'; return false; }
+
+  function cert(g, tid){
+    var tp = G[g].topics.filter(function(x){ return x.id===tid; })[0], me = S.me();
+    var w = document.getElementById('certwrap'); main.hidden = true; w.hidden = false;
+    w.innerHTML = '<div class="cert"><img src="img/sq-bird.png" alt="" width="90" height="90"><h1>Certificate of Discovery</h1><p>This certificate is awarded to</p>'+
+      '<div class="nm">'+(me?esc(me.name):'&nbsp;')+'</div><p>for completing every story, quiz and hands-on challenge in</p>'+
+      '<h2 style="font-size:30px;margin:10px 0">'+esc(tp.name)+'</h2><p>'+NAMES[g]+' · '+new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})+'</p>'+
+      '<p style="margin-top:24px;font-weight:900;color:var(--teal)">Science Quest by Curious Nest</p></div>'+
+      '<p class="noprint" style="text-align:center"><button class="btn pri" onclick="window.print()">🖨 Print</button> <button class="btn sec" id="cback">Back</button></p>';
+    document.getElementById('cback').onclick = draw;
+    window.scrollTo(0,0);
+  }
+
+  draw();
+})();
+</script>
+</body>
+</html>

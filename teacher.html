@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teachers | Science Quest by Curious Nest</title>
+<link rel="icon" type="image/png" href="img/sq-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css?v=18">
+<style>
+.tbox{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;margin-top:18px}
+.tbox h2{font-size:22px;margin-bottom:10px}
+.fld{display:block;width:100%;font:700 16px Nunito,sans-serif;border:2px solid var(--line);border-radius:12px;padding:11px 13px;color:var(--ink);margin:6px 0 12px}
+.fld:focus{outline:none;border-color:var(--teal)}
+table.pt{width:100%;border-collapse:collapse;font-size:14px}
+table.pt th,table.pt td{padding:9px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+table.pt th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.code{font:900 16px/1 Nunito,sans-serif;letter-spacing:.12em;background:var(--tealL);color:var(--tealD);padding:5px 8px;border-radius:8px;white-space:nowrap}
+.mini{background:none;border:0;color:var(--teal);font:800 13px Nunito,sans-serif;cursor:pointer;padding:2px 4px}
+.mini.red{color:#B23A57}
+.cls{display:flex;flex-wrap:wrap;gap:8px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.ccode{border:2px dashed var(--teal);border-radius:16px;padding:16px;text-align:center;break-inside:avoid}
+.ccode b{display:block;font-size:20px}
+.ccode .code{display:inline-block;font-size:26px;margin:8px 0}
+.ccode small{display:block;color:var(--muted);font-weight:700}
+.scroll{overflow-x:auto}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<header class="top noprint">
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><span class="mk"><img src="img/sq-bird.png" alt=""></span><span><b>Science Quest</b><small>Teachers</small></span></a>
+    <span id="acct"></span>
+  </div>
+</header>
+<main class="wrap" id="main"></main>
+<footer class="foot noprint"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>Children’s progress is only visible to their own teacher.</span></div></footer>
+
+<script src="js/art.js?v=18"></script>
+<script src="js/kg2.js?v=18"></script>
+<script src="js/g1.js?v=18"></script>
+<script src="js/challenges.js?v=18"></script>
+<script>
+(function(){
+  var sb = supabase.createClient('https://xpbkdnkfufkahaszfycd.supabase.co','sb_publishable_QIAV_9tLUBbDCu7FHqaTEw_zYQ0teEG');
+  var GR = {kg2:'KG2 (Year 1)', g1:'Grade 1 (Year 2)', g2:'Grade 2 (Year 3)', g3:'Grade 3 (Year 4)', g4:'Grade 4 (Year 5)', g5:'Grade 5 (Year 6)'};
+  var main = document.getElementById('main'), acct = document.getElementById('acct');
+  var classes = [], kids = [], prog = {}, cur = null;
+  function esc(t){ return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+  function fmt(c){ return c ? c.slice(0,3)+'-'+c.slice(3) : ''; }
+
+  async function start(){
+    var s = (await sb.auth.getSession()).data.session;
+    if (!s) return login();
+    acct.innerHTML = '<span style="font-weight:800;color:var(--muted);font-size:14px">'+esc(s.user.email)+'</span> <button class="chipbtn" id="out">Sign out</button>';
+    document.getElementById('out').onclick = async function(){ await sb.auth.signOut(); acct.innerHTML=''; login(); };
+    await load(); home();
+  }
+
+  function login(){
+    main.innerHTML = '<div class="tbox" style="max-width:420px;margin:40px auto"><h2>Teacher sign in</h2>'+
+      '<p style="color:var(--ink2);margin:0 0 12px">Use the same email and password as your Maths Quest or Spelling Bee teacher account.</p>'+
+      '<label class="jl" for="em">Email</label><input class="fld" id="em" type="email" autocomplete="username">'+
+      '<label class="jl" for="pw">Password</label><input class="fld" id="pw" type="password" autocomplete="current-password">'+
+      '<p class="sqerr" id="err"></p><button class="btn pri" id="go">Sign in</button></div>';
+    document.getElementById('go').onclick = async function(){
+      var r = await sb.auth.signInWithPassword({email:document.getElementById('em').value.trim(), password:document.getElementById('pw').value});
+      if (r.error){ document.getElementById('err').textContent = 'That email or password did not work. Please try again.'; return; }
+      start();
+    };
+  }
+
+  async function load(){
+    var a = await sb.from('sq_classes').select('*').order('grade').order('name');
+    var b = await sb.from('sq_students').select('*').order('first_name');
+    var c = await sb.from('sq_progress').select('*');
+    if (a.error){ main.innerHTML = '<div class="tbox"><h2>Almost ready</h2><p>Science Quest’s database has not been set up yet. Please run <b>science-quest-codes.sql</b> in Supabase first.</p></div>'; throw a.error; }
+    classes = a.data||[]; kids = b.data||[]; prog = {}; (c.data||[]).forEach(function(p){ prog[p.student_id] = p; });
+  }
+
+  function home(){
+    var h = '<div class="lhead"><h1>My classes</h1><p>Create a class, add your children’s first names, and give each child their code card. Their badges, challenge stars and journals appear here.</p></div>';
+    h += '<div class="tbox"><h2>Classes</h2>'+(classes.length?'<div class="cls">'+classes.map(function(c){ var n = kids.filter(function(k){return k.class_id===c.id;}).length;
+        return '<button class="grade'+(cur===c.id?' on':'')+'" data-c="'+c.id+'">'+esc(c.name)+'<small>'+GR[c.grade]+' · '+n+' children</small></button>'; }).join('')+'</div>':'<p style="color:var(--muted);font-weight:700">No classes yet.</p>')+
+      '<details style="margin-top:14px"><summary style="cursor:pointer;font-weight:900;color:var(--teal)">+ New class</summary>'+
+      '<label class="jl" for="cn">Class name</label><input class="fld" id="cn" placeholder="For example: 1B">'+
+      '<label class="jl" for="cg">Grade</label><select class="fld" id="cg">'+Object.keys(GR).map(function(g){return '<option value="'+g+'"'+(window.SQ_GRADE[g]?'':' disabled')+'>'+GR[g]+(window.SQ_GRADE[g]?'':' (coming soon)')+'</option>';}).join('')+'</select>'+
+      '<button class="btn pri" id="mk">Create class</button></details></div>';
+    if (cur) h += classView();
+    main.innerHTML = h;
+    main.querySelectorAll('[data-c]').forEach(function(b){ b.onclick = function(){ cur = b.getAttribute('data-c'); home(); }; });
+    document.getElementById('mk').onclick = async function(){
+      var n = document.getElementById('cn').value.trim(); if (!n) return;
+      var r = await sb.from('sq_classes').insert({name:n, grade:document.getElementById('cg').value}).select();
+      if (r.error) return alert('Sorry, that did not work: ' + r.error.message);
+      cur = r.data[0].id; await load(); home();
+    };
+    if (cur) bindClass();
+  }
+
+  function classView(){
+    var c = classes.filter(function(x){return x.id===cur;})[0]; if (!c) return '';
+    var G = window.SQ_GRADE[c.grade], CH = (window.SQ_CHAL||{})[c.grade] || {};
+    var ks = kids.filter(function(k){return k.class_id===cur;});
+    var h = '<div class="tbox"><h2>'+esc(c.name)+' · '+GR[c.grade]+'</h2>'+
+      '<label class="jl" for="nm">Add children (one first name per line)</label><textarea class="jt" id="nm" placeholder="Amira&#10;Noah&#10;Priya"></textarea>'+
+      '<p style="margin-top:10px"><button class="btn pri" id="add">Add children and make codes</button> '+(ks.length?'<button class="btn sec" id="cards">🖨 Print code cards</button>':'')+' <button class="mini red" id="delc">Delete this class</button></p></div>';
+    if (!ks.length) return h;
+    h += '<div class="tbox"><h2>Progress</h2><div class="scroll"><table class="pt"><tr><th>Child</th><th>Code</th><th>Stories</th>'+
+      G.topics.map(function(t){ return '<th>'+esc(t.name)+'<br><span style="text-transform:none;letter-spacing:0">quiz · mysteries · hands-on</span></th>'; }).join('')+'<th>Journal</th><th></th></tr>';
+    ks.forEach(function(k){
+      var p = prog[k.id] || {badges:{}, stars:{}, hands:{}, journal:[]};
+      var nb = G.stories.filter(function(s){ return p.badges[s.id]; }).length;
+      h += '<tr><td><b>'+esc(k.first_name)+'</b></td><td><span class="code">'+fmt(k.code)+'</span></td><td>'+nb+' / '+G.stories.length+'</td>'+
+        G.topics.map(function(t){ var ch = CH[t.id]; if (!ch) return '<td>-</td>';
+          var q = p.stars['quiz-'+c.grade+'-'+t.id]||0, m = ch.mystery.filter(function(x){ return p.stars['myst-'+x.id]; }).length;
+          return '<td>'+('★★★'.slice(0,q)+'☆☆☆'.slice(0,3-q))+' · '+m+'/'+ch.mystery.length+' · '+(p.hands[ch.hands.id]?'✅':'–')+'</td>'; }).join('')+
+        '<td>'+(p.journal.length?'<button class="mini" data-j="'+k.id+'">'+p.journal.length+' entries</button>':'0')+'</td>'+
+        '<td><button class="mini" data-nc="'+k.id+'">New code</button> <button class="mini red" data-dk="'+k.id+'">Remove</button></td></tr>';
+    });
+    h += '</table></div></div><div id="jview"></div>';
+    return h;
+  }
+
+  function bindClass(){
+    var c = classes.filter(function(x){return x.id===cur;})[0];
+    document.getElementById('add').onclick = async function(){
+      var names = document.getElementById('nm').value.split(/\n|,/).map(function(s){return s.trim();}).filter(Boolean);
+      if (!names.length) return;
+      this.disabled = true;
+      var r = await sb.rpc('sq_add_students', {p_class:cur, p_names:names});
+      if (r.error) alert('Sorry, that did not work: ' + r.error.message);
+      await load(); home();
+    };
+    var cards = document.getElementById('cards'); if (cards) cards.onclick = function(){
+      var ks = kids.filter(function(k){return k.class_id===cur;});
+      main.innerHTML = '<p class="noprint" style="margin-top:20px"><button class="btn pri" onclick="window.print()">🖨 Print</button> <button class="btn sec" id="bk">Back</button></p><div class="cards">'+
+        ks.map(function(k){ return '<div class="ccode"><img src="img/sq-bird.png" alt="" width="40" height="40"><b>'+esc(k.first_name)+'</b><span class="code">'+fmt(k.code)+'</span><small>science.thinknest.education</small><small>'+esc(c.name)+' · Science Quest</small></div>'; }).join('')+'</div>';
+      document.getElementById('bk').onclick = home;
+    };
+    document.getElementById('delc').onclick = async function(){
+      if (!confirm('Delete '+c.name+' and all of its children’s progress? This cannot be undone.')) return;
+      await sb.from('sq_classes').delete().eq('id', cur); cur = null; await load(); home();
+    };
+    main.querySelectorAll('[data-nc]').forEach(function(b){ b.onclick = async function(){
+      if (!confirm('Make a new code for this child? Their old code will stop working.')) return;
+      var r = await sb.rpc('sq_new_code_for', {p_student:b.getAttribute('data-nc')}); if (r.error) alert(r.error.message); await load(); home(); }; });
+    main.querySelectorAll('[data-dk]').forEach(function(b){ b.onclick = async function(){
+      if (!confirm('Remove this child and their progress? This cannot be undone.')) return;
+      await sb.from('sq_students').delete().eq('id', b.getAttribute('data-dk')); await load(); home(); }; });
+    main.querySelectorAll('[data-j]').forEach(function(b){ b.onclick = function(){
+      var k = kids.filter(function(x){return x.id===b.getAttribute('data-j');})[0], p = prog[k.id];
+      document.getElementById('jview').innerHTML = '<div class="tbox"><h2>'+esc(k.first_name)+'’s science journal</h2>'+p.journal.map(function(e){
+        return '<div class="jentry"><h4>'+esc(e.title||'Discovery')+'</h4><span class="d">'+esc(e.at)+'</span>'+(e.q?'<p><b>Question:</b> '+esc(e.q)+'</p>':'')+(e.guess?'<p><b>Predicted:</b> '+esc(e.guess)+'</p>':'')+(e.found?'<p><b>Found out:</b> '+esc(e.found)+'</p>':'')+'</div>'; }).join('')+'</div>';
+      document.getElementById('jview').scrollIntoView({behavior:'smooth'});
+    }; });
+  }
+
+  start();
+})();
+</script>
+</body>
+</html>

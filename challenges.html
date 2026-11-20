@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Science Challenges | Science Quest by Curious Nest</title>
+<link rel="icon" type="image/png" href="img/sq-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css?v=18">
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><span class="mk"><img src="img/sq-bird.png" alt=""></span><span><b>Science Quest</b><small>by Curious Nest</small></span></a>
+    <div class="who"><a class="chipbtn" href="learn.html">📚 Library</a><a class="chipbtn" href="discoveries.html">⭐ My Discoveries</a><span id="who"></span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div id="home">
+    <div class="lhead">
+      <h1>Science Challenges</h1>
+      <p>Test what you know with a topic quiz, solve a mystery picture, or try a hands-on challenge. Every challenge earns stars!</p>
+    </div>
+    <div class="ctabs" id="grades"></div>
+    <div id="topics"></div>
+  </div>
+  <div id="play" hidden>
+    <button class="chipbtn" id="back" style="margin-top:22px">← All challenges</button>
+    <h1 id="ptitle" style="font-size:clamp(24px,3.4vw,32px);margin-top:14px"></h1>
+    <div class="stage" id="stage"></div>
+  </div>
+</main>
+
+<footer class="foot"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>Original content. Not affiliated with any publisher or exam board.</span></div></footer>
+
+<script src="js/art.js?v=18"></script>
+<script src="js/kg2.js?v=18"></script>
+<script src="js/g1.js?v=18"></script>
+<script src="js/challenges.js?v=18"></script>
+<script src="js/store.js?v=18"></script>
+<script>
+(function(){
+  var S = SQ_STORE, C = SQ_CHAL, G = SQ_GRADE;
+  var GR = [['kg2','KG2','Year 1'],['g1','Grade 1','Year 2'],['g2','Grade 2','Year 3'],['g3','Grade 3','Year 4'],['g4','Grade 4','Year 5'],['g5','Grade 5','Year 6']];
+  var me = S.me(), cur = (me && C[me.grade]) ? me.grade : 'kg2';
+  var stage = document.getElementById('stage');
+  function esc(t){ return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+  function shuffle(a){ a = a.slice(); for (var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)), t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+  function starStr(n){ return '★★★'.slice(0,n) + '☆☆☆'.slice(0,3-n); }
+  var canSpeak = 'speechSynthesis' in window;
+  function say(t){ if (!canSpeak) return; speechSynthesis.cancel(); var u = new SpeechSynthesisUtterance(t); u.lang='en-GB'; u.rate=.9;
+    var v = speechSynthesis.getVoices(); u.voice = v.filter(function(x){return /kate/i.test(x.name);})[0] || v.filter(function(x){return x.lang==='en-GB';})[0] || null; speechSynthesis.speak(u); }
+  function sayBtn(t){ return canSpeak ? '<button class="chipbtn" data-say="'+esc(t)+'">🔊 Read it to me</button>' : ''; }
+  function bindSay(){ stage.querySelectorAll('[data-say]').forEach(function(b){ b.onclick = function(){ say(b.getAttribute('data-say')); }; }); }
+
+  S.chip(document.getElementById('who'), function(){ var m = S.me(); if (m && C[m.grade]) cur = m.grade; if (!document.getElementById('home').hidden) home(); });
+
+  /* ---------------- home ---------------- */
+  function home(){
+    document.getElementById('home').hidden = false; document.getElementById('play').hidden = true;
+    var d = S.data();
+    var g = document.getElementById('grades'); g.innerHTML = '';
+    GR.forEach(function(x){
+      var ready = !!C[x[0]], b = document.createElement('button');
+      b.className = 'grade' + (x[0]===cur?' on':'') + (ready?'':' soon');
+      b.innerHTML = x[1] + '<small>' + x[2] + (ready?'':' · coming soon') + '</small>';
+      if (ready) b.onclick = function(){ cur = x[0]; home(); };
+      g.appendChild(b);
+    });
+    var t = document.getElementById('topics'); t.innerHTML = '';
+    G[cur].topics.forEach(function(tp){
+      var ch = C[cur][tp.id]; if (!ch) return;
+      var qk = 'quiz-'+cur+'-'+tp.id, qs = d.stars[qk]||0;
+      var ms = ch.mystery.reduce(function(a,m){ return a + (d.stars['myst-'+m.id]?1:0); }, 0);
+      var hd = !!d.hands[ch.hands.id];
+      var h = '<section class="topic-block"><div class="thead"><h2>'+esc(tp.name)+'</h2><span class="portal-tag c-'+tp.color+'">'+esc(tp.portal)+'</span></div><div class="cgrid">'+
+        '<button class="ccard" data-go="quiz" data-t="'+tp.id+'"><span class="ck" style="color:var(--teal)">🧠 Topic quiz</span><h3>10 quick questions</h3><p>Answer as many as you can first time.</p><span class="st">'+starStr(qs)+'</span></button>'+
+        '<button class="ccard" data-go="myst" data-t="'+tp.id+'"><span class="ck" style="color:var(--plum)">🔍 Mystery pictures</span><h3>What’s happening here?</h3><p>Look closely and use your science to explain.</p><span class="st">'+ms+' / '+ch.mystery.length+' solved</span></button>'+
+        '<button class="ccard" data-go="hand" data-t="'+tp.id+'"><span class="ck" style="color:#A0670A">✋ Hands-on</span><h3>'+esc(ch.hands.title)+'</h3><p>Try it at home or at school, then record what you found.</p><span class="st">'+(hd?'✅ Done!':'Not tried yet')+'</span></button>'+
+        '</div></section>';
+      t.insertAdjacentHTML('beforeend', h);
+    });
+    t.querySelectorAll('[data-go]').forEach(function(b){ b.onclick = function(){ open(b.getAttribute('data-go'), b.getAttribute('data-t')); }; });
+  }
+  function open(kind, tid){
+    document.getElementById('home').hidden = true; document.getElementById('play').hidden = false;
+    var tp = G[cur].topics.filter(function(x){return x.id===tid;})[0];
+    document.getElementById('ptitle').textContent = tp.name + ': ' + (kind==='quiz'?'Topic quiz':kind==='myst'?'Mystery pictures':C[cur][tid].hands.title);
+    ({quiz:quiz, myst:myst, hand:hand})[kind](tid);
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  document.getElementById('back').onclick = function(){ if (canSpeak) speechSynthesis.cancel(); home(); };
+
+  /* ---------------- quiz ---------------- */
+  function quiz(tid){
+    var pool = shuffle(C[cur][tid].quiz).slice(0,10), i = 0, score = 0;
+    function q(){
+      var Q = pool[i], order = shuffle([0,1,2]), tries = 0, done = false;
+      stage.innerHTML = '<div class="panel"><span class="tag">Question '+(i+1)+' of '+pool.length+'</span><div class="qbar"><i style="width:'+(i/pool.length*100)+'%"></i></div>'+
+        '<h2 class="qtitle">'+esc(Q[0])+'</h2><div class="opts">'+order.map(function(k){return '<button class="opt" data-k="'+k+'">'+esc(Q[1][k])+'</button>';}).join('')+'</div>'+
+        '<p class="fb" id="fb" aria-live="polite"></p><div class="row"><span class="stars">Score: '+score+'</span><span>'+sayBtn(Q[0]+' '+order.map(function(k){return Q[1][k];}).join('. '))+' <button class="btn pri" id="nx" disabled>Next →</button></span></div></div>';
+      bindSay();
+      var fb = document.getElementById('fb'), nx = document.getElementById('nx');
+      stage.querySelectorAll('.opt').forEach(function(b){ b.onclick = function(){
+        if (done) return; tries++;
+        if (b.getAttribute('data-k')==='0'){ done = true; b.classList.add('right'); if (tries===1) score++; fb.innerHTML = '<b>'+(tries===1?'Correct!':'You got there!')+'</b> '+esc(Q[2]); nx.disabled = false; stage.querySelector('.stars').textContent = 'Score: '+score; }
+        else { b.classList.add('wrong'); b.disabled = true; fb.innerHTML = '<b>Not quite.</b> Think again and try another answer.'; }
+      }; });
+      nx.onclick = function(){ if (canSpeak) speechSynthesis.cancel(); i++; if (i < pool.length) q(); else end(); };
+    }
+    function end(){
+      var st = score >= 9 ? 3 : score >= 7 ? 2 : score >= 5 ? 1 : 0;
+      S.stars('quiz-'+cur+'-'+tid, st);
+      stage.innerHTML = '<div class="finish"><div class="medal" style="font-size:52px">'+(st?'⭐':'💡')+'</div><h2>'+score+' out of '+pool.length+' first time!</h2>'+
+        '<p style="font-size:34px;letter-spacing:6px;color:#A0670A;margin:6px auto">'+starStr(st)+'</p>'+
+        '<p>'+(st===3?'Brilliant science! You are a topic expert.':st?'Great work! Try again to earn more stars. You get different questions each time.':'Keep going! Read the stories again, then have another try.')+'</p>'+
+        '<button class="btn pri" id="again">Try again</button> <button class="btn sec" id="home2">All challenges</button></div>';
+      document.getElementById('again').onclick = function(){ quiz(tid); };
+      document.getElementById('home2').onclick = home;
+    }
+    q();
+  }
+
+  /* ---------------- mystery pictures ---------------- */
+  function myst(tid){
+    var list = C[cur][tid].mystery, i = 0;
+    function show(){
+      var M = list[i], order = shuffle([0,1,2]), tries = 0, done = false;
+      stage.innerHTML = '<div class="panel"><span class="tag">Mystery '+(i+1)+' of '+list.length+'</span>'+
+        '<div id="pic" style="margin-top:14px"><img class="mpic" src="img/mystery/'+M.id+'.webp" alt="Mystery picture"></div>'+
+        '<h2 class="qtitle">'+esc(M.q)+'</h2><div class="opts">'+order.map(function(k){return '<button class="opt" data-k="'+k+'">'+esc(M.o[k])+'</button>';}).join('')+'</div>'+
+        '<p class="fb" id="fb" aria-live="polite"></p><div class="row"><span>'+sayBtn(M.q+' '+order.map(function(k){return M.o[k];}).join('. '))+'</span>'+
+        '<span><button class="btn sec" id="pv"'+(i?'':' disabled')+'>← Back</button> <button class="btn pri" id="nx" disabled>'+(i<list.length-1?'Next mystery →':'Finish')+'</button></span></div></div>';
+      bindSay();
+      stage.querySelector('.mpic').onerror = function(){ document.getElementById('pic').innerHTML = '<div class="mpic-soon">🎨 Picture coming soon<br><span style="font-weight:700">Imagine this: '+esc(M.brief)+'</span></div>'; };
+      var fb = document.getElementById('fb'), nx = document.getElementById('nx');
+      stage.querySelectorAll('.opt').forEach(function(b){ b.onclick = function(){
+        if (done) return; tries++;
+        if (b.getAttribute('data-k')==='0'){ done = true; b.classList.add('right'); S.stars('myst-'+M.id, tries===1?3:tries===2?2:1); fb.innerHTML = '<b>Mystery solved!</b> '+esc(M.why); nx.disabled = false; }
+        else { b.classList.add('wrong'); b.disabled = true; fb.innerHTML = '<b>Look again.</b> What clues can you see in the picture?'; }
+      }; });
+      nx.onclick = function(){ if (i < list.length-1){ i++; show(); } else home(); };
+      document.getElementById('pv').onclick = function(){ i--; show(); };
+    }
+    show();
+  }
+
+  /* ---------------- hands-on ---------------- */
+  function hand(tid){
+    var H = C[cur][tid].hands, done = !!S.data().hands[H.id];
+    stage.innerHTML = '<div class="panel"><span class="tag">Hands-on challenge</span><h2 class="qtitle">'+esc(H.title)+'</h2>'+
+      '<div class="try"><div class="box"><h4>You will need</h4><ul>'+H.need.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul><p class="safety">⚠ Always ask an adult before you start.</p></div>'+
+      '<div class="box"><h4>What to do</h4><ol>'+H.steps.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ol></div>'+
+      '<div class="note">🔍 '+esc(H.ask)+'</div></div>'+
+      '<div style="margin-top:22px"><h3 style="font-size:20px">Record it in your journal</h3>'+
+      '<label class="jl" for="g">What did you predict would happen?</label><textarea class="jt" id="g" placeholder="I think..."></textarea>'+
+      '<label class="jl" for="f">What did you find out?</label><textarea class="jt" id="f" placeholder="I found out that..."></textarea>'+
+      '<p class="fb" id="fb"></p><div class="row"><span>'+sayBtn(H.title+'. You will need: '+H.need.join('. ')+'. What to do: '+H.steps.join(' ')+' '+H.ask)+'</span><button class="btn pri" id="sv">'+(done?'Add another journal entry':'I did it! Save to my journal ★')+'</button></div></div></div>';
+    bindSay();
+    document.getElementById('sv').onclick = async function(){
+      var g = document.getElementById('g').value.trim(), f = document.getElementById('f').value.trim(), fb = document.getElementById('fb');
+      if (!f){ fb.innerHTML = '<b>Almost!</b> Write what you found out first.'; return; }
+      this.disabled = true;
+      S.hand(H.id); await S.note({title:H.title, q:H.ask, guess:g, found:f});
+      stage.innerHTML = '<div class="finish"><div class="medal" style="font-size:52px">✋</div><h2>Challenge complete!</h2><p>Your results are saved in your science journal.</p>'+
+        '<a class="btn pri" href="discoveries.html">See my journal</a> <button class="btn sec" id="home2">All challenges</button></div>';
+      document.getElementById('home2').onclick = home;
+    };
+  }
+
+  home();
+})();
+</script>
+</body>
+</html>
