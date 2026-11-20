@@ -176,5 +176,46 @@ window.SQ_GRADE.g1 = {
     steps:['Put the same amount of cotton wool in each pot.','Sprinkle the same number of seeds on each one.','Water both pots the same amount.','Put one pot on a sunny windowsill and one in a dark cupboard.','Check them every day for a week and draw what you see.'],
     notice:'Which pot grew green, healthy cress? What was the one thing you changed? Why does that make it a fair test?'}
   }
+  ,
+  {id:'g1-animals-1', topic:'animals', title:'Lina’s Growing-Up Book',
+   cast:'Lina, Baby Yusuf and Aunt Mariam', cover:['baby','chick','sheep'], badge:'Life Cycle Spotter',
+   img:'img/stories/g1-animals-1/', coverImg:'cover.webp',
+   vocab:{
+     'toddler':'A young child who is just learning to walk.',
+     'teenager':'A young person aged between 13 and 19.',
+     'adult':'A fully grown-up person or animal.',
+     'offspring':'The babies or young of an animal or person.',
+     'hatches':'Breaks out of an egg.',
+     'ducklings':'Baby ducks.',
+     'tadpoles':'Baby frogs. They live in water and have tails.',
+     'chrysalis':'A hard case a caterpillar makes around itself while it changes into a butterfly.'
+   },
+   pages:[
+    {pic:'cover.webp', title:true, text:'Lina’s Growing-Up Book'},
+    {pic:'p1.webp', text:'Lina had a new baby brother called Yusuf. He was tiny! He slept, drank milk and cried. Lina leaned over his cot. "Will he always be this small?" she asked. Mum smiled and held up a scrapbook. "No. He will grow, just like you did. Let’s make a growing-up book."'},
+    {pic:'p2.webp', text:'Lina stuck in some photos. There she was as a sleepy baby, then as a [[toddler]] learning to walk, then on her first day at school. Mum pointed to the last photo. "Next, you’ll be a [[teenager]], and then an [[adult]]," she said. "Humans grow and change all through their lives."'},
+    {pic:'p3.webp', text:'On Saturday, they visited Aunt Mariam’s farm. "Animals have babies too," said Aunt Mariam. "We call them [[offspring]]. Some offspring look like their parents." In the field, a lamb jumped beside its mother. "The lamb will grow into a sheep!" said Lina, clapping her hands.'},
+    {pic:'p4.webp', text:'In the hen house, they crouched down quietly. Crack! A fluffy yellow chick wriggled out of a brown egg. "A chick [[hatches]] from an egg," whispered Aunt Mariam. "It will grow feathers and turn into a hen or a cockerel, just like its mother." Lina watched, amazed.'},
+    {pic:'p5.webp', text:'At the pond, Lina saw [[ducklings]] paddling behind their mother. Then she pointed at the water. Tiny black [[tadpoles]] were wriggling about! "Will they turn into fish?" she asked. "No!" laughed Aunt Mariam. "Tadpoles grow legs and lose their tails. They turn into frogs!"'},
+    {pic:'p6.webp', text:'Lina spotted a tiny caterpillar munching on a cabbage leaf. "Look, Aunt Mariam!" Aunt Mariam smiled. "Some offspring look very different from their parents. It will grow, build a cosy [[chrysalis]], and one day it will flutter away as a butterfly." "Wow!" said Lina. "What a magical change!"'},
+    {pic:'p7.webp', text:'At home, Lina drew in her book: lamb to sheep, chick to hen, tadpole to frog, and caterpillar to chrysalis to butterfly. On the last line, she drew Baby Yusuf. Then she drew him as a boy, a teenager, and a grown-up man.'},
+    {pic:'p8.webp', text:'Baby Yusuf gave a gurgle and grabbed Lina’s finger. "You’ll grow big and strong," Lina whispered. "And I’ll be here to watch." Beside them lay her finished book. Lina smiled. Every living thing grows up!'}
+   ],
+   understand:[
+    {q:'Who is Yusuf?', o:['Lina’s baby brother','Aunt Mariam’s lamb','Lina’s friend from school'], a:0, type:'Find it', why:'Yusuf is Lina’s new baby brother.'},
+    {q:'What does offspring mean?', o:['The babies or young of an animal','A kind of farm','A fully grown animal'], a:0, type:'Word power', why:'Offspring are the babies or young of an animal or person, like a lamb or a chick.'},
+    {q:'What do tadpoles grow into?', o:['Frogs','Fish','Ducks'], a:0, type:'Find it', why:'Tadpoles grow legs, lose their tails and turn into frogs.'},
+    {q:'Why does a caterpillar not look like its parent?', o:['It changes inside a chrysalis to become a butterfly','It is a different animal','It will never grow up'], a:0, type:'Think about it', why:'A caterpillar changes completely inside its chrysalis and comes out as a butterfly, like its parent.'},
+    {q:'Where did Lina go straight after the field with the lamb?', o:['The hen house','The pond','The cabbage patch'], a:0, type:'Order it', why:'First the field, then the hen house, then the pond, then the cabbages.'}
+   ],
+   predict:{q:'A duckling is paddling behind its mother on the pond. What do you think it will grow into?',
+    o:['A duck','A frog','A hen'], a:0,
+    discover:'A duckling grows into a duck, just like its mother. Some offspring, like lambs, chicks and ducklings, look a lot like their parents. Others, like tadpoles and caterpillars, change a lot as they grow. But all animals, including humans, have offspring that grow into adults.'},
+   sort:{title:'Match the baby to the adult', bins:['Grows into a sheep','Grows into a hen','Grows into a frog','Grows into a butterfly','Grows into an adult human'],
+    items:[['Lamb',0,'sheep'],['Chick',1,'chick'],['Tadpole',2,'tadpole'],['Caterpillar',3,'caterpillar'],['Chrysalis',3,'chrysalis'],['Baby',4,'baby'],['Teenager',4,'leo']]},
+   tryit:{title:'Make your own growing-up book', need:['An adult to help','Photos or drawings of you at different ages','Paper, glue and pencils'],
+    steps:['Ask your family for photos of you as a baby, a toddler and now.','Stick them in order on your paper.','Ask: what could you do at each age? Write or draw it.','Draw what you think you will look like as a teenager and an adult.','Add one animal too, like a chick and a hen.'],
+    notice:'How have you changed since you were a baby? Does your animal baby look like its parent, or very different?'}
+  }
   ]
 };
