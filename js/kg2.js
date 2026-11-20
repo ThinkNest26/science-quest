@@ -280,6 +280,49 @@ window.SQ_GRADE.kg2 = {
     notice:'Which material did you find most of? Why do you think that material was chosen for those objects?'}
   },
 
+  {id:'kg2-materials-2', topic:'materials', title:'Pip and the Lost Property Box',
+   cast:'Hana and Pip the parrot', cover:['spoon','hat','marble'], badge:'Material Detective',
+   img:'img/stories/kg2-materials-2/', coverImg:'cover.webp',
+   vocab:{
+     'lost property':'Things people have lost and left behind, kept safe until someone collects them.',
+     'object':'A thing you can see and touch, like a spoon or a hat.',
+     'materials':'What objects are made from, like wood, metal or plastic.',
+     'fabric':'Cloth, like wool or cotton. Clothes are made of fabric.',
+     'see-through':'You can see through it, like a window.',
+     'squashy':'Soft and easy to squeeze.',
+     'bendy':'Easy to bend without breaking.',
+     'waterproof':'Does not let water through.',
+     'soaked':'Took in lots of water, like a sponge.',
+     'graphite':'The grey part in the middle of a pencil that makes marks.'
+   },
+   pages:[
+    {pic:'cover.webp', title:true, text:'Pip and the Lost Property Box'},
+    {pic:'p1.webp', text:'The [[lost property]] box was full to the top. "What a muddle!" said Mr Oduya, scratching his head. "Could someone sort it out?" "I will!" said Hana. "Squawk! Me too!" said Pip the parrot, flapping down from his perch.'},
+    {pic:'p2.webp', text:'Hana found three spoons. One was wood, one was metal and one was plastic. "Squawk! Three spoons!" said Pip. "They are the same [[object]], but they are made from different [[materials]]!"'},
+    {pic:'p3.webp', text:'"Let’s sort everything by material," said Hana. She made four groups on the rug: wood, metal, plastic and [[fabric]]. The wooden ruler went in the wood group. The metal keys went in the metal group. The plastic lunchbox went in the plastic group. The woolly hat went in the fabric group.'},
+    {pic:'p4.webp', text:'Pip found a pebble. "Squawk! Where does this go?" Then Hana held a glass marble up to the light. "Glass is hard, smooth and [[see-through]]. It needs a new group!" Pip held up his pebble. "And this is rock. It is hard and heavy. That’s another new group!"'},
+    {pic:'p5.webp', text:'"Now let’s sort a different way," said Pip. "Squawk! By how things feel!" Hana squeezed a sponge. "This is soft and [[squashy]]." The key, the pebble and the wooden block went in the hard tray. The feather and the woolly hat went in the soft tray. And the straw? "It is [[bendy]]!" said Hana.'},
+    {pic:'p6.webp', text:'Next, they tested which things were [[waterproof]]. Hana dripped water on a woolly glove. The water [[soaked]] right in. Then she dripped water on a plastic raincoat. The drops sat on top and rolled off. "The raincoat is waterproof," said Hana. "That is why it is made of plastic!"'},
+    {pic:'p7.webp', text:'"Some objects are made from more than one material," said Hana. She held up a pencil. "The outside is wood. The middle is [[graphite]], which makes the marks." Pip hopped onto a backpack. "Squawk! Fabric, with a metal zip and plastic buckles!"'},
+    {pic:'p8.webp', text:'At last, the lost property was sorted into six neat baskets: fabric, glass, rock, wood, metal and plastic. "Wonderful!" said Mr Oduya. "How did you do it?" "We looked at what each object was made from," said Hana, "and how each material feels." "Squawk!" said Pip. "Material detectives!"'}
+   ],
+   understand:[
+    {q:'Who asked for help with the lost property box?', o:['Mr Oduya','Hana’s teacher','Pip the parrot'], a:0, type:'Find it', why:'Mr Oduya said, "Could someone sort it out?"'},
+    {q:'The three spoons were the same object. What was different?', o:['The materials they were made from','Their names','Who lost them'], a:0, type:'Think about it', why:'One spoon was wood, one was metal and one was plastic. Same object, different materials.'},
+    {q:'What does waterproof mean?', o:['It does not let water through','It soaks up water','It is see-through'], a:0, type:'Word power', why:'Water rolled off the plastic raincoat. It is waterproof.'},
+    {q:'Which material is see-through?', o:['Glass','Rock','Wood'], a:0, type:'Find it', why:'Hana held the glass marble up to the light. Glass is see-through.'},
+    {q:'How did Hana sort the things first?', o:['By material','By how they feel','By colour'], a:0, type:'Order it', why:'First by material, then by how things feel, then by testing for waterproof.'}
+   ],
+   predict:{q:'Hana drips water on a woolly glove and on a plastic raincoat. Which one do you think will stay dry underneath?',
+    o:['The plastic raincoat','The woolly glove','Both of them'], a:0,
+    discover:'Plastic is waterproof, so the water sits on top and rolls off. Wool is a fabric that soaks up water, so the glove gets wet. To keep a test fair, use the same amount of water on each material.'},
+   sort:{title:'What is it made from?', bins:['Wood','Metal','Plastic','Fabric','Glass','Rock'],
+    items:[['Ruler',0,'ruler'],['Wooden block',0,'wood'],['Key',1,'key'],['Spoon',1,'spoon'],['Lunchbox',2,'lunchbox'],['Raincoat',2,'raincoat'],['Woolly hat',3,'hat'],['Glove',3,'glove'],['Marble',4,'marble'],['Pebble',5,'rock']]},
+   tryit:{title:'Sort your own lost property', need:['An adult to help','About ten safe objects from around your home, like a spoon, a sock, a toy and a cup'],
+    steps:['Put all your objects in a pile.','Pick up each object. What material is it made from?','Sort them into groups by material.','Now mix them up and sort them again by how they feel: hard or soft, rough or smooth, bendy or stiff.','Can you find an object made from more than one material?'],
+    notice:'Which material did you find the most of? Which objects were hard to sort, and why?'}
+  },
+
   /* ---------------- SEASONS ---------------- */
   {id:'kg2-seasons-1', topic:'seasons', title:'Pebble and Whirl’s Weather Year',
    cast:'Pebble the squirrel and Whirl the weathervane', cover:['squirrel','vane','sun'], badge:'Weather Watcher',
