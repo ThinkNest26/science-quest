@@ -191,4 +191,123 @@ g1: {
    ask:'Which bridge held more coins? How did bending the paper into a new shape change how strong it was?'}
  }
 }
+,
+g2: {
+ plants: {
+  quiz: [
+   ['Which part of a flowering plant takes in water from the soil?', ['The roots','The petals','The leaves'], 'Roots soak up water and nutrients from the soil and hold the plant firmly in the ground.'],
+   ['What job does the stem do?', ['Holds the plant up and carries water to the leaves','Makes the seeds','Attracts bees'], 'The stem is like a support and a set of tiny pipes, carrying water up from the roots.'],
+   ['Where does a plant make its food?', ['In its leaves','In its roots','In its petals'], 'Leaves use sunlight, air and water to make food for the plant.'],
+   ['Which of these do plants need to grow well?', ['Light, water, air, nutrients and room to grow','Only water','Darkness and sugar'], 'Plants need all of these. If one is missing, the plant will not grow well.'],
+   ['A plant is left in a dark cupboard. What will happen?', ['It will turn pale and weak','It will grow faster','It will grow flowers'], 'Without light, leaves cannot make food. The plant grows thin, pale and weak.'],
+   ['What does pollination mean?', ['Moving pollen from one flower to another','Watering a plant','Cutting off dead leaves'], 'Insects and the wind carry pollen between flowers. This helps flowers make seeds.'],
+   ['Why do many flowers have bright petals and a sweet smell?', ['To attract insects like bees','To scare away birds','To keep the rain off'], 'Bright colours and nectar invite insects, which carry pollen as they visit.'],
+   ['What grows from a pollinated flower?', ['Seeds, often inside a fruit','More roots','A new stem'], 'After pollination, the flower makes seeds. A fruit often grows around them.'],
+   ['How is a sycamore seed spread?', ['It spins away on the wind','A squirrel buries it','It floats on the sea'], 'Its wing-shaped seed spins like a helicopter, carrying it away from the parent tree.'],
+   ['How do burrs get spread to new places?', ['Their hooks stick to animal fur','They explode','They are blown by the wind'], 'Burrs hook onto fur or clothes and drop off somewhere new.'],
+   ['Why is it good for seeds to travel away from the parent plant?', ['So they have enough light, water and space','So the parent can rest','So they stay cold'], 'Seeds that land far away do not have to compete with the parent plant.'],
+   ['Celery is stood in coloured water. What happens to its leaves?', ['They change colour','They fall off','Nothing at all'], 'The stem carries the coloured water up to the leaves, showing how water travels in a plant.']
+  ],
+  mystery: [
+   {id:'g2-plants-m1', brief:'Two pots of the same kind of bean plant on a windowsill. One is tall, green and healthy. The other, which has a label saying "no water", is drooping and brown.', q:'Why is one plant drooping?', o:['It has not had any water','It has had too much light','It is a different plant'], why:'Plants need water to stay firm and healthy. Without it, the leaves droop and dry out. It is a fair test because only the water was changed.'},
+   {id:'g2-plants-m2', brief:'A white flower in a glass of blue water. The petals have blue streaks in them. A child is looking closely with a magnifying glass.', q:'How did the blue get into the petals?', o:['The stem carried the coloured water up','Someone painted the petals','The flower was blue all along'], why:'Water travels up the stem through tiny tubes to every part of the plant, including the petals.'}
+  ],
+  hands: {id:'g2-plants-h', title:'Watch water travel', need:['An adult to help','A stick of celery with leaves, or a white flower','A glass of water','Food colouring'],
+   steps:['Put a few drops of food colouring into a glass of water.','Ask your adult to trim the bottom of the celery stalk.','Stand the celery in the coloured water.','Check it after 1 hour, 1 day and 2 days. Draw what you see.','Ask your adult to cut across the stalk. Look for coloured dots.'],
+   ask:'Where did the colour go? What does this tell you about how water moves through a plant?'}
+ },
+ animals: {
+  quiz: [
+   ['Why must animals eat food?', ['They cannot make their own food','They like being full','To stay quiet'], 'Plants make their own food, but animals cannot. They must eat to get nutrition.'],
+   ['What is a herbivore?', ['An animal that eats only plants','An animal that eats only meat','An animal that eats nothing'], 'Cows, giraffes and tortoises are herbivores.'],
+   ['What is a carnivore?', ['An animal that eats other animals','An animal that eats only plants','An animal with no bones'], 'Lions and sharks are carnivores.'],
+   ['Humans eat plants and animals. What are we?', ['Omnivores','Herbivores','Carnivores'], 'Omnivores eat both plants and animals.'],
+   ['Which foods give us lots of energy?', ['Bread, rice and pasta','Sweets only','Water'], 'Carbohydrates like bread and rice give us energy.'],
+   ['What does a balanced diet mean?', ['Eating the right types of food in the right amounts','Eating only fruit','Eating as much as possible'], 'A balanced diet has a mix of foods, with only a little fat and sugar.'],
+   ['What are three jobs of a skeleton?', ['Support, protection and movement','Breathing, eating and sleeping','Seeing, hearing and smelling'], 'Bones hold us up, protect our insides and work with muscles to help us move.'],
+   ['Which bone protects your brain?', ['The skull','The ribs','The spine'], 'The skull is a hard case around your brain.'],
+   ['What do your ribs protect?', ['Your heart and lungs','Your feet','Your teeth'], 'The rib cage wraps around your heart and lungs.'],
+   ['How do muscles move bones?', ['They pull on them','They push them from inside','They melt them'], 'Muscles can only pull. They work in pairs to move bones back and forth.'],
+   ['What is an exoskeleton?', ['A hard skeleton on the outside of an animal','A skeleton made of jelly','A broken bone'], 'Beetles and crabs have an exoskeleton, like armour on the outside.'],
+   ['Which animal has no skeleton at all?', ['A worm','A frog','A fish'], 'Worms have no bones. Their muscles and the fluid inside them help them move.']
+  ],
+  mystery: [
+   {id:'g2-animals-m1', brief:'A picnic blanket in a park with two lunchboxes. One is full of crisps, sweets and fizzy drinks. The other has a sandwich, an apple, carrot sticks, cheese and water.', q:'Which lunchbox is more balanced?', o:['The one with the sandwich, fruit and vegetables','The one with crisps and sweets','They are both the same'], why:'A balanced lunch has foods for energy, foods for growing, and fruit and vegetables. Sweets and crisps are fine as a small treat.'},
+   {id:'g2-animals-m2', brief:'A child flexing their arm. A see-through diagram shows the bones of the arm and the muscle on top bunching up.', q:'What is the muscle doing to lift the arm?', o:['Pulling on the bone','Pushing the bone away','Turning into bone'], why:'When a muscle gets shorter, it pulls on the bone it is joined to, and the arm bends at the elbow.'}
+  ],
+  hands: {id:'g2-animals-h', title:'Food detective', need:['An adult to help','Food packets from your kitchen','Paper and a pencil'],
+   steps:['Draw a plate and divide it into 4 parts.','Label the parts: energy foods, growing foods, fruit and vegetables, and treats.','Look at the food in your kitchen. Draw each one in the right part.','Plan one balanced dinner for your family.','Find a pet or an animal you like. Is it a herbivore, carnivore or omnivore?'],
+   ask:'Was your dinner balanced? Which part of the plate was the biggest, and why?'}
+ },
+ rocks: {
+  quiz: [
+   ['What is soil made from?', ['Tiny pieces of rock mixed with things that were once alive','Only sand','Melted ice'], 'Soil is crumbled rock mixed with organic matter, air and water.'],
+   ['What is the dark top layer of soil called?', ['Topsoil','Bedrock','Subsoil'], 'Topsoil is dark because it is full of rotted leaves and roots.'],
+   ['What breaks big rocks into small pieces over many years?', ['Rain, ice, wind and plant roots','Magnets','Sunglasses'], 'This slow breaking down of rock is called weathering.'],
+   ['Water freezes inside a crack in a rock. What happens?', ['The ice pushes the crack wider','The rock melts','The crack closes'], 'Ice takes up more space than water, so it pushes the crack apart.'],
+   ['What is a fossil?', ['The remains or shape of a living thing from long ago, kept in rock','A shiny new pebble','A kind of soil'], 'Fossils show us plants and animals that lived millions of years ago.'],
+   ['How does a fossil form?', ['A living thing is buried in mud that slowly turns to rock','It is carved by people','It falls from the sky'], 'Layers of mud cover the remains and, over a very long time, they become rock.'],
+   ['Why is slate good for roofs?', ['It splits into thin sheets and water can’t soak through','It is soft and crumbly','It is very colourful'], 'Thin, flat slate tiles keep the rain out.'],
+   ['Why is granite used for steps?', ['It is very hard','It soaks up water','It is light and fluffy'], 'Granite is tough, so it lasts even when lots of feet walk on it.'],
+   ['Which rock often contains fossil shells?', ['Limestone','Granite','Slate'], 'Limestone often forms from the shells of sea creatures.'],
+   ['Which soil lets water through fastest?', ['Sandy soil','Clay soil','Compost'], 'Sandy soil has big gaps between its grains, so water rushes through.'],
+   ['Why do gardeners add compost to soil?', ['It holds water and adds nutrients','It makes the soil hard','It keeps worms away'], 'Compost is organic matter. It feeds plants and holds the right amount of water.'],
+   ['A rock soaks up water when you drip water on it. Which could it be?', ['Sandstone','Granite','Slate'], 'Sandstone, chalk and limestone soak up water. Granite and slate do not.']
+  ],
+  mystery: [
+   {id:'g2-rocks-m1', brief:'A grey cliff on a beach with a curly spiral shell shape in the rock. A child is pointing at it, and the sea is in the background.', q:'How did the shell shape get inside the rock?', o:['A sea creature was buried long ago and became a fossil','Someone carved it last week','The wind blew it there'], why:'Long ago, a sea creature died and was buried in mud. Over millions of years, the mud turned to rock and kept its shape as a fossil.'},
+   {id:'g2-rocks-m2', brief:'An old stone garden wall with crumbly, rounded corners and a small plant growing out of a crack. A newer wall next to it has sharp, neat corners.', q:'Why is the old wall so crumbly?', o:['Rain, ice and roots have slowly weathered it','It was built from sand','Someone hit it with a hammer'], why:'Over many years, water, ice and plant roots slowly break rock into smaller pieces. This is called weathering.'}
+  ],
+  hands: {id:'g2-rocks-h', title:'Make a soil shaker', need:['An adult to help','A clear jar with a lid','A trowel of garden soil','Water'],
+   steps:['Fill the jar one-third full with soil.','Add water until the jar is nearly full, then screw on the lid tightly.','Shake it hard for one minute.','Leave it still for a whole day.','Draw the layers you see. Look for anything floating on top.'],
+   ask:'What sank to the bottom first? What floated? What does this tell you about what soil is made of?'}
+ },
+ light: {
+  quiz: [
+   ['What do we need in order to see?', ['Light','Sound','Wind'], 'Our eyes need light. Without light, we cannot see anything.'],
+   ['What is dark?', ['When there is no light','A colour of paint','A kind of shadow puppet'], 'Dark is the absence of light.'],
+   ['Which of these is a light source?', ['The sun','The moon','A mirror'], 'The sun makes its own light. The moon and mirrors only reflect light.'],
+   ['How do we see a teddy bear?', ['Light bounces off it into our eyes','Light comes out of our eyes','The teddy glows'], 'Light reflects off objects and travels into our eyes.'],
+   ['Which surface reflects the most light?', ['A smooth, shiny mirror','A woolly jumper','Black card'], 'Smooth, shiny surfaces are the best reflectors.'],
+   ['Why do cyclists wear reflective strips?', ['So drivers can see them in headlights','To keep warm','To make them faster'], 'Reflective strips bounce light back from car headlights.'],
+   ['Why must you never look straight at the sun?', ['Its light can damage your eyes','It will make you sneeze','It is too far away'], 'Sunlight is so strong that it can hurt your eyes forever, even with sunglasses.'],
+   ['How is a shadow made?', ['An object blocks the light','Light shines through glass','The sun goes to sleep'], 'Light travels in straight lines. When something blocks it, a shadow forms behind.'],
+   ['Which material lets light through, so it makes almost no shadow?', ['Clear glass','Wood','Cardboard'], 'Transparent materials let light pass through.'],
+   ['You move a torch closer to a puppet. What happens to the shadow?', ['It gets bigger','It gets smaller','It disappears'], 'The closer the object is to the light, the bigger its shadow.'],
+   ['When are shadows shortest on a sunny day?', ['Around midday','Early morning','Late evening'], 'At midday, the sun is high in the sky, so shadows are short.'],
+   ['What is inside a periscope?', ['Two mirrors','A torch','A magnet'], 'Two tilted mirrors reflect light, so you can see over things.']
+  ],
+  mystery: [
+   {id:'g2-light-m1', brief:'A sunny playground at three different times: morning, midday and evening. A child stands in the same spot each time, with a long shadow, then a short shadow, then a long shadow pointing the other way.', q:'Why does the child’s shadow change during the day?', o:['The sun moves across the sky','The child grows and shrinks','The ground moves'], why:'As the sun appears to move across the sky, the angle of light changes. Low sun makes long shadows; high sun at midday makes short ones.'},
+   {id:'g2-light-m2', brief:'A dark road at night. A cyclist in dark clothes is hard to see, while another cyclist in a high-vis vest with reflective strips shines brightly in a car’s headlights.', q:'Why can the driver see one cyclist much better?', o:['The reflective strips bounce light back','That cyclist is closer to the moon','The vest makes its own light'], why:'The strips reflect the car’s headlights back towards the driver. They do not make their own light.'}
+  ],
+  hands: {id:'g2-light-h', title:'Shadow puppet show', need:['An adult to help','Card, scissors and lolly sticks','Sticky tape','A torch and a plain wall'],
+   steps:['Draw an animal on card and cut it out.','Tape it to a lolly stick.','Make the room dark and shine the torch at the wall.','Hold the puppet between the torch and the wall.','Move the puppet closer to the torch, then further away. Watch the shadow.'],
+   ask:'When was the shadow biggest? Why do you think the shadow is the same shape as your puppet?'}
+ },
+ forces: {
+  quiz: [
+   ['What is a force?', ['A push or a pull','A kind of light','A type of rock'], 'Forces are pushes and pulls. They can start, stop, speed up, slow down or turn things.'],
+   ['Opening a drawer is a…', ['Pull','Push','Neither'], 'You pull a drawer towards you to open it.'],
+   ['What is friction?', ['A force that slows things when surfaces rub together','A kind of magnet','A fast wind'], 'Friction acts when two surfaces touch and rub.'],
+   ['On which surface will a toy car roll furthest?', ['A smooth wooden floor','Thick carpet','Bubble wrap'], 'Smooth surfaces make less friction, so the car keeps rolling.'],
+   ['Why do trainers have bumpy rubber soles?', ['To make friction and give grip','To make them lighter','To make noise'], 'More friction means more grip, so you do not slip.'],
+   ['How do bike brakes stop a bike?', ['Rubber pads rub on the wheel and make friction','Magnets pull the wheel','The bell rings'], 'The friction from the pads slows the wheel down.'],
+   ['What do magnets attract?', ['Things made of iron or steel','All metals','Wood and plastic'], 'Magnets attract iron and steel. Aluminium cans and copper coins are not attracted.'],
+   ['Which force can act without touching?', ['Magnetic force','Friction','A push from your hand'], 'A magnet can pull a paperclip from a distance.'],
+   ['What are the two ends of a magnet called?', ['North and south poles','Top and bottom stops','Hot and cold ends'], 'Every magnet has a north pole and a south pole.'],
+   ['What happens when two north poles face each other?', ['They push apart (repel)','They stick together','Nothing'], 'Like poles repel. Opposite poles attract.'],
+   ['A north pole and a south pole face each other. What happens?', ['They pull together (attract)','They push apart','They spin round'], 'Opposite poles attract each other.'],
+   ['Which of these will a magnet pick up?', ['A steel paperclip','A plastic spoon','A wooden pencil'], 'Steel contains iron, so it is magnetic.']
+  ],
+  mystery: [
+   {id:'g2-forces-m1', brief:'A frozen pond in winter. A child in wellies slides along the ice with their arms out, while another child walks easily on a gravel path beside the pond.', q:'Why is the child on the ice sliding?', o:['Smooth ice makes very little friction','The ice is pushing them','Gravel is slippery'], why:'Ice is very smooth, so there is little friction to grip their boots. The rough gravel makes lots of friction, so walking is easy.'},
+   {id:'g2-forces-m2', brief:'A fridge door covered in fridge magnets holding up drawings. One drawing has fallen to the floor because it was stuck with a magnet on a wooden door instead.', q:'Why did the magnet not stick to the wooden door?', o:['Wood is not magnetic','The magnet was too small','The drawing was too heavy'], why:'Magnets only attract materials such as iron and steel. Many fridge doors are steel, but wood is not magnetic.'}
+  ],
+  hands: {id:'g2-forces-h', title:'Magnet hunt', need:['An adult to help','A fridge magnet or any magnet','Paper and a pencil'],
+   steps:['Draw two columns: Magnetic and Not magnetic.','Guess which objects around your home a magnet will stick to.','Test them gently: spoons, keys, coins, foil, cans, paperclips, door handles.','Write each object in the right column.','Keep magnets away from phones, tablets and bank cards.'],
+   ask:'Were all the metal objects magnetic? What surprised you?'}
+ }
+}
+
 };
