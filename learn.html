@@ -57,8 +57,8 @@
       var h = '<section class="topic-block"><div class="thead"><h2>'+tp.name+'</h2><span class="portal-tag c-'+tp.color+'">'+tp.portal+'</span></div>'+
         '<details class="nc"><summary>Curriculum links ('+G.year+')</summary><ul>'+tp.nc.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul></details><div class="stories">';
       G.stories.filter(function(s){return s.topic===tp.id;}).forEach(function(s){
-        h += '<a class="scard" href="story.html?s='+s.id+'"><div class="cov c-'+tp.color+'">'+s.cover.map(function(k){return A.icon(k,92);}).join('')+'</div>'+
-          '<div class="body"><h3>'+s.title+'</h3><p>'+s.cast+'</p><div class="meta"><span>8 pages · 5 steps</span>'+(got[s.id]?'<span class="done">★ '+s.badge+'</span>':'<span style="color:var(--teal)">Start reading →</span>')+'</div></div></a>';
+        h += '<a class="scard" href="story.html?s='+s.id+'">'+(s.coverImg ? '<div class="cov pic"><img src="'+s.img+s.coverImg+'" alt=""></div>' : '<div class="cov c-'+tp.color+'">'+s.cover.map(function(k){return A.icon(k,92);}).join('')+'</div>')+
+          '<div class="body"><h3>'+s.title+'</h3><p>'+s.cast+'</p><div class="meta"><span>'+s.pages.length+' pages · 5 steps</span>'+(got[s.id]?'<span class="done">★ '+s.badge+'</span>':'<span style="color:var(--teal)">Start reading →</span>')+'</div></div></a>';
       });
       h += '<div class="scard soon"><div class="cov">More stories coming soon</div><div class="body"><h3>Next adventure</h3><p>New characters are on their way.</p></div></div></div></section>';
       t.insertAdjacentHTML('beforeend', h);

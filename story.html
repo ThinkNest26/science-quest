@@ -101,14 +101,14 @@
   function read(){
     var P = S.pages[page], t = renderText(P.text), fs = load('sq-fs') || '24';
     stage.innerHTML =
-      A.scene(P.art, P.bg) +
+      (P.pic ? '<img class="page-pic" src="'+S.img+P.pic+'" alt="Story picture: page '+(page+1)+'">' : A.scene(P.art, P.bg)) +
       '<div class="reader" style="--fs:'+fs+'px">' +
         '<div class="tools">' +
           (canSpeak ? '<button class="chipbtn" id="listen" aria-pressed="false"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>Read to me</button>' +
           '<button class="chipbtn" id="spd" title="Reading speed">🐢 '+LABEL[speed]+'</button>' : '') +
           '<span class="sp"></span><button class="chipbtn" id="fsm" aria-label="Smaller text">A−</button><button class="chipbtn" id="fsp" aria-label="Bigger text">A+</button>' +
         '</div>' +
-        '<p class="story-text" id="txt">'+t.html+'</p>' +
+        (P.title ? '<h2 class="story-title">'+t.html+'</h2><p style="margin:6px 0 0;color:var(--muted);font-weight:800">'+esc(S.cast)+'</p>' : '<p class="story-text" id="txt">'+t.html+'</p>') +
         '<div class="def" id="def"></div>' +
       '</div>' +
       '<div class="pager"><button class="btn sec" id="prev"'+(page?'':' disabled')+'>← Back</button>' +
