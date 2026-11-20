@@ -224,7 +224,8 @@ label.jl{display:block;font-weight:900;margin:14px 0 6px}
 .cert p{font-size:18px;color:var(--ink2);line-height:1.6}
 
 /* book spread: picture and words side by side */
-.spread{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:center}
+.spread{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:start}
+.spread .spic{position:sticky;top:12px;align-self:start}
 .spread .spic{background:#F3E6CF}
 .spread .spic img,.spread .spic svg{width:100%;height:auto;display:block}
 .spread .reader{padding:22px 28px}
