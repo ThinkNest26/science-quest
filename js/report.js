@@ -23,7 +23,8 @@
     objs.forEach(function(o){ counts[level(sk[o.id])]++; });
     var G = (window.SQ_GRADE||{})[grade], rd = data.reading || {}, read = 0, right = 0, asked = 0;
     if (G) G.stories.forEach(function(s){ var r = rd[s.id]; if (r || (data.badges||{})[s.id]) read++; if (r) { right += r.s; asked += r.of; } });
-    return {objs:objs.length, counts:counts, stories:G ? G.stories.length : 0, read:read, comp: asked ? right/asked : null};
+    var sup = objs.filter(function(o){ var x = sk['sup-'+o.id]; return x && x.ok; }).length;
+    return {sup:sup, champ:!!sk['champ-'+grade], objs:objs.length, counts:counts, stories:G ? G.stories.length : 0, read:read, comp: asked ? right/asked : null};
   }
 
   function html(o){
@@ -37,7 +38,8 @@
       '<div class="rtile"><b>'+sm.counts[3]+' / '+sm.objs+'</b><span>science objectives secure</span></div>'+
       '<div class="rtile"><b>'+sm.read+' / '+sm.stories+'</b><span>science stories read</span></div>'+
       '<div class="rtile"><b>'+(sm.comp==null?'–':Math.round(sm.comp*100)+'%')+'</b><span>reading questions right first time</span></div>'+
-      '<div class="rtile"><b>'+Object.keys(data.hands||{}).length+'</b><span>hands-on investigations</span></div></div>';
+      '<div class="rtile"><b>'+sm.sup+'</b><span>🌟 Super Scientist stars</span></div></div>';
+    if (sm.champ) h += '<p class="rchamp">🏆 Grade Champion: every science objective for this grade is secure.</p>';
     // science knowledge
     h += '<h3>Science knowledge</h3><p class="rnote">Each objective comes from the National Curriculum. The level is based on the child’s most recent answers in Science Practice.</p>';
     if (!objs.length) h += '<p class="rnote">Science Practice for this grade is coming soon.</p>';
@@ -45,7 +47,8 @@
       var list = objs.filter(function(x){ return x.topic===t; }); if (!list.length) return;
       h += '<div class="rtopic"><h4>'+esc(topics[t])+'</h4><table class="rtab">';
       list.forEach(function(x){ var r = sk[x.id], l = level(r);
-        h += '<tr><td><b>'+esc(x.short)+'</b><small>'+esc(x.nc)+'</small></td><td class="rc">'+chip(l)+'</td><td class="rn">'+(r && r.n ? r.r+' of '+r.n+' right' : '')+'</td></tr>'; });
+        var st = sk['sup-'+x.id];
+        h += '<tr><td><b>'+esc(x.short)+(st && st.ok ? ' 🌟' : '')+'</b><small>'+esc(x.nc)+'</small></td><td class="rc">'+chip(l)+'</td><td class="rn">'+(r && r.n ? r.r+' of '+r.n+' right' : '')+'</td></tr>'; });
       h += '</table></div>';
     });
     // reading
@@ -80,6 +83,7 @@
     '.rbar{display:block;height:12px;background:#EEF1F5;border-radius:99px;overflow:hidden}.rbar b{display:block;height:100%;border-radius:99px}'+
     '.rbadge{display:inline-block;background:#EAF7EF;color:#2F7A4C;border-radius:99px;padding:2px 8px;font-size:12px;font-weight:900}'+
     '.rnext{display:grid;grid-template-columns:1fr 1fr;gap:16px}.rnext>div{background:#F7F9FB;border-radius:14px;padding:4px 14px 10px}.rnext ul{margin:4px 0 0;padding-left:18px;font-weight:700}'+
+    '.rchamp{background:#FFF5E3;border:2px solid #F6B93B;border-radius:14px;padding:10px 14px;font-weight:900;color:#5C3D00}'+
     '.rfoot{margin-top:18px;color:#9AA3AE;font-size:12px;font-weight:800;text-align:center}'+
     '@media (max-width:700px){.rtiles{grid-template-columns:1fr 1fr}.rskills,.rnext{grid-template-columns:1fr}.rskill{grid-template-columns:130px 1fr 50px}}'+
     '@media print{header.top,footer.foot,.noprint{display:none!important}.rep{border:0;padding:0;margin:0}body{background:#fff}.rtopic{break-inside:avoid}.rep h3{break-after:avoid}}';

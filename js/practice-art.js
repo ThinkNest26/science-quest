@@ -166,6 +166,15 @@
   }
   function scene(name){ return wrap('<g transform="translate(40 0) scale(1.5)">'+(EXTRA[name]||'')+'</g>' + (name==='log' ? art('woodlouse', 210, 110, .4) : ''), '#EAF7EF'); }
 
+  function bars(list){
+    var items = list.map(function(x){ var p = x.split('='); return [p[0], +p[1]]; }), mx = Math.max.apply(null, items.map(function(x){return x[1];})) || 1;
+    var w = 260/items.length, s = '<path d="M40 20 V150 H310" stroke="#4A5677" stroke-width="2" fill="none"/>';
+    items.forEach(function(it, i){ var h = it[1]/mx*112, x = 48 + i*w;
+      s += '<rect x="'+(x+6)+'" y="'+(150-h)+'" width="'+(w-16)+'" height="'+h+'" rx="4" fill="'+['#16918C','#7559D1','#F6B93B','#E0607E','#3D8BE0'][i%5]+'"/>'+
+           label(x + w/2 - 2, 144 - h, it[1]) + '<text x="'+(x + w/2 - 2)+'" y="168" font-family="Nunito,Arial" font-weight="800" font-size="11" text-anchor="middle" fill="'+INK+'">'+it[0]+'</text>'; });
+    return wrap(s, '#FFFFFF');
+  }
+
   window.SQ_VIS = function(spec){
     if (!spec) return '';
     var p = spec.split(':'), k = p[0], a = p[1] || '';
@@ -174,7 +183,7 @@
       case 'plant': return plant(a); case 'tree': return tree(a); case 'body': return body(a); case 'skel': return skeleton(a);
       case 'chain': return chain(a.split(',')); case 'cycle': return cycle(a.split(',')); case 'season': return season(a);
       case 'shadow': return shadow(a); case 'magnets': return magnets(a); case 'soil': return soil(a); case 'flower': return flower(a);
-      case 'celery': return celery(a); case 'see': return see(a); case 'ramp': return ramp(a); case 'scene': return scene(a);
+      case 'celery': return celery(a); case 'bars': return bars(a.split(',')); case 'see': return see(a); case 'ramp': return ramp(a); case 'scene': return scene(a);
     }
     return '';
   };

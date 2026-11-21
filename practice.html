@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/app.css?v=38">
+<link rel="stylesheet" href="css/app.css?v=39">
 <style>
   .pgrades{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 6px}
   .ptopic{margin-top:26px}
@@ -38,6 +38,25 @@
   .qfb.y{background:var(--leafL);color:#2F7A4C} .qfb.n{background:var(--roseL);color:#9B2C4A}
   .pbar{height:10px;background:#EEF1F5;border-radius:99px;overflow:hidden;margin:8px 0 2px}.pbar b{display:block;height:100%;background:var(--teal);transition:width .3s}
   .sumrow{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #EEF1F5;font-weight:800}
+  .banner{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-radius:18px;padding:14px 18px;margin-top:14px;font-weight:700}
+  .banner.champ{background:linear-gradient(90deg,#FFF5E3,#FFE9B8);border:2px solid #F6B93B;color:#5C3D00}
+  .banner.review{background:var(--skyL);border:2px solid #A9CFF3;color:#1F4E80}
+  .banner.duel{background:var(--plumL);border:2px solid #CBBEF2;color:#3B2A8C}
+  .supbtn{border:2px dashed #F6B93B;background:#FFF9EC;color:#8A5A00;font-weight:900;border-radius:12px;padding:8px;cursor:pointer;font-size:13px}
+  .qcard.super{border:3px solid #F6B93B;background:linear-gradient(#FFFDF6,#fff)}
+  .dlist{margin-top:12px}.dlist h3{font-size:17px;margin-bottom:8px}
+  .dcard{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:10px 14px;margin-bottom:8px;font-weight:700}
+  .dcard.new{border-color:#CBBEF2;background:#FBFAFF}.dcard.win{border-color:#A6DDB7}.dcard.lose{border-color:#F2C7D2}
+  .dcard em{font-style:normal;font-weight:900;color:var(--ink2)}
+  .dnote{font-weight:700;color:var(--muted);margin:8px 0 0}
+  .opts2{display:flex;flex-wrap:wrap;gap:10px}
+  .opt3{border:2.5px solid var(--line);background:#fff;border-radius:14px;padding:10px 16px;font-weight:800;font-size:16px;cursor:pointer}
+  .opt3.on{border-color:var(--plum);background:var(--plumL)}
+  .vs{display:flex;justify-content:center;align-items:center;gap:22px;margin:14px 0}.vs div{background:#F7F9FB;border-radius:16px;padding:12px 22px}.vs b{display:block;font-size:40px;font-weight:900;color:var(--teal)}.vs span{font-weight:800;color:var(--ink2)}.vs em{font-style:normal;font-weight:900;color:var(--muted)}
+  .ccert{max-width:760px;margin:20px auto;text-align:center;border:10px double #F6B93B;border-radius:24px;padding:40px 30px;background:#FFFDF6}
+  .ccert h1{font-size:44px;color:#B7791F;margin:10px 0}.ccert .nm{font-size:40px;font-weight:900;color:var(--ink);border-bottom:3px solid #F6B93B;display:inline-block;padding:4px 30px;margin:6px 0 14px}
+  .ccert p{font-size:18px;font-weight:700;color:var(--ink2)}.ccert .dt{color:var(--muted);font-size:15px}.ccert .by{font-size:13px;color:var(--muted)}
+  @media print{header.top,footer.foot,.noprint{display:none!important}.ccert{margin:0}}
   .lvl{display:inline-block;border-radius:99px;padding:4px 10px;font-weight:900;font-size:12px;white-space:nowrap}
 </style>
 </head>
@@ -53,24 +72,32 @@
 
 <footer class="foot"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>Original questions based on the National Curriculum for England. Not affiliated with any publisher or exam board.</span></div></footer>
 
-<script src="js/art.js?v=38"></script>
-<script src="js/kg2.js?v=38"></script>
-<script src="js/g1.js?v=38"></script>
-<script src="js/g2.js?v=38"></script>
-<script src="js/g3.js?v=38"></script>
-<script src="js/practice-art.js?v=38"></script>
-<script src="js/practice.js?v=38"></script>
-<script src="js/avatar.js?v=38"></script>
-<script src="js/store.js?v=38"></script>
-<script src="js/report.js?v=38"></script>
+<script src="js/art.js?v=39"></script>
+<script src="js/kg2.js?v=39"></script>
+<script src="js/g1.js?v=39"></script>
+<script src="js/g2.js?v=39"></script>
+<script src="js/g3.js?v=39"></script>
+<script src="js/practice-art.js?v=39"></script>
+<script src="js/practice.js?v=39"></script>
+<script src="js/practice-more.js?v=39"></script>
+<script src="js/avatar.js?v=39"></script>
+<script src="js/store.js?v=39"></script>
+<script src="js/report.js?v=39"></script>
 <script>
 (function(){
-  var S = SQ_STORE, P = SQ_PRAC, T = SQ_PRAC_TOPICS, R = SQ_REPORT, main = document.getElementById('main');
+  var S = SQ_STORE, P = SQ_PRAC, T = SQ_PRAC_TOPICS, R = SQ_REPORT, M = window.SQ_PRAC_MORE || {}, main = document.getElementById('main');
+  // add the extra questions and the Super Scientist questions to every objective
+  Object.keys(P).forEach(function(g){ P[g].forEach(function(o){ var x = M[o.id]; if (x && !o._merged) { o.qs = o.qs.concat(x.m || []); o.sup = x.s || []; o._merged = true; } }); });
   var GR = [['kg2','KG2','Year 1'],['g1','Grade 1','Year 2'],['g2','Grade 2','Year 3'],['g3','Grade 3','Year 4'],['g4','Grade 4','Year 5'],['g5','Grade 5','Year 6']];
-  var me = S.me(), grade = (me && P[me.grade]) ? me.grade : 'kg2', sess = null;
+  var me = S.me(), grade = (me && P[me.grade]) ? me.grade : 'kg2', sess = null, duelCache = null;
+  var PER = 8, REVIEW_DAYS = 3;
   function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
   function shuffle(a){ a = a.slice(); for (var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)), t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
   function sk(){ return S.data().skills || {}; }
+  function today(){ return new Date().toISOString().slice(0,10); }
+  function days(d){ return d ? Math.floor((Date.now() - new Date(d+'T00:00:00').getTime())/864e5) : 999; }
+  function objById(id){ var f = null; Object.keys(P).forEach(function(g){ P[g].forEach(function(o){ if (o.id===id) f = o; }); }); return f; }
+  function nextGrade(g){ var i = GR.map(function(x){return x[0];}).indexOf(g), n = GR[i+1]; return n && P[n[0]] ? n : null; }
 
   /* read aloud with the friendliest lady's voice the device has */
   var canSpeak = 'speechSynthesis' in window;
@@ -81,76 +108,182 @@
     for (var i=0;i<pref.length;i++){ var f = v.filter(function(x){return pref[i].test(x.name);})[0]; if (f) return f; } return v[0] || null; }
   function say(t){ if (!canSpeak) return; speechSynthesis.cancel(); var u = new SpeechSynthesisUtterance(t), v = voice(); if (v) { u.voice = v; u.lang = v.lang; } u.rate = .92; u.pitch = 1.08; speechSynthesis.speak(u); }
 
+  function isChampion(g){ var s = sk(); return P[g].every(function(o){ var r = s[o.id]; return r && (r.s || R.level(r)===3); }); }
+  function due(){ var s = sk(); return P[grade].filter(function(o){ var r = s[o.id]; return r && (r.s || R.level(r)===3) && days(r.d) >= REVIEW_DAYS; }); }
+
+  /* ---------------- home ---------------- */
   function home(){
     sess = null;
-    var h = '<div class="lhead"><h1>Science Practice</h1><p>Practise every science objective for your grade. Each question has a picture to help you think. Get answers right to make each objective <b>Secure</b>!</p></div>';
-    h += '<div class="pgrades">'+GR.map(function(g){ var ok = !!P[g[0]]; return '<button class="grade'+(g[0]===grade?' on':'')+(ok?'':' soon')+'" '+(ok?'data-g="'+g[0]+'"':'disabled')+'>'+g[1]+'<small>'+g[2]+(ok?'':' · coming soon')+'</small></button>'; }).join('')+'</div>';
-    var objs = P[grade], s = sk();
-    var sm = R.summary(grade, S.data());
-    h += '<p style="font-weight:800;color:var(--ink2);margin:12px 0 0">You are secure in <b style="color:var(--teal)">'+sm.counts[3]+' of '+sm.objs+'</b> objectives. Every objective you make secure earns 🪙 15 coins!</p>';
+    var objs = P[grade], s = sk(), sm = R.summary(grade, S.data()), champ = !!s['champ-'+grade], nx = nextGrade(grade);
+    var h = '<div class="lhead"><h1>Science Practice</h1><p>Practise every science objective for your grade. Make each one <b>Secure</b>, then take on the 🌟 <b>Super Scientist</b> questions!</p></div>';
+    h += '<div class="pgrades">'+GR.map(function(g){ var ok = !!P[g[0]]; return '<button class="grade'+(g[0]===grade?' on':'')+(ok?'':' soon')+'" '+(ok?'data-g="'+g[0]+'"':'disabled')+'>'+(s['champ-'+g[0]]?'🏆 ':'')+g[1]+'<small>'+g[2]+(ok?'':' · coming soon')+'</small></button>'; }).join('')+'</div>';
+    if (champ) h += '<div class="banner champ"><div><b>🏆 '+esc(R ? '' : '')+'Grade Champion!</b> Every '+esc(GR.filter(function(g){return g[0]===grade;})[0][1])+' objective is secure.'+(nx?' Ready for more? Try <b>'+nx[1]+'</b> practice.':'')+'</div><span><button class="go" id="cert">🖨 My certificate</button>'+(nx?' <button class="mix" data-g="'+nx[0]+'">Go to '+nx[1]+' →</button>':'')+'</span></div>';
+    var d = due();
+    if (d.length) h += '<div class="banner review"><div><b>⏰ Time to review!</b> '+d.length+' secure objective'+(d.length>1?'s':'')+' you have not practised for a few days. A quick check keeps your knowledge strong.</div><button class="go" id="rev">Start review</button></div>';
+    h += '<div class="banner duel" id="duelbox"><div><b>⚔️ Peer challenges</b> '+(S.me() ? 'Challenge a classmate to the same 8 questions. Who knows more science?' : 'Sign in with your code to challenge your classmates.')+'</div>'+(S.me()?'<button class="go" id="newduel">Challenge a classmate</button>':'')+'</div><div id="duels"></div>';
+    h += '<p style="font-weight:800;color:var(--ink2);margin:14px 0 0">You are secure in <b style="color:var(--teal)">'+sm.counts[3]+' of '+sm.objs+'</b> objectives. 🪙 Coins: 15 for each secure objective, 20 for each Super Scientist star, 50 for Grade Champion.</p>';
     Object.keys(T[grade]).forEach(function(t){
       var list = objs.filter(function(o){ return o.topic===t; });
       h += '<section class="ptopic"><div class="th"><h2>'+esc(T[grade][t])+'</h2><button class="mix" data-mix="'+t+'">🎲 Mixed quiz: 8 questions</button></div><div class="objs">';
-      list.forEach(function(o){ var r = s[o.id], l = R.level(r), hh = (r && r.h) || '';
-        h += '<div class="obj"><h3>'+esc(o.short)+'</h3><p>'+esc(o.nc)+'</p><div class="row2">'+R.chip(l)+'<span class="dots" title="Your last answers">'+
-          Array.apply(null, Array(10)).map(function(_,i){ var c = hh.charAt(i); return '<i class="'+(c==='1'?'y':c==='0'?'n':'')+'"></i>'; }).join('')+'</span><button class="go" data-o="'+o.id+'">Practise</button></div></div>'; });
+      list.forEach(function(o){ var r = s[o.id], l = R.level(r), hh = (r && r.h) || '', sup = s['sup-'+o.id], everSec = r && (r.s || l===3);
+        h += '<div class="obj"><h3>'+esc(o.short)+(sup&&sup.ok?' <span title="Super Scientist">🌟</span>':'')+'</h3><p>'+esc(o.nc)+'</p><div class="row2">'+R.chip(l)+'<span class="dots" title="Your last answers">'+
+          Array.apply(null, Array(10)).map(function(_,i){ var c = hh.charAt(i); return '<i class="'+(c==='1'?'y':c==='0'?'n':'')+'"></i>'; }).join('')+'</span><button class="go" data-o="'+o.id+'">Practise</button></div>'+
+          (everSec && o.sup && o.sup.length ? '<button class="supbtn" data-sup="'+o.id+'">'+(sup&&sup.ok?'🌟 Super Scientist: try again':'🌟 Try the Super Scientist challenge')+'</button>' : '')+'</div>'; });
       h += '</div></section>';
     });
     main.innerHTML = h;
-    main.querySelectorAll('[data-g]').forEach(function(b){ b.onclick = function(){ grade = b.getAttribute('data-g'); home(); }; });
-    main.querySelectorAll('[data-o]').forEach(function(b){ b.onclick = function(){ var o = objs.filter(function(x){return x.id===b.getAttribute('data-o');})[0];
-      start(shuffle(o.qs).map(function(q){ return {q:q, o:o}; }), o.short); }; });
-    main.querySelectorAll('[data-mix]').forEach(function(b){ b.onclick = function(){ var t = b.getAttribute('data-mix'), all = [];
-      objs.filter(function(o){return o.topic===t;}).forEach(function(o){ o.qs.forEach(function(q){ all.push({q:q, o:o}); }); });
-      start(shuffle(all).slice(0,8), T[grade][t] + ': mixed quiz'); }; });
+    main.querySelectorAll('[data-g]').forEach(function(b){ b.onclick = function(){ grade = b.getAttribute('data-g'); home(); window.scrollTo({top:0}); }; });
+    main.querySelectorAll('[data-o]').forEach(function(b){ b.onclick = function(){ var o = objById(b.getAttribute('data-o'));
+      start(shuffle(o.qs).slice(0, PER).map(function(q){ return {q:q, o:o}; }), o.short, 'practice'); }; });
+    main.querySelectorAll('[data-sup]').forEach(function(b){ b.onclick = function(){ var o = objById(b.getAttribute('data-sup'));
+      start(shuffle(o.sup).map(function(q){ return {q:q, o:o, sup:true}; }), '🌟 Super Scientist: ' + o.short, 'super', {obj:o}); }; });
+    main.querySelectorAll('[data-mix]').forEach(function(b){ b.onclick = function(){ var t = b.getAttribute('data-mix');
+      start(topicItems(t), T[grade][t] + ': mixed quiz', 'practice'); }; });
+    var rv = document.getElementById('rev'); if (rv) rv.onclick = function(){ var items = [];
+      shuffle(d).slice(0,5).forEach(function(o){ shuffle(o.qs).slice(0,2).forEach(function(q){ items.push({q:q, o:o}); }); });
+      start(shuffle(items), '⏰ Review', 'review'); };
+    var ct = document.getElementById('cert'); if (ct) ct.onclick = certificate;
+    var nd = document.getElementById('newduel'); if (nd) nd.onclick = newDuel;
+    if (S.me()) loadDuels();
   }
+  function topicItems(t){ var all = []; P[grade].filter(function(o){return o.topic===t;}).forEach(function(o){ o.qs.forEach(function(q, i){ all.push({q:q, o:o, qid:o.id+'#'+i}); }); }); return shuffle(all).slice(0, PER); }
 
-  function start(items, title){
-    var before = {}; items.forEach(function(it){ before[it.o.id] = R.level(sk()[it.o.id]); });
-    sess = {items:items, i:0, right:0, title:title, before:before}; ask(); window.scrollTo({top:0});
+  /* ---------------- questions ---------------- */
+  function start(items, title, mode, extra){
+    var before = {}, everS = {}; items.forEach(function(it){ var r = sk()[it.o.id]; before[it.o.id] = R.level(r); everS[it.o.id] = !!(r && (r.s || R.level(r)===3)); });
+    sess = {everS:everS, items:items, i:0, right:0, title:title, mode:mode, extra:extra||{}, before:before, t0:Date.now()}; ask(); window.scrollTo({top:0});
   }
   function ask(){
-    var it = sess.items[sess.i], q = it.q, pics = !!q.pic;
+    var it = sess.items[sess.i], q = it.q, pics = !!q.pic, duel = sess.mode==='duel';
     var order = shuffle(q.o.map(function(_,i){return i;}));
-    var h = '<div class="qcard"><div class="qtop"><span class="qobj">'+esc(it.o.short)+'</span><span>Question '+(sess.i+1)+' of '+sess.items.length+'</span></div>'+
+    var h = '<div class="qcard'+(sess.mode==='super'?' super':'')+'"><div class="qtop"><span class="qobj">'+(sess.mode==='super'?'🌟 Super Scientist · ':duel?'⚔️ Challenge · ':sess.mode==='review'?'⏰ Review · ':'')+esc(it.o.short)+'</span><span>Question '+(sess.i+1)+' of '+sess.items.length+(duel?' · ⏱ <b id="clock">0</b>s':'')+'</span></div>'+
       '<div class="pbar"><b style="width:'+(sess.i/sess.items.length*100)+'%"></b></div>'+
       (q.v ? '<div class="qpic">'+SQ_VIS(q.v)+'</div>' : '')+
       '<div class="qtext">'+esc(q.q)+'</div>'+
       '<div class="qopts'+(pics?' pics':'')+'">'+order.map(function(i){ var parts = q.o[i].split('|');
         return '<button class="qo" data-i="'+i+'">'+(pics ? SQ_PIC(parts[1])+'<span>'+esc(parts[0])+'</span>' : esc(parts[0]))+'</button>'; }).join('')+'</div>'+
-      '<div id="fb"></div><p style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">'+(canSpeak?'<button class="chipbtn" id="rd">🔊 Read to me</button>':'')+'<button class="chipbtn" id="quit">← Back to objectives</button></p></div>';
+      '<div id="fb"></div><p style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">'+(canSpeak?'<button class="chipbtn" id="rd">🔊 Read to me</button>':'')+(duel?'':'<button class="chipbtn" id="quit">← Back to objectives</button>')+'</p></div>';
     main.innerHTML = h;
+    if (duel) { clearInterval(sess.tick); sess.tick = setInterval(function(){ var c = document.getElementById('clock'); if (c) c.textContent = Math.floor((Date.now()-sess.t0)/1000); }, 500); }
     var rd = document.getElementById('rd'); if (rd) rd.onclick = function(){ say(q.q + ' ' + order.map(function(i){ return q.o[i].split('|')[0]; }).join('. ')); };
-    document.getElementById('quit').onclick = function(){ if (canSpeak) speechSynthesis.cancel(); home(); };
+    var qt = document.getElementById('quit'); if (qt) qt.onclick = function(){ if (canSpeak) speechSynthesis.cancel(); home(); };
     main.querySelectorAll('.qo').forEach(function(b){ b.onclick = function(){
       var i = +b.getAttribute('data-i'), ok = i === 0;
       main.querySelectorAll('.qo').forEach(function(x){ x.disabled = true; if (+x.getAttribute('data-i')===0) x.classList.add('right'); });
       if (!ok) b.classList.add('wrong'); else sess.right++;
-      S.skill(it.o.id, ok);
+      if (!it.sup) S.skill(it.o.id, ok);
       document.getElementById('fb').innerHTML = '<div class="qfb '+(ok?'y':'n')+'">'+(ok?'✅ <b>Correct!</b> ':'❌ <b>Not quite.</b> The answer is <b>'+esc(q.o[0].split('|')[0])+'</b>. ')+esc(q.why)+'</div>'+
         '<p style="margin-top:14px"><button class="btn pri" id="nx">'+(sess.i < sess.items.length-1 ? 'Next question →' : 'See my results')+'</button></p>';
       document.getElementById('nx').onclick = function(){ if (canSpeak) speechSynthesis.cancel(); sess.i++; if (sess.i < sess.items.length) ask(); else done(); };
     }; });
   }
   function done(){
-    var ids = Object.keys(sess.before), objs = P[grade], h = '<div class="qcard" style="text-align:center"><h2 style="font-size:28px">'+(sess.right/sess.items.length >= .8 ? '🌟 Superb science!' : sess.right/sess.items.length >= .5 ? '👏 Well done!' : '💪 Good effort!')+'</h2>'+
-      '<p class="qtext" style="font-size:20px">You got '+sess.right+' out of '+sess.items.length+' right.</p><div style="text-align:left;margin:10px 0 16px">';
+    clearInterval(sess.tick);
+    if (sess.mode==='duel') return duelDone();
+    var ids = Object.keys(sess.before), n = sess.items.length, pct = sess.right/n, h = '<div class="qcard" style="text-align:center">';
+    if (sess.mode==='super') {
+      var o = sess.extra.obj, passed = sess.right >= Math.ceil(n*0.75), old = sk()['sup-'+o.id] || {};
+      var rec = {r:(old.r|0)+sess.right, n:(old.n|0)+n, ok: old.ok || (passed?1:0), d:today()}; S.mark('sup-'+o.id, rec);
+      h += '<h2 style="font-size:28px">'+(passed ? '🌟 Super Scientist!' : '💪 So close!')+'</h2><p class="qtext" style="font-size:20px">You got '+sess.right+' out of '+n+' of the hardest questions right.</p>'+
+        (passed && !old.ok ? '<p class="coinwin">🪙 +20 coins! You earned a Super Scientist star for “'+esc(o.short)+'”.</p>' : passed ? '' : '<p style="font-weight:700;color:var(--ink2)">Get '+Math.ceil(n*0.75)+' or more right to earn the star. Have another go!</p>');
+      h += '<p><button class="btn pri" id="again">Try again</button> <button class="btn sec" id="back">Back to objectives</button></p></div>';
+      main.innerHTML = h; var it = sess.items, tl = sess.title, ex = sess.extra;
+      document.getElementById('again').onclick = function(){ start(shuffle(it), tl, 'super', ex); };
+      document.getElementById('back').onclick = home; return;
+    }
+    h += '<h2 style="font-size:28px">'+(pct >= .8 ? '🌟 Superb science!' : pct >= .5 ? '👏 Well done!' : '💪 Good effort!')+'</h2><p class="qtext" style="font-size:20px">You got '+sess.right+' out of '+n+' right.</p><div style="text-align:left;margin:10px 0 16px">';
     var newSecure = 0;
-    ids.forEach(function(id){ var o = objs.filter(function(x){return x.id===id;})[0], now = R.level(sk()[id]), was = sess.before[id];
-      if (now===3 && was!==3) newSecure++;
+    ids.forEach(function(id){ var o = objById(id), r = sk()[id], now = R.level(r), was = sess.before[id];
+      if (now===3 && was!==3 && !sess.everS[id]) newSecure++;
       h += '<div class="sumrow"><span>'+esc(o.short)+'</span><span>'+(was!==now ? R.chip(was)+' → ' : '')+R.chip(now)+'</span></div>'; });
-    h += '</div>'+(newSecure ? '<p class="coinwin">🪙 +'+(newSecure*15)+' coins! You made '+newSecure+' objective'+(newSecure>1?'s':'')+' secure. Spend them in <a href="lab.html">My Scientist</a>.</p>' : '')+
-      '<p><button class="btn pri" id="again">Practise again</button> <button class="btn sec" id="back">Choose another objective</button></p></div>';
+    h += '</div>'+(newSecure ? '<p class="coinwin">🪙 +'+(newSecure*15)+' coins! You made '+newSecure+' objective'+(newSecure>1?'s':'')+' secure. Spend them in <a href="lab.html">My Scientist</a>.</p>' : '');
+    // Grade Champion
+    var champNow = isChampion(grade) && !sk()['champ-'+grade];
+    if (champNow) { S.mark('champ-'+grade, {c:1, d:today()}); var nx = nextGrade(grade);
+      h += '<div class="banner champ" style="text-align:left"><div><b>🏆 You are a Grade Champion!</b> Every objective is secure. 🪙 +50 coins!'+(nx?' Ready for '+nx[1]+'?':'')+'</div><span><button class="go" id="cert2">🖨 My certificate</button></span></div>'; }
+    h += '<p><button class="btn pri" id="again">Practise again</button> <button class="btn sec" id="back">Back to objectives</button></p></div>';
     main.innerHTML = h;
-    var items = sess.items, title = sess.title;
-    document.getElementById('again').onclick = function(){ start(shuffle(items), title); };
+    var items = sess.items, title = sess.title, mode = sess.mode;
+    document.getElementById('again').onclick = function(){
+      if (mode==='practice' && items.length && items.every(function(x){return x.o===items[0].o;})) { var o = items[0].o; start(shuffle(o.qs).slice(0, PER).map(function(q){ return {q:q, o:o}; }), title, 'practice'); }
+      else start(shuffle(items), title, mode); };
     document.getElementById('back').onclick = home;
+    var c2 = document.getElementById('cert2'); if (c2) c2.onclick = certificate;
+  }
+
+  /* ---------------- Grade Champion certificate ---------------- */
+  function certificate(){
+    var m = S.me(), g = GR.filter(function(x){return x[0]===grade;})[0], c = sk()['champ-'+grade] || {}, stars = P[grade].filter(function(o){ var s = sk()['sup-'+o.id]; return s && s.ok; }).length;
+    main.innerHTML = '<p class="noprint" style="margin-top:20px"><button class="btn pri" onclick="window.print()">🖨 Print</button> <button class="btn sec" id="bk">Back</button></p>'+
+      '<div class="ccert"><img src="img/sq-bird.png" alt="" width="90" height="90"><h1>Grade Champion</h1><p>This certificate is awarded to</p><div class="nm">'+(m?esc(m.name):'&nbsp;')+'</div>'+
+      '<p>for making every National Curriculum science objective for <b>'+g[1]+' ('+g[2]+')</b> secure in Science Practice'+(stars?', and earning <b>'+stars+' Super Scientist star'+(stars>1?'s':'')+'</b>':'')+'.</p>'+
+      '<p class="dt">'+new Date(c.d || Date.now()).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})+'</p><p class="by">Science Quest by Curious Nest · Powered by ThinkNest Education</p></div>';
+    document.getElementById('bk').onclick = home; window.scrollTo({top:0});
+  }
+
+  /* ---------------- peer challenges ---------------- */
+  function qFromId(qid){ var p = qid.split('#'), o = objById(p[0]); return o && o.qs[+p[1]] ? {q:o.qs[+p[1]], o:o, qid:qid} : null; }
+  async function loadDuels(){
+    var box = document.getElementById('duels'); if (!box) return;
+    var list = await S.duels(); if (!document.getElementById('duels')) return;
+    if (list === null) { box.innerHTML = '<p class="dnote">Peer challenges are not switched on yet. (Ask your teacher.)</p>'; return; }
+    duelCache = list;
+    var waiting = list.filter(function(d){ return !d.mine && d.b_score == null; }), rest = list.filter(function(d){ return d.mine || d.b_score != null; });
+    var h = '';
+    if (waiting.length) h += '<div class="dlist"><h3>📨 Challenges for you</h3>'+waiting.map(function(d){ return '<div class="dcard new"><span><b>'+esc(d.a_name)+'</b> challenged you: '+esc(d.topic)+' ('+d.qids.length+' questions)</span><button class="go" data-play="'+d.id+'">Play now</button></div>'; }).join('')+'</div>';
+    if (rest.length) h += '<div class="dlist"><h3>📋 My challenges</h3>'+rest.slice(0,8).map(function(d){
+        var me2 = d.mine ? d.a_score : d.b_score, them = d.mine ? d.b_score : d.a_score, other = d.mine ? d.b_name : d.a_name, mt = d.mine ? d.a_ms : d.b_ms, tt = d.mine ? d.b_ms : d.a_ms;
+        if (d.b_score == null) return '<div class="dcard"><span>You challenged <b>'+esc(other)+'</b>: '+esc(d.topic)+'. You scored '+me2+'/'+d.qids.length+'.</span><em>Waiting for '+esc(other)+'…</em></div>';
+        var win = me2 > them || (me2 === them && mt < tt), draw = me2 === them && mt === tt;
+        return '<div class="dcard '+(draw?'':win?'win':'lose')+'"><span>'+esc(d.topic)+': you <b>'+me2+'</b> – <b>'+them+'</b> '+esc(other)+(me2===them && !draw ? ' (same score, '+(win?'you were':esc(other)+' was')+' faster)' : '')+'</span><em>'+(draw?'🤝 Draw':win?'🏆 You won!':'👏 '+esc(other)+' won')+'</em></div>'; }).join('')+'</div>';
+    box.innerHTML = h;
+    box.querySelectorAll('[data-play]').forEach(function(b){ b.onclick = function(){ var d = duelCache.filter(function(x){return x.id===b.getAttribute('data-play');})[0];
+      var items = d.qids.map(qFromId).filter(Boolean); if (!items.length) return alert('Sorry, this challenge could not be loaded.');
+      start(items, 'Challenge from ' + d.a_name, 'duel', {duel:d}); }; });
+  }
+  async function newDuel(){
+    main.innerHTML = '<div class="qcard"><h2>⚔️ Challenge a classmate</h2><p style="font-weight:700;color:var(--ink2)">Loading your class…</p></div>';
+    var mates = await S.classmates();
+    if (!mates) { main.innerHTML = '<div class="qcard"><h2>⚔️ Challenge a classmate</h2><p>Peer challenges are not switched on yet. Ask your teacher.</p><button class="btn sec" id="bk">Back</button></div>'; document.getElementById('bk').onclick = home; return; }
+    var pick = {opp:null, topic:null};
+    function draw(){
+      main.innerHTML = '<div class="qcard"><h2>⚔️ Challenge a classmate</h2><p style="font-weight:700;color:var(--ink2)">You both answer the same 8 questions. The highest score wins. If you get the same score, the fastest wins! Taking part earns 🪙 5 coins, and winning earns 🪙 10 more.</p>'+
+        '<h3 style="margin-top:14px">1. Who do you want to challenge?</h3><div class="opts2">'+(mates.length ? mates.map(function(m){ return '<button class="opt3'+(pick.opp===m.id?' on':'')+'" data-m="'+m.id+'">'+esc(m.name)+'</button>'; }).join('') : '<p>Nobody else is in your class yet.</p>')+'</div>'+
+        '<h3 style="margin-top:14px">2. Choose a topic</h3><div class="opts2">'+Object.keys(T[grade]).map(function(t){ return '<button class="opt3'+(pick.topic===t?' on':'')+'" data-t="'+t+'">'+esc(T[grade][t])+'</button>'; }).join('')+'</div>'+
+        '<p style="margin-top:18px"><button class="btn pri" id="go"'+(pick.opp&&pick.topic?'':' disabled')+'>Start my 8 questions ⏱</button> <button class="btn sec" id="bk">Back</button></p></div>';
+      main.querySelectorAll('[data-m]').forEach(function(b){ b.onclick = function(){ pick.opp = b.getAttribute('data-m'); draw(); }; });
+      main.querySelectorAll('[data-t]').forEach(function(b){ b.onclick = function(){ pick.topic = b.getAttribute('data-t'); draw(); }; });
+      document.getElementById('bk').onclick = home;
+      document.getElementById('go').onclick = function(){ var m = mates.filter(function(x){return x.id===pick.opp;})[0];
+        start(topicItems(pick.topic), 'Challenge to ' + m.name, 'duel', {opp:m, topic:T[grade][pick.topic]}); };
+    }
+    draw();
+  }
+  async function duelDone(){
+    var ms = Date.now() - sess.t0, n = sess.items.length, x = sess.extra, secs = Math.round(ms/1000);
+    main.innerHTML = '<div class="qcard" style="text-align:center"><h2>⏱ Sending your score…</h2></div>';
+    var h = '<div class="qcard" style="text-align:center">';
+    if (x.duel) {
+      var r = await S.duelPlay(x.duel.id, sess.right, ms);
+      if (!r || r.error) h += '<h2>Sorry!</h2><p>Your score could not be sent. Please check the internet and try again later.</p>';
+      else { var them = x.duel.a_score, win = sess.right > them || (sess.right === them && ms < x.duel.a_ms), draw = sess.right === them && ms === x.duel.a_ms;
+        h += '<h2 style="font-size:30px">'+(draw?'🤝 It’s a draw!':win?'🏆 You won!':'👏 '+esc(x.duel.a_name)+' won this time')+'</h2>'+
+          '<div class="vs"><div><b>'+sess.right+'</b><span>You · '+secs+'s</span></div><em>vs</em><div><b>'+them+'</b><span>'+esc(x.duel.a_name)+' · '+Math.round(x.duel.a_ms/1000)+'s</span></div></div>'+
+          '<p class="coinwin">🪙 +'+(win?15:5)+' coins for '+(win?'taking part and winning':'taking part')+'!</p>'; }
+    } else {
+      var qids = sess.items.map(function(it){ return it.qid; });
+      var r2 = await S.duelNew(x.opp.id, x.topic, qids, sess.right, ms);
+      if (!r2 || r2.error) h += '<h2>Sorry!</h2><p>'+(r2 && r2.error==='too many' ? 'You already have 10 challenges waiting. Wait for your classmates to play them first.' : 'Your challenge could not be sent. Please check the internet and try again.')+'</p>';
+      else h += '<h2 style="font-size:28px">⚔️ Challenge sent!</h2><p class="qtext" style="font-size:20px">You scored '+sess.right+' out of '+n+' in '+secs+' seconds.</p><p style="font-weight:700;color:var(--ink2)">When '+esc(x.opp.name)+' plays the same questions, you will see who won here.</p>';
+    }
+    h += '<p><button class="btn pri" id="back">Back to Science Practice</button></p></div>';
+    main.innerHTML = h; document.getElementById('back').onclick = home;
   }
 
   S.chip(document.getElementById('who'), function(){ var m = S.me(); if (m && P[m.grade]) grade = m.grade; if (!sess) home(); });
   home();
 })();
 </script>
-<script src="js/nav.js?v=38"></script>
+<script src="js/nav.js?v=39"></script>
 </body>
 </html>

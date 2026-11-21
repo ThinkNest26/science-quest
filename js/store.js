@@ -37,12 +37,12 @@
       if (!d) return 'We could not find that code. Check it with your teacher.';
       if (d.error === 'wait') return 'Too many tries. Please wait 10 minutes, then try again.';
       me = {code:c, name:d.name, grade:d.grade, cls:d['class']}; lset(LS, me);
-      data = {badges:d.badges||{}, stars:d.stars||{}, hands:d.hands||{}, journal:d.journal||[], look:d.look||{}, skills:d.skills||{}, reading:d.reading||{}}; cache();
+      data = {badges:d.badges||{}, stars:d.stars||{}, hands:d.hands||{}, journal:d.journal||[], look:d.look||{}, skills:d.skills||{}, reading:d.reading||{}, duel:d.duel||{}}; cache();
       return null;
     },
     refresh: async function(){
       if (!me) return;
-      try { var d = await rpc('sq_login', {p_code:me.code}); if (d && !d.error) { data = {badges:d.badges||{}, stars:d.stars||{}, hands:d.hands||{}, journal:d.journal||[], look:d.look||data.look||{}, skills:d.skills||data.skills||{}, reading:d.reading||data.reading||{}}; cache(); } } catch(e){}
+      try { var d = await rpc('sq_login', {p_code:me.code}); if (d && !d.error) { data = {badges:d.badges||{}, stars:d.stars||{}, hands:d.hands||{}, journal:d.journal||[], look:d.look||data.look||{}, skills:d.skills||data.skills||{}, reading:d.reading||data.reading||{}, duel:d.duel||data.duel||{}}; cache(); } } catch(e){}
     },
     logout: function(){ me = null; try{ localStorage.removeItem(LS); localStorage.removeItem(LS+'-cache'); }catch(e){} data = lget(LSG, blank()); },
     badge: function(id){ if (data.badges[id]) return; data.badges[id] = today(); cache(); if (me) rpc('sq_save',{p_code:me.code,p_part:'badges',p_key:id,p_val:today()}).catch(function(){}); },
@@ -60,7 +60,14 @@
     earned: function(){
       var n = 40; n += Object.keys(data.badges).length * 20; n += Object.keys(data.hands).length * 15;
       for (var k in data.stars) n += /^myst-/.test(k) ? 10 : (data.stars[k]||0) * 5;
-      var sk = data.skills || {}; for (var o in sk) if (S.level(sk[o]) === 3) n += 15;   // every objective made secure
+      // once earned, coins are never taken away: they come from objectives that have EVER been secure
+      var sk = data.skills || {};
+      for (var o in sk) { var r = sk[o] || {};
+        if (/^champ-/.test(o)) n += 50;                 // Grade Champion
+        else if (/^sup-/.test(o)) { if (r.ok) n += 20; } // Super Scientist on an objective
+        else if (r.s || S.level(r) === 3) n += 15;       // objective made secure
+      }
+      var du = data.duel || {}; n += (du.p|0) * 5 + (du.w|0) * 10;   // peer challenges: taking part and winning
       return n;
     },
     /* science knowledge: one record per curriculum objective {r: right, n: answered, h: last 10 answers as 1/0, d: date}
@@ -74,10 +81,21 @@
       data.skills = data.skills || {};
       var r = data.skills[id] || {r:0, n:0, h:''};
       r.n++; if (ok) r.r++; r.h = (r.h + (ok?'1':'0')).slice(-10); r.d = today();
+      if (S.level(r) === 3) r.s = 1;   // remember it has been secure, so its coins are kept
       data.skills[id] = r; cache();
       if (me) rpc('sq_track',{p_code:me.code,p_part:'skills',p_key:id,p_val:r}).catch(function(){});
       return r;
     },
+    /* any other record in skills: Super Scientist results (sup-<objective>) and Grade Champion (champ-<grade>) */
+    mark: function(key, val){
+      data.skills = data.skills || {}; data.skills[key] = val; cache();
+      if (me) rpc('sq_track',{p_code:me.code,p_part:'skills',p_key:key,p_val:val}).catch(function(){});
+    },
+    /* peer challenges with classmates (signed-in children only) */
+    classmates: async function(){ if (!me) return []; try { return await rpc('sq_classmates',{p_code:me.code}) || []; } catch(e){ return null; } },
+    duels: async function(){ if (!me) return []; try { return await rpc('sq_duel_list',{p_code:me.code}) || []; } catch(e){ return null; } },
+    duelNew: async function(opp, topic, qids, score, ms){ if (!me) return {error:'signin'}; try { return await rpc('sq_duel_new',{p_code:me.code,p_opp:opp,p_topic:topic,p_qids:qids,p_score:score,p_ms:ms}); } catch(e){ return {error:'net'}; } },
+    duelPlay: async function(id, score, ms){ if (!me) return {error:'signin'}; try { var r = await rpc('sq_duel_play',{p_code:me.code,p_id:id,p_score:score,p_ms:ms}); if (r && r.duel) { data.duel = r.duel; cache(); } return r; } catch(e){ return {error:'net'}; } },
     /* reading: one record per story {s: first-try score, of: questions, b: best score, n: times read, t: {type:[right,asked]}, d: date} */
     read: function(id, score, of, types){
       data.reading = data.reading || {};

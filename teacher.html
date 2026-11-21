@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/app.css?v=38">
+<link rel="stylesheet" href="css/app.css?v=39">
 <style>
 .tbox{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;margin-top:18px}
 .tbox h2{font-size:22px;margin-bottom:10px}
@@ -40,14 +40,15 @@ table.pt th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:v
 <main class="wrap" id="main"></main>
 <footer class="foot noprint"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>Children’s progress is only visible to their own teacher.</span></div></footer>
 
-<script src="js/art.js?v=38"></script>
-<script src="js/kg2.js?v=38"></script>
-<script src="js/g1.js?v=38"></script>
-<script src="js/g2.js?v=38"></script>
-<script src="js/g3.js?v=38"></script>
-<script src="js/challenges.js?v=38"></script>
-<script src="js/practice.js?v=38"></script>
-<script src="js/report.js?v=38"></script>
+<script src="js/art.js?v=39"></script>
+<script src="js/kg2.js?v=39"></script>
+<script src="js/g1.js?v=39"></script>
+<script src="js/g2.js?v=39"></script>
+<script src="js/g3.js?v=39"></script>
+<script src="js/challenges.js?v=39"></script>
+<script src="js/practice.js?v=39"></script>
+<script src="js/practice-more.js?v=39"></script>
+<script src="js/report.js?v=39"></script>
 <script>
 (function(){
   var sb = supabase.createClient('https://xpbkdnkfufkahaszfycd.supabase.co','sb_publishable_QIAV_9tLUBbDCu7FHqaTEw_zYQ0teEG');
@@ -129,14 +130,14 @@ table.pt th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:v
     h += '</table></div></div>';
     // science knowledge against every curriculum objective, and reading
     var objs = (window.SQ_PRAC||{})[c.grade] || [], R = window.SQ_REPORT;
-    h += '<div class="tbox"><h2>Science knowledge and reading</h2><p style="color:var(--ink2);font-weight:700;margin:0 0 10px">Each column is a National Curriculum objective from Science Practice (hover or tap a number to see it). Colours: '+
+    h += '<div class="tbox"><h2>Science knowledge and reading</h2><p style="color:var(--ink2);font-weight:700;margin:0 0 10px">Each column is a National Curriculum objective from Science Practice (hover or tap a number to see it). 🌟 = Super Scientist star, 🏆 = Grade Champion. Colours: '+
       R.LEVELS.map(function(L){ return '<span class="lvl" style="background:'+L.c+';color:'+L.t+'">'+L.n+'</span>'; }).join(' ')+'</p>';
     if (!objs.length) h += '<p style="color:var(--muted);font-weight:700">Science Practice for this grade is coming soon. Reading is shown below.</p>';
     h += '<div class="scroll"><table class="pt kgrid"><tr><th>Child</th>'+objs.map(function(o,i){ return '<th title="'+esc(o.short)+': '+esc(o.nc)+'">'+(i+1)+'</th>'; }).join('')+'<th>Secure</th><th>Stories read</th><th>Reading score</th><th></th></tr>';
     ks.forEach(function(k){
       var p = prog[k.id] || {}, sm = R.summary(c.grade, p), sk = p.skills || {};
-      h += '<tr><td><b>'+esc(k.first_name)+'</b></td>'+objs.map(function(o){ var r = sk[o.id], L = R.LEVELS[R.level(r)];
-          return '<td title="'+esc(o.short)+' · '+L.n+(r&&r.n?' · '+r.r+' of '+r.n+' right':'')+'" style="background:'+L.c+';color:'+L.t+';text-align:center;font-weight:900">'+(r&&r.n?Math.round(r.r/r.n*100)+'%':'')+'</td>'; }).join('')+
+      h += '<tr><td><b>'+esc(k.first_name)+'</b>'+(sk['champ-'+c.grade]?' 🏆':'')+'</td>'+objs.map(function(o){ var r = sk[o.id], L = R.LEVELS[R.level(r)];
+          return '<td title="'+esc(o.short)+' · '+L.n+(r&&r.n?' · '+r.r+' of '+r.n+' right':'')+'" style="background:'+L.c+';color:'+L.t+';text-align:center;font-weight:900">'+(r&&r.n?Math.round(r.r/r.n*100)+'%':'')+((sk['sup-'+o.id]||{}).ok?' 🌟':'')+'</td>'; }).join('')+
         '<td><b>'+sm.counts[3]+'</b> / '+sm.objs+'</td><td>'+sm.read+' / '+sm.stories+'</td><td>'+(sm.comp==null?'–':Math.round(sm.comp*100)+'%')+'</td>'+
         '<td><button class="mini" data-rep="'+k.id+'">📄 Report</button></td></tr>';
     });
