@@ -238,3 +238,13 @@ label.jl{display:block;font-weight:900;margin:14px 0 6px}
 .mechip .mini{width:30px;height:30px;border-radius:50%;overflow:hidden;display:block;flex:none}
 .coinwin{display:inline-block;background:var(--sunL);border:1.5px solid #F4D28A;color:#8A5A00;font-weight:800;border-radius:14px;padding:10px 16px;margin:4px 0 18px}
 .coinwin a{color:#8A5A00}
+
+/* shared menu bar */
+.sqnav{border-top:1px solid var(--line);background:rgba(255,253,248,.96)}
+.sqnav .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:6px;padding-bottom:6px;scrollbar-width:none}
+.sqnav .wrap::-webkit-scrollbar{display:none}
+.sqnav a{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;text-decoration:none;font-weight:800;font-size:14px;color:var(--ink2);padding:7px 12px;border-radius:99px}
+.sqnav a:hover{background:var(--tealL);color:var(--tealD)}
+.sqnav a.on{background:var(--teal);color:#fff}
+.lvl{display:inline-block;border-radius:99px;padding:4px 10px;font-weight:900;font-size:12px;white-space:nowrap}
+table.kgrid td{padding:6px 4px;font-size:12px;min-width:34px}

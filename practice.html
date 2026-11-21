@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Science Practice | Science Quest by Curious Nest</title>
+<link rel="icon" type="image/png" href="img/sq-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css?v=38">
+<style>
+  .pgrades{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 6px}
+  .ptopic{margin-top:26px}
+  .ptopic .th{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .ptopic h2{font-size:22px}
+  .objs{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px;margin-top:12px}
+  .obj{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+  .obj h3{font-size:16px;line-height:1.3}
+  .obj p{margin:0;font-size:13px;color:var(--muted);font-weight:700;line-height:1.4}
+  .obj .row2{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto}
+  .dots{display:flex;gap:2px;flex-wrap:nowrap}.dots i{width:7px;height:7px;border-radius:50%;background:#E8ECEF;display:block}.dots i.y{background:#47A86A}.dots i.n{background:#E0607E}
+  .go{border:0;background:var(--teal);color:#fff;font-weight:900;border-radius:12px;padding:9px 14px;cursor:pointer;font-size:14px}
+  .mix{border:2px solid var(--teal);background:#fff;color:var(--tealD);font-weight:900;border-radius:12px;padding:9px 14px;cursor:pointer}
+  .qcard{background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:20px 22px;margin-top:18px;max-width:760px;margin-left:auto;margin-right:auto}
+  .qtop{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-weight:900;color:var(--muted)}
+  .qobj{font-size:13px;color:var(--teal);font-weight:900;text-transform:uppercase;letter-spacing:.05em}
+  .qpic{margin:14px 0}
+  .qtext{font-size:22px;font-weight:900;line-height:1.35;margin:10px 0 14px}
+  .qopts{display:grid;gap:10px}
+  .qopts.pics{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+  .qo{border:2.5px solid var(--line);background:#fff;border-radius:16px;padding:13px 16px;font-weight:800;font-size:18px;cursor:pointer;text-align:left;color:var(--ink)}
+  .qopts.pics .qo{text-align:center;padding:10px}
+  .qopts.pics .qo span{display:block;margin-top:6px;font-size:16px}
+  .qo:hover{border-color:var(--teal)}
+  .qo.right{border-color:var(--leaf);background:var(--leafL)} .qo.wrong{border-color:var(--rose);background:var(--roseL)}
+  .qfb{margin-top:14px;padding:12px 16px;border-radius:14px;font-weight:700}
+  .qfb.y{background:var(--leafL);color:#2F7A4C} .qfb.n{background:var(--roseL);color:#9B2C4A}
+  .pbar{height:10px;background:#EEF1F5;border-radius:99px;overflow:hidden;margin:8px 0 2px}.pbar b{display:block;height:100%;background:var(--teal);transition:width .3s}
+  .sumrow{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #EEF1F5;font-weight:800}
+  .lvl{display:inline-block;border-radius:99px;padding:4px 10px;font-weight:900;font-size:12px;white-space:nowrap}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><span class="mk"><img src="img/sq-bird.png" alt=""></span><span><b>Science Quest</b><small>by Curious Nest</small></span></a>
+    <div class="who"><a class="chipbtn" href="learn.html">📚 Library</a><a class="chipbtn" href="progress.html">📈 My Progress</a><span id="who"></span></div>
+  </div>
+</header>
+
+<main class="wrap" id="main"></main>
+
+<footer class="foot"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>Original questions based on the National Curriculum for England. Not affiliated with any publisher or exam board.</span></div></footer>
+
+<script src="js/art.js?v=38"></script>
+<script src="js/kg2.js?v=38"></script>
+<script src="js/g1.js?v=38"></script>
+<script src="js/g2.js?v=38"></script>
+<script src="js/g3.js?v=38"></script>
+<script src="js/practice-art.js?v=38"></script>
+<script src="js/practice.js?v=38"></script>
+<script src="js/avatar.js?v=38"></script>
+<script src="js/store.js?v=38"></script>
+<script src="js/report.js?v=38"></script>
+<script>
+(function(){
+  var S = SQ_STORE, P = SQ_PRAC, T = SQ_PRAC_TOPICS, R = SQ_REPORT, main = document.getElementById('main');
+  var GR = [['kg2','KG2','Year 1'],['g1','Grade 1','Year 2'],['g2','Grade 2','Year 3'],['g3','Grade 3','Year 4'],['g4','Grade 4','Year 5'],['g5','Grade 5','Year 6']];
+  var me = S.me(), grade = (me && P[me.grade]) ? me.grade : 'kg2', sess = null;
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function shuffle(a){ a = a.slice(); for (var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)), t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+  function sk(){ return S.data().skills || {}; }
+
+  /* read aloud with the friendliest lady's voice the device has */
+  var canSpeak = 'speechSynthesis' in window;
+  function voice(){ var v = canSpeak ? speechSynthesis.getVoices() : [], bad = /zarvox|whisper|bells|bubbles|jester|organ|trinoids|wobble|albert|fred|junior|ralph|daniel|arthur|oliver|male|grandpa|eddy|reed|rocko/i;
+    v = v.filter(function(x){ return /^en/i.test(x.lang) && !bad.test(x.name); });
+    var pref = [/libby|maisie|sonia/i,/serena|stephanie|martha|kate/i,/google uk english female/i,/samantha|karen|moira|tessa/i];
+    try { var mine = localStorage.getItem('sq-voice'); var m = v.filter(function(x){return x.name===mine;})[0]; if (m) return m; } catch(e){}
+    for (var i=0;i<pref.length;i++){ var f = v.filter(function(x){return pref[i].test(x.name);})[0]; if (f) return f; } return v[0] || null; }
+  function say(t){ if (!canSpeak) return; speechSynthesis.cancel(); var u = new SpeechSynthesisUtterance(t), v = voice(); if (v) { u.voice = v; u.lang = v.lang; } u.rate = .92; u.pitch = 1.08; speechSynthesis.speak(u); }
+
+  function home(){
+    sess = null;
+    var h = '<div class="lhead"><h1>Science Practice</h1><p>Practise every science objective for your grade. Each question has a picture to help you think. Get answers right to make each objective <b>Secure</b>!</p></div>';
+    h += '<div class="pgrades">'+GR.map(function(g){ var ok = !!P[g[0]]; return '<button class="grade'+(g[0]===grade?' on':'')+(ok?'':' soon')+'" '+(ok?'data-g="'+g[0]+'"':'disabled')+'>'+g[1]+'<small>'+g[2]+(ok?'':' · coming soon')+'</small></button>'; }).join('')+'</div>';
+    var objs = P[grade], s = sk();
+    var sm = R.summary(grade, S.data());
+    h += '<p style="font-weight:800;color:var(--ink2);margin:12px 0 0">You are secure in <b style="color:var(--teal)">'+sm.counts[3]+' of '+sm.objs+'</b> objectives. Every objective you make secure earns 🪙 15 coins!</p>';
+    Object.keys(T[grade]).forEach(function(t){
+      var list = objs.filter(function(o){ return o.topic===t; });
+      h += '<section class="ptopic"><div class="th"><h2>'+esc(T[grade][t])+'</h2><button class="mix" data-mix="'+t+'">🎲 Mixed quiz: 8 questions</button></div><div class="objs">';
+      list.forEach(function(o){ var r = s[o.id], l = R.level(r), hh = (r && r.h) || '';
+        h += '<div class="obj"><h3>'+esc(o.short)+'</h3><p>'+esc(o.nc)+'</p><div class="row2">'+R.chip(l)+'<span class="dots" title="Your last answers">'+
+          Array.apply(null, Array(10)).map(function(_,i){ var c = hh.charAt(i); return '<i class="'+(c==='1'?'y':c==='0'?'n':'')+'"></i>'; }).join('')+'</span><button class="go" data-o="'+o.id+'">Practise</button></div></div>'; });
+      h += '</div></section>';
+    });
+    main.innerHTML = h;
+    main.querySelectorAll('[data-g]').forEach(function(b){ b.onclick = function(){ grade = b.getAttribute('data-g'); home(); }; });
+    main.querySelectorAll('[data-o]').forEach(function(b){ b.onclick = function(){ var o = objs.filter(function(x){return x.id===b.getAttribute('data-o');})[0];
+      start(shuffle(o.qs).map(function(q){ return {q:q, o:o}; }), o.short); }; });
+    main.querySelectorAll('[data-mix]').forEach(function(b){ b.onclick = function(){ var t = b.getAttribute('data-mix'), all = [];
+      objs.filter(function(o){return o.topic===t;}).forEach(function(o){ o.qs.forEach(function(q){ all.push({q:q, o:o}); }); });
+      start(shuffle(all).slice(0,8), T[grade][t] + ': mixed quiz'); }; });
+  }
+
+  function start(items, title){
+    var before = {}; items.forEach(function(it){ before[it.o.id] = R.level(sk()[it.o.id]); });
+    sess = {items:items, i:0, right:0, title:title, before:before}; ask(); window.scrollTo({top:0});
+  }
+  function ask(){
+    var it = sess.items[sess.i], q = it.q, pics = !!q.pic;
+    var order = shuffle(q.o.map(function(_,i){return i;}));
+    var h = '<div class="qcard"><div class="qtop"><span class="qobj">'+esc(it.o.short)+'</span><span>Question '+(sess.i+1)+' of '+sess.items.length+'</span></div>'+
+      '<div class="pbar"><b style="width:'+(sess.i/sess.items.length*100)+'%"></b></div>'+
+      (q.v ? '<div class="qpic">'+SQ_VIS(q.v)+'</div>' : '')+
+      '<div class="qtext">'+esc(q.q)+'</div>'+
+      '<div class="qopts'+(pics?' pics':'')+'">'+order.map(function(i){ var parts = q.o[i].split('|');
+        return '<button class="qo" data-i="'+i+'">'+(pics ? SQ_PIC(parts[1])+'<span>'+esc(parts[0])+'</span>' : esc(parts[0]))+'</button>'; }).join('')+'</div>'+
+      '<div id="fb"></div><p style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">'+(canSpeak?'<button class="chipbtn" id="rd">🔊 Read to me</button>':'')+'<button class="chipbtn" id="quit">← Back to objectives</button></p></div>';
+    main.innerHTML = h;
+    var rd = document.getElementById('rd'); if (rd) rd.onclick = function(){ say(q.q + ' ' + order.map(function(i){ return q.o[i].split('|')[0]; }).join('. ')); };
+    document.getElementById('quit').onclick = function(){ if (canSpeak) speechSynthesis.cancel(); home(); };
+    main.querySelectorAll('.qo').forEach(function(b){ b.onclick = function(){
+      var i = +b.getAttribute('data-i'), ok = i === 0;
+      main.querySelectorAll('.qo').forEach(function(x){ x.disabled = true; if (+x.getAttribute('data-i')===0) x.classList.add('right'); });
+      if (!ok) b.classList.add('wrong'); else sess.right++;
+      S.skill(it.o.id, ok);
+      document.getElementById('fb').innerHTML = '<div class="qfb '+(ok?'y':'n')+'">'+(ok?'✅ <b>Correct!</b> ':'❌ <b>Not quite.</b> The answer is <b>'+esc(q.o[0].split('|')[0])+'</b>. ')+esc(q.why)+'</div>'+
+        '<p style="margin-top:14px"><button class="btn pri" id="nx">'+(sess.i < sess.items.length-1 ? 'Next question →' : 'See my results')+'</button></p>';
+      document.getElementById('nx').onclick = function(){ if (canSpeak) speechSynthesis.cancel(); sess.i++; if (sess.i < sess.items.length) ask(); else done(); };
+    }; });
+  }
+  function done(){
+    var ids = Object.keys(sess.before), objs = P[grade], h = '<div class="qcard" style="text-align:center"><h2 style="font-size:28px">'+(sess.right/sess.items.length >= .8 ? '🌟 Superb science!' : sess.right/sess.items.length >= .5 ? '👏 Well done!' : '💪 Good effort!')+'</h2>'+
+      '<p class="qtext" style="font-size:20px">You got '+sess.right+' out of '+sess.items.length+' right.</p><div style="text-align:left;margin:10px 0 16px">';
+    var newSecure = 0;
+    ids.forEach(function(id){ var o = objs.filter(function(x){return x.id===id;})[0], now = R.level(sk()[id]), was = sess.before[id];
+      if (now===3 && was!==3) newSecure++;
+      h += '<div class="sumrow"><span>'+esc(o.short)+'</span><span>'+(was!==now ? R.chip(was)+' → ' : '')+R.chip(now)+'</span></div>'; });
+    h += '</div>'+(newSecure ? '<p class="coinwin">🪙 +'+(newSecure*15)+' coins! You made '+newSecure+' objective'+(newSecure>1?'s':'')+' secure. Spend them in <a href="lab.html">My Scientist</a>.</p>' : '')+
+      '<p><button class="btn pri" id="again">Practise again</button> <button class="btn sec" id="back">Choose another objective</button></p></div>';
+    main.innerHTML = h;
+    var items = sess.items, title = sess.title;
+    document.getElementById('again').onclick = function(){ start(shuffle(items), title); };
+    document.getElementById('back').onclick = home;
+  }
+
+  S.chip(document.getElementById('who'), function(){ var m = S.me(); if (m && P[m.grade]) grade = m.grade; if (!sess) home(); });
+  home();
+})();
+</script>
+<script src="js/nav.js?v=38"></script>
+</body>
+</html>

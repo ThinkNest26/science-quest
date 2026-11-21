@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/app.css?v=37">
+<link rel="stylesheet" href="css/app.css?v=38">
 </head>
 <body>
 <header class="top">
@@ -27,13 +27,13 @@
 
 <footer class="foot"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>Original stories and characters. Not affiliated with any publisher or exam board.</span></div></footer>
 
-<script src="js/art.js?v=37"></script>
-<script src="js/kg2.js?v=37"></script>
-<script src="js/g1.js?v=37"></script>
-<script src="js/g2.js?v=37"></script>
-<script src="js/g3.js?v=37"></script>
-<script src="js/avatar.js?v=37"></script>
-<script src="js/store.js?v=37"></script>
+<script src="js/art.js?v=38"></script>
+<script src="js/kg2.js?v=38"></script>
+<script src="js/g1.js?v=38"></script>
+<script src="js/g2.js?v=38"></script>
+<script src="js/g3.js?v=38"></script>
+<script src="js/avatar.js?v=38"></script>
+<script src="js/store.js?v=38"></script>
 <script>
 (function(){
   var A = window.SQ_ART, id = new URLSearchParams(location.search).get('s'), S = null;
@@ -44,7 +44,7 @@
   document.getElementById('title').textContent = S.title;
 
   var STEPS = ['Read it','Understand it','Think like a scientist','Discover','Try it yourself'];
-  var step = 0, page = 0, qi = 0, stars = 0, prediction = null;
+  var step = 0, page = 0, qi = 0, stars = 0, prediction = null, kinds = {};
   function store(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
   function load(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
   function esc(t){ return t.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
@@ -221,10 +221,12 @@
         var i = +b.getAttribute('data-i'); tries++;
         if (i === Q.a) {
           done = true; b.classList.add('right'); if (tries===1) stars++;
+          if (tries===1) { var kt = kinds[Q.type] || [0,0]; kinds[Q.type] = [kt[0]+1, kt[1]+1]; }
           fb.innerHTML = '<b>'+(tries===1?'Brilliant!':'You got there!')+'</b> '+esc(Q.why);
           nx.disabled = false;
           stage.querySelector('.stars').textContent = 'Question '+(qi+1)+' of '+S.understand.length+' · ★ '+stars;
         } else {
+          if (tries===1) { var kw = kinds[Q.type] || [0,0]; kinds[Q.type] = [kw[0], kw[1]+1]; }
           b.classList.add('wrong'); b.disabled = true;
           fb.innerHTML = '<b>Not quite.</b> Have another look at the story and try again.';
         }
@@ -303,6 +305,7 @@
   /* ---------- badge ---------- */
   function finish(){
     SQ_STORE.badge(S.id);
+    if (SQ_STORE.read) SQ_STORE.read(S.id, stars, S.understand.length, kinds);
     SQ_STORE.note({title:S.title, q:S.predict.q, guess:S.predict.o[prediction], found:S.predict.discover});
     document.querySelectorAll('.stp').forEach(function(s){ s.className = 'stp done'; s.querySelector('.n').textContent = '✓'; });
     stage.innerHTML = '<div class="finish"><div class="medal">'+A.icon(S.cover[0],80)+'</div>' +
@@ -310,12 +313,13 @@
       '<p>You read the story, answered '+stars+' of '+S.understand.length+' questions first time, made a prediction and sorted like a real scientist.</p>' +
       '<p class="coinwin">🪙 +20 coins! Spend them on science equipment for <a href="lab.html">My Scientist</a>.</p>' +
       '<a class="btn pri" href="learn.html">Back to the library</a> <button class="btn sec" id="again">Read it again</button></div>';
-    document.getElementById('again').onclick = function(){ page = 0; qi = 0; stars = 0; prediction = null; go(0); };
+    document.getElementById('again').onclick = function(){ page = 0; qi = 0; stars = 0; kinds = {}; prediction = null; go(0); };
   }
 
   SQ_STORE.chip(document.getElementById('who'));
   drawSteps(); read();
 })();
 </script>
+<script src="js/nav.js?v=38"></script>
 </body>
 </html>

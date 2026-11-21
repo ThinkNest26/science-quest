@@ -165,5 +165,112 @@
     return '<svg viewBox="0 0 360 200" width="100%" style="display:block;max-width:520px;margin:0 auto">'+s+'</svg>';
   }
 
-  window.SQ_LAB = {ROOMS:ROOMS, FURN:FURN, EXP:EXP, furn:furn, thing:thing, testScene:testScene, sliderScene:sliderScene, icon:icon};
+
+  /* ---------- lab shop: paint, floors, wall decorations and outside (bought with lab points) ---------- */
+  var PAINTS = [
+    {id:'p-default',name:'Original colour',col:null,price:0},
+    {id:'p-white', name:'Clean white', col:'#FBFBF8', price:0},
+    {id:'p-mint',  name:'Mint',        col:'#D7F2EC', price:15},
+    {id:'p-lilac', name:'Lilac',       col:'#E6DEFA', price:15},
+    {id:'p-pink',  name:'Candy pink',  col:'#FBDDE5', price:15},
+    {id:'p-sky',   name:'Sky blue',    col:'#D6EAFB', price:15},
+    {id:'p-lemon', name:'Lemon',       col:'#FFF3B8', price:20},
+    {id:'p-peach', name:'Peach',       col:'#FFE0CC', price:20},
+    {id:'p-sage',  name:'Sage green',  col:'#D9EBCF', price:20},
+    {id:'p-ocean', name:'Deep ocean',  col:'#2F6FA8', price:30},
+    {id:'p-forest',name:'Forest',      col:'#2F7A57', price:30},
+    {id:'p-stars', name:'Starry night',col:'#1B2350', price:45}
+  ];
+  var FLOORS = [
+    {id:'f-default',name:'Original floor',price:0},
+    {id:'f-wood',   name:'Wooden planks', price:20},
+    {id:'f-tiles',  name:'White tiles',   price:20},
+    {id:'f-check',  name:'Chequered tiles',price:30},
+    {id:'f-stone',  name:'Stone slabs',   price:25},
+    {id:'f-grass',  name:'Grass carpet',  price:30},
+    {id:'f-rug',    name:'Round rug',     price:25},
+    {id:'f-space',  name:'Space carpet',  price:40}
+  ];
+  var DECOR = [
+    {id:'d-window',  name:'Window',             price:20},
+    {id:'d-clock',   name:'Wall clock',         price:15},
+    {id:'d-board',   name:'Whiteboard',         price:20},
+    {id:'d-books',   name:'Book shelf',         price:25},
+    {id:'d-safety',  name:'Safety signs',       price:15},
+    {id:'d-solar',   name:'Solar system poster',price:30},
+    {id:'d-skeleton',name:'Skeleton poster',    price:30},
+    {id:'d-plant',   name:'Plant parts poster', price:25},
+    {id:'d-moon',    name:'Moon phases poster', price:30},
+    {id:'d-water',   name:'Water cycle poster', price:30},
+    {id:'d-map',     name:'World map',          price:35},
+    {id:'d-cert',    name:'Framed certificate', price:20},
+    {id:'d-hangplant',name:'Hanging plant',     price:20},
+    {id:'d-lights',  name:'Fairy lights',       price:25}
+  ];
+  var OUTSIDE = [
+    {id:'r-plum',  name:'Purple roof', kind:'roof', col:'#7559D1', price:0},
+    {id:'r-teal',  name:'Teal roof',   kind:'roof', col:'#16918C', price:20},
+    {id:'r-red',   name:'Red roof',    kind:'roof', col:'#D9443A', price:20},
+    {id:'r-sun',   name:'Sunny roof',  kind:'roof', col:'#F2A93B', price:20},
+    {id:'r-navy',  name:'Navy roof',   kind:'roof', col:'#2F4B8C', price:20},
+    {id:'o-tree',  name:'Apple tree',      kind:'deco', price:30},
+    {id:'o-flowers',name:'Flower beds',    kind:'deco', price:25},
+    {id:'o-path',  name:'Stone path',      kind:'deco', price:15},
+    {id:'o-bench', name:'Garden bench',    kind:'deco', price:20},
+    {id:'o-vane',  name:'Rooftop weather vane', kind:'deco', price:30},
+    {id:'o-solar', name:'Rooftop solar panels', kind:'deco', price:45},
+    {id:'o-dish',  name:'Satellite dish',  kind:'deco', price:40},
+    {id:'o-pond',  name:'Wildlife pond',   kind:'deco', price:40}
+  ];
+  var LABITEMS = {}; PAINTS.concat(FLOORS, DECOR, OUTSIDE).forEach(function(x){ LABITEMS[x.id] = x; });
+
+  function floor(id, w, h){
+    var s = '';
+    switch(id){
+      case 'f-wood': s = '<rect width="'+w+'" height="'+h+'" fill="#C9965A"/>'; for (var y=0;y<h;y+=9) s += '<path d="M0 '+y+' H'+w+'" stroke="#A7743F" stroke-width="1.5"/>'; for (var x=20;x<w;x+=60) s += '<path d="M'+x+' 0 v9 M'+(x+30)+' 9 v9 M'+x+' 18 v9 M'+(x+30)+' 27 v9 M'+x+' 36 v10" stroke="#A7743F" stroke-width="1.2"/>'; return s;
+      case 'f-tiles': s = '<rect width="'+w+'" height="'+h+'" fill="#F4F6F8"/>'; for (var x2=0;x2<w;x2+=23) s += '<path d="M'+x2+' 0 V'+h+'" stroke="#D5DBE3"/>'; for (var y2=0;y2<h;y2+=15) s += '<path d="M0 '+y2+' H'+w+'" stroke="#D5DBE3"/>'; return s;
+      case 'f-check': s = '<rect width="'+w+'" height="'+h+'" fill="#F4F6F8"/>'; for (var i=0;i<w/23;i++) for (var j=0;j<h/15;j++) if ((i+j)%2) s += '<rect x="'+(i*23)+'" y="'+(j*15)+'" width="23" height="15" fill="#2B2E34"/>'; return s;
+      case 'f-stone': s = '<rect width="'+w+'" height="'+h+'" fill="#B9B4AE"/>'; [[4,4,60,18],[70,4,50,18],[126,4,70,18],[202,4,68,18],[4,26,44,18],[54,26,72,18],[132,26,54,18],[192,26,78,18]].forEach(function(r){ s += '<rect x="'+r[0]+'" y="'+r[1]+'" width="'+r[2]+'" height="'+r[3]+'" rx="4" fill="#CFCAC4"/>'; }); return s;
+      case 'f-grass': s = '<rect width="'+w+'" height="'+h+'" fill="#8CCB6E"/>'; for (var g=6;g<w;g+=12) s += '<path d="M'+g+' '+h+' l3 -10 l3 10" fill="#6FB253"/>'; return s;
+      case 'f-rug': return '<ellipse cx="'+(w/2)+'" cy="'+(h/2)+'" rx="'+(w*.42)+'" ry="'+(h*.38)+'" fill="#E0607E"/><ellipse cx="'+(w/2)+'" cy="'+(h/2)+'" rx="'+(w*.32)+'" ry="'+(h*.26)+'" fill="#F6B93B"/><ellipse cx="'+(w/2)+'" cy="'+(h/2)+'" rx="'+(w*.2)+'" ry="'+(h*.14)+'" fill="#FCEFF2"/>';
+      case 'f-space': s = '<rect width="'+w+'" height="'+h+'" fill="#24306B"/>'; [[20,10],[60,30],[110,14],[160,34],[210,12],[250,30],[90,38],[190,22]].forEach(function(p){ s += '<circle cx="'+p[0]+'" cy="'+p[1]+'" r="2" fill="#FFF6C9"/>'; }); return s + '<circle cx="140" cy="24" r="8" fill="#F6B93B"/>';
+    }
+    return '';
+  }
+  /* wall decorations fit an 80 x 50 box */
+  function decor(id){
+    switch(id){
+      case 'd-window': return '<rect x="8" y="0" width="64" height="50" rx="4" fill="#fff"/><rect x="12" y="4" width="56" height="42" fill="#BFE3F7"/><circle cx="56" cy="14" r="6" fill="#FFD966"/><path d="M40 4 V46 M12 25 H68" stroke="#fff" stroke-width="4"/><path d="M14 40 c8 -8 16 -8 24 0" fill="#9AD27A"/>';
+      case 'd-clock': return '<circle cx="40" cy="25" r="22" fill="#fff" stroke="#4A5677" stroke-width="4"/><path d="M40 25 V11 M40 25 L50 30" stroke="#1F2B4D" stroke-width="3" stroke-linecap="round"/><circle cx="40" cy="25" r="2.5" fill="#E2453A"/>';
+      case 'd-board': return '<rect x="2" y="2" width="76" height="44" rx="3" fill="#fff" stroke="#9AA3AE" stroke-width="3"/><text x="40" y="24" font-family="Arial" font-weight="bold" font-size="13" text-anchor="middle" fill="#3D8BE0">H₂O</text><path d="M12 34 h22 M44 34 h24" stroke="#E2453A" stroke-width="2"/>';
+      case 'd-books': return '<rect x="2" y="40" width="76" height="6" fill="#B7834A"/>'+[[6,'#E2453A',30],[14,'#3D8BE0',34],[22,'#F6B93B',28],[30,'#47A86A',34],[38,'#7559D1',30],[46,'#E0607E',26],[56,'#16918C',34],[64,'#F2A93B',30]].map(function(b){ return '<rect x="'+b[0]+'" y="'+(40-b[2])+'" width="7" height="'+b[2]+'" fill="'+b[1]+'"/>'; }).join('');
+      case 'd-safety': return '<rect x="2" y="6" width="36" height="40" rx="4" fill="#1F6FD1"/><circle cx="20" cy="24" r="11" fill="#fff"/><path d="M12 24 h16" stroke="#1F6FD1" stroke-width="5"/><path d="M42 44 L60 6 L78 44Z" fill="#F6B93B" stroke="#1F2B4D" stroke-width="2"/><text x="60" y="40" font-family="Arial" font-weight="bold" font-size="18" text-anchor="middle" fill="#1F2B4D">!</text>';
+      case 'd-solar': return '<rect x="2" y="2" width="76" height="46" rx="3" fill="#1B2350"/><circle cx="8" cy="25" r="12" fill="#F6B93B"/>'+[[24,2.5,'#9AA3AE'],[32,3,'#F2A93B'],[41,3.4,'#3D8BE0'],[50,2.8,'#E2453A'],[60,6,'#D9B98A'],[71,5,'#F2D18B']].map(function(p){ return '<circle cx="'+p[0]+'" cy="25" r="'+p[1]+'" fill="'+p[2]+'"/>'; }).join('');
+      case 'd-skeleton': return '<rect x="14" y="0" width="52" height="50" rx="3" fill="#2F4B8C"/><circle cx="40" cy="10" r="6" fill="#F7F1E3"/><path d="M40 16 V36 M30 22 H50 M31 27 H49 M32 32 H48 M40 36 L33 47 M40 36 L47 47 M30 22 L24 33 M50 22 L56 33" stroke="#F7F1E3" stroke-width="2.5" stroke-linecap="round"/>';
+      case 'd-plant': return '<rect x="14" y="0" width="52" height="50" rx="3" fill="#FFFDF0" stroke="#47A86A" stroke-width="2"/><path d="M40 40 V18" stroke="#2F8F57" stroke-width="2.5"/><circle cx="40" cy="12" r="5" fill="#F6B93B"/><circle cx="40" cy="12" r="2" fill="#B7834A"/><ellipse cx="33" cy="26" rx="6" ry="3" fill="#47A86A"/><ellipse cx="47" cy="30" rx="6" ry="3" fill="#47A86A"/><path d="M40 40 l-6 6 M40 40 l6 6 M40 40 v7" stroke="#8A5E2E" stroke-width="1.5"/>';
+      case 'd-moon': return '<rect x="2" y="6" width="76" height="38" rx="3" fill="#1B2350"/>'+[10,24,38,52,66].map(function(x,i){ return '<circle cx="'+(x+2)+'" cy="25" r="6" fill="#F7F1E3"/>'+(i<4?'<circle cx="'+(x+2+[-4,-7,7,4][i])+'" cy="25" r="6" fill="#1B2350"/>':''); }).join('');
+      case 'd-water': return '<rect x="2" y="2" width="76" height="46" rx="3" fill="#EAF4FD" stroke="#3D8BE0" stroke-width="2"/><path d="M4 40 H40" stroke="#3D8BE0" stroke-width="6"/><path d="M40 46 L56 20 L72 46Z" fill="#9AD27A"/><ellipse cx="44" cy="12" rx="12" ry="6" fill="#fff" stroke="#9AA3AE"/><path d="M20 36 C18 26 26 18 32 14" stroke="#E2453A" stroke-width="1.5" fill="none" marker-end=""/><path d="M50 18 v8 M46 20 v6" stroke="#3D8BE0" stroke-width="1.5"/>';
+      case 'd-map': return '<rect x="2" y="4" width="76" height="42" rx="3" fill="#BFE3F7" stroke="#B7834A" stroke-width="2"/><path d="M10 14 c6 -4 14 0 16 6 c2 6 -6 8 -4 14 c-6 0 -10 -8 -12 -20z M34 10 c8 -2 12 4 10 8 c-4 2 -4 10 2 18 c-6 2 -12 -12 -12 -26z M50 12 c10 -4 22 0 24 8 c-4 4 -10 0 -12 6 c-6 -2 -8 -8 -12 -14z M60 32 c4 0 8 4 6 8 c-4 0 -6 -4 -6 -8z" fill="#9AD27A"/>';
+      case 'd-cert': return '<rect x="10" y="2" width="60" height="46" rx="3" fill="#F2A93B"/><rect x="15" y="7" width="50" height="36" fill="#FFFDF0"/><path d="M22 16 h36 M22 22 h28 M22 28 h32" stroke="#9AA3AE" stroke-width="2"/><circle cx="54" cy="36" r="6" fill="#E2453A"/>';
+      case 'd-hangplant': return '<path d="M40 0 V14" stroke="#8A5E2E" stroke-width="1.5"/><path d="M28 14 h24 l-4 14 h-16z" fill="#C2452F"/><path d="M30 26 c-6 8 -2 16 -8 22 M36 28 c0 10 4 14 2 22 M48 26 c6 8 2 16 8 22" stroke="#47A86A" stroke-width="3" fill="none" stroke-linecap="round"/><ellipse cx="24" cy="38" rx="4" ry="2.4" fill="#5BBE7C"/><ellipse cx="54" cy="40" rx="4" ry="2.4" fill="#5BBE7C"/>';
+      case 'd-lights': var s = '<path d="M0 8 Q40 30 80 8" stroke="#4A5677" stroke-width="1.5" fill="none"/>'; [6,16,26,36,46,56,66,74].forEach(function(x){ var y = 8 + 22*(1-Math.pow((x-40)/40,2))*.9; s += '<circle cx="'+x+'" cy="'+(y+3).toFixed(1)+'" r="3.4" fill="#FFE58A"/><circle cx="'+x+'" cy="'+(y+3).toFixed(1)+'" r="6" fill="#FFE58A" opacity=".3"/>'; }); return s;
+    }
+    return '';
+  }
+  /* outside things, drawn on the 900 x 730 lab picture */
+  function outside(id){
+    switch(id){
+      case 'o-tree': return '<rect x="842" y="560" width="14" height="70" fill="#8A5E2E"/><circle cx="849" cy="540" r="40" fill="#47A86A"/><circle cx="830" cy="530" r="6" fill="#E2453A"/><circle cx="860" cy="548" r="6" fill="#E2453A"/><circle cx="846" cy="516" r="6" fill="#E2453A"/>';
+      case 'o-flowers': var s = '<rect x="30" y="650" width="330" height="22" rx="8" fill="#8A5E2E"/><rect x="540" y="650" width="280" height="22" rx="8" fill="#8A5E2E"/>'; for (var x=44;x<360;x+=26) s += '<circle cx="'+x+'" cy="648" r="7" fill="'+['#E0607E','#F6B93B','#A88BEB','#FFFFFF'][x%4]+'"/><circle cx="'+x+'" cy="648" r="2.5" fill="#F6B93B"/>'; for (var y=554;y<820;y+=26) s += '<circle cx="'+y+'" cy="648" r="7" fill="'+['#E0607E','#F6B93B','#A88BEB','#FFFFFF'][y%4]+'"/><circle cx="'+y+'" cy="648" r="2.5" fill="#F6B93B"/>'; return s;
+      case 'o-path': return '<path d="M420 614 L400 730 H500 L480 614Z" fill="#CFCAC4"/><path d="M412 650 H488 M406 690 H494" stroke="#B9B4AE" stroke-width="3"/>';
+      case 'o-bench': return '<rect x="560" y="676" width="80" height="10" rx="3" fill="#B7834A"/><rect x="560" y="660" width="80" height="8" rx="3" fill="#B7834A"/><rect x="566" y="686" width="6" height="18" fill="#6B7280"/><rect x="628" y="686" width="6" height="18" fill="#6B7280"/>';
+      case 'o-vane': return '<path d="M450 20 V3" stroke="#4A5677" stroke-width="3"/><path d="M428 9 H472" stroke="#4A5677" stroke-width="3"/><path d="M470 3 l12 6 l-12 6z" fill="#E2453A"/><path d="M430 3 l-8 6 l8 6z" fill="#4A5677"/>';
+      case 'o-solar': return '<g transform="rotate(-11.8 160 70)"><rect x="110" y="62" width="110" height="26" fill="#2F4B8C" stroke="#BFC7D2" stroke-width="2"/><path d="M137 62 v26 M164 62 v26 M191 62 v26 M110 75 h110" stroke="#5C7FC9" stroke-width="1.5"/></g>';
+      case 'o-dish': return '<g transform="translate(700 48) rotate(12)"><path d="M0 0 a26 26 0 0 0 40 20" fill="#E8ECEF" stroke="#9AA3AE" stroke-width="2"/><path d="M20 10 L34 -4" stroke="#6B7280" stroke-width="2"/><circle cx="35" cy="-5" r="3" fill="#E2453A"/></g>';
+      case 'o-pond': return '<ellipse cx="90" cy="694" rx="62" ry="20" fill="#3D8BE0" stroke="#9AA3AE" stroke-width="4"/><ellipse cx="72" cy="690" rx="10" ry="4" fill="#47A86A"/><path d="M110 690 c4 -4 10 -4 12 0 c-2 4 -8 4 -12 0z" fill="#F6B93B"/><path d="M146 690 v-22 M152 692 v-18" stroke="#2F8F57" stroke-width="3"/><ellipse cx="146" cy="666" rx="3" ry="7" fill="#8A5E2E"/>';
+    }
+    return '';
+  }
+
+  window.SQ_LAB = {ROOMS:ROOMS, FURN:FURN, EXP:EXP, PAINTS:PAINTS, FLOORS:FLOORS, DECOR:DECOR, OUTSIDE:OUTSIDE, LABITEMS:LABITEMS, floor:floor, decor:decor, outside:outside, furn:furn, thing:thing, testScene:testScene, sliderScene:sliderScene, icon:icon};
 })();

@@ -1,0 +1,400 @@
+/* Science Quest: Science Practice questions, organised by National Curriculum objective.
+   Each question: {q, o:[correct, wrong, wrong...], why, v (picture), pic (true = answers are pictures, written "Label|picture")}
+   The first option is always the correct one; options are shuffled on screen. */
+window.SQ_PRAC = {
+/* ===================== KG2 = Year 1 ===================== */
+kg2: [
+ {id:'y1-pl-1', topic:'plants', short:'Name wild and garden plants and trees',
+  nc:'Identify and name a variety of common wild and garden plants, including deciduous and evergreen trees',
+  qs:[
+   {q:'Which of these is a daisy?', o:['Daisy|daisy','Sunflower|sunflower','Tulip|tulip'], pic:true, why:'A daisy has white petals around a yellow middle.'},
+   {q:'This tree keeps its green leaves all year round. What kind of tree is it?', v:'i:pine,holly', o:['Evergreen','Deciduous','Dead'], why:'Evergreen trees, like pine and holly, stay green even in winter.'},
+   {q:'This tree has lost all its leaves in winter. What kind of tree is it?', v:'tree:winter', o:['Deciduous','Evergreen','A cactus'], why:'Deciduous trees drop their leaves in autumn and grow new ones in spring.'},
+   {q:'Which plant grows wild, without anyone planting it?', o:['Dandelion|dandelion','Tulip in a pot|tulip','Rose in a garden|rose'], pic:true, why:'Dandelions grow by themselves in fields and cracks in the pavement, so they are wild plants.'},
+   {q:'Which tree grows acorns?', v:'i:acorn', o:['Oak|oak','Pine|pine','Holly|holly'], pic:true, why:'Acorns are the seeds of oak trees.'},
+   {q:'Which of these is a tree?', o:['Apple tree|appletree','Daisy|daisy','Clover|clover'], pic:true, why:'Trees are big plants with a woody trunk.'}
+  ]},
+ {id:'y1-pl-2', topic:'plants', short:'Parts of flowering plants and trees',
+  nc:'Identify and describe the basic structure of a variety of common flowering plants, including trees',
+  qs:[
+   {q:'Which part of the plant is the arrow pointing to?', v:'plant:roots', o:['Roots','Stem','Petals'], why:'Roots grow under the soil. They hold the plant still and take in water.'},
+   {q:'Which part of the plant is the arrow pointing to?', v:'plant:leaf', o:['Leaf','Root','Flower'], why:'Leaves are flat and green. They use sunlight to make food for the plant.'},
+   {q:'Which part of the plant is the arrow pointing to?', v:'plant:stem', o:['Stem','Roots','Petal'], why:'The stem holds the plant up and carries water from the roots to the leaves.'},
+   {q:'Which part of the plant is the arrow pointing to?', v:'plant:flower', o:['Flower','Leaf','Root'], why:'The flower is often brightly coloured to attract insects.'},
+   {q:'What is the thick, woody stem of a tree called?', v:'tree:trunk', o:['Trunk','Petal','Bud'], why:'A tree’s stem is called its trunk. It is covered in bark.'},
+   {q:'Which part of a plant is usually underground?', o:['Roots','Flowers','Leaves'], why:'Roots grow down into the soil.'}
+  ]},
+ {id:'y1-an-1', topic:'animals', short:'Fish, amphibians, reptiles, birds and mammals',
+  nc:'Identify and name a variety of common animals including fish, amphibians, reptiles, birds and mammals',
+  qs:[
+   {q:'Which animal is a fish?', o:['Trout|trout','Frog|frog','Rabbit|rabbit'], pic:true, why:'Fish live in water, have fins and breathe with gills.'},
+   {q:'Which animal is a bird?', o:['Parrot|kiki','Lizard|lizard','Cow|cow'], pic:true, why:'Birds have feathers, wings and a beak, and they lay eggs.'},
+   {q:'A frog lives in water and on land. What kind of animal is it?', v:'i:frog', o:['An amphibian','A bird','A fish'], why:'Amphibians, like frogs, start life in water and can live on land when they grow up.'},
+   {q:'Which animal is a reptile?', o:['Lizard|lizard','Sheep|sheep','Parrot|kiki'], pic:true, why:'Reptiles have dry, scaly skin. Lizards, snakes and tortoises are reptiles.'},
+   {q:'Which animal is a mammal?', o:['Rabbit|rabbit','Trout|trout','Frog|frog'], pic:true, why:'Mammals have hair or fur and feed their babies milk. Humans are mammals too!'},
+   {q:'What do all birds have?', v:'i:kiki,chick', o:['Feathers','Fur','Scales'], why:'Every bird has feathers.'}
+  ]},
+ {id:'y1-an-2', topic:'animals', short:'Carnivores, herbivores and omnivores',
+  nc:'Identify and name a variety of common animals that are carnivores, herbivores and omnivores',
+  qs:[
+   {q:'A cow only eats grass and plants. What is it?', v:'i:cow', o:['A herbivore','A carnivore','An omnivore'], why:'Herbivores eat only plants.'},
+   {q:'A lion eats other animals. What is it?', v:'i:lion,meat', o:['A carnivore','A herbivore','An omnivore'], why:'Carnivores eat other animals.'},
+   {q:'A bear eats berries, fish and honey. What is it?', v:'i:bear,blackberry,trout', o:['An omnivore','A herbivore','A carnivore'], why:'Omnivores eat both plants and animals.'},
+   {q:'Which animal is a herbivore?', o:['Rabbit|rabbit','Shark|shark','Lion|lion'], pic:true, why:'Rabbits eat grass, leaves and vegetables.'},
+   {q:'Humans eat fruit, vegetables, eggs and fish. What are we?', v:'i:apple,broccoli,egg', o:['Omnivores','Herbivores','Carnivores'], why:'Most people eat both plants and animals, so humans are omnivores.'},
+   {q:'Which animal is a carnivore?', o:['Shark|shark','Sheep|sheep','Giraffe|giraffe'], pic:true, why:'Sharks hunt and eat fish and other sea animals.'}
+  ]},
+ {id:'y1-an-3', topic:'animals', short:'Compare the bodies of animals',
+  nc:'Describe and compare the structure of a variety of common animals (fish, amphibians, reptiles, birds and mammals, including pets)',
+  qs:[
+   {q:'What does a fish use to swim?', v:'i:trout', o:['Fins and a tail','Wings','Legs'], why:'Fish move their tail and fins to push through the water.'},
+   {q:'Which animal has a hard shell on its back?', o:['Tortoise|tortoise','Rabbit|rabbit','Frog|frog'], pic:true, why:'A tortoise has a hard shell that protects its body.'},
+   {q:'How many legs does a bird have?', v:'i:chick', o:['2','4','6'], why:'Birds walk on two legs and have two wings.'},
+   {q:'What covers a sheep’s body?', v:'i:sheep', o:['Wool (fur)','Feathers','Scales'], why:'Sheep are mammals. Their thick, woolly fur keeps them warm.'},
+   {q:'How many legs does an insect, like a ladybird, have?', v:'i:ladybird', o:['6','4','8'], why:'All insects have six legs.'},
+   {q:'Which animal has a beak?', o:['Parrot|kiki','Cow|cow','Lizard|lizard'], pic:true, why:'Birds use their beaks to eat, because they have no teeth.'}
+  ]},
+ {id:'y1-an-4', topic:'animals', short:'Parts of the human body and the senses',
+  nc:'Identify, name, draw and label the basic parts of the human body and say which part of the body is associated with each sense',
+  qs:[
+   {q:'Which part of the body is the arrow pointing to?', v:'body:knee', o:['Knee','Elbow','Neck'], why:'Your knee is the joint in the middle of your leg.'},
+   {q:'Which part of the body is the arrow pointing to?', v:'body:elbow', o:['Elbow','Knee','Shoulder'], why:'Your elbow is the joint in the middle of your arm.'},
+   {q:'Which part of the body do you use to hear?', o:['Ear|ear','Nose|nose','Eye|eye'], pic:true, why:'We hear with our ears.'},
+   {q:'Which sense do you use with your nose?', v:'i:nose', o:['Smell','Taste','Touch'], why:'Your nose lets you smell, like the smell of fresh bread.'},
+   {q:'Which part of the body helps you taste food?', o:['Tongue|tongue','Hand|hand','Ear|ear'], pic:true, why:'Your tongue has taste buds that sense sweet, salty, sour and bitter.'},
+   {q:'Which sense do you use to feel if something is soft or rough?', v:'i:hand', o:['Touch','Sight','Hearing'], why:'We feel with our skin, especially our fingers.'},
+   {q:'Which part of the body is the arrow pointing to?', v:'body:neck', o:['Neck','Foot','Hand'], why:'Your neck joins your head to your body.'}
+  ]},
+ {id:'y1-ma-1', topic:'materials', short:'Objects and the materials they are made from',
+  nc:'Distinguish between an object and the material from which it is made',
+  qs:[
+   {q:'What material is this spoon made from?', v:'i:spoon', o:['Metal','Paper','Wool'], why:'Spoons are often made of metal, which is strong and easy to clean.'},
+   {q:'What material is this window made from?', v:'i:window', o:['Glass','Wood','Fabric'], why:'Windows are made of glass because we can see through it.'},
+   {q:'Which of these is a material, not an object?', o:['Wood','Chair','Table'], why:'Wood is a material. Chairs and tables are objects that can be made from wood.'},
+   {q:'What is this bucket made from?', v:'i:bucket', o:['Plastic','Glass','Paper'], why:'Many buckets are made of plastic: it is light and waterproof.'},
+   {q:'A house is an object. Which material could it be made from?', v:'i:brick', o:['Brick','Paper','Jelly'], why:'Bricks are strong and hard, so they are good for building houses.'}
+  ]},
+ {id:'y1-ma-2', topic:'materials', short:'Name everyday materials',
+  nc:'Identify and name a variety of everyday materials, including wood, plastic, glass, metal, water, and rock',
+  qs:[
+   {q:'What material is this?', v:'i:wood', o:['Wood','Glass','Plastic'], why:'Wood comes from trees.'},
+   {q:'What material is this?', v:'i:rock', o:['Rock','Metal','Paper'], why:'Rock is hard and comes from the ground.'},
+   {q:'Which of these is made of metal?', o:['Key|key','Paper|paper','Sponge|sponge'], pic:true, why:'Keys are made of metal so they are strong and do not bend.'},
+   {q:'Which of these is made of glass?', o:['Marble|marble','Sponge|sponge','Cardboard box|cardboard'], pic:true, why:'A glass marble is hard, smooth and see-through.'},
+   {q:'Which material is a liquid?', o:['Water','Wood','Rock'], why:'Water is a liquid: it can be poured and takes the shape of its container.'}
+  ]},
+ {id:'y1-ma-3', topic:'materials', short:'Describe properties of materials',
+  nc:'Describe the simple physical properties of a variety of everyday materials',
+  qs:[
+   {q:'What is a sponge like?', v:'i:sponge', o:['Soft and squashy','Hard and stiff','See-through'], why:'A sponge is soft and squashy, and it soaks up water.'},
+   {q:'What does see-through mean?', v:'i:window', o:['You can see through it, like glass','It is very heavy','It is soft'], why:'Glass is see-through (transparent). Light passes through it.'},
+   {q:'Which word describes a rock?', v:'i:rock', o:['Hard','Stretchy','Bendy'], why:'Rock is hard. It does not squash or stretch.'},
+   {q:'An elastic band can be pulled longer, then goes back. What is it?', v:'i:elastic', o:['Stretchy','Waterproof','See-through'], why:'Stretchy materials can be pulled and then spring back to their shape.'},
+   {q:'A raincoat keeps you dry. What property does it have?', v:'i:raincoat', o:['Waterproof','Absorbent','Fluffy'], why:'Waterproof materials do not let water through.'}
+  ]},
+ {id:'y1-ma-4', topic:'materials', short:'Compare and group materials',
+  nc:'Compare and group together a variety of everyday materials on the basis of their simple physical properties',
+  qs:[
+   {q:'Which material would soak up spilled water best?', o:['Sponge|sponge','Plastic|plastic','Foil|foil'], pic:true, why:'A sponge is absorbent: it soaks up water.'},
+   {q:'Which one is the odd one out? (Hint: which is not hard?)', o:['Sponge|sponge','Rock|rock','Brick|brick'], pic:true, why:'Rock and brick are hard. The sponge is soft.'},
+   {q:'Which would be best for an umbrella?', o:['Plastic','Paper','Cotton wool'], why:'Plastic is waterproof, so it keeps the rain off.'},
+   {q:'Which group are all hard?', o:['Rock, metal, wood','Sponge, wool, cotton','Water, juice, milk'], why:'Rock, metal and wood are all hard materials.'},
+   {q:'Which material could you see through?', o:['Glass','Wood','Brick'], why:'Glass is transparent. Wood and brick are not.'}
+  ]},
+ {id:'y1-se-1', topic:'seasons', short:'Changes across the four seasons',
+  nc:'Observe changes across the four seasons',
+  qs:[
+   {q:'Which season does this picture show?', v:'season:autumn', o:['Autumn','Spring','Summer'], why:'In autumn, leaves turn orange, red and brown and fall from trees.'},
+   {q:'Which season does this picture show?', v:'season:winter', o:['Winter','Summer','Autumn'], why:'In winter, it is cold, trees can be bare and it might snow.'},
+   {q:'Which season does this picture show?', v:'season:spring', o:['Spring','Autumn','Winter'], why:'In spring, blossom and new flowers appear and baby animals are born.'},
+   {q:'Which season comes after spring?', o:['Summer','Winter','Autumn'], why:'The seasons go: spring, summer, autumn, winter.'},
+   {q:'How many seasons are there in a year?', o:['4','2','12'], why:'There are four seasons: spring, summer, autumn and winter.'}
+  ]},
+ {id:'y1-se-2', topic:'seasons', short:'Weather and day length',
+  nc:'Observe and describe weather associated with the seasons and how day length varies',
+  qs:[
+   {q:'Which season has the longest days?', v:'season:summer', o:['Summer','Winter','Autumn'], why:'In summer, it gets light early and dark late, so the days are long.'},
+   {q:'In winter, when do we usually have darker evenings?', o:['Earlier than in summer','Later than in summer','Never'], why:'In winter, the days are shorter, so it gets dark earlier.'},
+   {q:'What does a rain gauge measure?', v:'i:raingauge', o:['How much rain falls','How hot it is','How fast the wind blows'], why:'A rain gauge collects rain so we can measure how much has fallen.'},
+   {q:'What does a windsock show?', v:'i:windsock', o:['Which way the wind blows','How much it rained','How cold it is'], why:'A windsock fills with wind and points the way the wind is blowing.'},
+   {q:'What do you need on a hot, sunny day?', o:['Sun hat|sunhat','Scarf|scarf','Snow|snow'], pic:true, why:'A sun hat protects you from the sun. Don’t forget sun cream and water too!'}
+  ]}
+],
+
+/* ===================== Grade 1 = Year 2 ===================== */
+g1: [
+ {id:'y2-lh-1', topic:'living', short:'Alive, dead or never alive',
+  nc:'Explore and compare the differences between things that are living, dead, and things that have never been alive',
+  qs:[
+   {q:'Is this rabbit living, dead or never alive?', v:'i:rabbit', o:['Living','Dead','Never alive'], why:'A rabbit moves, breathes, eats and grows, so it is living.'},
+   {q:'Is a rock living, dead or never alive?', v:'i:rock', o:['Never alive','Living','Dead'], why:'A rock has never moved, eaten or grown by itself. It has never been alive.'},
+   {q:'This plant has dried up and died. What is it now?', v:'scene:dead', o:['Dead','Living','Never alive'], why:'It was once alive, but now it has died.'},
+   {q:'Which of these was once alive?', o:['Wooden pencil|pencil','Plastic button|button','Metal key|key'], pic:true, why:'Wood comes from trees, which were once alive.'},
+   {q:'Which of these is something every living thing does?', o:['Grows','Melts','Shines'], why:'All living things grow, feed, move, breathe and reproduce.'}
+  ]},
+ {id:'y2-lh-2', topic:'living', short:'Habitats provide what living things need',
+  nc:'Identify that most living things live in habitats to which they are suited and describe how different habitats provide for the basic needs of different kinds of animals and plants, and how they depend on each other',
+  qs:[
+   {q:'Which habitat is this?', v:'scene:desert', o:['Desert','Ocean','Arctic'], why:'Deserts are very dry and hot in the day.'},
+   {q:'Which animal is suited to living in the ocean?', o:['Shark|shark','Squirrel|squirrel','Cow|cow'], pic:true, why:'Sharks have fins and gills, so they can live in the sea.'},
+   {q:'Why do squirrels live in woodlands?', v:'scene:woodland', o:['Trees give them food and shelter','It is very salty','There is no food there'], why:'Squirrels eat nuts and seeds from trees and build nests in branches.'},
+   {q:'What do plants give animals in a habitat?', o:['Food and shelter','Electricity','Plastic'], why:'Animals eat plants and hide in them. Living things depend on each other.'},
+   {q:'Which habitat is very cold and icy?', v:'scene:arctic', o:['Arctic','Desert','Rainforest'], why:'The Arctic is covered in ice and snow. Animals there have thick fur or fat.'}
+  ]},
+ {id:'y2-lh-3', topic:'living', short:'Habitats and micro-habitats',
+  nc:'Identify and name a variety of plants and animals in their habitats, including micro-habitats',
+  qs:[
+   {q:'Which animal might you find under this log?', v:'scene:log', o:['Woodlouse|woodlouse','Shark|shark','Giraffe|giraffe'], pic:true, why:'Woodlice like dark, damp places like under logs and stones. A log is a micro-habitat.'},
+   {q:'What is a micro-habitat?', o:['A very small habitat, like under a stone','A huge ocean','A kind of food'], why:'Micro-habitats are tiny places where minibeasts live.'},
+   {q:'Which animal lives in a pond?', v:'scene:pond', o:['Frog|frog','Lion|lion','Sheep|sheep'], pic:true, why:'Frogs lay their eggs in ponds and tadpoles grow there.'},
+   {q:'Why do woodlice live in damp places?', v:'i:woodlouse', o:['They dry out easily in the sun','They like to swim','They eat sand'], why:'Woodlice need damp places so their bodies do not dry out.'},
+   {q:'Where would you find a crab and seaweed?', v:'scene:rockpool', o:['In a rock pool','In a desert','In a tree'], why:'Rock pools at the beach are home to crabs, shrimps, seaweed and snails.'}
+  ]},
+ {id:'y2-lh-4', topic:'living', short:'Simple food chains',
+  nc:'Describe how animals obtain their food from plants and other animals, using the idea of a simple food chain, and identify and name different sources of food',
+  qs:[
+   {q:'What comes at the start of this food chain?', v:'chain:leaf,caterpillar,kiki', o:['A plant','A bird','A caterpillar'], why:'Food chains start with a plant, which makes its own food using sunlight.'},
+   {q:'In this food chain, what does the caterpillar eat?', v:'chain:leaf,caterpillar,kiki', o:['The leaf','The bird','Nothing'], why:'The arrow shows the leaf is eaten by the caterpillar.'},
+   {q:'What do the arrows in a food chain mean?', v:'chain:clover,rabbit,lion', o:['“is eaten by”','“is bigger than”','“lives with”'], why:'Each arrow points from the food to the animal that eats it.'},
+   {q:'Which is a correct food chain?', o:['Grass → cow','Cow → grass','Lion → grass'], why:'The grass is eaten by the cow, so the arrow goes from grass to cow.'},
+   {q:'Where does all the energy in a food chain start?', o:['The sun','The lion','The rain'], why:'Plants use energy from sunlight to make food. Animals get energy by eating.'}
+  ]},
+ {id:'y2-pl-1', topic:'plants', short:'Seeds and bulbs grow into plants',
+  nc:'Observe and describe how seeds and bulbs grow into mature plants',
+  qs:[
+   {q:'What will this seed grow into?', v:'i:seed,seedling', o:['A plant','A rock','An animal'], why:'A seed has a tiny plant inside. With water and warmth, it grows.'},
+   {q:'What grows from this bulb?', v:'i:bulb', o:['A flower, like a daffodil','A tree','A bean'], why:'Bulbs store food under the ground. Daffodils and tulips grow from bulbs.'},
+   {q:'What grows first when a seed starts to grow?', o:['A root','A flower','A fruit'], why:'The root grows first, down into the soil, then a shoot grows up.'},
+   {q:'Put the bean plant in order. What comes first?', o:['Seed','Shoot','Plant with flowers'], why:'Seed, then shoot, then young plant, then a plant with flowers.'},
+   {q:'What is a young plant just poking out of the soil called?', v:'i:seedling', o:['A seedling','A trunk','A bulb'], why:'A seedling is a baby plant.'}
+  ]},
+ {id:'y2-pl-2', topic:'plants', short:'What plants need to grow',
+  nc:'Find out and describe how plants need water, light and a suitable temperature to grow and stay healthy',
+  qs:[
+   {q:'This cress was kept in the dark. What happened to it?', v:'i:cresspale', o:['It grew pale and weak','It grew green and strong','It turned into a tree'], why:'Plants need light to grow green and healthy.'},
+   {q:'This cress was not given any water. What happened?', v:'i:cressdry', o:['It dried up and died','It grew taller','Nothing changed'], why:'Plants need water. Without it they wilt and die.'},
+   {q:'Which three things do plants need to grow well?', o:['Water, light and warmth','Sweets, darkness and ice','Noise, sand and plastic'], why:'Plants need water, light and a suitable temperature.'},
+   {q:'Where would a plant grow best?', o:['On a sunny windowsill, watered','In a dark cupboard','In the freezer'], why:'A sunny windowsill gives light and warmth, and watering gives water.'},
+   {q:'Which cress plant had everything it needed?', o:['Green cress|cress','Pale cress|cresspale','Dry cress|cressdry'], pic:true, why:'The green, healthy cress had water, light and warmth.'}
+  ]},
+ {id:'y2-an-1', topic:'animals', short:'Animals have young that grow into adults',
+  nc:'Notice that animals, including humans, have offspring which grow into adults',
+  qs:[
+   {q:'What does a chick grow into?', v:'i:chick', o:['A hen|hen','A frog|frog','A sheep|sheep'], pic:true, why:'A chick hatches from an egg and grows into a hen or cockerel.'},
+   {q:'What is the order of a frog’s life cycle?', v:'cycle:frogspawn,tadpole,frog', o:['Frogspawn, tadpole, frog','Frog, frogspawn, tadpole','Tadpole, frog, frogspawn'], why:'Frogs lay frogspawn, which hatches into tadpoles, which grow into frogs.'},
+   {q:'What does a caterpillar turn into?', v:'cycle:caterpillar,chrysalis,butterfly', o:['A butterfly|butterfly','A bee|bee','A ladybird|ladybird'], pic:true, why:'A caterpillar makes a chrysalis and changes into a butterfly.'},
+   {q:'What do we call a baby sheep?', v:'i:lamb', o:['A lamb','A calf','A chick'], why:'Baby sheep are called lambs.'},
+   {q:'What are the young of animals called?', o:['Offspring','Habitats','Seeds'], why:'Offspring means the babies or young of a living thing.'},
+   {q:'Put a human’s life in order. What comes after child?', v:'i:baby,child,adult', o:['Adult','Baby','Egg'], why:'Baby, child, teenager, then adult.'}
+  ]},
+ {id:'y2-an-2', topic:'animals', short:'What animals need to survive',
+  nc:'Find out about and describe the basic needs of animals, including humans, for survival (water, food and air)',
+  qs:[
+   {q:'Which three things do all animals need to survive?', o:['Water, food and air','Toys, sweets and TV','Sand, rocks and glass'], why:'All animals, including humans, need water, food and air.'},
+   {q:'Why does a pet rabbit need fresh water every day?', v:'i:rabbit,water', o:['Animals need water to survive','Water makes fur blue','It is just for fun'], why:'Without water, animals cannot stay alive.'},
+   {q:'Fish breathe under water. What do they use?', v:'i:trout', o:['Gills','Lungs only','Their tail'], why:'Fish take oxygen from the water using their gills.'},
+   {q:'What do animals get from food?', o:['Energy to move and grow','Light','Rain'], why:'Food gives animals energy and helps them grow.'},
+   {q:'Which of these is NOT something an animal needs to survive?', o:['A television|tv','Food|apple','Water|water'], pic:true, why:'Animals need food, water and air. A television is not a need!'}
+  ]},
+ {id:'y2-an-3', topic:'animals', short:'Exercise, healthy food and hygiene',
+  nc:'Describe the importance for humans of exercise, eating the right amounts of different types of food, and hygiene',
+  qs:[
+   {q:'Why is exercise good for you?', v:'i:run', o:['It keeps your heart and muscles strong','It makes you sleepy forever','It stops you growing'], why:'Exercise makes your heart, lungs and muscles strong.'},
+   {q:'Which snack is the healthiest?', o:['Apple|apple','Sweets|sweets','Chocolate|chocolate'], pic:true, why:'Fruit has vitamins and is good for you. Sweets are an occasional treat.'},
+   {q:'Why should you wash your hands before eating?', v:'i:washhands,soap', o:['To wash away germs','To make them cold','To change their colour'], why:'Washing with soap removes germs that could make you ill.'},
+   {q:'How often should you brush your teeth?', v:'i:toothbrush,teeth', o:['Twice a day','Once a month','Never'], why:'Brushing twice a day keeps your teeth and gums healthy.'},
+   {q:'What does a balanced diet mean?', o:['Eating different kinds of food in the right amounts','Eating only sweets','Eating one food all day'], why:'A balanced diet has fruit, vegetables, protein and carbohydrates, with only a little sugar and fat.'},
+   {q:'Why is sleep important?', v:'i:sleep', o:['It helps your body rest and grow','It is not important','It makes you hungry'], why:'Your body and brain rest and repair while you sleep.'}
+  ]},
+ {id:'y2-ma-1', topic:'materials', short:'Choosing the right material',
+  nc:'Identify and compare the suitability of a variety of everyday materials, including wood, metal, plastic, glass, brick, rock, paper and cardboard for particular uses',
+  qs:[
+   {q:'Which material is best for a window?', o:['Glass','Brick','Cardboard'], why:'Glass is transparent, so light comes in and we can see out.'},
+   {q:'Why are houses made of brick?', v:'i:brick', o:['Brick is strong and hard','Brick is see-through','Brick is soft'], why:'Bricks are strong and last a long time.'},
+   {q:'Why is a teapot not made of chocolate?', v:'i:chocolate', o:['Chocolate would melt','Chocolate is see-through','Chocolate is too strong'], why:'Hot tea would melt chocolate. Teapots are made of china or metal.'},
+   {q:'Which material would make the best raincoat?', o:['Plastic','Paper','Wool'], why:'Plastic is waterproof. Paper would get soggy and tear.'},
+   {q:'Why are spoons often made of metal?', v:'i:spoon', o:['Metal is strong and easy to clean','Metal is soft and squashy','Metal is see-through'], why:'Metal spoons do not bend or break easily and can be washed.'}
+  ]},
+ {id:'y2-ma-2', topic:'materials', short:'Squash, bend, twist and stretch',
+  nc:'Find out how the shapes of solid objects made from some materials can be changed by squashing, bending, twisting and stretching',
+  qs:[
+   {q:'What can you do to change the shape of playdough?', v:'i:playdough', o:['Squash it','Melt it in water','Nothing'], why:'Playdough can be squashed, rolled and twisted into new shapes.'},
+   {q:'What happens when you stretch an elastic band and let go?', v:'i:elastic', o:['It goes back to its shape','It stays long','It turns into water'], why:'Elastic bands are stretchy and spring back.'},
+   {q:'Which of these can you bend easily?', o:['Pipe cleaner|pipecleaner','Rock|rock','Brick|brick'], pic:true, why:'A pipe cleaner has bendy wire inside, so it keeps its new shape.'},
+   {q:'Which material can be twisted?', o:['A pipe cleaner','A glass marble','A brick'], why:'Pipe cleaners can be twisted into shapes.'},
+   {q:'What happens when you squash a sponge and let go?', v:'i:sponge', o:['It springs back','It stays flat for ever','It breaks into pieces'], why:'A sponge can be squashed but springs back when you let go.'}
+  ]}
+],
+
+/* ===================== Grade 2 = Year 3 ===================== */
+g2: [
+ {id:'y3-pl-1', topic:'plants', short:'Jobs of roots, stem, leaves and flowers',
+  nc:'Identify and describe the functions of different parts of flowering plants: roots, stem/trunk, leaves and flowers',
+  qs:[
+   {q:'What is the job of the part the arrow points to?', v:'plant:roots', o:['Taking in water and holding the plant in place','Making seeds','Attracting insects'], why:'Roots anchor the plant and absorb water and nutrients from the soil.'},
+   {q:'What is the job of the leaves?', v:'plant:leaf', o:['Making food using sunlight','Holding the plant in the soil','Making the plant smell nice'], why:'Leaves use sunlight, air and water to make the plant’s food.'},
+   {q:'What does the stem do?', v:'plant:stem', o:['Supports the plant and carries water','Makes food at night','Catches insects'], why:'The stem holds the plant up and carries water from the roots to the leaves.'},
+   {q:'Why are many flowers brightly coloured?', v:'plant:flower', o:['To attract insects for pollination','To keep warm','To scare animals'], why:'Bright colours and sweet smells attract insects, which carry pollen.'},
+   {q:'What does the trunk of a tree do?', v:'tree:trunk', o:['Supports the tree and carries water','Makes seeds','Catches rain'], why:'A trunk is a thick, woody stem.'}
+  ]},
+ {id:'y3-pl-2', topic:'plants', short:'What plants need, and how it varies',
+  nc:'Explore the requirements of plants for life and growth (air, light, water, nutrients from soil, and room to grow) and how they vary from plant to plant',
+  qs:[
+   {q:'Which of these do plants NOT need to grow?', o:['Sugar sprinkled on them','Light','Water'], why:'Plants need air, light, water, nutrients from soil and room to grow. They make their own sugar.'},
+   {q:'Seedlings planted too close together grow thin and weak. What are they missing?', o:['Room to grow','Darkness','Salt'], why:'Crowded plants compete for light, water and nutrients.'},
+   {q:'A cactus grows in the desert. How is it different from other plants?', v:'scene:desert', o:['It needs very little water','It needs no light','It grows in snow'], why:'Different plants have different needs. A cactus stores water and needs very little.'},
+   {q:'Where do plants get nutrients from?', v:'soil:topsoil', o:['The soil','The sky','Their flowers'], why:'Roots take in nutrients and water from the soil.'},
+   {q:'A plant kept in the dark grows pale and thin. Why?', v:'i:cresspale', o:['It cannot make food without light','It has too much light','It is too cold to be green'], why:'Leaves need light to make food and to stay green.'}
+  ]},
+ {id:'y3-pl-3', topic:'plants', short:'How water travels in plants',
+  nc:'Investigate the way in which water is transported within plants',
+  qs:[
+   {q:'Celery is stood in blue water. After a day, what will the leaves look like?', v:'celery:#3D8BE0', o:['They turn blue at the edges','They stay exactly the same','They fall off'], why:'Water travels up tiny tubes in the stem to the leaves, carrying the colour with it.'},
+   {q:'Which part of a plant carries water up to the leaves?', o:['The stem','The petals','The seeds'], why:'The stem has tiny tubes that carry water up from the roots.'},
+   {q:'Which part takes in water first?', v:'plant:roots', o:['The roots','The leaves','The flower'], why:'Roots take in water from the soil, then it travels up the stem.'},
+   {q:'Why does a plant droop when it is not watered?', o:['The stem and leaves lose water and go floppy','It is tired','It is too cold'], why:'Water keeps plant cells firm. Without it, plants wilt.'}
+  ]},
+ {id:'y3-pl-4', topic:'plants', short:'Flowers, pollination and seeds',
+  nc:'Explore the part that flowers play in the life cycle of flowering plants, including pollination, seed formation and seed dispersal',
+  qs:[
+   {q:'What is the bee doing?', v:'flower:bee', o:['Carrying pollen from flower to flower','Eating the petals','Planting seeds'], why:'Bees collect nectar and carry pollen between flowers. This is pollination.'},
+   {q:'What happens after a flower is pollinated?', o:['It makes seeds','It turns into a leaf','It becomes a root'], why:'After pollination, seeds start to form, often inside a fruit.'},
+   {q:'How is a sycamore seed spread?', v:'i:sycamore', o:['It spins on the wind','Animals eat it','It explodes'], why:'Sycamore seeds have wings and spin like helicopters.'},
+   {q:'How do burrs travel to new places?', v:'i:burr', o:['They hook onto animal fur','They float on rivers','They are blown far away'], why:'Burrs have tiny hooks that stick to fur and clothes.'},
+   {q:'How does a coconut travel?', v:'i:coconut', o:['It floats on the sea','It hooks onto fur','It spins'], why:'Coconuts float and can travel across the ocean to new beaches.'},
+   {q:'Why is it good for seeds to be spread far away?', o:['So they have space, light and water to grow','So the parent plant can rest','So they stay dark'], why:'Seeds that land far away do not compete with the parent plant.'}
+  ]},
+ {id:'y3-an-1', topic:'animals', short:'Nutrition: the right food',
+  nc:'Identify that animals, including humans, need the right types and amount of nutrition, and that they cannot make their own food; they get nutrition from what they eat',
+  qs:[
+   {q:'Why do animals need to eat?', o:['They cannot make their own food','They like to be busy','To keep their fur clean'], why:'Plants make their own food. Animals must eat to get nutrition.'},
+   {q:'Which food gives you lots of energy?', o:['Rice|rice','Water|water','Broccoli|broccoli'], pic:true, why:'Carbohydrates like rice, bread and pasta give us energy.'},
+   {q:'Which food helps your body grow and repair?', o:['Egg|egg','Sweets|sweets','Lemonade|fizzy'], pic:true, why:'Protein, found in eggs, fish, meat, beans and cheese, helps your body grow.'},
+   {q:'Which food gives you vitamins to stay healthy?', o:['Broccoli|broccoli','Sweets|sweets','Chocolate|chocolate'], pic:true, why:'Fruit and vegetables are full of vitamins and fibre.'},
+   {q:'Why should we eat only a little sugar and fat?', o:['Too much can be unhealthy','They have no taste','They make you taller'], why:'Too much sugar and fat can harm your teeth and heart.'}
+  ]},
+ {id:'y3-an-2', topic:'animals', short:'Skeletons and muscles',
+  nc:'Identify that humans and some other animals have skeletons and muscles for support, protection and movement',
+  qs:[
+   {q:'Which bones is the arrow pointing to?', v:'skel:skull', o:['The skull','The ribs','The spine'], why:'The skull protects your brain.'},
+   {q:'What do the ribs protect?', v:'skel:ribs', o:['Your heart and lungs','Your feet','Your teeth'], why:'The rib cage wraps around and protects your heart and lungs.'},
+   {q:'Which bone is the arrow pointing to?', v:'skel:spine', o:['The spine (backbone)','The skull','A leg bone'], why:'The spine holds you up and protects the nerves running down your back.'},
+   {q:'How do muscles move bones?', o:['They pull on them','They push them from inside','They melt them'], why:'Muscles can only pull. They work in pairs to bend and straighten joints.'},
+   {q:'Which animal has its skeleton on the outside?', o:['Beetle|beetle','Rabbit|rabbit','Fish|trout'], pic:true, why:'Insects like beetles have an exoskeleton: a hard outer case.'},
+   {q:'Which animal has no skeleton at all?', o:['Worm|worm','Frog|frog','Bird|kiki'], pic:true, why:'Worms have no bones. They use muscles to move.'}
+  ]},
+ {id:'y3-ro-1', topic:'rocks', short:'Compare and group rocks',
+  nc:'Compare and group together different kinds of rocks on the basis of their appearance and simple physical properties',
+  qs:[
+   {q:'This rock is speckled and very hard. What is it?', v:'i:granite', o:['Granite','Chalk','Sandstone'], why:'Granite is hard and speckled with crystals.'},
+   {q:'Which rock soaks up water?', o:['Chalk|chalk','Granite|granite','Slate|slate'], pic:true, why:'Chalk is soft and full of tiny holes, so water soaks in. It is permeable.'},
+   {q:'Which rock splits into thin, flat sheets for roofs?', v:'i:slate', o:['Slate','Chalk','Sandstone'], why:'Slate splits into flat sheets and does not let water through.'},
+   {q:'What does permeable mean?', o:['It lets water soak through','It is very shiny','It is magnetic'], why:'Permeable rocks, like chalk and sandstone, let water soak in.'},
+   {q:'How could you test which rock is hardest?', o:['Scratch each one with a coin','Smell them','Paint them'], why:'Harder rocks are more difficult to scratch.'}
+  ]},
+ {id:'y3-ro-2', topic:'rocks', short:'How fossils form',
+  nc:'Describe in simple terms how fossils are formed when things that have lived are trapped within rock',
+  qs:[
+   {q:'What is this fossil?', v:'i:ammonite', o:['An ammonite, a sea creature from long ago','A modern snail','A plant'], why:'Ammonites lived in the sea millions of years ago.'},
+   {q:'What happens first when a fossil forms?', o:['A living thing dies and is buried in mud','The rock is painted','The animal climbs into a rock'], why:'It is quickly covered in mud or sand at the bottom of the sea or a lake.'},
+   {q:'How long does it take for a fossil to form?', o:['Millions of years','A few days','One year'], why:'Layers of mud slowly turn to rock over millions of years.'},
+   {q:'Which parts of an animal usually become fossils?', o:['Hard parts, like bones and shells','Soft fur','Eyes'], why:'Soft parts rot away. Hard bones, teeth and shells are left.'},
+   {q:'Which rock often contains shell fossils?', v:'i:limestone', o:['Limestone','Granite','Slate'], why:'Limestone forms from the shells of sea creatures.'}
+  ]},
+ {id:'y3-ro-3', topic:'rocks', short:'Soils come from rocks and organic matter',
+  nc:'Recognise that soils are made from rocks and organic matter',
+  qs:[
+   {q:'Which layer is the arrow pointing to?', v:'soil:topsoil', o:['Topsoil','Bedrock','Subsoil'], why:'Topsoil is the dark top layer, full of rotted plants and tiny creatures.'},
+   {q:'Which layer is the arrow pointing to?', v:'soil:bedrock', o:['Bedrock','Topsoil','Compost'], why:'Bedrock is the solid rock deep under the soil.'},
+   {q:'What is soil made from?', o:['Tiny bits of rock and organic matter','Melted ice','Plastic'], why:'Soil is crumbled rock mixed with rotted plants and animals, air and water.'},
+   {q:'What is organic matter?', o:['Things that were once alive, like rotted leaves','Bits of glass','Metal'], why:'Rotting leaves, twigs and dead creatures become organic matter.'},
+   {q:'Which soil lets water drain through fastest?', o:['Sandy soil|sandsoil','Clay soil|claysoil','Compost|compost'], pic:true, why:'Sandy soil has big grains with gaps, so water rushes through.'}
+  ]},
+ {id:'y3-li-1', topic:'light', short:'We need light to see',
+  nc:'Recognise that they need light in order to see things and that dark is the absence of light',
+  qs:[
+   {q:'How can we see the teddy?', v:'see:light', o:['Light bounces off it into our eyes','Our eyes shine light at it','The teddy glows'], why:'Light from a source reflects off objects and travels into our eyes.'},
+   {q:'Why can’t we see anything in a completely dark room?', v:'see:dark', o:['There is no light','Our eyes are closed','Things disappear'], why:'Dark is the absence of light. Without light, we cannot see.'},
+   {q:'Which of these is a light source?', o:['Sun|sun','Mirror|mirror','Moon|moon'], pic:true, why:'The sun makes its own light. A mirror and the moon only reflect light.'},
+   {q:'Which of these is NOT a light source?', o:['A mirror','A torch','A candle flame'], why:'A mirror reflects light but does not make its own.'}
+  ]},
+ {id:'y3-li-2', topic:'light', short:'Light reflects from surfaces',
+  nc:'Notice that light is reflected from surfaces',
+  qs:[
+   {q:'Which surface reflects the most light?', o:['Mirror|mirror','Woolly sock|sock','Black card|blackcard'], pic:true, why:'Smooth, shiny surfaces like mirrors reflect the most light.'},
+   {q:'Why do cyclists wear high-vis vests at night?', v:'i:hivis', o:['The strips reflect car headlights','They glow on their own','They keep cyclists warm'], why:'Reflective strips bounce light back to drivers.'},
+   {q:'What does reflect mean?', o:['Light bounces off a surface','Light is made','Light disappears'], why:'When light hits a surface and bounces off, it is reflected.'},
+   {q:'Which would be hardest to see in torch light?', o:['Black card','Foil','A mirror'], why:'Dark, dull surfaces reflect very little light.'}
+  ]},
+ {id:'y3-li-3', topic:'light', short:'Sunlight can be dangerous',
+  nc:'Recognise that light from the sun can be dangerous and that there are ways to protect their eyes',
+  qs:[
+   {q:'What should you never do?', o:['Look straight at the sun','Wear a sun hat','Sit in the shade'], why:'The sun’s light is so strong it can damage your eyes forever.'},
+   {q:'How can you protect your eyes on a sunny day?', o:['Sunglasses|sunglasses','Scarf|scarf','Mirror|mirror'], pic:true, why:'Sunglasses that block harmful light protect your eyes.'},
+   {q:'Is it safe to look at the sun through sunglasses?', o:['No, never look at the sun','Yes, always','Only on Mondays'], why:'Even with sunglasses, looking at the sun can hurt your eyes.'},
+   {q:'Which is a good way to stay safe in strong sunshine?', v:'i:sunhat', o:['Wear a hat and sit in the shade','Stare at the sky','Use a mirror to look at the sun'], why:'Hats, shade, sunglasses and sun cream all help.'}
+  ]},
+ {id:'y3-li-4', topic:'light', short:'How shadows form',
+  nc:'Recognise that shadows are formed when the light from a light source is blocked by an opaque object',
+  qs:[
+   {q:'Why is there a shadow on the wall?', v:'shadow:far', o:['The object blocks the light','The torch makes dark light','The wall is dirty'], why:'An opaque object blocks light, leaving a dark shape called a shadow.'},
+   {q:'What does opaque mean?', o:['Light cannot pass through it','It is see-through','It glows'], why:'Opaque materials, like wood and card, block light completely.'},
+   {q:'Which material makes the darkest shadow?', o:['Cardboard','Clear glass','Clear plastic'], why:'Cardboard is opaque, so it blocks all the light.'},
+   {q:'What shape is a shadow?', o:['The same shape as the object’s outline','Always a circle','Always a square'], why:'The shadow has the outline of the object that blocks the light.'}
+  ]},
+ {id:'y3-li-5', topic:'light', short:'Patterns in shadow size',
+  nc:'Find patterns in the way that the size of shadows change',
+  qs:[
+   {q:'The object is close to the torch. What size is the shadow?', v:'shadow:near', o:['Big','Small','There is no shadow'], why:'The closer an object is to the light, the bigger its shadow.'},
+   {q:'The object moves away from the torch, nearer the wall. What happens to the shadow?', v:'shadow:far', o:['It gets smaller','It gets bigger','It disappears'], why:'Moving the object away from the light makes the shadow smaller.'},
+   {q:'When are shadows shortest on a sunny day?', o:['Around midday','Early morning','Late evening'], why:'At midday the sun is high, so shadows are short.'},
+   {q:'Why are shadows long in the evening?', o:['The sun is low in the sky','The sun is very hot','It is raining'], why:'When the sun is low, light hits objects at a low angle and makes long shadows.'}
+  ]},
+ {id:'y3-fo-1', topic:'forces', short:'Moving on different surfaces',
+  nc:'Compare how things move on different surfaces',
+  qs:[
+   {q:'The car rolls onto smooth wood. Will it go far?', v:'ramp:wood', o:['Yes, smooth surfaces have little friction','No, it stops at once','It goes backwards'], why:'Smooth surfaces have less friction, so the car keeps rolling.'},
+   {q:'Which surface would stop the car quickest?', o:['Carpet','Ice','Smooth wood'], why:'Rough, soft surfaces like carpet create the most friction.'},
+   {q:'What is friction?', o:['A force that slows things when surfaces rub','A type of magnet','A kind of light'], why:'Friction acts between surfaces that rub together.'},
+   {q:'Why do trainers have bumpy soles?', v:'i:trainer', o:['To grip the ground with friction','To look nice only','To make you slide'], why:'Bumpy soles increase friction so you do not slip.'},
+   {q:'Why is it easy to slip on ice?', v:'ramp:ice', o:['Ice is smooth, so there is little friction','Ice is sticky','Ice is magnetic'], why:'Ice is very smooth, so there is very little friction to grip.'}
+  ]},
+ {id:'y3-fo-2', topic:'forces', short:'Contact forces and magnetic forces',
+  nc:'Notice that some forces need contact between two objects, but magnetic forces can act at a distance',
+  qs:[
+   {q:'Which force can work without touching?', o:['Magnetic force','Friction','A push with your hand'], why:'A magnet can pull a paperclip from a distance.'},
+   {q:'Kicking a ball is a…', v:'i:football', o:['Contact force (a push)','Magnetic force','Force at a distance'], why:'Your foot touches the ball and pushes it.'},
+   {q:'A magnet pulls a paperclip across the table without touching it. Why?', v:'i:magnet,paperclip', o:['Magnetic force acts at a distance','The table is pushing it','The paperclip is alive'], why:'Magnetic forces can act across a gap.'},
+   {q:'Which of these needs contact to work?', o:['Friction','Magnetism','Neither'], why:'Friction only happens when two surfaces touch.'}
+  ]},
+ {id:'y3-fo-3', topic:'forces', short:'Magnetic and non-magnetic materials',
+  nc:'Observe how magnets attract or repel each other and attract some materials and not others',
+  qs:[
+   {q:'Which will a magnet attract?', o:['Paperclip|paperclip','Pencil|pencil','Button|button'], pic:true, why:'Steel paperclips contain iron, so magnets attract them.'},
+   {q:'Which of these is NOT magnetic?', o:['Foil|foil','Nail|nail','Paperclip|paperclip'], pic:true, why:'Foil is aluminium. It is a metal, but it is not magnetic.'},
+   {q:'Which statement is true?', o:['Only some metals are magnetic','All metals are magnetic','Wood is magnetic'], why:'Iron and steel are magnetic. Aluminium, copper and gold are not.'},
+   {q:'What does attract mean?', o:['Pull towards','Push away','Change colour'], why:'Magnets attract (pull) iron and steel towards them.'}
+  ]},
+ {id:'y3-fo-4', topic:'forces', short:'Magnets have two poles',
+  nc:'Describe magnets as having two poles',
+  qs:[
+   {q:'What are the two ends of a magnet called?', v:'magnets:NS', o:['North and south poles','Top and bottom','Hot and cold ends'], why:'Every magnet has a north pole and a south pole.'},
+   {q:'Where is a magnet’s pull strongest?', o:['At its poles (the ends)','In the middle','It is the same everywhere'], why:'Magnetic force is strongest at the poles.'},
+   {q:'If you cut a bar magnet in half, what do you get?', o:['Two magnets, each with a north and south pole','Two non-magnets','A north magnet and a south magnet'], why:'Every magnet always has two poles.'}
+  ]},
+ {id:'y3-fo-5', topic:'forces', short:'Predict attract or repel',
+  nc:'Predict whether two magnets will attract or repel each other, depending on which poles are facing',
+  qs:[
+   {q:'A north pole faces a north pole. What will happen?', v:'magnets:NN', o:['They repel (push apart)','They attract (pull together)','Nothing'], why:'Like poles repel each other.'},
+   {q:'A north pole faces a south pole. What will happen?', v:'magnets:NS', o:['They attract (pull together)','They repel (push apart)','They spin'], why:'Opposite poles attract.'},
+   {q:'A south pole faces a south pole. What will happen?', v:'magnets:SS', o:['They repel','They attract','They stick forever'], why:'Two south poles are alike, so they push apart.'},
+   {q:'Which rule is correct?', o:['Opposite poles attract, like poles repel','Like poles attract, opposite poles repel','All poles attract'], why:'This rule works for every pair of magnets.'}
+  ]}
+]
+};
+/* topic names for each grade (practice uses the same topics as the story library where they exist) */
+window.SQ_PRAC_TOPICS = {
+  kg2: {plants:'Plants', animals:'Animals, including humans', materials:'Everyday materials', seasons:'Seasonal changes'},
+  g1:  {living:'Living things and their habitats', plants:'Plants', animals:'Animals, including humans', materials:'Uses of everyday materials'},
+  g2:  {plants:'Plants', animals:'Animals, including humans', rocks:'Rocks', light:'Light', forces:'Forces and magnets'}
+};

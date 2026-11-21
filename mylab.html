@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/app.css?v=37">
+<link rel="stylesheet" href="css/app.css?v=38">
 <style>
   .wallet{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 4px}
   .pill{display:inline-flex;align-items:center;gap:8px;font-weight:900;font-size:17px;border-radius:99px;padding:8px 16px;border:1.5px solid}
@@ -66,6 +66,23 @@
   @keyframes wob{25%{transform:translateX(6px)}50%{transform:translateX(-6px)}75%{transform:translateX(4px)}}
   .fade{animation:fade 1.8s forwards}
   @keyframes fade{to{opacity:0;transform:translateY(16px)}}
+  .lshelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
+  .litem{border:1.5px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+  .litem.mine{border-color:#CBBEF2}
+  .litem .lp svg{display:block;width:100%;height:120px}
+  .litem .lb{padding:10px 12px 12px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .litem b{font-size:15px;line-height:1.2} .litem small{color:var(--muted);font-weight:700}
+  .litem .pr{font-weight:900;color:#4B33A8;font-size:14px}
+  .bt{border:0;border-radius:12px;padding:9px;font-weight:900;font-size:14px;cursor:pointer;margin-top:auto;background:#EEF1F5;color:var(--muted)}
+  .bt.buy{background:var(--plum);color:#fff} .bt.buy[disabled]{background:#EEF1F5;color:var(--muted);cursor:default}
+  .bt.use{background:var(--plumL);color:#4B33A8} .bt.using{background:var(--leafL);color:#2F8F57}
+  .decbox{margin-top:16px;border:2px dashed #CBBEF2;border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:8px;background:#FBFAFF}
+  .decbox h3{font-size:19px}
+  .sw2{width:46px;height:46px;border-radius:12px;border:3px solid #fff;box-shadow:0 0 0 2px var(--line);cursor:pointer}
+  .sw2.on{box-shadow:0 0 0 3px var(--plum)}
+  .mini2{display:flex;flex-direction:column;align-items:center;gap:3px;border:2.5px solid var(--line);background:#fff;border-radius:12px;padding:6px;cursor:pointer;font-weight:800;font-size:12px;max-width:96px;text-align:center}
+  .mini2.on{border-color:var(--plum);background:var(--plumL)}
+  .labsvg [data-dec]{cursor:pointer}
   .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:var(--ink);color:#fff;font-weight:800;padding:12px 20px;border-radius:14px;z-index:60;opacity:0;transition:opacity .25s;pointer-events:none}
   .toast.show{opacity:1}
   .grades{margin:6px 0 14px}
@@ -86,22 +103,22 @@
     <p>Answer science questions to earn lab points. Use them to build your lab, buy equipment with your coins, then run real experiments!</p>
   </div>
   <div class="wallet"><span class="pill lp">🧪 <span id="lp">0</span> lab points</span><span class="pill cn">🪙 <span id="cn">0</span> coins</span></div>
-  <div class="tabs"><button class="tab on" data-t="build">🏗️ Build my lab</button><button class="tab" data-t="earn">❓ Earn lab points</button><button class="tab" data-t="exp">⚗️ Experiments</button></div>
+  <div class="tabs"><button class="tab on" data-t="build">🏗️ Build my lab</button><button class="tab" data-t="shop">🛒 Lab shop</button><button class="tab" data-t="earn">❓ Earn lab points</button><button class="tab" data-t="exp">⚗️ Experiments</button></div>
   <div id="panel"></div>
 </main>
 <div class="toast" id="toast"></div>
 
 <footer class="foot"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>Original stories and characters. Not affiliated with any publisher or exam board.</span></div></footer>
 
-<script src="js/art.js?v=37"></script>
-<script src="js/kg2.js?v=37"></script>
-<script src="js/g1.js?v=37"></script>
-<script src="js/g2.js?v=37"></script>
-<script src="js/g3.js?v=37"></script>
-<script src="js/challenges.js?v=37"></script>
-<script src="js/avatar.js?v=37"></script>
-<script src="js/labgame.js?v=37"></script>
-<script src="js/store.js?v=37"></script>
+<script src="js/art.js?v=38"></script>
+<script src="js/kg2.js?v=38"></script>
+<script src="js/g1.js?v=38"></script>
+<script src="js/g2.js?v=38"></script>
+<script src="js/g3.js?v=38"></script>
+<script src="js/challenges.js?v=38"></script>
+<script src="js/avatar.js?v=38"></script>
+<script src="js/labgame.js?v=38"></script>
+<script src="js/store.js?v=38"></script>
 <script>
 (function(){
   var S = SQ_STORE, AV = SQ_AV, LB = SQ_LAB, tab = 'build';
@@ -112,26 +129,34 @@
   function toast(t){ var e = document.getElementById('toast'); e.textContent = t; e.classList.add('show'); clearTimeout(toast.t); toast.t = setTimeout(function(){ e.classList.remove('show'); }, 2400); }
 
   /* ---------- saved lab: inside the child's "look" so it follows them to any device ---------- */
-  function look(){ var l = AV.def(S.look()); l.lab = l.lab || {}; l.lab.pts = l.lab.pts|0; l.lab.built = l.lab.built || {}; l.lab.done = l.lab.done || {}; return l; }
+  function look(){ var l = AV.def(S.look()); l.lab = l.lab || {}; var b = l.lab; b.pts = b.pts|0; b.built = b.built || {}; b.done = b.done || {}; b.owned = b.owned || {}; b.paint = b.paint || {}; b.floor = b.floor || {}; b.decor = b.decor || {}; return l; }
   function save(l){ S.saveLook(l); wallet(); }
   function price(id){ var r = LB.ROOMS.filter(function(x){return x.id===id;})[0] || LB.FURN.filter(function(x){return x.id===id;})[0]; return r ? r.price : 0; }
-  function points(l){ var n = l.lab.pts; for (var k in l.lab.built) n -= price(k); return n; }
+  function points(l){ var n = l.lab.pts; for (var k in l.lab.built) n -= price(k); for (var j in l.lab.owned) if (LB.LABITEMS[j]) n -= LB.LABITEMS[j].price; return n; }
+  function has(l, id){ var it = LB.LABITEMS[id]; return !!it && (it.price === 0 || !!l.lab.owned[id]); }
   function coins(l){ return S.earned() - AV.spent(l); }
   function built(l, id){ return id==='bench' || !!l.lab.built[id]; }
   function wallet(){ var l = look(); document.getElementById('lp').textContent = points(l); document.getElementById('cn').textContent = coins(l); }
-  function draw(){ wallet(); document.querySelectorAll('.tab').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-t')===tab); }); ({build:build, earn:earn, exp:exps})[tab](); }
+  function draw(){ wallet(); document.querySelectorAll('.tab').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-t')===tab); }); ({build:build, shop:shop, earn:earn, exp:exps})[tab](); }
 
   /* ---------- 1. build ---------- */
   function build(){
     var l = look(), m = S.me(), W = 900, H = 730, s = '';
     s += '<rect width="'+W+'" height="'+H+'" fill="#EAF4FD"/><rect y="'+(H-30)+'" width="'+W+'" height="30" fill="#9AD27A"/>';
-    s += '<path d="M20 108 L450 18 L880 108Z" fill="#7559D1"/><rect x="300" y="52" width="300" height="40" rx="10" fill="#fff"/>';
-    s += '<text x="450" y="79" text-anchor="middle" font-family="Nunito,Arial" font-weight="900" font-size="20" fill="#4B33A8">'+esc('Dr ' + (m ? m.name : 'Scientist') + '’s Science Lab')+'</text>';
+    var roof = (l.lab.roof && has(l, l.lab.roof)) ? LB.LABITEMS[l.lab.roof].col : '#7559D1';
+    s += '<path d="M20 108 L450 18 L880 108Z" fill="'+roof+'"/><rect x="300" y="52" width="300" height="40" rx="10" fill="#fff"/>';
+    s += '<text x="450" y="79" text-anchor="middle" font-family="Nunito,Arial" font-weight="900" font-size="20" fill="'+roof+'">'+esc('Dr ' + (m ? m.name : 'Scientist') + '’s Science Lab')+'</text>';
     s += '<rect x="20" y="108" width="860" height="506" fill="#F7F3EC"/><rect x="410" y="604" width="80" height="10" fill="#B7834A"/>';
     LB.ROOMS.forEach(function(r, i){
       var x = 30 + (i%3)*283, y = 118 + Math.floor(i/3)*246, w = 274, h = 236, ok = built(l, r.id);
       s += '<g transform="translate('+x+' '+y+')">';
-      s += '<rect width="'+w+'" height="'+h+'" rx="10" fill="'+r.wall+'" stroke="#D9CFC0" stroke-width="3"/><rect y="'+(h-46)+'" width="'+w+'" height="46" fill="'+r.floor+'"/>';
+      var pt = ok && l.lab.paint[r.id] && has(l, l.lab.paint[r.id]) ? LB.LABITEMS[l.lab.paint[r.id]] : null, wall = pt && pt.col ? pt.col : r.wall;
+      s += '<rect width="'+w+'" height="'+h+'" rx="10" fill="'+wall+'" stroke="#D9CFC0" stroke-width="3"/>';
+      if (pt && pt.id==='p-stars') [[30,50],[80,70],[140,46],[200,66],[240,40],[110,84],[60,96],[220,96]].forEach(function(q){ s += '<circle cx="'+q[0]+'" cy="'+q[1]+'" r="2" fill="#FFF6C9"/>'; });
+      s += '<rect y="'+(h-46)+'" width="'+w+'" height="46" fill="'+r.floor+'"/>';
+      var fl = ok && l.lab.floor[r.id] && has(l, l.lab.floor[r.id]) ? l.lab.floor[r.id] : null;
+      if (fl) s += '<svg x="0" y="'+(h-46)+'" width="'+w+'" height="46">'+LB.floor(fl, w, 46)+'</svg>';
+      if (ok) (l.lab.decor[r.id]||[]).forEach(function(d, k){ if (d && has(l, d)) s += '<g transform="translate('+(k ? w-96 : 16)+' 40)">'+LB.decor(d)+'</g>'; });
       s += '<rect x="10" y="8" width="'+(w-20)+'" height="26" rx="8" fill="#fff" opacity=".9"/><text x="'+(w/2)+'" y="26" text-anchor="middle" font-family="Nunito,Arial" font-weight="900" font-size="14" fill="#1F2B4D">'+esc(r.name)+'</text>';
       var fs = LB.FURN.filter(function(f){ return f.room===r.id; });
       fs.forEach(function(f, j){
@@ -141,20 +166,94 @@
              '<text x="'+(fx+45)+'" y="'+(fy+52)+'" text-anchor="middle" font-family="Nunito,Arial" font-weight="900" font-size="11" fill="#4B33A8">'+esc(f.name)+'</text>'+
              '<text x="'+(fx+45)+'" y="'+(fy+74)+'" text-anchor="middle" font-family="Nunito,Arial" font-weight="900" font-size="13" fill="#7559D1">+ '+f.price+' 🧪</text></g>';
       });
+      if (ok) s += '<g data-dec="'+r.id+'"><circle cx="'+(w-20)+'" cy="21" r="15" fill="#7559D1"/><text x="'+(w-20)+'" y="27" text-anchor="middle" font-size="15">🎨</text></g>';
       if (!ok) s += '<g data-r="'+r.id+'"><rect width="'+w+'" height="'+h+'" rx="10" fill="#4A5677" opacity=".55"/><circle cx="'+(w/2)+'" cy="104" r="28" fill="#fff"/><text x="'+(w/2)+'" y="114" text-anchor="middle" font-size="28">🔒</text>'+
              '<rect x="'+(w/2-82)+'" y="148" width="164" height="36" rx="12" fill="'+(points(l)>=r.price?'#F6B93B':'#fff')+'"/><text x="'+(w/2)+'" y="171" text-anchor="middle" font-family="Nunito,Arial" font-weight="900" font-size="15" fill="#3A2600">Build for '+r.price+' 🧪</text></g>';
       s += '</g>';
     });
+    LB.OUTSIDE.forEach(function(o){ if (o.kind==='deco' && has(l, o.id)) s += LB.outside(o.id); });
     // the child's scientist standing by the door
     var me = AV.svg(l, 92).replace('<svg ', '<svg x="404" y="'+(H-118)+'" pointer-events="none" ');
     s += me;
     var p = document.getElementById('panel');
-    p.innerHTML = '<div class="box"><h2>Build my lab</h2><p class="lead">Tap a locked room to build it, then tap the dotted spaces to add furniture. Each experiment needs its own room and furniture.</p>'+
-      '<svg class="labsvg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="My science lab">'+s+'</svg></div>';
+    p.innerHTML = '<div class="box"><h2>Build my lab</h2><p class="lead">Tap a locked room to build it and the dotted spaces to add furniture. Tap 🎨 on any room to paint it and add floors and wall pictures from the lab shop.</p>'+
+      '<svg class="labsvg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="My science lab">'+s+'</svg><div id="decor"></div></div>';
+    p.querySelectorAll('[data-dec]').forEach(function(g){ g.onclick = function(ev){ ev.stopPropagation(); decorate(g.getAttribute('data-dec')); }; });
+    if (decRoom) decorate(decRoom);
     p.querySelectorAll('[data-r],[data-f]').forEach(function(g){ g.onclick = function(){
       var id = g.getAttribute('data-r') || g.getAttribute('data-f'), l = look(), cost = price(id), name = (LB.ROOMS.concat(LB.FURN).filter(function(x){return x.id===id;})[0]||{}).name;
       if (points(l) < cost) { toast('You need ' + (cost - points(l)) + ' more lab points. Answer questions to earn them!'); return; }
       l.lab.built[id] = new Date().toISOString().slice(0,10); save(l); build(); toast('🎉 You built the ' + name.toLowerCase() + '!');
+    }; });
+  }
+
+  /* ---------- decorate a room with things bought in the lab shop ---------- */
+  var decRoom = null;
+  function decorate(rid){
+    decRoom = rid;
+    var l = look(), r = LB.ROOMS.filter(function(x){return x.id===rid;})[0], d = document.getElementById('decor'); if (!d) return;
+    var paints = LB.PAINTS.filter(function(x){ return has(l, x.id); }), floors = LB.FLOORS.filter(function(x){ return has(l, x.id); }), decs = LB.DECOR.filter(function(x){ return has(l, x.id); });
+    var cur = l.lab.decor[rid] || [];
+    function sw(x, set, on){ var c = x.col || r.wall; return '<button class="sw2'+(on?' on':'')+'" data-set="'+set+'" data-v="'+x.id+'" title="'+esc(x.name)+'" style="background:'+c+'"></button>'; }
+    function mini(x, set, on, draw){ return '<button class="mini2'+(on?' on':'')+'" data-set="'+set+'" data-v="'+x.id+'" title="'+esc(x.name)+'">'+draw+'<span>'+esc(x.name)+'</span></button>'; }
+    var h = '<div class="decbox"><h3>🎨 Decorate the '+esc(r.name.toLowerCase())+'</h3>';
+    h += '<b>Wall paint</b><div class="opts">'+paints.map(function(x){ return sw(x, 'paint', (l.lab.paint[rid]||'p-default')===x.id); }).join('')+'</div>';
+    h += '<b>Floor</b><div class="opts">'+floors.map(function(x){ return mini(x, 'floor', (l.lab.floor[rid]||'f-default')===x.id, '<svg viewBox="0 0 92 46" width="74" height="37">'+(x.id==='f-default' ? '<rect width="92" height="46" fill="'+r.floor+'"/>' : LB.floor(x.id, 92, 46))+'</svg>'); }).join('')+'</div>';
+    [0,1].forEach(function(k){
+      h += '<b>'+(k?'Right':'Left')+' wall picture</b><div class="opts">'+mini({id:'',name:'Nothing'}, 'decor'+k, !cur[k], '<svg viewBox="0 0 80 50" width="64" height="40"><rect width="80" height="50" rx="6" fill="#F4F6F8"/></svg>')+
+        decs.map(function(x){ return mini(x, 'decor'+k, cur[k]===x.id, '<svg viewBox="0 0 80 50" width="64" height="40">'+LB.decor(x.id)+'</svg>'); }).join('')+'</div>';
+    });
+    if (decs.length + floors.length + paints.length < 6) h += '<p style="font-weight:700;color:var(--ink2)">Want more choices? Buy paint, floors and wall pictures in the <a href="#" id="toshop">🛒 Lab shop</a>.</p>';
+    h += '<button class="btn sec" id="decdone">✓ Done decorating</button></div>';
+    d.innerHTML = h;
+    var ts = document.getElementById('toshop'); if (ts) ts.onclick = function(e){ e.preventDefault(); decRoom = null; tab = 'shop'; draw(); };
+    document.getElementById('decdone').onclick = function(){ decRoom = null; build(); };
+    d.querySelectorAll('[data-set]').forEach(function(b){ b.onclick = function(){
+      var l = look(), set = b.getAttribute('data-set'), v = b.getAttribute('data-v');
+      if (set==='paint') l.lab.paint[rid] = v; else if (set==='floor') l.lab.floor[rid] = v;
+      else { var arr = (l.lab.decor[rid] || ['','']).slice(); arr[+set.slice(-1)] = v; l.lab.decor[rid] = arr; }
+      save(l); build(); var dd = document.getElementById('decor'); if (dd) dd.scrollIntoView({block:'nearest'});
+    }; });
+  }
+
+  /* ---------- lab shop (everything bought with lab points) ---------- */
+  var shopCat = 'rooms';
+  var SCATS = [['rooms','🏠 Rooms'],['furn','🪑 Furniture'],['paint','🎨 Wall paint'],['floor','🟫 Floors'],['decor','🖼️ Wall pictures'],['out','🌳 Outside']];
+  function shop(){
+    var l = look(), pts = points(l), list = [];
+    if (shopCat==='rooms') list = LB.ROOMS.filter(function(r){ return r.price; }).map(function(r){ return {id:r.id, name:r.name, price:r.price, own:built(l,r.id), kind:'built',
+      pic:'<svg viewBox="0 0 274 236"><rect width="274" height="236" rx="10" fill="'+r.wall+'"/><rect y="190" width="274" height="46" fill="'+r.floor+'"/>'+LB.FURN.filter(function(f){return f.room===r.id;}).map(function(f,j){ return '<g transform="translate('+(4+j*90)+' 92)">'+LB.furn(f.id)+'</g>'; }).join('')+'</svg>'}; });
+    else if (shopCat==='furn') list = LB.FURN.map(function(f){ var room = LB.ROOMS.filter(function(r){return r.id===f.room;})[0]; return {id:f.id, name:f.name, price:f.price, own:!!l.lab.built[f.id], kind:'built', needRoom: built(l, f.room) ? null : room.name,
+      pic:'<svg viewBox="-10 -6 110 112"><rect x="-10" y="-6" width="110" height="112" fill="'+room.wall+'"/>'+LB.furn(f.id)+'</svg>', sub:'For the '+room.name.toLowerCase()}; });
+    else if (shopCat==='paint') list = LB.PAINTS.filter(function(x){return x.id!=='p-default';}).map(function(x){ return {id:x.id, name:x.name, price:x.price, own:has(l,x.id), kind:'owned',
+      pic:'<svg viewBox="0 0 120 100"><rect width="120" height="100" fill="'+x.col+'"/>'+(x.id==='p-stars'?[[20,20],[60,40],[96,18],[40,70],[90,74]].map(function(q){return '<circle cx="'+q[0]+'" cy="'+q[1]+'" r="3" fill="#FFF6C9"/>';}).join(''):'')+'<path d="M84 64 l14 -14 l10 10 l-14 14z" fill="#B7834A"/><rect x="62" y="70" width="30" height="20" rx="4" fill="#9AA3AE"/><rect x="64" y="72" width="26" height="8" fill="'+x.col+'" stroke="#fff"/></svg>'}; });
+    else if (shopCat==='floor') list = LB.FLOORS.filter(function(x){return x.id!=='f-default';}).map(function(x){ return {id:x.id, name:x.name, price:x.price, own:has(l,x.id), kind:'owned', pic:'<svg viewBox="0 0 138 100"><svg width="138" height="100" viewBox="0 0 138 50" preserveAspectRatio="none">'+LB.floor(x.id,138,50)+'</svg></svg>'}; });
+    else if (shopCat==='decor') list = LB.DECOR.map(function(x){ return {id:x.id, name:x.name, price:x.price, own:has(l,x.id), kind:'owned', pic:'<svg viewBox="-8 -10 96 70"><rect x="-8" y="-10" width="96" height="70" fill="#F7F3EC"/>'+LB.decor(x.id)+'</svg>'}; });
+    else list = LB.OUTSIDE.filter(function(x){ return x.price; }).map(function(x){ var pic;
+        if (x.kind==='roof') pic = '<svg viewBox="0 0 120 100"><rect width="120" height="100" fill="#EAF4FD"/><path d="M10 56 L60 20 L110 56Z" fill="'+x.col+'"/><rect x="18" y="56" width="84" height="40" fill="#F7F3EC"/><rect x="52" y="70" width="16" height="26" fill="#B7834A"/></svg>';
+        else { var box = {'o-tree':'790 480 120 160','o-flowers':'20 620 360 70','o-path':'380 600 140 130','o-bench':'540 640 120 80','o-vane':'410 -6 90 40','o-solar':'100 40 140 70','o-dish':'680 10 90 90','o-pond':'20 650 150 70'}[x.id];
+               pic = '<svg viewBox="'+box+'"><rect x="-100" y="-100" width="1200" height="1000" fill="#EAF4FD"/>'+LB.outside(x.id)+'</svg>'; }
+        return {id:x.id, name:x.name, price:x.price, own:has(l,x.id), kind:'owned', roof:x.kind==='roof', using: x.kind==='roof' && l.lab.roof===x.id}; });
+    var h = '<div class="box"><h2>🛒 Lab shop</h2><p class="lead">Spend your lab points on rooms, furniture and decorations. Then tap 🎨 on a room in <b>Build my lab</b> to use your paint, floors and wall pictures.</p>'+
+      '<div class="opts" style="margin-bottom:14px">'+SCATS.map(function(c){ return '<button class="opt2'+(shopCat===c[0]?' on':'')+'" data-sc="'+c[0]+'">'+c[1]+'</button>'; }).join('')+'</div><div class="lshelf">';
+    list.forEach(function(x){
+      var btn;
+      if (x.own) btn = x.roof ? (x.using ? '<button class="bt using" disabled>✓ On my lab</button>' : '<button class="bt use" data-roof="'+x.id+'">Put on my lab</button>') : '<button class="bt using" disabled>✓ Owned</button>';
+      else if (x.needRoom) btn = '<button class="bt" disabled>🔒 Build the '+esc(x.needRoom.toLowerCase())+' first</button>';
+      else btn = '<button class="bt buy" data-buy="'+x.id+'" data-kind="'+x.kind+'"'+(pts < x.price ? ' disabled' : '')+'>'+(pts < x.price ? '🔒 Need '+(x.price-pts)+' more' : 'Buy for 🧪 '+x.price)+'</button>';
+      h += '<div class="litem'+(x.own?' mine':'')+'"><div class="lp">'+(x.pic||'')+'</div><div class="lb"><b>'+esc(x.name)+'</b>'+(x.sub?'<small>'+esc(x.sub)+'</small>':'')+'<span class="pr">🧪 '+x.price+'</span>'+btn+'</div></div>';
+    });
+    h += '</div></div>';
+    var p = document.getElementById('panel'); p.innerHTML = h;
+    p.querySelectorAll('[data-sc]').forEach(function(b){ b.onclick = function(){ shopCat = b.getAttribute('data-sc'); shop(); }; });
+    p.querySelectorAll('[data-roof]').forEach(function(b){ b.onclick = function(){ var l = look(); l.lab.roof = b.getAttribute('data-roof'); save(l); shop(); }; });
+    p.querySelectorAll('[data-buy]').forEach(function(b){ b.onclick = function(){
+      var l = look(), id = b.getAttribute('data-buy'), kind = b.getAttribute('data-kind'), cost = kind==='built' ? price(id) : LB.LABITEMS[id].price;
+      if (points(l) < cost) return;
+      var today = new Date().toISOString().slice(0,10);
+      if (kind==='built') l.lab.built[id] = today; else l.lab.owned[id] = today;
+      if (LB.LABITEMS[id] && LB.LABITEMS[id].kind==='roof') l.lab.roof = id;
+      save(l); shop(); toast('🎉 Bought: ' + b.closest('.litem').querySelector('b').textContent + '!');
     }; });
   }
 
@@ -301,5 +400,6 @@
   draw();
 })();
 </script>
+<script src="js/nav.js?v=38"></script>
 </body>
 </html>

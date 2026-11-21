@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/app.css?v=37">
+<link rel="stylesheet" href="css/app.css?v=38">
 <style>
 .tbox{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;margin-top:18px}
 .tbox h2{font-size:22px;margin-bottom:10px}
@@ -40,12 +40,14 @@ table.pt th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:v
 <main class="wrap" id="main"></main>
 <footer class="foot noprint"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>Children’s progress is only visible to their own teacher.</span></div></footer>
 
-<script src="js/art.js?v=37"></script>
-<script src="js/kg2.js?v=37"></script>
-<script src="js/g1.js?v=37"></script>
-<script src="js/g2.js?v=37"></script>
-<script src="js/g3.js?v=37"></script>
-<script src="js/challenges.js?v=37"></script>
+<script src="js/art.js?v=38"></script>
+<script src="js/kg2.js?v=38"></script>
+<script src="js/g1.js?v=38"></script>
+<script src="js/g2.js?v=38"></script>
+<script src="js/g3.js?v=38"></script>
+<script src="js/challenges.js?v=38"></script>
+<script src="js/practice.js?v=38"></script>
+<script src="js/report.js?v=38"></script>
 <script>
 (function(){
   var sb = supabase.createClient('https://xpbkdnkfufkahaszfycd.supabase.co','sb_publishable_QIAV_9tLUBbDCu7FHqaTEw_zYQ0teEG');
@@ -85,7 +87,7 @@ table.pt th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:v
   }
 
   function home(){
-    var h = '<div class="lhead"><h1>My classes</h1><p>Create a class, add your children’s first names, and give each child their code card. Their badges, challenge stars and journals appear here.</p></div>';
+    var h = '<div class="lhead"><h1>My classes</h1><p>Create a class, add your children’s first names, and give each child their code card. Their badges, challenge stars, journals, science knowledge and reading appear here.</p></div>';
     h += '<div class="tbox"><h2>Classes</h2>'+(classes.length?'<div class="cls">'+classes.map(function(c){ var n = kids.filter(function(k){return k.class_id===c.id;}).length;
         return '<button class="grade'+(cur===c.id?' on':'')+'" data-c="'+c.id+'">'+esc(c.name)+'<small>'+GR[c.grade]+' · '+n+' children</small></button>'; }).join('')+'</div>':'<p style="color:var(--muted);font-weight:700">No classes yet.</p>')+
       '<details style="margin-top:14px"><summary style="cursor:pointer;font-weight:900;color:var(--teal)">+ New class</summary>'+
@@ -124,7 +126,26 @@ table.pt th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:v
         '<td>'+(p.journal.length?'<button class="mini" data-j="'+k.id+'">'+p.journal.length+' entries</button>':'0')+'</td>'+
         '<td><button class="mini" data-nc="'+k.id+'">New code</button> <button class="mini red" data-dk="'+k.id+'">Remove</button></td></tr>';
     });
-    h += '</table></div></div><div id="jview"></div>';
+    h += '</table></div></div>';
+    // science knowledge against every curriculum objective, and reading
+    var objs = (window.SQ_PRAC||{})[c.grade] || [], R = window.SQ_REPORT;
+    h += '<div class="tbox"><h2>Science knowledge and reading</h2><p style="color:var(--ink2);font-weight:700;margin:0 0 10px">Each column is a National Curriculum objective from Science Practice (hover or tap a number to see it). Colours: '+
+      R.LEVELS.map(function(L){ return '<span class="lvl" style="background:'+L.c+';color:'+L.t+'">'+L.n+'</span>'; }).join(' ')+'</p>';
+    if (!objs.length) h += '<p style="color:var(--muted);font-weight:700">Science Practice for this grade is coming soon. Reading is shown below.</p>';
+    h += '<div class="scroll"><table class="pt kgrid"><tr><th>Child</th>'+objs.map(function(o,i){ return '<th title="'+esc(o.short)+': '+esc(o.nc)+'">'+(i+1)+'</th>'; }).join('')+'<th>Secure</th><th>Stories read</th><th>Reading score</th><th></th></tr>';
+    ks.forEach(function(k){
+      var p = prog[k.id] || {}, sm = R.summary(c.grade, p), sk = p.skills || {};
+      h += '<tr><td><b>'+esc(k.first_name)+'</b></td>'+objs.map(function(o){ var r = sk[o.id], L = R.LEVELS[R.level(r)];
+          return '<td title="'+esc(o.short)+' · '+L.n+(r&&r.n?' · '+r.r+' of '+r.n+' right':'')+'" style="background:'+L.c+';color:'+L.t+';text-align:center;font-weight:900">'+(r&&r.n?Math.round(r.r/r.n*100)+'%':'')+'</td>'; }).join('')+
+        '<td><b>'+sm.counts[3]+'</b> / '+sm.objs+'</td><td>'+sm.read+' / '+sm.stories+'</td><td>'+(sm.comp==null?'–':Math.round(sm.comp*100)+'%')+'</td>'+
+        '<td><button class="mini" data-rep="'+k.id+'">📄 Report</button></td></tr>';
+    });
+    // class average row
+    if (objs.length) h += '<tr><td><b>Class</b></td>'+objs.map(function(o){ var n = 0, s = 0; ks.forEach(function(k){ var p = prog[k.id]; if (p && p.skills && p.skills[o.id]) { n++; s += R.level(p.skills[o.id])===3 ? 1 : 0; } });
+        return '<td style="text-align:center;font-size:12px;font-weight:800;color:var(--muted)">'+(n ? s+'/'+n : '')+'</td>'; }).join('')+'<td colspan="4" style="font-size:12px;color:var(--muted);font-weight:700">children secure / children who have tried</td></tr>';
+    h += '</table></div><p style="margin-top:12px"><button class="btn sec" id="allrep">🖨 Print reports for every child</button></p>';
+    if (objs.length) h += '<details style="margin-top:10px"><summary style="cursor:pointer;font-weight:900;color:var(--teal)">Show the objectives</summary><ol style="font-weight:700;color:var(--ink2)">'+objs.map(function(o){ return '<li><b>'+esc(o.short)+'</b>: '+esc(o.nc)+'</li>'; }).join('')+'</ol></details>';
+    h += '</div><div id="jview"></div>';
     return h;
   }
 
@@ -154,6 +175,13 @@ table.pt th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:v
     main.querySelectorAll('[data-dk]').forEach(function(b){ b.onclick = async function(){
       if (!confirm('Remove this child and their progress? This cannot be undone.')) return;
       await sb.from('sq_students').delete().eq('id', b.getAttribute('data-dk')); await load(); home(); }; });
+    function showReports(list){
+      main.innerHTML = '<p class="noprint" style="margin-top:20px"><button class="btn pri" onclick="window.print()">🖨 Print</button> <button class="btn sec" id="bk">Back to class</button></p>'+
+        list.map(function(k, i){ return '<div style="'+(i?'break-before:page;':'')+'">'+SQ_REPORT.html({name:k.first_name, cls:c.name, grade:c.grade, data:prog[k.id]||{}, forParents:true})+'</div>'; }).join('');
+      document.getElementById('bk').onclick = home; window.scrollTo({top:0});
+    }
+    main.querySelectorAll('[data-rep]').forEach(function(b){ b.onclick = function(){ showReports(kids.filter(function(x){return x.id===b.getAttribute('data-rep');})); }; });
+    var ar = document.getElementById('allrep'); if (ar) ar.onclick = function(){ showReports(kids.filter(function(k){return k.class_id===cur;})); };
     main.querySelectorAll('[data-j]').forEach(function(b){ b.onclick = function(){
       var k = kids.filter(function(x){return x.id===b.getAttribute('data-j');})[0], p = prog[k.id];
       document.getElementById('jview').innerHTML = '<div class="tbox"><h2>'+esc(k.first_name)+'’s science journal</h2>'+p.journal.map(function(e){

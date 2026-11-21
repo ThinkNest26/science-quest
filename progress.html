@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Progress | Science Quest by Curious Nest</title>
+<link rel="icon" type="image/png" href="img/sq-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css?v=38">
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><span class="mk"><img src="img/sq-bird.png" alt=""></span><span><b>Science Quest</b><small>by Curious Nest</small></span></a>
+    <div class="who"><a class="chipbtn" href="learn.html">📚 Library</a><a class="chipbtn" href="practice.html">🧠 Science Practice</a><span id="who"></span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="lhead noprint">
+    <h1>My Progress</h1>
+    <p>See how your science knowledge and your reading are growing. You can print a report to share at home.</p>
+  </div>
+  <div class="pgrades noprint" id="grades" style="display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 4px"></div>
+  <p class="noprint" style="margin:14px 0 0"><button class="btn pri" id="print">🖨 Print a report for home</button></p>
+  <div id="rep"></div>
+</main>
+
+<footer class="foot"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>Original stories and characters. Not affiliated with any publisher or exam board.</span></div></footer>
+
+<script src="js/art.js?v=38"></script>
+<script src="js/kg2.js?v=38"></script>
+<script src="js/g1.js?v=38"></script>
+<script src="js/g2.js?v=38"></script>
+<script src="js/g3.js?v=38"></script>
+<script src="js/practice.js?v=38"></script>
+<script src="js/avatar.js?v=38"></script>
+<script src="js/store.js?v=38"></script>
+<script src="js/report.js?v=38"></script>
+<script>
+(function(){
+  var S = SQ_STORE, GR = [['kg2','KG2','Year 1'],['g1','Grade 1','Year 2'],['g2','Grade 2','Year 3'],['g3','Grade 3','Year 4']];
+  var grade = null, parents = false;
+  function draw(){
+    var m = S.me(); if (!grade) grade = (m && window.SQ_GRADE[m.grade]) ? m.grade : 'kg2';
+    document.getElementById('grades').innerHTML = GR.map(function(g){ return '<button class="grade'+(g[0]===grade?' on':'')+'" data-g="'+g[0]+'">'+g[1]+'<small>'+g[2]+'</small></button>'; }).join('');
+    document.querySelectorAll('[data-g]').forEach(function(b){ b.onclick = function(){ grade = b.getAttribute('data-g'); draw(); }; });
+    document.getElementById('rep').innerHTML = (m ? '' : '<p class="noprint" style="font-weight:800;color:var(--muted)">You are not signed in, so this shows the progress saved on this device. Sign in with your code to keep it everywhere.</p>') +
+      SQ_REPORT.html({name: m ? m.name : '', cls: m ? m.cls : '', grade: grade, data: S.data(), forParents: parents});
+  }
+  document.getElementById('print').onclick = function(){ parents = true; draw(); setTimeout(function(){ window.print(); parents = false; }, 150); };
+  S.chip(document.getElementById('who'), draw);
+  draw();
+})();
+</script>
+<script src="js/nav.js?v=38"></script>
+</body>
+</html>
