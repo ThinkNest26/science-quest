@@ -73,7 +73,7 @@ table.pt th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:v
   }
 
   /* ---------- sign in, create an account, reset a password ---------- */
-  var loginTab = 'in';
+  var loginTab = location.hash === '#signup' ? 'up' : 'in';
   function login(msg){
     var tabs = '<div style="display:flex;gap:8px;margin-bottom:14px"><button class="tabb'+(loginTab==='in'?' on':'')+'" data-lt="in">Sign in</button><button class="tabb'+(loginTab==='up'?' on':'')+'" data-lt="up">Create a teacher account</button></div>';
     var h = '<div class="tbox" style="max-width:460px;margin:40px auto">'+tabs;
