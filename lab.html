@@ -76,7 +76,7 @@
 <footer class="foot"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>Original stories and characters. Not affiliated with any publisher or exam board.</span></div></footer>
 
 <script src="js/art.js?v=45"></script>
-<script src="js/avatar.js?v=45"></script>
+<script src="js/avatar.js?v=52"></script>
 <script src="js/store.js?v=45"></script>
 <script>
 (function(){
@@ -108,14 +108,17 @@
     else h += row('Hair colour', AV.HAIRC.map(function(c,i){ return '<button class="sw'+(l.hc===i?' on':'')+'" style="background:'+c+'" data-set="hc" data-v="'+i+'" aria-label="Hair colour '+(i+1)+'"></button>'; }).join(''));
     h += row('Face', AV.FACES.map(function(k){ return '<button class="opt2'+(l.face===k[0]?' on':'')+'" data-set="face" data-v="'+k[0]+'">'+k[1]+'</button>'; }).join('') +
          '<button class="opt2'+(l.glasses?' on':'')+'" data-set="glasses" data-v="'+(!l.glasses)+'">👓 Glasses</button><button class="opt2'+(l.freckles?' on':'')+'" data-set="freckles" data-v="'+(!l.freckles)+'">✨ Freckles</button>');
-    h += row('T-shirt under my lab coat', AV.SHIRT.map(function(c,i){ return '<button class="sw'+(l.shirt===i?' on':'')+'" style="background:'+c+'" data-set="shirt" data-v="'+i+'" aria-label="T-shirt colour '+(i+1)+'"></button>'; }).join(''));
+    h += row('Eye colour', AV.EYEC.map(function(c,i){ return '<button class="sw'+(l.eye===i?' on':'')+'" style="background:'+c+'" data-set="eye" data-v="'+i+'" aria-label="Eye colour '+(i+1)+'"></button>'; }).join(''));
+    h += row('Picture on my T-shirt', AV.EMB.map(function(k){ return '<button class="opt2'+(l.emb===k[0]?' on':'')+'" data-set="emb" data-v="'+k[0]+'">'+k[1]+'</button>'; }).join(''));
+    h += row('Trousers or skirt', AV.LEGS.map(function(k){ return '<button class="opt2'+(l.legs===k[0]?' on':'')+'" data-set="legs" data-v="'+k[0]+'">'+k[1]+'</button>'; }).join(''));
+    h += row('T-shirt and trainers colour', AV.SHIRT.map(function(c,i){ return '<button class="sw'+(l.shirt===i?' on':'')+'" style="background:'+c+'" data-set="shirt" data-v="'+i+'" aria-label="T-shirt colour '+(i+1)+'"></button>'; }).join(''));
     h += row('Lab coat', AV.SHOP.filter(function(x){return x.slot==='coat' && AV.owns(l,x.id);}).map(function(x){ return '<button class="sw'+(l.coat===x.id?' on':'')+'" style="background:'+x.col+'" data-set="coat" data-v="'+x.id+'" aria-label="'+x.name+'"></button>'; }).join('') +
          '<button class="opt2" data-go="coat">🛒 More coats in the shop</button>');
     var p = document.getElementById('panel'); p.innerHTML = h;
     p.querySelectorAll('[data-set]').forEach(function(b){ b.onclick = function(){
       var l = L(), k = b.getAttribute('data-set'), v = b.getAttribute('data-v');
-      l[k] = (k==='kind'||k==='hair'||k==='face'||k==='coat') ? v : (v==='true' ? true : v==='false' ? false : +v);
-      if (k==='kind') l.hair = v==='girl' ? 'long' : 'short';
+      l[k] = (k==='kind'||k==='hair'||k==='face'||k==='coat'||k==='emb'||k==='legs') ? v : (v==='true' ? true : v==='false' ? false : +v);
+      if (k==='kind') { l.hair = v==='girl' ? 'long' : 'short'; l.emb = v==='girl' ? 'flask' : 'atom'; l.legs = v==='girl' ? 'skirt' : 'jeans'; }
       save(l);
     }; });
     p.querySelectorAll('[data-go]').forEach(function(b){ b.onclick = function(){ tab = 'shop'; cat = b.getAttribute('data-go'); draw(); }; });
