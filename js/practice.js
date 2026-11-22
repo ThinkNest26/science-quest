@@ -756,6 +756,164 @@ g4: [
    {q:'Which gear turns faster?', v:'gears', o:['B, the small gear','A, the big gear','Both the same'], why:'The small gear has fewer teeth, so it turns more times for each turn of the big gear.'},
    {q:'Which of these is a lever?', o:['Scissors','A ball','A bowl'], why:'Scissors are two levers joined at a pivot.'}
   ]}
+],
+/* ===================== Grade 5 = Year 6 ===================== */
+g5: [
+ /* ---------- Living things and their habitats ---------- */
+ {id:'y6-lv-1', topic:'living', short:'Classifying living things into groups',
+  nc:'Describe how living things are classified into broad groups according to common observable characteristics and based on similarities and differences, including micro-organisms, plants and animals',
+  qs:[
+   {q:'Which group has a backbone?', o:['Vertebrates','Invertebrates','Micro-organisms'], why:'Fish, amphibians, reptiles, birds and mammals are vertebrates.'},
+   {q:'Which is a micro-organism?', o:['Bacteria','A mushroom on a tree','An ant'], why:'Micro-organisms are too small to see without a microscope.'},
+   {q:'Which vertebrate group has dry, scaly skin and lays eggs on land?', v:'i:lizard', o:['Reptiles','Amphibians','Fish'], why:'Lizards, snakes, turtles and crocodiles are reptiles.'},
+   {q:'Which animal is an arachnid?', o:['Spider (8 legs)','Ant (6 legs)','Snail'], why:'Arachnids, like spiders and scorpions, have eight legs.'},
+   {q:'Who created the system of giving every living thing a two-part scientific name?', o:['Carl Linnaeus','Isaac Newton','Mary Anning'], why:'Linnaeus published his system in the 1700s. Humans are Homo sapiens.'},
+   {q:'Mushrooms are not plants. Which group do they belong to?', o:['Fungi','Animals','Bacteria'], why:'Fungi cannot make their own food using sunlight.'}
+  ]},
+ {id:'y6-lv-2', topic:'living', short:'Reasons for classifying living things',
+  nc:'Give reasons for classifying plants and animals based on specific characteristics',
+  qs:[
+   {q:'Why is a bat classified as a mammal, not a bird?', o:['It has fur and feeds its young milk','It can fly','It eats insects'], why:'Flying is not what decides the group; fur and milk do.'},
+   {q:'Why is a whale a mammal, not a fish?', v:'i:shark', o:['It breathes air with lungs and feeds its young milk','It lives in water','It has fins'], why:'Fish breathe with gills; whales breathe air.'},
+   {q:'Why is a frog an amphibian?', v:'i:frog', o:['It lives part of its life in water and part on land, and has moist skin','It has feathers','It has scales and lays eggs on land'], why:'Amphibians start life in water with gills.'},
+   {q:'Ferns do not have flowers. How do they reproduce?', o:['With spores','With seeds in fruit','With pollen from bees'], why:'Ferns and mosses use spores.'},
+   {q:'A penguin cannot fly. Why is it still a bird?', o:['It has feathers and lays eggs with hard shells','It swims','It is black and white'], why:'Feathers are a key characteristic of birds.'},
+   {q:'Why do scientists classify living things?', o:['To organise them, study them and see how they are related','To make them grow','To give them colours'], why:'Classification helps scientists communicate clearly.'}
+  ]},
+ /* ---------- Animals, including humans ---------- */
+ {id:'y6-an-1', topic:'animals', short:'The circulatory system',
+  nc:'Identify and name the main parts of the human circulatory system, and describe the functions of the heart, blood vessels and blood',
+  qs:[
+   {q:'Which organ is the arrow pointing to?', v:'heart:heart', o:['Heart','Lungs','Stomach'], why:'The heart is a muscle that pumps blood around the body.'},
+   {q:'Which organs is the arrow pointing to?', v:'heart:lungs', o:['Lungs','Heart','Kidneys'], why:'Blood picks up oxygen in the lungs.'},
+   {q:'What do arteries do?', o:['Carry blood away from the heart','Carry blood back to the heart','Digest food'], why:'Arteries carry blood from the heart to the body.'},
+   {q:'What do veins do?', o:['Carry blood back to the heart','Carry blood away from the heart','Make blood'], why:'Veins return blood to the heart.'},
+   {q:'What does blood carry around the body?', o:['Oxygen, water and nutrients','Only air','Only food lumps'], why:'Blood also carries waste, like carbon dioxide, away.'},
+   {q:'What are the tiny blood vessels that reach every cell called?', o:['Capillaries','Arteries','Lungs'], why:'Capillary walls are so thin that oxygen and nutrients pass through them.'}
+  ]},
+ {id:'y6-an-2', topic:'animals', short:'Diet, exercise, drugs and lifestyle',
+  nc:'Recognise the impact of diet, exercise, drugs and lifestyle on the way their bodies function',
+  qs:[
+   {q:'What happens to your heart rate when you exercise?', o:['It goes up','It goes down','It stops'], why:'Muscles need more oxygen, so the heart pumps faster.'},
+   {q:'Which food group mainly gives us energy?', v:'i:rice', o:['Carbohydrates','Vitamins','Water'], why:'Bread, rice and pasta are carbohydrates.'},
+   {q:'Which food group helps the body grow and repair?', v:'i:egg', o:['Protein','Fat','Sugar'], why:'Eggs, fish, meat, beans and lentils contain protein.'},
+   {q:'What is a balanced diet?', o:['Eating the right amounts of different food groups','Eating only fruit','Eating as much as possible'], why:'The body needs a mix of nutrients.'},
+   {q:'How does smoking harm the body?', o:['It damages the lungs and heart','It makes muscles stronger','It improves breathing'], why:'Smoking is very harmful to health.'},
+   {q:'Medicines are drugs that can help us. How should they be used?', o:['Only as a doctor or the label says, given by a trusted adult','As much as you like','By sharing a friend’s'], why:'Used wrongly, even medicines can be harmful.'}
+  ]},
+ {id:'y6-an-3', topic:'animals', short:'How nutrients and water are transported',
+  nc:'Describe the ways in which nutrients and water are transported within animals, including humans',
+  qs:[
+   {q:'Where do nutrients from food pass into the blood?', o:['The small intestine','The lungs','The heart'], why:'Digested food passes through the walls of the small intestine.'},
+   {q:'How do nutrients reach the cells in your toes?', o:['They are carried by the blood','They walk there','Through the bones'], why:'The circulatory system carries nutrients everywhere.'},
+   {q:'Why do we need to drink water?', v:'i:water', o:['Our bodies use and lose water all the time','Water gives us protein','Water makes bones'], why:'We lose water when we breathe, sweat and go to the toilet.'},
+   {q:'Which organ pumps blood, carrying nutrients and water, around the body?', o:['The heart','The stomach','The brain'], why:'The heart is a powerful muscle.'},
+   {q:'What is the liquid part of blood called, which carries dissolved nutrients?', o:['Plasma','Saliva','Bile'], why:'Plasma is mostly water.'},
+   {q:'Which organs clean the blood and remove extra water as urine?', o:['Kidneys','Lungs','Heart'], why:'Your two kidneys filter your blood.'}
+  ]},
+ /* ---------- Evolution and inheritance ---------- */
+ {id:'y6-ev-1', topic:'evolution', short:'Fossils show how life has changed',
+  nc:'Recognise that living things have changed over time and that fossils provide information about living things that inhabited the Earth millions of years ago',
+  qs:[
+   {q:'What is this?', v:'i:ammonite', o:['A fossil of an ammonite','A living snail','A seed'], why:'Ammonites lived in ancient seas millions of years ago.'},
+   {q:'What can fossils tell us?', o:['What living things were like millions of years ago','What will happen tomorrow','The weather today'], why:'Fossils are evidence of past life.'},
+   {q:'In which type of rock are fossils usually found?', v:'i:limestone', o:['Sedimentary rock','Volcanic glass','Melted lava rock'], why:'Layers of sediment bury and preserve remains.'},
+   {q:'About how long ago did the last of the giant dinosaurs die out?', o:['About 66 million years ago','About 6,600 years ago','Last century'], why:'Scientists think a huge asteroid impact was a major cause.'},
+   {q:'Which fossil hunter found the first complete plesiosaur in 1823?', o:['Mary Anning','Jane Goodall','Charles Darwin'], why:'Mary Anning worked on the Jurassic Coast in England.'},
+   {q:'Fossils show that many species living long ago no longer exist. What is this called?', o:['Extinction','Adaptation','Pollination'], why:'An extinct species has no living members.'}
+  ]},
+ {id:'y6-ev-2', topic:'evolution', short:'Offspring vary and are not identical',
+  nc:'Recognise that living things produce offspring of the same kind, but normally offspring vary and are not identical to their parents',
+  qs:[
+   {q:'What do cats produce?', o:['Kittens, which grow into cats','Puppies','Chicks'], why:'Living things produce offspring of the same kind.'},
+   {q:'Why do puppies in the same litter look different from each other?', o:['They inherit different mixes of characteristics from their parents','They eat different food','They live in different houses'], why:'This natural difference is called variation.'},
+   {q:'What does inherit mean?', o:['Get characteristics passed on from parents','Learn a skill at school','Buy something'], why:'Eye colour is an inherited characteristic.'},
+   {q:'Which is an inherited characteristic?', o:['Natural eye colour','A scar from a fall','Speaking English'], why:'Scars and languages are not passed on through genes.'},
+   {q:'What is variation?', o:['Differences between living things of the same kind','Animals moving to new homes','A type of fossil'], why:'No two people are exactly the same.'},
+   {q:'Are offspring usually exactly the same as their parents?', o:['No, they are similar but not identical','Yes, always','They are a different kind of animal'], why:'Offspring vary.'}
+  ]},
+ {id:'y6-ev-3', topic:'evolution', short:'Adaptation and evolution',
+  nc:'Identify how animals and plants are adapted to suit their environment in different ways and that adaptation may lead to evolution',
+  qs:[
+   {q:'How is a cactus adapted to the desert?', v:'scene:desert', o:['It stores water in its thick stem and has spines instead of leaves','It has huge thin leaves','It needs lots of rain'], why:'Spines lose less water and protect the plant.'},
+   {q:'How is a polar bear adapted to the Arctic?', v:'scene:arctic', o:['Thick fur and fat keep it warm','It has thin skin','It sweats a lot'], why:'Insulation helps it survive the cold.'},
+   {q:'Who wrote “On the Origin of Species” (1859), explaining evolution by natural selection?', o:['Charles Darwin','Carl Linnaeus','Galileo'], why:'Alfred Russel Wallace had similar ideas at the same time.'},
+   {q:'What is natural selection?', o:['Living things best suited to their environment survive and pass on their characteristics','Choosing pets','Animals picking their food'], why:'Over many generations, this can lead to evolution.'},
+   {q:'Why do many animals in snowy places have white fur?', o:['It helps them hide (camouflage)','It keeps them cool','White is heavier'], why:'Camouflage helps them hunt or avoid predators.'},
+   {q:'What is evolution?', o:['The gradual change of living things over many generations','A change in one animal’s lifetime','A type of rock'], why:'Evolution happens over very long periods.'}
+  ]},
+ /* ---------- Light ---------- */
+ {id:'y6-lt-1', topic:'light', short:'Light travels in straight lines',
+  nc:'Recognise that light appears to travel in straight lines',
+  qs:[
+   {q:'Can the eye see the torch light?', v:'holes:line', o:['Yes, the holes are in a straight line','No','Only if the torch is red'], why:'Light travels in straight lines through the lined-up holes.'},
+   {q:'One card has moved. Can the eye see the light now?', v:'holes:offset', o:['No, light cannot bend around the card','Yes','Yes, it is brighter'], why:'Light cannot go round corners on its own.'},
+   {q:'How does light usually travel?', o:['In straight lines','In curves','In circles'], why:'Rays of light are drawn as straight lines with arrows.'},
+   {q:'Why can’t you see around a corner?', o:['Light travels in straight lines','It is too dark','Walls make light'], why:'Light from objects round the corner cannot reach your eyes.'},
+   {q:'A beam of sunlight through a window has straight edges. What does this show?', o:['Light travels in straight lines','Light is a liquid','Sunlight is solid'], why:'The edges of beams and shadows are straight.'},
+   {q:'How do scientists draw light in diagrams?', o:['Straight lines with arrows (rays)','Wiggly lines','Dots only'], why:'Arrows show the direction the light travels.'}
+  ]},
+ {id:'y6-lt-2', topic:'light', short:'We see objects that give out or reflect light',
+  nc:'Use the idea that light travels in straight lines to explain that objects are seen because they give out or reflect light into the eye',
+  qs:[
+   {q:'How can the eye see the teddy?', v:'see:lamp', o:['Light from the lamp reflects off the teddy into the eye','Light goes from the eye to the teddy','The teddy makes its own light'], why:'Light travels from the source, to the object, then to the eye.'},
+   {q:'Which is a light source?', o:['A candle flame','A mirror','The Moon'], why:'Light sources give out their own light. Mirrors and the Moon reflect light.'},
+   {q:'What does a mirror do to light?', v:'reflect', o:['Reflects it','Absorbs all of it','Makes it'], why:'Smooth, shiny surfaces reflect light well.'},
+   {q:'Why can’t you see anything in a completely dark room?', o:['There is no light to reflect into your eyes','Your eyes stop working','Objects disappear'], why:'We need light to see.'},
+   {q:'Which surface reflects light best?', o:['A smooth, shiny mirror','A black carpet','Rough wood'], why:'Shiny smooth surfaces reflect light clearly.'},
+   {q:'Which way does light travel when you see a lit lamp?', o:['From the lamp into your eyes','From your eyes to the lamp','In both directions at once'], why:'Light enters our eyes; eyes do not send out light.'}
+  ]},
+ {id:'y6-lt-3', topic:'light', short:'How light travels to our eyes',
+  nc:'Explain that we see things because light travels from light sources to our eyes or from light sources to objects and then to our eyes',
+  qs:[
+   {q:'Look at the diagram. Where does the light start?', v:'reflect', o:['At the torch','At the eye','At the mirror'], why:'The torch is the light source.'},
+   {q:'Which is the correct order for seeing a book in a lit room?', o:['Lamp → book → eye','Eye → book → lamp','Book → lamp → eye'], why:'Light goes from the source to the object, then to the eye.'},
+   {q:'How do we see the Moon?', o:['Sunlight reflects off the Moon into our eyes','The Moon makes light','Our eyes light it up'], why:'The Moon is not a light source.'},
+   {q:'What is a periscope used for?', o:['Seeing over or around things using mirrors','Making light','Hearing sounds'], why:'Two mirrors reflect light into your eye.'},
+   {q:'Which part of the eye lets light in?', v:'i:eye', o:['The pupil','The eyelash','The eyebrow'], why:'The pupil is the black hole in the middle of the eye.'},
+   {q:'Light hits a mirror at an angle. How does it leave the mirror?', v:'reflect', o:['At the same angle, on the other side','Straight back the way it came','It stops'], why:'The angle of reflection equals the angle of incidence.'}
+  ]},
+ {id:'y6-lt-4', topic:'light', short:'Shadows have the same shape as the object',
+  nc:'Use the idea that light travels in straight lines to explain why shadows have the same shape as the objects that cast them',
+  qs:[
+   {q:'Why does the shadow form?', v:'shadow:near', o:['The object blocks the light travelling in straight lines','The object makes darkness','The screen is dark'], why:'Light cannot bend around opaque objects.'},
+   {q:'What shape is the shadow of a round plate?', o:['Round','Square','Triangular'], why:'Shadows are the same shape as the objects that cast them.'},
+   {q:'Which material makes the darkest shadow?', o:['Opaque cardboard','Clear glass','Clear plastic wrap'], why:'Opaque materials block all light.'},
+   {q:'The object moves closer to the torch. What happens to the shadow?', v:'shadow:near', o:['It gets bigger','It gets smaller','It disappears'], why:'Closer to the light, the object blocks more of the beam.'},
+   {q:'Why can’t you see details like eyes in your shadow?', o:['A shadow is just the shape where light is blocked','Shadows are too small','Eyes do not block light'], why:'Shadows show outline, not colour or detail.'},
+   {q:'Do transparent objects make shadows?', o:['Hardly any, because light passes through','Yes, very dark ones','Only at night'], why:'Transparent materials let light through.'}
+  ]},
+ /* ---------- Electricity ---------- */
+ {id:'y6-el-1', topic:'electricity', short:'Cells, voltage, brightness and volume',
+  nc:'Associate the brightness of a lamp or the volume of a buzzer with the number and voltage of cells used in the circuit',
+  qs:[
+   {q:'This circuit has two cells. Compared with one cell, the bulb will be…', v:'circuit:two', o:['Brighter','Dimmer','Off'], why:'More cells give a higher voltage, pushing more electricity through the bulb.'},
+   {q:'What does voltage measure?', o:['The “push” of a cell or battery','The length of a wire','The colour of a bulb'], why:'Voltage is measured in volts (V).'},
+   {q:'A buzzer gets a higher voltage. What happens?', o:['It gets louder','It gets quieter','It stops'], why:'More push makes the buzzer vibrate more strongly.'},
+   {q:'A 1.5 V cell is replaced by a 3 V battery. The bulb will be…', o:['Brighter','Dimmer','The same'], why:'Higher voltage, brighter bulb (if the bulb can handle it).'},
+   {q:'What could happen if the voltage is far too high for a bulb?', o:['The bulb could blow (break)','It glows blue','Nothing'], why:'Components have a safe voltage.'},
+   {q:'What unit is voltage measured in?', o:['Volts','Newtons','Metres'], why:'Named after Alessandro Volta.'}
+  ]},
+ {id:'y6-el-2', topic:'electricity', short:'How components work: bulbs, buzzers and switches',
+  nc:'Compare and give reasons for variations in how components function, including the brightness of bulbs, the loudness of buzzers and the on/off position of switches',
+  qs:[
+   {q:'Two bulbs are in a series circuit with one cell. Compared with one bulb, each bulb will be…', v:'symcircuit:twobulb', o:['Dimmer','Brighter','The same'], why:'The cell’s push is shared between two bulbs.'},
+   {q:'The switch in this circuit diagram is…', v:'symcircuit:open', o:['Open, so the bulb is off','Closed, so the bulb is on','Missing'], why:'A gap in the switch symbol means it is open.'},
+   {q:'How could you make a buzzer quieter?', o:['Use fewer cells','Add more cells','Close the switch'], why:'Less voltage makes a quieter sound.'},
+   {q:'A bulb is dim. Which change would make it brighter?', o:['Add another cell','Add another bulb','Use a longer wire'], why:'More voltage makes bulbs brighter.'},
+   {q:'Why does a bulb not light when the switch is open?', o:['The circuit is broken, so no electricity flows','The bulb is too hot','The cell is too strong'], why:'An open switch makes a gap.'},
+   {q:'Which would make a motor spin faster?', o:['More cells','Fewer cells','An open switch'], why:'More voltage makes motors spin faster.'}
+  ]},
+ {id:'y6-el-3', topic:'electricity', short:'Circuit symbols and diagrams',
+  nc:'Use recognised symbols when representing a simple circuit in a diagram',
+  qs:[
+   {q:'What does this symbol show?', v:'symbol:cell', o:['A cell','A bulb','A switch'], why:'A long and a short line show a cell.'},
+   {q:'What does this symbol show?', v:'symbol:bulb', o:['A bulb (lamp)','A motor','A buzzer'], why:'A circle with a cross is a bulb.'},
+   {q:'What does this symbol show?', v:'symbol:switchopen', o:['An open switch','A closed switch','A cell'], why:'The line is lifted, making a gap.'},
+   {q:'What does this symbol show?', v:'symbol:motor', o:['A motor','A bulb','A battery'], why:'A circle with an M is a motor.'},
+   {q:'Why do scientists use symbols for circuits?', o:['They are quick to draw and understood everywhere','They look prettier than pictures','They make circuits work'], why:'Symbols are the same all over the world.'},
+   {q:'What does this circuit diagram show?', v:'symcircuit:basic', o:['A cell and a bulb in a complete circuit','A switch and a buzzer','Two cells and no bulb'], why:'The circuit has a cell symbol and a bulb symbol.'}
+  ]}
 ]
 };
 /* topic names for each grade (practice uses the same topics as the story library where they exist) */
@@ -764,5 +922,6 @@ window.SQ_PRAC_TOPICS = {
   g1:  {living:'Living things and their habitats', plants:'Plants', animals:'Animals, including humans', materials:'Uses of everyday materials'},
   g2:  {plants:'Plants', animals:'Animals, including humans', rocks:'Rocks', light:'Light', forces:'Forces and magnets'},
   g3:  {living:'Living things and their habitats', animals:'Animals, including humans', states:'States of matter', sound:'Sound', electricity:'Electricity'},
-  g4:  {living:'Living things and their habitats', animals:'Animals, including humans', materials:'Properties and changes of materials', space:'Earth and space', forces:'Forces'}
+  g4:  {living:'Living things and their habitats', animals:'Animals, including humans', materials:'Properties and changes of materials', space:'Earth and space', forces:'Forces'},
+  g5:  {living:'Living things and their habitats', animals:'Animals, including humans', evolution:'Evolution and inheritance', light:'Light', electricity:'Electricity'}
 };

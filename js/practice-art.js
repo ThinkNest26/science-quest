@@ -358,6 +358,62 @@
     return wrap(s, '#F7F9FB');
   }
 
+
+  /* ---------- Year 6 diagrams ---------- */
+  // circulation: heart in the middle, lungs above, body below. part: heart | lungs | artery | vein | none
+  function heart(part){
+    var s = '<ellipse cx="160" cy="40" rx="70" ry="24" fill="#F2A0A8"/>'+label(160, 44, '')+
+      '<rect x="110" y="140" width="100" height="30" rx="12" fill="#F4D6B8"/>'+
+      '<path d="M150 64 V82 M170 82 V64" stroke="#3D8BE0" stroke-width="7"/><path d="M178 64 V82" stroke="#E2453A" stroke-width="7"/>'+
+      '<path d="M140 92 C120 70 96 98 140 130 L160 144 L180 130 C224 98 200 70 180 92 C172 84 148 84 140 92Z" fill="#D93A4A"/>'+
+      '<path d="M104 112 C80 120 80 150 110 156" stroke="#3D8BE0" stroke-width="7" fill="none"/><path d="M216 112 C240 120 240 150 210 156" stroke="#E2453A" stroke-width="7" fill="none"/>'+
+      arrow(240, 140, 236, 128) + arrow(80, 128, 84, 140);
+    var at = {heart:[160,112,[270,96]], lungs:[160,40,[270,30]], artery:[228,134,[290,160]], vein:[92,134,[30,160]]}[part];
+    if (at) s += point(at[0], at[1], at[2]);
+    return wrap(s, '#FFF5E3');
+  }
+  // light through holes in cards. kind: line (holes lined up) | offset (one card moved)
+  function holes(kind){
+    var s = '<rect width="320" height="180" fill="#1F2438"/>'+art('torch', 6, 64, .45);
+    [[110,90],[170,kind==='offset'?60:90],[230,90]].forEach(function(c){ s += '<rect x="'+(c[0]-6)+'" y="30" width="12" height="120" fill="#E8E1D0"/><rect x="'+(c[0]-6)+'" y="'+(c[1]-5)+'" width="12" height="10" fill="#1F2438"/>'; });
+    s += '<path d="M60 90 H'+(kind==='offset'?'164':'290')+'" stroke="#FFE58A" stroke-width="4"/>' + '<g transform="translate(272 70) scale(.33)">'+EXTRA.eye+'</g>';
+    return '<svg viewBox="0 0 320 180" width="100%" role="img" aria-label="Question picture" style="display:block;max-width:440px;margin:0 auto;border-radius:16px">'+s+'</svg>';
+  }
+  // a torch beam bouncing off a mirror into an eye
+  function reflect(){
+    var s = '<rect width="320" height="180" fill="#1F2438"/>'+art('torch', 10, 18, .4)+'<rect x="150" y="150" width="70" height="10" fill="#BFE7FF" stroke="#E8E1D0" stroke-width="2"/>'+
+      '<path d="M58 44 L185 150 L292 56" stroke="#FFE58A" stroke-width="4" fill="none"/>'+arrow(150, 121, 160, 129)+arrow(232, 109, 250, 93)+'<g transform="translate(268 22) scale(.33)">'+EXTRA.eye+'</g>';
+    return '<svg viewBox="0 0 320 180" width="100%" role="img" aria-label="Question picture" style="display:block;max-width:440px;margin:0 auto;border-radius:16px">'+s+'</svg>';
+  }
+  // standard circuit symbols. name: cell | battery | bulb | switchopen | switchclosed | buzzer | motor | wire
+  function symbol(name){
+    var W = 'stroke="'+INK+'" stroke-width="4" fill="none" stroke-linecap="round"', s = '';
+    if (name==='cell') s = '<path d="M60 90 H148 M172 90 H260" '+W+'/><path d="M148 60 V120" '+W+'/><path d="M172 74 V106" stroke="'+INK+'" stroke-width="8"/>';
+    else if (name==='battery') s = '<path d="M50 90 H118 M202 90 H270 M142 90 H178" '+W+'/><path d="M118 60 V120 M178 60 V120" '+W+'/><path d="M142 74 V106 M202 74 V106" stroke="'+INK+'" stroke-width="8"/>';
+    else if (name==='bulb') s = '<path d="M60 90 H130 M190 90 H260" '+W+'/><circle cx="160" cy="90" r="30" '+W+'/><path d="M139 69 L181 111 M181 69 L139 111" '+W+'/>';
+    else if (name==='switchopen') s = '<path d="M60 90 H130 M190 90 H260 M130 90 L184 62" '+W+'/><circle cx="130" cy="90" r="5" fill="'+INK+'"/><circle cx="190" cy="90" r="5" fill="'+INK+'"/>';
+    else if (name==='switchclosed') s = '<path d="M60 90 H260" '+W+'/><circle cx="130" cy="90" r="5" fill="'+INK+'"/><circle cx="190" cy="90" r="5" fill="'+INK+'"/>';
+    else if (name==='buzzer') s = '<path d="M60 90 H140 V60 M180 60 V90 H260" '+W+'/><path d="M126 60 H194 V60 A34 34 0 0 1 126 60Z" '+W+'/>';
+    else if (name==='motor') s = '<path d="M60 90 H130 M190 90 H260" '+W+'/><circle cx="160" cy="90" r="30" '+W+'/><text x="160" y="100" font-family="Nunito,Arial" font-weight="900" font-size="28" text-anchor="middle" fill="'+INK+'">M</text>';
+    else s = '<path d="M60 90 H260" '+W+'/>';
+    return wrap(s, '#FFFFFF');
+  }
+  // a circuit diagram drawn with symbols. kind: basic | open | buzzer | twocell | twobulb
+  function symcircuit(kind){
+    var W = 'stroke="'+INK+'" stroke-width="3.5" fill="none" stroke-linecap="round"';
+    var s = '<path d="M60 40 H140 M180 40 H260 V140 H180 M140 140 H60 V40" '+W+'/>';
+    // cell(s) on the bottom
+    if (kind==='twocell') s += '<path d="M140 140 H140 M150 140 H160 M170 140 H180" '+W+'/><path d="M140 120 V160 M160 120 V160" '+W+'/><path d="M150 128 V152 M170 128 V152" stroke="'+INK+'" stroke-width="7"/><path d="M60 140 H140" '+W+'/>';
+    else s += '<path d="M150 120 V160" '+W+'/><path d="M170 128 V152" stroke="'+INK+'" stroke-width="7"/><path d="M140 140 H150 M170 140 H180" '+W+'/>';
+    // component on top
+    if (kind==='buzzer') s += '<path d="M140 40 V24 M180 24 V40" '+W+'/><path d="M140 24 H180 A20 20 0 0 1 140 24Z" '+W+'/>';
+    else s += '<circle cx="160" cy="40" r="20" '+W+'/><path d="M146 26 L174 54 M174 26 L146 54" '+W+'/>';
+    if (kind==='twobulb') s = s.replace('M180 40 H260 V140', 'M180 40 H260 V70 M260 110 V140') + '<circle cx="260" cy="90" r="20" '+W+'/><path d="M246 76 L274 104 M274 76 L246 104" '+W+'/>';
+    // left side: switch
+    if (kind==='open') s = s.replace('V40" ', 'V110 M60 70 V40" ') + '<path d="M60 110 L40 76" '+W+'/><circle cx="60" cy="110" r="4" fill="'+INK+'"/><circle cx="60" cy="70" r="4" fill="'+INK+'"/>';
+    return wrap(s, '#FFFFFF');
+  }
+
   window.SQ_VIS = function(spec){
     if (!spec) return '';
     var p = spec.split(':'), k = p[0], a = p[1] || '';
@@ -370,6 +426,7 @@
       case 'particles': return particles(a); case 'bottles': return bottles(); case 'drums': return drums(); case 'soundpath': return soundpath(a);
       case 'planets': return planets(a); case 'orbit': return orbit(a); case 'daynight': return daynight(a); case 'sunpath': return sunpath(a); case 'lever': return lever(a);
       case 'pulley': return pulley(); case 'gears': return gears(); case 'forces': return forces(a); case 'separate': return separate(a);
+      case 'heart': return heart(a); case 'holes': return holes(a); case 'reflect': return reflect(); case 'symbol': return symbol(a); case 'symcircuit': return symcircuit(a);
       case 'celery': return celery(a); case 'bars': return bars(a.split(',')); case 'see': return see(a); case 'ramp': return ramp(a); case 'scene': return scene(a);
     }
     return '';

@@ -1036,5 +1036,201 @@ window.SQ_PRAC_MORE = {
   {q:'Using several pulleys together to lift a heavy load means…', o:['You need less force, but you pull more rope','You need more force','It is impossible'], why:'More pulleys share the load.'},
   {q:'Archimedes said: “Give me a place to stand and I will move the Earth.” What idea was he talking about?', o:['A long enough lever can move a huge load','Gravity is weak','Pulleys are heavy'], why:'Long levers multiply force.'},
   {q:'Why does a bike use a low gear to go up a steep hill?', o:['Pedalling is easier, even though the bike moves slower','The bike goes faster','It stops friction'], why:'Gears trade speed for force.'}
+ ]},
+/* ---------- Grade 5 = Year 6 ---------- */
+'y6-lv-1': {m:[
+  {q:'Which is an invertebrate?', o:['Jellyfish','Shark','Eagle'], why:'Jellyfish have no backbone.'},
+  {q:'Which plant group makes cones instead of flowers?', v:'i:pine', o:['Conifers','Mosses','Flowering plants'], why:'Pine trees are conifers.'},
+  {q:'Yeast, used to make bread rise, is a…', o:['Micro-organism (a fungus)','Plant','Animal'], why:'Yeast is a single-celled fungus.'},
+  {q:'Which animal group includes crabs and lobsters?', o:['Crustaceans','Insects','Mammals'], why:'Crustaceans have hard shells and jointed legs.'},
+  {q:'Which instrument is needed to see bacteria?', o:['A microscope','A telescope','A magnifying mirror'], why:'Bacteria are microscopic.'},
+  {q:'Which vertebrate group lays eggs in water and has gills as babies?', o:['Amphibians','Birds','Mammals'], why:'Tadpoles breathe with gills.'}
+ ], s:[
+  {q:'Some micro-organisms are helpful. Which is an example?', o:['Bacteria that turn milk into yoghurt','Bacteria that cause tooth decay','Mould on old bread'], why:'Many foods rely on micro-organisms.'},
+  {q:'The scientific name for humans is Homo sapiens. What does the first word show?', o:['The genus (a group of closely related species)','The kingdom','The colour'], why:'Two-part names give the genus and then the species.'},
+  {q:'A new animal has six legs, three body parts and wings. Which group is it in?', o:['Insects','Arachnids','Crustaceans'], why:'Insects have six legs and three body parts.'},
+  {q:'Why are micro-organisms put in their own groups?', o:['They are tiny, often single cells, and are not plants or animals','They are invisible plants','They are baby animals'], why:'They have their own characteristics.'}
+ ]},
+'y6-lv-2': {m:[
+  {q:'Why is a snake classified as a reptile?', o:['It has dry scales and lays eggs on land','It lives in water','It has fins'], why:'Snakes breathe air and have dry, scaly skin.'},
+  {q:'Which characteristic is used to group flowering plants?', o:['They produce flowers and seeds','They are green','They are tall'], why:'Many green plants do not flower.'},
+  {q:'Why is a spider not an insect?', o:['It has eight legs and two body parts','It spins webs','It is small'], why:'Insects have six legs and three body parts.'},
+  {q:'An animal has feathers, a beak and lays eggs. It is a…', o:['Bird','Mammal','Reptile'], why:'Feathers are only found on birds.'},
+  {q:'Why is a dolphin classified as a mammal?', o:['It breathes air and feeds its calf milk','It swims','It eats fish'], why:'Mammals breathe air and make milk.'},
+  {q:'Which is the best characteristic for sorting animals scientifically?', o:['Whether it has a backbone','Whether it is cute','Its favourite food'], why:'Scientific characteristics can be observed and agreed on.'}
+ ], s:[
+  {q:'The platypus lays eggs, but it is a mammal. Why?', o:['It has fur and feeds its young milk','It has a beak','It swims'], why:'It is one of the few egg-laying mammals.'},
+  {q:'Why might classification change when scientists study DNA?', o:['DNA shows how closely related living things really are','DNA changes colour','DNA makes animals bigger'], why:'New evidence can change groups.'},
+  {q:'Sharks and dolphins both have fins and a streamlined shape. Why are they in different groups?', o:['Sharks are fish with gills; dolphins are mammals with lungs','They are in the same group','Dolphins are reptiles'], why:'Similar shapes can come from similar habitats.'},
+  {q:'A plant has no flowers and grows in damp, shady places with tiny leaves. It is probably…', o:['A moss','A sunflower','An oak'], why:'Mosses are non-flowering plants that like damp places.'}
+ ]},
+'y6-an-1': {m:[
+  {q:'Which vessel is the arrow pointing to?', v:'heart:artery', o:['An artery','A vein','The lungs'], why:'Arteries carry blood away from the heart.'},
+  {q:'Which vessel is the arrow pointing to?', v:'heart:vein', o:['A vein','An artery','The heart'], why:'Veins carry blood back to the heart.'},
+  {q:'What is your pulse?', o:['The beat of your heart felt in an artery','Your breathing','Your temperature'], why:'You can feel it at your wrist or neck.'},
+  {q:'Which part of the blood carries oxygen?', o:['Red blood cells','Plasma only','Platelets'], why:'Red blood cells carry oxygen from the lungs.'},
+  {q:'What do white blood cells do?', o:['Fight germs','Carry oxygen','Make the heart beat'], why:'They are part of the immune system.'},
+  {q:'What is the heart made of?', o:['Muscle','Bone','Fat'], why:'The heart is a strong muscle that never rests.'}
+ ], s:[
+  {q:'Why does blood go to the lungs before going round the body?', o:['To pick up oxygen and get rid of carbon dioxide','To get warm','To collect food'], why:'This is the double circulation.'},
+  {q:'Who first described how blood circulates around the body, in 1628?', o:['William Harvey','Isaac Newton','Charles Darwin'], why:'Harvey showed the heart pumps blood in a loop.'},
+  {q:'How many chambers does the human heart have?', o:['4','2','1'], why:'Two atria and two ventricles.'},
+  {q:'Why are capillary walls very thin?', o:['So oxygen and nutrients can pass easily into cells','So blood moves faster','So they can be seen'], why:'Thin walls allow exchange.'}
+ ]},
+'y6-an-2': {m:[
+  {q:'Which helps keep your heart healthy?', o:['Regular exercise','Sitting all day','Lots of salty snacks'], why:'Exercise makes the heart stronger.'},
+  {q:'Which food group gives vitamins and minerals?', v:'i:apple', o:['Fruit and vegetables','Sweets','Fizzy drinks'], why:'Fruit and vegetables keep the body working well.'},
+  {q:'Which food helps digestion because it has lots of fibre?', v:'i:broccoli', o:['Vegetables and wholegrain bread','Butter','Sugar'], why:'Fibre helps food move through the intestines.'},
+  {q:'Why is sleep important?', o:['The body and brain rest and repair','It makes you hungry','It stops the heart'], why:'Children need around 9–11 hours of sleep.'},
+  {q:'Which harms the liver and brain?', o:['Drinking alcohol','Drinking water','Eating vegetables'], why:'Alcohol is harmful, especially for young people.'},
+  {q:'Why do we breathe faster when we exercise?', o:['Muscles need more oxygen','We are bored','The lungs get smaller'], why:'Breathing brings in oxygen and removes carbon dioxide.'}
+ ], s:[
+  {q:'A pupil’s pulse is 80 at rest and 140 after running. After 5 minutes rest it is 90. What does this show?', o:['Exercise raises heart rate, and it falls again with rest','Running lowers heart rate','Resting raises heart rate'], why:'Fitter people recover more quickly.'},
+  {q:'Too much sugar can lead to…', o:['Tooth decay and weight gain','Stronger bones','Better eyesight'], why:'Sugar should be eaten in small amounts.'},
+  {q:'Why are some drugs called medicines?', o:['They help the body when used correctly','They are always safe in any amount','They are sweets'], why:'Medicines must be used as directed.'},
+  {q:'Why does the heart rate of a fit athlete at rest tend to be lower?', o:['A strong heart pumps more blood with each beat','Their heart is smaller','They have less blood'], why:'Training strengthens the heart muscle.'}
+ ]},
+'y6-an-3': {m:[
+  {q:'What happens to food before nutrients can be carried in the blood?', o:['It is digested into tiny pieces','It is frozen','It is turned into air'], why:'Digestion breaks food down.'},
+  {q:'Which system carries water and nutrients around the body?', o:['The circulatory system','The skeleton','The nervous system'], why:'Blood vessels reach every part of the body.'},
+  {q:'Where is most water absorbed from waste food?', o:['The large intestine','The mouth','The heart'], why:'The large intestine takes water back into the body.'},
+  {q:'Which waste gas does blood carry to the lungs?', o:['Carbon dioxide','Oxygen','Nitrogen only'], why:'We breathe it out.'},
+  {q:'How long is the small intestine in an adult, roughly?', o:['About 6 metres','About 6 centimetres','About 60 metres'], why:'It is long and coiled.'},
+  {q:'How do plants transport water?', o:['From the roots up the stem to the leaves','From the leaves down to the roots only','They do not need water'], why:'Tubes in the stem carry water.'}
+ ], s:[
+  {q:'Why does the small intestine have millions of tiny finger-like villi?', o:['They give a huge surface area to absorb nutrients','They push food','They make saliva'], why:'More surface means faster absorption.'},
+  {q:'Why do you feel thirsty after exercise?', o:['You lose water by sweating and breathing','You gain water','Your heart stops'], why:'Thirst tells you to replace lost water.'},
+  {q:'If the heart stopped pumping, why would cells be in danger?', o:['They would not receive oxygen and nutrients','They would get too much food','Nothing would happen'], why:'Blood flow keeps cells alive.'},
+  {q:'Fish absorb oxygen through gills. What do gills and lungs have in common?', o:['Thin surfaces where oxygen passes into the blood','Both are bones','Both digest food'], why:'Both are designed for gas exchange.'}
+ ]},
+'y6-ev-1': {m:[
+  {q:'How do most fossils form?', o:['A dead plant or animal is buried by layers of sediment that slowly turn to rock','Animals turn to stone instantly','Rocks grow into animals'], why:'This takes a very long time.'},
+  {q:'Which part of an animal is most likely to become a fossil?', o:['Bones, teeth and shells','Fur','Eyes'], why:'Hard parts last longest.'},
+  {q:'What is a palaeontologist?', o:['A scientist who studies fossils','A doctor for teeth','A volcano expert'], why:'Palaeontologists study ancient life.'},
+  {q:'Fossil horses were much smaller than horses today. What does this suggest?', o:['Horses have changed over time','Horses shrink','Fossils are always small'], why:'Fossils show evolution.'},
+  {q:'Which is NOT a fossil?', o:['A plastic toy dinosaur','A footprint in rock','A shell in limestone'], why:'Fossils are real remains or traces of ancient life.'},
+  {q:'Which bird-like dinosaur fossil links dinosaurs and birds?', o:['Archaeopteryx','Tyrannosaurus','Diplodocus'], why:'Archaeopteryx had feathers, teeth and a bony tail.'}
+ ], s:[
+  {q:'Why are deeper layers of rock usually older?', o:['Layers build up on top of each other over time','Deep rocks grow faster','Rain makes them older'], why:'Newer layers settle on older ones.'},
+  {q:'Fossil whale ancestors had legs. What does this suggest?', o:['Whales evolved from land-living ancestors','Whales will grow legs','Fossils are wrong'], why:'Fossils show how species changed.'},
+  {q:'Why is the fossil record incomplete?', o:['Most living things never become fossils','Fossils are made every day','All animals become fossils'], why:'Fossilisation needs special conditions.'},
+  {q:'Ammonite fossils are found on mountains far from the sea. What does this tell us?', o:['That land was once under the sea','Ammonites climbed mountains','Mountains are made of shells only'], why:'Rocks can be pushed up over millions of years.'}
+ ]},
+'y6-ev-2': {m:[
+  {q:'Two brown-eyed parents have a child with blue eyes. Is this possible?', o:['Yes, characteristics can be passed down in different combinations','No, never','Only for cats'], why:'Parents can carry characteristics they do not show.'},
+  {q:'Which characteristic is NOT inherited?', o:['Being able to ride a bike','Hair colour','Earlobe shape'], why:'Riding a bike is learnt.'},
+  {q:'Identical twins look very similar because…', o:['They have the same inherited information','They eat the same food','They wear the same clothes'], why:'They come from one fertilised egg.'},
+  {q:'Sunflower seeds from one plant grow into plants of slightly different heights. This is…', o:['Variation','Extinction','Pollination'], why:'Offspring vary.'},
+  {q:'What do dogs always produce?', o:['Puppies','Kittens','Cubs of any animal'], why:'Offspring are the same kind as their parents.'},
+  {q:'Which can be affected by the environment, not just inheritance?', o:['Height, if a child has poor food','Natural eye colour','Blood group'], why:'Food and health affect growth.'}
+ ], s:[
+  {q:'Why do farmers breed the cows that give the most milk?', o:['Their offspring may inherit high milk production','Cows learn from each other','It changes the grass'], why:'This is called selective breeding.'},
+  {q:'All dog breeds came from wolves. How?', o:['People chose and bred dogs with certain characteristics over many generations','Wolves learnt tricks','Dogs came from cats'], why:'Selective breeding created the variety of breeds.'},
+  {q:'Gregor Mendel studied inheritance using which plants?', o:['Pea plants','Oak trees','Cacti'], why:'Mendel’s experiments in the 1860s founded genetics.'},
+  {q:'Why is variation important for a species?', o:['Some individuals may survive if the environment changes','It makes them all identical','It stops reproduction'], why:'Variation is what natural selection acts on.'}
+ ]},
+'y6-ev-3': {m:[
+  {q:'How are a duck’s webbed feet an adaptation?', o:['They help it swim','They help it climb trees','They keep it cool'], why:'Webbed feet push against the water.'},
+  {q:'Why does a giraffe’s long neck help it survive?', v:'i:giraffe', o:['It can reach leaves high in trees','It can dig','It can swim'], why:'Less competition for high leaves.'},
+  {q:'How are a camel’s wide feet adapted to the desert?', o:['They stop it sinking into soft sand','They help it swim','They keep it warm'], why:'Wide feet spread its weight.'},
+  {q:'Why do woodpeckers have strong, sharp beaks?', o:['To drill into wood for insects','To crack ice','To swim'], why:'Beaks are adapted to food.'},
+  {q:'What is an adaptation?', o:['A feature that helps a living thing survive in its habitat','A type of fossil','A change in weather'], why:'Adaptations come from evolution over generations.'},
+  {q:'Who came up with natural selection independently at the same time as Darwin?', o:['Alfred Russel Wallace','Mary Anning','Carl Linnaeus'], why:'Wallace and Darwin presented their ideas together in 1858.'}
+ ], s:[
+  {q:'Darwin noticed finches on different Galápagos islands had different beaks. Why?', o:['Each beak was adapted to the food on its island','The birds sharpened them','They were different ages'], why:'Natural selection favoured beaks that suited local food.'},
+  {q:'Peppered moths: dark moths became more common when trees were covered in soot. Why?', o:['Dark moths were better camouflaged, so fewer were eaten','Moths painted themselves','Soot changed their colour'], why:'A classic example of natural selection.'},
+  {q:'Why might an adaptation become a problem if the environment changes?', o:['It may no longer help the animal survive','Adaptations never matter','The animal will change instantly'], why:'Changes can happen faster than species can adapt.'},
+  {q:'Bacteria can become resistant to antibiotics. How is this evolution?', o:['Bacteria that survive the medicine reproduce and pass on resistance','Antibiotics teach them','Bacteria are not living'], why:'Natural selection happens quickly in bacteria.'}
+ ]},
+'y6-lt-1': {m:[
+  {q:'Which shows that light travels in straight lines?', o:['Shadows have sharp, straight edges','Light makes things warm','Light is bright'], why:'Light cannot bend around objects.'},
+  {q:'Torch beams look like…', o:['Straight lines spreading out','Curly lines','Circles'], why:'Light rays are straight.'},
+  {q:'Light from the Sun reaches Earth in about…', o:['8 minutes','8 seconds','8 days'], why:'Light is very fast, but the Sun is very far.'},
+  {q:'Which travels fastest?', o:['Light','Sound','A jet plane'], why:'Light is the fastest thing in the universe.'},
+  {q:'You are behind a wall. Why can your friend not see you?', o:['Light from you cannot travel through or around the wall','The wall is too cold','You are too quiet'], why:'Opaque walls block light.'},
+  {q:'Which word describes light that goes from a source in all directions?', o:['It radiates out in straight lines','It bends round everything','It stays still'], why:'Light spreads out from sources.'}
+ ], s:[
+  {q:'How could you use a laser pointer and dusty air to show light travels in straight lines? (Never point lasers at eyes.)', o:['The dust shows the beam as a straight line','The beam curves in dust','Dust makes light'], why:'Particles scatter light so you can see the beam.'},
+  {q:'A pinhole camera makes an upside-down image. Why?', o:['Light rays travel in straight lines and cross at the pinhole','The camera flips it with mirrors','Light bends'], why:'Rays from the top go to the bottom.'},
+  {q:'Light travels about 300,000 km per second. How far in 2 seconds?', o:['About 600,000 km','About 150,000 km','About 300 km'], why:'300,000 × 2 = 600,000.'},
+  {q:'Why does a straw look bent in a glass of water?', o:['Light changes direction when it passes from water to air (refraction)','The straw really bends','Water is magic'], why:'Light still travels in straight lines in each material but changes direction at the boundary.'}
+ ]},
+'y6-lt-2': {m:[
+  {q:'Which is NOT a light source?', o:['The Moon','The Sun','A torch'], why:'The Moon reflects sunlight.'},
+  {q:'Why do cyclists wear reflective strips?', v:'i:reflector', o:['They reflect car headlights back so drivers see them','They make light','They keep them warm'], why:'Reflectors bounce light back towards its source.'},
+  {q:'Which reflects the least light?', o:['A black, rough surface','A white sheet','A mirror'], why:'Dark, rough surfaces absorb most light.'},
+  {q:'Can a cat see in total darkness?', o:['No, all eyes need some light','Yes, perfectly','Only red objects'], why:'Cats see well in dim light, but not in total darkness.'},
+  {q:'Why does a white T-shirt look white?', o:['It reflects lots of light into our eyes','It makes light','It absorbs all light'], why:'White surfaces reflect most light.'},
+  {q:'A mirror shows your reflection. What is happening?', o:['Light from you reflects off the mirror into your eyes','The mirror makes a copy','Your eyes send light'], why:'Mirrors reflect light very evenly.'}
+ ], s:[
+  {q:'Why do some road signs seem to glow at night?', o:['Special materials reflect headlight beams back to drivers','They have batteries','They are hot'], why:'Retro-reflectors send light back the way it came.'},
+  {q:'A scientist says “eyes do not send out light”. Which evidence supports this?', o:['We cannot see in a completely dark room','We can see the Sun','Eyes are round'], why:'If eyes made light, we could see in the dark.'},
+  {q:'Why is the Moon bright even though it does not make light?', o:['It reflects a lot of sunlight towards Earth','It is on fire','It is made of glass'], why:'The Moon is lit by the Sun.'},
+  {q:'Which explains why we see a red apple?', o:['Light reflects off the apple into our eyes','The apple makes red light','Our eyes paint it red'], why:'Objects are seen by reflected light.'}
+ ]},
+'y6-lt-3': {m:[
+  {q:'How many mirrors are in a simple periscope?', o:['Two','One','Ten'], why:'Each mirror reflects light at an angle.'},
+  {q:'Which part of the eye focuses light?', o:['The lens','The eyelash','The eyebrow'], why:'The lens focuses light onto the back of the eye (retina).'},
+  {q:'What happens to your pupils in bright light?', o:['They get smaller','They get bigger','They disappear'], why:'This protects the eye from too much light.'},
+  {q:'Where does the light go after hitting the mirror?', v:'reflect', o:['Into the eye','Back into the torch','Into the mirror forever'], why:'The reflected ray travels to the eye.'},
+  {q:'How does light from a lamp help you read a book?', o:['It reflects off the page into your eyes','It goes from your eyes to the book','It heats the book'], why:'Reflected light carries the image.'},
+  {q:'Which sends signals from the eye to the brain?', o:['The optic nerve','The eyelid','The tear duct'], why:'The brain turns signals into what we see.'}
+ ], s:[
+  {q:'Why do submarines use periscopes?', o:['To see above the water while staying below','To make light','To hear fish'], why:'Mirrors redirect the light.'},
+  {q:'A ray hits a mirror at 30° to the normal line. At what angle does it reflect?', o:['30°','60°','90°'], why:'The angle of reflection equals the angle of incidence.'},
+  {q:'Why do we see a blurry image if our eye lens does not focus properly?', o:['Light does not meet exactly on the retina','There is no light','The brain is asleep'], why:'Glasses help focus the light.'},
+  {q:'Why can a car driver see behind using a mirror?', o:['Light from behind reflects off the mirror into the driver’s eyes','The mirror is a camera','Light bends round the car'], why:'Mirrors change the direction of light.'}
+ ]},
+'y6-lt-4': {m:[
+  {q:'What shape is the shadow of a triangle?', o:['A triangle','A circle','A square'], why:'Shadows match the outline of the object.'},
+  {q:'The object moves further from the torch. The shadow…', o:['Gets smaller','Gets bigger','Disappears'], why:'Further from the light, it blocks less of the beam.'},
+  {q:'When is your shadow longest?', o:['Early morning or late evening','Midday','Never'], why:'The Sun is low in the sky.'},
+  {q:'Which material lets SOME light through, making a faint shadow?', o:['Tissue paper (translucent)','Cardboard','Wood'], why:'Translucent materials let some light through.'},
+  {q:'What is needed to make a shadow?', o:['A light source and an opaque object','Only darkness','Only water'], why:'Opaque objects block light.'},
+  {q:'Shadow puppets work because…', o:['Light travels in straight lines and is blocked by the puppet','Puppets make darkness','Screens make shapes'], why:'The puppet’s outline blocks the light.'}
+ ], s:[
+  {q:'A sundial shadow moves during the day. Why?', o:['The Sun’s position in the sky changes as the Earth turns','The sundial spins','The shadow is alive'], why:'Light direction changes, so the shadow moves.'},
+  {q:'A torch is held directly above a ball. Where is the shadow?', o:['Directly below the ball','To one side','Above it'], why:'Shadows form on the opposite side from the light.'},
+  {q:'Why does a shadow sometimes have a fuzzy edge?', o:['A large light source lights some parts of the edge but not others','Light bends a lot','The object is moving'], why:'Large or many light sources make soft shadows.'},
+  {q:'During a solar eclipse, the Moon’s shadow falls on the Earth. What does this show?', o:['The Moon is opaque and blocks sunlight','The Moon makes light','The Earth is flat'], why:'Eclipses are giant shadows.'}
+ ]},
+'y6-el-1': {m:[
+  {q:'Which circuit diagram shows two cells?', v:'symcircuit:twocell', o:['This one','None','Only circuits with motors'], why:'The diagram shows two cell symbols side by side.'},
+  {q:'A buzzer with one cell is quiet. How can you make it louder?', o:['Add another cell','Remove the cell','Open the switch'], why:'More voltage means a louder buzzer.'},
+  {q:'What is a battery, strictly speaking?', o:['Two or more cells joined together','One bulb','A wire'], why:'In everyday speech people call a single cell a battery too.'},
+  {q:'A torch uses three 1.5 V cells. What is the total voltage?', o:['4.5 V','1.5 V','3 V'], why:'1.5 × 3 = 4.5 V.'},
+  {q:'Which bulb is brightest?', o:['A bulb with 3 cells','A bulb with 1 cell','A bulb with no cells'], why:'More cells (within safe limits) make bulbs brighter.'},
+  {q:'What happens when cells run down?', o:['The bulb gets dimmer','The bulb gets brighter','The wire melts'], why:'A run-down cell gives less push.'}
+ ], s:[
+  {q:'Two cells are put in a circuit facing opposite ways. What happens?', o:['They cancel each other out and the bulb may not light','The bulb is twice as bright','The buzzer is louder'], why:'Cells must face the same way.'},
+  {q:'A class tests buzzer loudness with 1, 2 and 3 cells: 60 dB, 70 dB, 78 dB. What is the pattern?', o:['More cells make the buzzer louder','More cells make it quieter','No pattern'], why:'More voltage gives louder sound.'},
+  {q:'Why are household lights not powered by small cells?', o:['They need much higher voltage, from the mains','Cells are too bright','Cells are illegal'], why:'Mains electricity is about 230 V.'},
+  {q:'Why does a bulb get hot as well as giving light?', o:['Some electrical energy changes into heat','Light is cold','Bulbs are made of ice'], why:'LEDs waste less energy as heat.'}
+ ]},
+'y6-el-2': {m:[
+  {q:'Which would make a bulb dimmer?', o:['Adding another bulb in series','Adding another cell','Using a new cell'], why:'The push is shared between more bulbs.'},
+  {q:'This circuit diagram has a buzzer. Will it sound?', v:'symcircuit:buzzer', o:['Yes, it is a complete circuit','No, there is a gap','No, buzzers need two cells'], why:'The circuit is complete.'},
+  {q:'What does a switch in the ON position do?', o:['Closes the circuit','Opens the circuit','Removes the cell'], why:'ON = closed = complete loop.'},
+  {q:'Which component changes electricity into movement?', o:['A motor','A bulb','A buzzer'], why:'Motors spin.'},
+  {q:'What happens to the other bulbs in a series circuit if one bulb breaks?', o:['They all go out','They get brighter','Nothing'], why:'The loop is broken.'},
+  {q:'Why might two identical bulbs in different circuits glow differently?', o:['Their circuits have different numbers of cells or bulbs','They are different colours','The tables are different'], why:'Voltage and number of components affect brightness.'}
+ ], s:[
+  {q:'Pupils add bulbs one at a time to a series circuit with 2 cells. What happens to brightness?', o:['Each bulb gets dimmer as more are added','Bulbs get brighter','Nothing changes'], why:'The same push is shared between more bulbs.'},
+  {q:'Why do old-fashioned fairy lights all go out when one bulb fails?', o:['They are wired in series','They are too bright','They need sunlight'], why:'A series circuit has only one path.'},
+  {q:'How could you make a model car go faster using its motor?', o:['Increase the voltage with more cells','Add more bulbs in series','Open the switch'], why:'More voltage spins the motor faster.'},
+  {q:'A circuit has a bulb and a buzzer in series. The buzzer is removed and the gap joined with wire. The bulb will be…', o:['Brighter','Dimmer','Off'], why:'Fewer components share the push.'}
+ ]},
+'y6-el-3': {m:[
+  {q:'What does this symbol show?', v:'symbol:buzzer', o:['A buzzer','A bulb','A cell'], why:'The buzzer symbol is shaped like a dome.'},
+  {q:'What does this symbol show?', v:'symbol:switchclosed', o:['A closed switch','An open switch','A motor'], why:'The line is joined, so the switch is closed.'},
+  {q:'What does this symbol show?', v:'symbol:battery', o:['A battery (two cells)','One bulb','A buzzer'], why:'Two cell symbols joined make a battery.'},
+  {q:'What does this symbol show?', v:'symbol:wire', o:['A wire','A cell','A switch'], why:'A straight line is a wire.'},
+  {q:'Which circuit diagram has an open switch?', v:'symcircuit:open', o:['This one','None of them','Only real circuits have switches'], why:'The switch symbol is lifted.'},
+  {q:'In a cell symbol, which line is the positive (+) end?', v:'symbol:cell', o:['The longer line','The shorter line','Neither'], why:'The long line is positive.'}
+ ], s:[
+  {q:'A circuit diagram shows a cell, an open switch and a bulb. Will the bulb light?', o:['No, the switch is open','Yes','Only dimly'], why:'Open switches break the circuit.'},
+  {q:'Why are circuit diagrams drawn with straight lines and right angles?', o:['They are neat and clear to read','Wires must be straight','It makes circuits work'], why:'Diagrams are about clarity, not how wires really look.'},
+  {q:'How many cells are shown in this diagram?', v:'symcircuit:twocell', o:['2','1','3'], why:'Two long-and-short pairs.'},
+  {q:'Which symbols would you draw for a doorbell circuit?', o:['Cell, switch and buzzer','Bulb and motor only','Two bulbs'], why:'Pressing the switch sounds the buzzer.'}
  ]}
 };
