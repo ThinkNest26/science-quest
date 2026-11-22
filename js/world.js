@@ -47,7 +47,7 @@ window.SQ_WORLD = [
  ],
  around:'Find a tree near you. Can you see its trunk, branches and leaves? Is it evergreen?'},
 
-{id:'w-icehotel', grade:'kg2', topic:'materials', type:'news', art:['icecube','snow','water'],
+{id:'w-icehotel', topicName:'Everyday materials', grade:'kg2', topic:'materials', type:'news', art:['icecube','snow','water'],
  title:'A Hotel Made of Ice',
  place:'Jukkasjärvi, Sweden', continent:'Europe', lat:67.85, lon:20.6, when:'Built every winter since 1990',
  sum:'In the north of Sweden, people build a whole hotel out of ice and snow. In spring, it melts away!',
@@ -189,7 +189,7 @@ window.SQ_WORLD = [
  ],
  around:'Which baby animals have you seen? What did they need from the grown-ups?'},
 
-{id:'w-dunlop', grade:'g1', topic:'materials', type:'news', art:['tyre','wheel','elastic'],
+{id:'w-dunlop', topicName:'Uses of everyday materials', grade:'g1', topic:'materials', type:'news', art:['tyre','wheel','elastic'],
  title:'The Bumpy Ride That Changed the World',
  place:'Belfast, Northern Ireland, UK', continent:'Europe', lat:54.6, lon:-5.93, when:'1887 to 1888',
  sum:'A dad in Belfast wanted to make his son’s bumpy tricycle ride smoother, and made the first air-filled rubber tyre that really caught on.',
@@ -342,7 +342,7 @@ window.SQ_WORLD = [
  ],
  around:'Where do you see reflectors or reflections near your home or school?'},
 
-{id:'w-maglev', grade:'g2', topic:'forces', type:'news', art:['magnet','wheel','gokart'],
+{id:'w-maglev', topicName:'Forces and magnets', grade:'g2', topic:'forces', type:'news', art:['magnet','wheel','gokart'],
  title:'Trains That Float on Magnets',
  place:'Shanghai, China', continent:'Asia', lat:31.2, lon:121.5, when:'Shanghai Maglev opened in 2004',
  sum:'Some of the fastest trains in the world never touch the track. They float, pushed and pulled by magnets.',
@@ -526,7 +526,7 @@ window.SQ_WORLD = [
  ],
  around:'Watch the Moon on a few evenings this month. Does its shape change? Draw what you see.'},
 
-{id:'w-feather', grade:'g4', topic:'forces', type:'news', art:['feather','rock','balloon'],
+{id:'w-feather', topicName:'Forces', grade:'g4', topic:'forces', type:'news', art:['feather','rock','balloon'],
  title:'A Hammer and a Feather on the Moon',
  place:'The Moon (Hadley Rille)', continent:'The Moon', lat:null, lon:null, away:'🌕 This story happens on the Moon, about 384,000 km from Earth.', when:'2 August 1971',
  sum:'An astronaut dropped a hammer and a feather on the Moon to test an idea from 400 years ago. Which landed first?',
@@ -580,7 +580,7 @@ window.SQ_WORLD = [
  ],
  around:'Look for an insect near you. Which stage of its life cycle do you think it is in?'},
 
-{id:'w-deadsea', grade:'g4', topic:'materials', type:'news', art:['water','sun','spoon'],
+{id:'w-deadsea', topicName:'Properties and changes of materials', grade:'g4', topic:'materials', type:'news', art:['water','sun','spoon'],
  title:'The Sea So Salty You Cannot Sink',
  place:'The Dead Sea, Jordan Rift Valley', continent:'Asia', lat:31.5, lon:35.5, when:'Today',
  sum:'At the lowest place on Earth’s land, a salty lake lets people float like corks, and leaves salt crystals on the rocks.',
