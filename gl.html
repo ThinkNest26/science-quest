@@ -73,14 +73,14 @@
 <script src="js/art.js?v=45"></script>
 <script src="js/practice-art.js?v=45"></script>
 <script src="js/practice-photos.js?v=54"></script>
-<script src="js/gl.js?v=54"></script>
+<script src="js/gl.js?v=55"></script>
 <script src="js/avatar.js?v=52"></script>
 <script src="js/store.js?v=45"></script>
 <script>
 (function(){
   var S = SQ_STORE, GL = SQ_GL, main = document.getElementById('main');
   var GR = [['kg2','KG2','Year 1'],['g1','Grade 1','Year 2'],['g2','Grade 2','Year 3'],['g3','Grade 3','Year 4'],['g4','Grade 4','Year 5'],['g5','Grade 5','Year 6']];
-  var DN = {B:'Biology', C:'Chemistry', P:'Physics'}, SN = {K:'Knowing science facts', A:'Using science knowledge', W:'Working scientifically'};
+  var DN = {B:'Biology', C:'Chemistry', P:'Physics'}, SN = {K:'Knowledge and understanding', A:'Application of knowledge', W:'Working scientifically'};
   var me = S.me(), grade = (me && GL[me.grade]) ? me.grade : (GL.g2 ? 'g2' : Object.keys(GL)[0]), T = null;
   function esc(t){ return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;'); }
   function shuffle(a){ a = a.slice(); for (var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)), t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
@@ -104,7 +104,7 @@
     if (G) {
       h += '<div class="tcard"><div><h2>'+esc(G.name)+' practice test</h2><p>'+G.qs.length+' questions · about '+G.mins+' minutes · '+esc(G.intro)+'</p>'+
         (r ? '<p class="best">Best score: '+r.best+' / '+r.of+' · Last try: '+r.s+' / '+r.of+' on '+esc(r.d)+'</p>' : '<p class="best">Not tried yet</p>')+'</div><button class="go" id="start">Start the test</button></div>';
-      h += '<div class="tips"><b>💡 Test tips</b><ul><li>Read every question carefully. Look closely at pictures, tables and charts.</li><li>Some questions ask you to tick <b>TWO</b> answers or to put things <b>in order</b>.</li><li>If you are stuck, skip it and come back later using the question numbers.</li><li>You will see your score and the right answers at the end.</li></ul></div>';
+      h += '<div class="tips"><b>💡 Test tips</b><ul><li>Read every question carefully. Look closely at pictures, tables and charts.</li><li>Look for the instruction under each question: <b>Tick one</b>, <b>Tick two</b> or <b>Number the boxes</b>.</li><li>If you are stuck, skip it and come back later using the question numbers.</li><li>You will see your score and the right answers at the end.</li></ul></div>';
       h += '<div class="glinfo"><div><b>🧬 Biology</b>Living things, plants, animals and the human body.</div><div><b>⚗️ Chemistry</b>Materials, rocks, soils and changes.</div><div><b>⚡ Physics</b>Forces, light, sound, electricity, Earth and space.</div><div><b>🔬 Working scientifically</b>Fair tests, tables, charts, patterns and conclusions.</div></div>';
     }
     main.innerHTML = h;
@@ -126,7 +126,7 @@
   function table(tb){ return '<table class="gtab"><tr>'+tb[0].map(function(c){ return '<th>'+esc(c)+'</th>'; }).join('')+'</tr>'+tb.slice(1).map(function(r){ return '<tr>'+r.map(function(c){ return '<td>'+esc(c)+'</td>'; }).join('')+'</tr>'; }).join('')+'</table>'; }
   function ask(){
     var it = T.items[T.i], q = it.q, n = T.items.length;
-    var hint = it.t==='two' ? 'Tick TWO answers.' : it.t==='order' ? 'Tap the boxes in the right order: 1 first, then 2, and so on.' : 'Choose ONE answer.';
+    var hint = it.t==='two' ? 'Tick two.' : it.t==='order' ? 'Number the boxes 1 to '+q.o.length+' to show the correct order. Tap the first one, then the next.' : 'Tick one.';
     var h = '<div class="qcard"><div class="qtop"><span>Question '+(T.i+1)+' of '+n+'</span><span class="clock" id="clock">⏱ '+mmss((Date.now()-T.t0)/1000)+' / '+T.G.mins+':00</span></div>'+
       '<div class="pbar"><b style="width:'+(T.items.filter(answered).length/n*100)+'%"></b></div>'+
       (q.v ? '<div class="qpic">'+SQ_VIS(q.v)+'</div>' : '')+(q.tb ? table(q.tb) : '')+
@@ -201,7 +201,7 @@
     var ADV = {B:'Read the biology stories in the Library and practise the living things, plants and animals objectives in Science Practice.',
                C:'Practise the materials, rocks and changes objectives in Science Practice.',
                P:'Practise the forces, light, sound and electricity objectives in Science Practice.',
-               K:'Learn the key science words and facts. The glossary in each Library story helps.',
+               K:'Learn the key science words and facts for each topic. The glossary in each Library story helps.',
                A:'Try the Challenges: they ask you to use what you know in new situations.',
                W:'Practise reading tables and bar charts, spotting patterns and saying what makes a test fair.'};
     var NM = {B:'Biology', C:'Chemistry', P:'Physics', K:SN.K, A:SN.A, W:SN.W};
