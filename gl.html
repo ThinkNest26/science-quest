@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GL Test Practice | Science Quest by Curious Nest</title>
+<link rel="icon" type="image/png" href="img/sq-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css?v=45">
+<style>
+  .pgrades{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 6px}
+  .glinfo{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:16px 0}
+  .glinfo div{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:14px 16px;font-weight:700;color:var(--ink2)}
+  .glinfo b{display:block;font-size:17px;color:var(--ink);margin-bottom:4px}
+  .tcard{background:#fff;border:2px solid var(--line);border-radius:22px;padding:20px 22px;margin-top:16px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .tcard h2{font-size:22px}.tcard p{margin:4px 0 0;color:var(--ink2);font-weight:700}
+  .tcard .best{font-weight:900;color:var(--tealD)}
+  .go{border:0;background:var(--teal);color:#fff;font-weight:900;border-radius:14px;padding:12px 20px;cursor:pointer;font-size:17px}
+  .go2{border:2px solid var(--teal);background:#fff;color:var(--tealD);font-weight:900;border-radius:14px;padding:10px 16px;cursor:pointer;font-size:15px}
+  .tips{background:var(--sunL);border-radius:18px;padding:14px 18px;margin-top:16px;font-weight:700;color:#5C3D00}
+  .tips ul{margin:6px 0 0;padding-left:20px}
+  .qcard{background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:20px 22px;margin-top:18px;max-width:780px;margin-left:auto;margin-right:auto}
+  .qtop{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-weight:900;color:var(--muted)}
+  .clock{background:#F7F9FB;border-radius:99px;padding:4px 12px}.clock.over{background:var(--sunL);color:#8A5A00}
+  .pbar{height:10px;background:#EEF1F5;border-radius:99px;overflow:hidden;margin:8px 0 2px}.pbar b{display:block;height:100%;background:var(--teal);transition:width .3s}
+  .qpic{margin:14px 0}
+  .qtext{font-size:21px;font-weight:900;line-height:1.35;margin:10px 0 6px}
+  .qhint{font-weight:800;color:var(--plum);margin:0 0 12px;font-size:15px}
+  .qopts{display:grid;gap:10px}
+  .qo{border:2.5px solid var(--line);background:#fff;border-radius:16px;padding:13px 16px;font-weight:800;font-size:18px;cursor:pointer;text-align:left;color:var(--ink);display:flex;gap:10px;align-items:center}
+  .qo:hover{border-color:var(--teal)}
+  .qo .bx{flex:none;width:26px;height:26px;border-radius:50%;border:2.5px solid #C9D1DC;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#fff}
+  .qo.tick .bx{border-radius:7px}
+  .qo.on{border-color:var(--teal);background:#E6F5F3}.qo.on .bx{background:var(--teal);border-color:var(--teal)}
+  .gtab{border-collapse:collapse;margin:12px auto;font-size:16px;min-width:60%}
+  .gtab th,.gtab td{border:2px solid #DDE3EA;padding:8px 12px;text-align:center;font-weight:800}
+  .gtab th{background:#E6F5F3;color:var(--tealD)}
+  .nav{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .qmap{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+  .qmap button{width:34px;height:34px;border-radius:10px;border:2px solid #DDE3EA;background:#fff;font-weight:900;cursor:pointer;color:var(--ink2)}
+  .qmap button.done{background:#E6F5F3;border-color:#9ED9D1}.qmap button.cur{border-color:var(--teal);box-shadow:0 0 0 2px var(--teal)}
+  .res{max-width:860px;margin:18px auto}
+  .score{text-align:center;background:#fff;border:2px solid var(--line);border-radius:24px;padding:24px}
+  .score .big{font-size:56px;font-weight:900;color:var(--teal);line-height:1}
+  .score p{font-weight:800;color:var(--ink2);margin:8px 0 0}
+  .breaks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+  .bk{background:#fff;border:2px solid var(--line);border-radius:20px;padding:14px 18px}
+  .bk h3{font-size:17px;margin-bottom:8px}
+  .br{display:grid;grid-template-columns:150px 1fr 70px;gap:8px;align-items:center;font-weight:800;font-size:14px;margin:8px 0}
+  .br .bar{height:14px;background:#EEF1F5;border-radius:99px;overflow:hidden}.br .bar b{display:block;height:100%;border-radius:99px}
+  .focus{background:var(--roseL);border-radius:18px;padding:14px 18px;margin-top:14px;font-weight:700;color:#7A2540}
+  .rv{background:#fff;border:1.5px solid var(--line);border-left:6px solid #47A86A;border-radius:16px;padding:12px 16px;margin-top:10px}
+  .rv.no{border-left-color:#E0607E}
+  .rv h4{font-size:16px;margin:0 0 6px}.rv p{margin:4px 0;font-weight:700;font-size:14px}
+  .rv .tag{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  @media (max-width:700px){.breaks{grid-template-columns:1fr}.br{grid-template-columns:110px 1fr 56px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><span class="mk"><img src="img/sq-bird.png" alt=""></span><span><b>Science Quest</b><small>by Curious Nest</small></span></a>
+    <div class="who"><span id="who"></span></div>
+  </div>
+</header>
+
+<main class="wrap" id="main"></main>
+
+<footer class="foot"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>Original practice questions written in the style of a standardised science test. Not affiliated with GL Assessment or any exam board.</span></div></footer>
+
+<script src="js/art.js?v=45"></script>
+<script src="js/practice-art.js?v=45"></script>
+<script src="js/practice-photos.js?v=54"></script>
+<script src="js/gl.js?v=54"></script>
+<script src="js/avatar.js?v=52"></script>
+<script src="js/store.js?v=45"></script>
+<script>
+(function(){
+  var S = SQ_STORE, GL = SQ_GL, main = document.getElementById('main');
+  var GR = [['kg2','KG2','Year 1'],['g1','Grade 1','Year 2'],['g2','Grade 2','Year 3'],['g3','Grade 3','Year 4'],['g4','Grade 4','Year 5'],['g5','Grade 5','Year 6']];
+  var DN = {B:'Biology', C:'Chemistry', P:'Physics'}, SN = {K:'Knowing science facts', A:'Using science knowledge', W:'Working scientifically'};
+  var me = S.me(), grade = (me && GL[me.grade]) ? me.grade : (GL.g2 ? 'g2' : Object.keys(GL)[0]), T = null;
+  function esc(t){ return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;'); }
+  function shuffle(a){ a = a.slice(); for (var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)), t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+  function mmss(s){ s = Math.max(0, s|0); return Math.floor(s/60)+':'+('0'+(s%60)).slice(-2); }
+  function rec(){ return (S.data().skills || {})['gl-'+grade] || null; }
+
+  /* read aloud with the friendliest lady's voice the device has */
+  var canSpeak = 'speechSynthesis' in window;
+  function voice(){ var v = canSpeak ? speechSynthesis.getVoices() : [], bad = /zarvox|whisper|bells|bubbles|jester|organ|trinoids|wobble|albert|fred|junior|ralph|daniel|arthur|oliver|male|grandpa|eddy|reed|rocko/i;
+    v = v.filter(function(x){ return /^en/i.test(x.lang) && !bad.test(x.name); });
+    var pref = [/libby|maisie|sonia/i,/serena|stephanie|martha|kate/i,/google uk english female/i,/samantha|karen|moira|tessa/i];
+    for (var i=0;i<pref.length;i++){ var f = v.filter(function(x){return pref[i].test(x.name);})[0]; if (f) return f; } return v[0] || null; }
+  function say(t){ if (!canSpeak) return; speechSynthesis.cancel(); var u = new SpeechSynthesisUtterance(t), v = voice(); if (v) { u.voice = v; u.lang = v.lang; } u.rate = .92; u.pitch = 1.08; speechSynthesis.speak(u); }
+
+  /* ---------------- home ---------------- */
+  function home(){
+    T = null; if (canSpeak) speechSynthesis.cancel();
+    var G = GL[grade], r = rec();
+    var h = '<div class="lhead"><h1>📝 GL Test Practice</h1><p>Get ready for your science test. Each practice test is set out like the real thing, with questions on biology, chemistry, physics and working scientifically.</p></div>';
+    h += '<div class="pgrades">'+GR.map(function(g){ var ok = !!GL[g[0]]; return '<button class="grade'+(g[0]===grade?' on':'')+(ok?'':' soon')+'" '+(ok?'data-g="'+g[0]+'"':'disabled')+'>'+g[1]+'<small>'+g[2]+(ok?'':' · coming soon')+'</small></button>'; }).join('')+'</div>';
+    if (G) {
+      h += '<div class="tcard"><div><h2>'+esc(G.name)+' practice test</h2><p>'+G.qs.length+' questions · about '+G.mins+' minutes · '+esc(G.intro)+'</p>'+
+        (r ? '<p class="best">Best score: '+r.best+' / '+r.of+' · Last try: '+r.s+' / '+r.of+' on '+esc(r.d)+'</p>' : '<p class="best">Not tried yet</p>')+'</div><button class="go" id="start">Start the test</button></div>';
+      h += '<div class="tips"><b>💡 Test tips</b><ul><li>Read every question carefully. Look closely at pictures, tables and charts.</li><li>Some questions ask you to tick <b>TWO</b> answers or to put things <b>in order</b>.</li><li>If you are stuck, skip it and come back later using the question numbers.</li><li>You will see your score and the right answers at the end.</li></ul></div>';
+      h += '<div class="glinfo"><div><b>🧬 Biology</b>Living things, plants, animals and the human body.</div><div><b>⚗️ Chemistry</b>Materials, rocks, soils and changes.</div><div><b>⚡ Physics</b>Forces, light, sound, electricity, Earth and space.</div><div><b>🔬 Working scientifically</b>Fair tests, tables, charts, patterns and conclusions.</div></div>';
+    }
+    main.innerHTML = h;
+    main.querySelectorAll('[data-g]').forEach(function(b){ b.onclick = function(){ grade = b.getAttribute('data-g'); home(); }; });
+    var st = document.getElementById('start'); if (st) st.onclick = start;
+  }
+
+  /* ---------------- test ---------------- */
+  function start(){
+    var G = GL[grade];
+    T = {G:G, i:0, t0:Date.now(), items:G.qs.map(function(q){
+      var t = q.t || 'mc', idx = q.o.map(function(_,k){ return k; });
+      return {q:q, t:t, show: shuffle(idx), ans: t==='mc' ? null : []};
+    })};
+    clearInterval(start.tick); start.tick = setInterval(function(){ var c = document.getElementById('clock'); if (!c || !T) return; var s = (Date.now()-T.t0)/1000; c.textContent = '⏱ '+mmss(s)+' / '+T.G.mins+':00'; c.classList.toggle('over', s > T.G.mins*60); }, 1000);
+    ask(); window.scrollTo({top:0});
+  }
+  function answered(it){ return it.t==='mc' ? it.ans!==null : it.t==='two' ? it.ans.length===2 : it.ans.length===it.q.o.length; }
+  function table(tb){ return '<table class="gtab"><tr>'+tb[0].map(function(c){ return '<th>'+esc(c)+'</th>'; }).join('')+'</tr>'+tb.slice(1).map(function(r){ return '<tr>'+r.map(function(c){ return '<td>'+esc(c)+'</td>'; }).join('')+'</tr>'; }).join('')+'</table>'; }
+  function ask(){
+    var it = T.items[T.i], q = it.q, n = T.items.length;
+    var hint = it.t==='two' ? 'Tick TWO answers.' : it.t==='order' ? 'Tap the boxes in the right order: 1 first, then 2, and so on.' : 'Choose ONE answer.';
+    var h = '<div class="qcard"><div class="qtop"><span>Question '+(T.i+1)+' of '+n+'</span><span class="clock" id="clock">⏱ '+mmss((Date.now()-T.t0)/1000)+' / '+T.G.mins+':00</span></div>'+
+      '<div class="pbar"><b style="width:'+(T.items.filter(answered).length/n*100)+'%"></b></div>'+
+      (q.v ? '<div class="qpic">'+SQ_VIS(q.v)+'</div>' : '')+(q.tb ? table(q.tb) : '')+
+      '<div class="qtext">'+esc(q.q)+'</div><p class="qhint">'+hint+'</p><div class="qopts">';
+    it.show.forEach(function(k){
+      var on, mark = '';
+      if (it.t==='mc') { on = it.ans===k; }
+      else if (it.t==='two') { on = it.ans.indexOf(k) > -1; mark = on ? '✓' : ''; }
+      else { var p = it.ans.indexOf(k); on = p > -1; mark = on ? p+1 : ''; }
+      h += '<button class="qo'+(it.t!=='mc'?' tick':'')+(on?' on':'')+'" data-k="'+k+'"><span class="bx">'+mark+'</span><span>'+esc(q.o[k])+'</span></button>';
+    });
+    h += '</div>'+(it.t==='order' && it.ans.length ? '<p style="margin:10px 0 0"><button class="go2" id="clr">↺ Start the order again</button></p>' : '')+
+      '<div class="nav"><span>'+(T.i ? '<button class="go2" id="prev">← Back</button> ' : '')+(canSpeak?'<button class="go2" id="rd">🔊 Read to me</button>':'')+'</span>'+
+      '<span>'+(T.i < n-1 ? '<button class="go" id="next">Next →</button>' : '<button class="go" id="fin">Finish the test ✓</button>')+'</span></div>'+
+      '<div class="qmap">'+T.items.map(function(x, j){ return '<button data-j="'+j+'" class="'+(answered(x)?'done ':'')+(j===T.i?'cur':'')+'" aria-label="Question '+(j+1)+'">'+(j+1)+'</button>'; }).join('')+'</div>'+
+      '<p style="margin-top:14px"><button class="go2" id="quit">✕ Leave the test</button></p></div>';
+    main.innerHTML = h;
+    main.querySelectorAll('.qo').forEach(function(b){ b.onclick = function(){
+      var k = +b.getAttribute('data-k');
+      if (it.t==='mc') it.ans = k;
+      else if (it.t==='two') { var p = it.ans.indexOf(k); if (p > -1) it.ans.splice(p,1); else if (it.ans.length < 2) it.ans.push(k); }
+      else { if (it.ans.indexOf(k) < 0) it.ans.push(k); }
+      ask();
+    }; });
+    main.querySelectorAll('[data-j]').forEach(function(b){ b.onclick = function(){ T.i = +b.getAttribute('data-j'); ask(); }; });
+    var x;
+    if ((x = document.getElementById('clr'))) x.onclick = function(){ it.ans = []; ask(); };
+    if ((x = document.getElementById('prev'))) x.onclick = function(){ T.i--; ask(); };
+    if ((x = document.getElementById('next'))) x.onclick = function(){ T.i++; ask(); window.scrollTo({top:0,behavior:'smooth'}); };
+    if ((x = document.getElementById('rd'))) x.onclick = function(){ say(q.q + ' ' + hint + ' ' + it.show.map(function(k){ return q.o[k]; }).join('. ')); };
+    if ((x = document.getElementById('quit'))) x.onclick = function(){ ask2('Leave the test? Your answers will not be saved.', function(){ clearInterval(start.tick); home(); }); };
+    if ((x = document.getElementById('fin'))) x.onclick = function(){
+      var left = T.items.filter(function(y){ return !answered(y); }).length;
+      if (left) ask2('You have '+left+' question'+(left>1?'s':'')+' with no answer. Finish anyway?', finish); else finish();
+    };
+  }
+  /* a simple on-page yes/no (browser pop-ups are avoided) */
+  function ask2(msg, yes){
+    var d = document.createElement('div'); d.style.cssText = 'position:fixed;inset:0;background:rgba(20,30,50,.45);display:flex;align-items:center;justify-content:center;z-index:99;padding:20px';
+    d.innerHTML = '<div style="background:#fff;border-radius:20px;padding:22px;max-width:420px;text-align:center;font-weight:800"><p style="font-size:18px;margin:0 0 16px">'+esc(msg)+'</p><button class="go2" id="cn">No, go back</button> <button class="go" id="cy">Yes</button></div>';
+    document.body.appendChild(d);
+    d.querySelector('#cn').onclick = function(){ d.remove(); };
+    d.querySelector('#cy').onclick = function(){ d.remove(); yes(); };
+  }
+
+  function correct(it){
+    if (it.t==='mc') return it.ans === 0;
+    if (it.t==='two') return it.ans.length===2 && it.ans.indexOf(0) > -1 && it.ans.indexOf(1) > -1;
+    return it.ans.length===it.q.o.length && it.ans.every(function(k, i){ return k===i; });
+  }
+  function shown(it){
+    if (it.t==='mc') return it.ans===null ? 'No answer' : it.q.o[it.ans];
+    if (!it.ans.length) return 'No answer';
+    return it.t==='two' ? it.ans.map(function(k){ return it.q.o[k]; }).join(' + ') : it.ans.map(function(k, i){ return (i+1)+'. '+it.q.o[k]; }).join('  ');
+  }
+  function right(it){ return it.t==='mc' ? it.q.o[0] : it.t==='two' ? it.q.o[0]+' + '+it.q.o[1] : it.q.o.map(function(o, i){ return (i+1)+'. '+o; }).join('  '); }
+
+  /* ---------------- results ---------------- */
+  function finish(){
+    clearInterval(start.tick);
+    var secs = Math.round((Date.now()-T.t0)/1000), n = T.items.length, ok = 0, by = {};
+    T.items.forEach(function(it){ var c = correct(it); it.ok = c; if (c) ok++;
+      [it.q.d, it.q.s].forEach(function(k){ by[k] = by[k] || [0,0]; by[k][1]++; if (c) by[k][0]++; }); });
+    var old = rec(), today = new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+    var save = {s:ok, of:n, d:today, secs:secs, best:Math.max(ok, old ? old.best||0 : 0), by:by, tries:(old ? old.tries||0 : 0)+1};
+    if (S.mark) S.mark('gl-'+grade, save);
+    var pc = ok/n, msg = pc >= .85 ? 'Outstanding! You are really well prepared. 🌟' : pc >= .7 ? 'Great work! You know lots of science. 👏' : pc >= .5 ? 'Good effort! Look at the areas below to see what to practise next. 💪' : 'Keep going! Practise the areas below, then try again. 🌱';
+    function row(k, name){ var x = by[k]; if (!x) return ''; var p = x[0]/x[1], col = p>=.8?'#47A86A':p>=.5?'#F6B93B':'#E0607E';
+      return '<div class="br"><span>'+name+'</span><span class="bar"><b style="width:'+Math.round(p*100)+'%;background:'+col+'"></b></span><span>'+x[0]+' / '+x[1]+'</span></div>'; }
+    var areas = ['B','C','P','K','A','W'].filter(function(k){ return by[k]; }).sort(function(a, b){ return by[a][0]/by[a][1] - by[b][0]/by[b][1]; });
+    var weak = areas.filter(function(k){ return by[k][0]/by[k][1] < .7; }).slice(0, 2);
+    var ADV = {B:'Read the biology stories in the Library and practise the living things, plants and animals objectives in Science Practice.',
+               C:'Practise the materials, rocks and changes objectives in Science Practice.',
+               P:'Practise the forces, light, sound and electricity objectives in Science Practice.',
+               K:'Learn the key science words and facts. The glossary in each Library story helps.',
+               A:'Try the Challenges: they ask you to use what you know in new situations.',
+               W:'Practise reading tables and bar charts, spotting patterns and saying what makes a test fair.'};
+    var NM = {B:'Biology', C:'Chemistry', P:'Physics', K:SN.K, A:SN.A, W:SN.W};
+    var h = '<div class="res"><div class="score"><div style="font-size:14px;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.06em">'+esc(T.G.name)+' practice test</div><div class="big">'+ok+' / '+n+'</div><p>'+Math.round(pc*100)+'% · Time: '+mmss(secs)+' (suggested '+T.G.mins+' minutes)</p><p style="font-size:18px">'+msg+'</p>'+
+      '<p style="margin-top:14px"><button class="go" id="again">Try again</button> <button class="go2" id="hm">Back to GL Test Practice</button></p></div>';
+    h += '<div class="breaks"><div class="bk"><h3>Science areas</h3>'+row('B','Biology')+row('C','Chemistry')+row('P','Physics')+'</div><div class="bk"><h3>Science skills</h3>'+row('K',SN.K)+row('A',SN.A)+row('W',SN.W)+'</div></div>';
+    if (weak.length) h += '<div class="focus"><b>🎯 What to practise next</b>'+weak.map(function(k){ return '<p style="margin:6px 0 0"><b>'+NM[k]+':</b> '+ADV[k]+'</p>'; }).join('')+'</div>';
+    h += '<h2 style="margin:22px 0 6px">Check your answers</h2>';
+    T.items.forEach(function(it, j){
+      h += '<div class="rv'+(it.ok?'':' no')+'"><span class="tag">Question '+(j+1)+' · '+DN[it.q.d]+' · '+SN[it.q.s]+'</span><h4>'+(it.ok?'✅ ':'❌ ')+esc(it.q.q)+'</h4>'+
+        (it.ok ? '' : '<p>Your answer: '+esc(shown(it))+'</p><p style="color:#2F7A4C">Correct answer: '+esc(right(it))+'</p>')+'<p style="color:var(--ink2)">'+esc(it.q.why)+'</p></div>';
+    });
+    h += '</div>';
+    main.innerHTML = h; window.scrollTo({top:0});
+    document.getElementById('again').onclick = start;
+    document.getElementById('hm').onclick = home;
+  }
+
+  S.chip(document.getElementById('who'), function(){ var m = S.me(); if (m && GL[m.grade]) grade = m.grade; if (!T) home(); });
+  home();
+})();
+</script>
+<script src="js/nav.js?v=54"></script>
+</body>
+</html>
