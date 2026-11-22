@@ -7,7 +7,7 @@ window.SQ_WORLD = [
  title:'A Treasure Chest of Seeds Inside an Arctic Mountain',
  place:'Svalbard, Norway', continent:'Europe', lat:78.2, lon:15.5, when:'Opened in 2008 · still growing in 2026',
  sum:'Deep inside a frozen mountain, more than a million seeds from around the world are kept safe.',
- photo:{src:'img/world/w-seedvault.webp', caption:'The entrance to the Svalbard Global Seed Vault sticks out of a snowy mountainside. The seeds are stored deep inside the rock.'},
+ photo:{src:'img/world/w-seedvault.webp', caption:'The entrance to the Svalbard Global Seed Vault sticks out of a snowy mountainside, lit up during the dark Arctic winter. The seeds are stored deep inside the rock.', credit:'Wikimedia Commons, 2008'},
  sections:[
   {h:'A very special freezer', t:'Far in the north of Norway, on the frozen islands of Svalbard, a narrow concrete doorway pokes out of a snowy mountain. Behind it, a long tunnel leads deep into the rock. At the end are three huge rooms filled with shelves of boxes. Inside those boxes are seeds. Lots and lots of seeds. This is the Svalbard Global Seed Vault. It opened in February 2008, and it is the biggest store of crop seeds anywhere in the world. Scientists sometimes call it a [[back-up]] for the world’s food.'},
   {h:'Seeds from every corner of the Earth', t:'Countries from all over the world send boxes of seeds here: rice from Asia, beans and okra from Africa, chillies from South America, wheat from Europe and many, many more. In 2025, one delivery alone brought more than 3,000 kinds of seeds collected across 30 African countries. By 2026, the vault held more than 1.4 million seed samples. Each country still owns its own seeds. If its seeds are ever lost because of a flood, a fire or a war, it can come and take its spare seeds back.'},
@@ -32,7 +32,7 @@ window.SQ_WORLD = [
  title:'A Day with the Gorilla Doctors',
  place:'Volcanoes National Park, Rwanda', continent:'Africa', lat:-1.47, lon:29.5, when:'Diary based on real work today',
  sum:'Vets climb misty volcanoes in Africa to keep the world’s mountain gorillas healthy.',
- photo:{src:'img/world/w-gorilla.webp', caption:'A mountain gorilla in the forest. Gorillas walk on all fours, leaning on the knuckles of their hands.'},
+ photo:{src:'img/world/w-gorilla.webp', caption:'A female mountain gorilla rests among the leaves of the forest. When gorillas walk, they go on all fours, leaning on the knuckles of their hands.', credit:'Wikimedia Commons'},
  sections:[
   {h:'6:00 am · Up the volcano', t:'The mist is still curled around the volcanoes when our team sets off. I am a vet with the Gorilla Doctors, and today we are hiking up through the bamboo forest to check on a family of mountain gorillas. The path is steep and muddy, so I am glad of my strong boots. A tracker walks ahead, looking for bent stems and fresh footprints. Mountain gorillas live in only two places in the whole world: here in the Virunga Mountains, shared by Rwanda, Uganda and the Democratic Republic of the Congo, and in the Bwindi forest in Uganda.'},
   {h:'9:30 am · Breakfast time', t:'We find the family eating. The huge [[silverback]], the father of the group, is sitting in a patch of wild celery, pulling up stems with his enormous hands. Mountain gorillas are [[herbivores]]. They eat leaves, stems, bamboo shoots, roots and a little fruit. They cannot make their own food like plants can, so they spend about half of every day eating. A youngster tumbles past me, walking on its knuckles. Gorillas have a strong skeleton and powerful muscles in their arms and shoulders, so they can lean their weight on their knuckles as they walk.'},
@@ -58,7 +58,7 @@ window.SQ_WORLD = [
  title:'The Girl Who Found a Sea Dragon',
  place:'Lyme Regis, England', continent:'Europe', lat:50.72, lon:-2.94, when:'1811 to 1823 · imagined diary of a real person',
  sum:'Over 200 years ago, a young fossil hunter named Mary Anning made discoveries that amazed scientists.',
- photo:{src:'img/world/w-anning.webp', caption:'A painting of Mary Anning with her dog and her fossil-hunting hammer, on the beach at Lyme Regis.'},
+ photo:{src:'img/world/w-anning.webp', caption:'A painting of Mary Anning with her dog and her fossil-hunting hammer, on the beach at Lyme Regis.', credit:'Painted around 1842, Natural History Museum, London (public domain)', fit:'contain'},
  sections:[
   {h:'Winter, 1811', t:'Last night a great storm crashed against the cliffs here in Lyme Regis. Storms are good news for us, because they wash away mud from the cliffs and uncover treasures. My brother Joseph and I hurried to the beach at dawn with our baskets and hammers. And there, poking out of the grey rock, Joseph found a long skull with rows of sharp teeth and an eye as big as a saucer! People in town whisper that it must be a crocodile, or even a monster.'},
   {h:'1812 · The rest of the skeleton', t:'I have been searching for a whole year, chipping carefully at the cliff whenever the tide was low. Today I found it: the rest of the creature, a backbone more than five metres long, with ribs and paddle-shaped flippers. It took many men to dig it out. Learned gentlemen say it is a kind of reptile that swam in the sea long ago. They have named it an [[ichthyosaur]], which means "fish lizard". I am twelve years old, and I think it is the most wonderful thing in the world.'},
@@ -109,7 +109,7 @@ window.SQ_WORLD = [
  title:'Trains That Float on Magnets',
  place:'Shanghai, China', continent:'Asia', lat:31.2, lon:121.5, when:'Shanghai Maglev opened in 2004',
  sum:'Some of the fastest trains in the world never touch the track. They float, pushed and pulled by magnets.',
- photo:{src:'img/world/w-maglev.webp', caption:'A maglev train glides along its raised track. There are no wheels touching the rails.'},
+ photo:{src:'img/world/w-maglev.webp', caption:'A maglev train leaves Pudong International Airport in Shanghai on its raised track. There are no wheels touching the rails.', credit:'Wikimedia Commons'},
  sections:[
   {h:'A train with no wheels on the track', t:'In Shanghai, China, a sleek white train races from the airport towards the city. It covers about 30 kilometres in around eight minutes. But look closely: it is not rolling on wheels. It is floating about one centimetre above its track! This is a [[maglev]] train, short for "magnetic levitation", which means floating using magnets.'},
   {h:'Pushing and pulling', t:'You already know that magnets have two poles, north and south. When two like poles face each other, they [[repel]], pushing apart. When opposite poles face each other, they [[attract]], pulling together. A maglev train and its track are fitted with very powerful magnets. Some magnets lift the train up so it hovers. Others are switched on and off in turn along the track, pulling the train forwards and pushing it from behind, again and again, very fast.'},
@@ -135,7 +135,7 @@ window.SQ_WORLD = [
  title:'My Winter on a Moving Ice Shelf',
  place:'Halley VI Research Station, Antarctica', continent:'Antarctica', lat:-75.6, lon:-26.2, when:'Diary based on real life at the station',
  sum:'A scientist’s diary from a research station on legs and skis, where water, ice and snow rule every day.',
- photo:{src:'img/world/w-antarctica.webp', caption:'Halley VI is made of eight modules on hydraulic legs with skis, so it can rise above the snow and even be towed to a new place.'},
+ photo:{src:'img/world/w-antarctica.webp', caption:'Halley VI is made of eight modules on hydraulic legs with skis, so it can rise above the snow and even be towed to a new place.', credit:'Wikimedia Commons'},
  sections:[
   {h:'Day 1 · A station on skis', t:'The plane bumped down onto the snow, and there it was: Halley VI, a row of bright blue and red modules standing on long legs, like a giant caterpillar on stilts. I am a scientist with the British Antarctic Survey, and this will be my home for the long Antarctic winter. Halley sits on the Brunt Ice Shelf, a sheet of ice about 150 metres thick floating on the sea. The ice shelf is slowly sliding towards the ocean, about 400 metres every year, so the whole station has skis on its feet. If the ice cracks dangerously, the modules can be unhooked and towed to a safer place. In fact, that has already happened.'},
   {h:'Day 30 · Where does our water come from?', t:'There are no rivers or taps here. Everything around us is frozen water. So every few days, the team digs fresh snow with a tractor and tips it into a big tank called a snow melter. Heaters warm the snow until it [[melts]] from a solid into liquid water. We use that water for drinking, cooking and showers. We have to be careful not to waste a drop, because melting snow takes a lot of energy.'},
@@ -162,7 +162,7 @@ window.SQ_WORLD = [
  title:'Listening to the Songs of the Ocean',
  place:'Pacific Ocean, near Hawaii', continent:'Oceans', lat:20.8, lon:-156.9, when:'Studied since the 1960s and still today',
  sum:'Humpback whales sing long, beautiful songs under the sea, and scientists listen with underwater microphones.',
- photo:{src:'img/world/w-whales.webp', caption:'A humpback whale leaps out of the ocean. Under the water, male humpbacks sing songs that can travel for many kilometres.'},
+ photo:{src:'img/world/w-whales.webp', caption:'A humpback whale leaps out of the ocean. Under the water, male humpbacks sing songs that can travel for many kilometres.', credit:'NOAA, Hawaiian Islands Humpback Whale National Marine Sanctuary (public domain)'},
  sections:[
   {h:'A song beneath the waves', t:'Imagine floating in a boat on a calm, blue sea and dropping a special microphone into the water. Through your headphones you hear moans, whoops, squeaks and long, deep rumbles, all in a pattern, again and again. You are listening to a humpback whale singing. Scientists use underwater microphones called [[hydrophones]] to record these songs.'},
   {h:'Who is singing?', t:'Only male humpback whales sing. Their songs are made of sounds repeated in patterns, a bit like verses in a song. One song can last up to 20 minutes, and a whale may sing it over and over for hours. All the males in one area sing the same song, but it slowly changes over time. Sometimes a brand-new song spreads from whale to whale across a whole ocean. In 1970, an album of humpback whale songs became famous around the world, and it helped people care about protecting whales.'},
@@ -187,7 +187,7 @@ window.SQ_WORLD = [
  title:'Light from the Desert: Morocco’s Giant Solar Power Station',
  place:'Ouarzazate, Morocco', continent:'Africa', lat:31.0, lon:-6.86, when:'Opened in stages from 2016 to 2018',
  sum:'At the edge of the Sahara, thousands of mirrors catch sunlight to make electricity, even after dark.',
- photo:{src:'img/world/w-noor.webp', caption:'Rows of curved mirrors at the Noor Ouarzazate solar complex. Each mirror focuses sunlight to heat a liquid that helps make electricity.'},
+ photo:{src:'img/world/w-noor.webp', caption:'The Noor Ouarzazate solar complex seen from space. At the top, thousands of mirrors circle the Noor III tower. Below are long rows of curved mirrors. Each mirror focuses sunlight to heat a liquid that helps make electricity.', credit:'Satellite image, Wikimedia Commons', fit:'contain'},
  sections:[
   {h:'A sea of mirrors', t:'At the edge of the Sahara Desert, at the foot of the Atlas Mountains in Morocco, there is a sight that looks like a shining silver sea. It is the Noor Ouarzazate solar complex, one of the biggest solar power stations of its kind in the world. "Noor" means "light" in Arabic. Altogether it covers about 3,000 hectares, as big as thousands of football pitches, and it can make up to about 580 megawatts of electricity.'},
   {h:'How do mirrors make electricity?', t:'Most of the station uses long rows of curved mirrors that follow the sun across the sky. The mirrors focus sunlight onto pipes filled with a special liquid, heating it until it is very hot. The heat boils water into steam, and the steam spins a [[turbine]], a machine like a giant fan that turns a [[generator]] to make electricity. In one part of the station, called Noor III, thousands of mirrors point sunlight at the top of a tower about 250 metres tall.'},
@@ -212,7 +212,7 @@ window.SQ_WORLD = [
  title:'Back from the Brink: The Return of the Arabian Oryx',
  place:'Jiddat al-Harasis, Oman', continent:'Asia', lat:19.9, lon:56.5, when:'1972 to today',
  sum:'This desert antelope disappeared from the wild in 1972. Thanks to people working together, herds roam again today.',
- photo:{src:'img/world/w-oryx.webp', caption:'An Arabian oryx in the desert. Its white coat reflects the sun’s heat, and its wide hooves help it walk on soft sand.'},
+ photo:{src:'img/world/w-oryx.webp', caption:'An Arabian oryx in the desert. Its white coat reflects the sun’s heat, and its wide hooves help it walk on soft sand.', credit:'Wikimedia Commons'},
  sections:[
   {h:'Gone from the wild', t:'The Arabian oryx is a beautiful white antelope with long, straight horns. For thousands of years, herds wandered across the deserts of the Arabian Peninsula. But in the 1900s, people hunted them more and more, until very few were left. In 1972, the last wild Arabian oryx was shot in the desert of Oman. The species was declared [[extinct in the wild]]: the only ones left were in zoos and private collections.'},
   {h:'Operation Oryx', t:'Luckily, about ten years earlier, conservationists had worried that this might happen. In the early 1960s, they caught a few of the last wild oryx and took them to a zoo in Phoenix, in the USA, where the dry, hot weather was a little like their home. Other oryx were added from Saudi Arabia, Kuwait and the United Kingdom. This small group, called the World Herd, began to have calves. Slowly, the herd grew.'},
@@ -238,7 +238,7 @@ window.SQ_WORLD = [
  title:'A Zookeeper’s Diary: Teeth, Tummies and Feeding Time',
  place:'A zoo in Singapore', continent:'Asia', lat:1.35, lon:103.8, when:'Diary based on real zookeeping',
  sum:'A zookeeper explains why lions, giraffes and humans have such different teeth, and what happens to food inside us.',
- photo:{src:'img/world/w-zookeeper.webp', caption:'A lion’s skull shows its long, pointed canine teeth for gripping and its sharp back teeth for slicing meat.'},
+ photo:{src:'img/world/w-zookeeper.webp', caption:'An old drawing of a lion’s skull. Look at the long, pointed canine teeth for gripping and the sharp back teeth for slicing meat.', credit:'Old scientific drawing (public domain), Wikimedia Commons', fit:'contain'},
  sections:[
   {h:'7:00 am · The big cats', t:'Feeding time is my favourite part of being a zookeeper. I start with the lions. They are [[carnivores]], so their breakfast is meat. When the lion pulls at her food, I can see her teeth clearly. At the front are four long, pointed [[canines]] for gripping and holding. Further back are sharp, blade-like teeth that slide past each other like scissors to slice meat. Lions do not chew much at all; they gulp down big chunks. An adult lion has 30 teeth.'},
   {h:'9:30 am · The giraffes', t:'Next, I climb up to the giraffe platform with branches of fresh leaves. Giraffes are herbivores. A giraffe uses its long, purple tongue to wrap around leaves and strip them off the branch. Here is a surprise: giraffes have no top front teeth at all, just a hard pad of gum. They grip leaves between their bottom front teeth and that pad. At the back, they have wide, flat [[molars]] for grinding tough leaves into mush. Grinding is important, because plants are hard to break down.'},
