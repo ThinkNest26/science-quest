@@ -156,14 +156,18 @@ table.pt th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:v
       '<details style="margin-top:14px"><summary style="cursor:pointer;font-weight:900;color:var(--teal)">+ New class</summary>'+
       '<label class="jl" for="cn">Class name</label><input class="fld" id="cn" placeholder="For example: 1B">'+
       '<label class="jl" for="cg">Grade</label><select class="fld" id="cg">'+Object.keys(GR).map(function(g){return '<option value="'+g+'"'+(ready(g)?'':' disabled')+'>'+GR[g]+(ready(g)?'':' (coming soon)')+'</option>';}).join('')+'</select>'+
-      '<button class="btn pri" id="mk">Create class</button></details></div>';
+      '<p class="sqerr" id="mkerr"></p><button class="btn pri" id="mk">Create class</button></details></div>';
     if (cur) h += classView();
     main.innerHTML = h;
     main.querySelectorAll('[data-c]').forEach(function(b){ b.onclick = function(){ cur = b.getAttribute('data-c'); home(); }; });
     document.getElementById('mk').onclick = async function(){
-      var n = document.getElementById('cn').value.trim(); if (!n) return;
+      var n = document.getElementById('cn').value.trim(), er = document.getElementById('mkerr'), b = this;
+      er.textContent = '';
+      if (!n) { er.textContent = 'Please type a class name first, for example 4B.'; document.getElementById('cn').focus(); return; }
+      b.disabled = true; b.textContent = 'Creating…';
       var r = await sb.from('sq_classes').insert({name:n, grade:document.getElementById('cg').value}).select();
-      if (r.error) return alert('Sorry, that did not work: ' + r.error.message);
+      b.disabled = false; b.textContent = 'Create class';
+      if (r.error || !r.data || !r.data.length) { er.textContent = 'Sorry, the class could not be created' + (r.error ? ': ' + r.error.message : '. Please sign out, sign in again and try once more.'); return; }
       cur = r.data[0].id; await load(); home();
     };
     if (cur) bindClass();
