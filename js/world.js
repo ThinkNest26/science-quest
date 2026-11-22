@@ -215,7 +215,7 @@ window.SQ_WORLD = [
 
 {id:'w-space', grade:'g1', topic:'animals', type:'diary', art:['trainer','toothbrush','apple'],
  title:'How Astronauts Stay Healthy in Space',
- place:'International Space Station', continent:'Space', lat:null, lon:null, when:'Diary based on real life on the space station',
+ place:'International Space Station', continent:'Space', lat:null, lon:null, away:'🚀 This story happens in space, about 400 km above the Earth.', when:'Diary based on real life on the space station',
  sum:'On the International Space Station, astronauts must exercise, eat well and keep clean, just like us, but in a very floaty way!',
  photo:{src:'img/world/w-space.webp', caption:'An astronaut runs on the space station’s treadmill. Straps hold her down so she does not float away.', credit:'NASA (public domain)'},
  sections:[
@@ -495,5 +495,273 @@ window.SQ_WORLD = [
   {type:'Summarise', q:'Which sentence sums up the diary?', o:['Different animals have teeth suited to their food, and food travels through the digestive system','Zoos open at 7 am','Lions are big cats'], why:'That is the main idea.'},
   {type:'Why it matters', q:'In the food chain grass → zebra → lion, what is the zebra?', o:['Prey','Producer','Predator'], why:'The zebra is eaten by the lion, so it is prey.'}
  ],
- around:'Look in a mirror and count your teeth. Which ones do you use most when you bite an apple?'}
+ around:'Look in a mirror and count your teeth. Which ones do you use most when you bite an apple?'},
+
+/* =========================== GRADE 4 (Year 5) =========================== */
+{id:'w-eclipse', grade:'g4', topic:'space', type:'diary', art:['sun','sunglasses','torch'],
+ title:'Four Minutes of Darkness at Midday',
+ place:'Nazas, Durango, Mexico', continent:'North America', lat:25.3, lon:-104.1, when:'8 April 2024 · imagined diary of a real event',
+ sum:'A girl in a small Mexican town watches the Moon cover the Sun for longer than anywhere else on Earth.',
+ photo:{src:'img/world/w-eclipse.webp', caption:'During totality, the Moon covers the Sun completely. Only the Sun’s glowing outer layer, the corona, can be seen around the dark Moon.'},
+ sections:[
+  {h:'Sunday, 7 April · The town fills up', t:'My town, Nazas, is usually quiet. But today it is full of visitors with cameras, telescopes and folding chairs. Scientists say that tomorrow, our town will be the best place on the whole planet to watch a [[total solar eclipse]]. Here, the Sun will be completely hidden for 4 minutes and 28 seconds, longer than anywhere else. Abuela says she has never seen anything like it in her life.'},
+  {h:'Monday, 8 April · 11:00 am', t:'Mr Ruiz, my science teacher, gave everyone special eclipse glasses. He was very serious: “Never look at the Sun without proper eclipse glasses, not even for a second. It can damage your eyes forever.” Through the glasses, the Sun looked like an orange coin. Then, very slowly, a dark curve appeared on one side, as if someone had taken a bite out of it. That was the Moon beginning to pass in front of the Sun.'},
+  {h:'12:15 pm · Totality!', t:'Bit by bit, the Sun became a thin, bright smile. The air felt cooler and the light turned strange and silvery. Then, suddenly, it was dark, like evening in the middle of the day! The birds went quiet, the street lights flickered on and everybody cheered. Around the black circle of the Moon was a pale, wispy glow called the [[corona]], the Sun’s outer layer. I could see two bright planets shining in the sky. Then a flash of sunlight burst out from one edge, and the daylight came rushing back.'},
+  {h:'Evening · How does it work?', t:'At home, Mr Ruiz’s explanation finally made sense. The Moon [[orbits]] the Earth, and the Earth orbits the Sun. The Sun is about 400 times wider than the Moon, but it is also about 400 times further away, so from Earth they look almost exactly the same size! When the Moon moves exactly between the Sun and the Earth, its shadow falls on a narrow strip of land. Only people inside that strip see a total eclipse. This time, the strip crossed Mexico, the USA and Canada, and about 44 million people lived inside it.'},
+  {h:'A promise', t:'The eclipse went across North America in less than two hours. I wrote down everything I saw, because a scientist must record observations carefully. I will remember those 4 minutes and 28 seconds for the rest of my life.'}
+ ],
+ fact:[['Date','8 April 2024'],['Countries in the path','Mexico, USA and Canada'],['Longest totality','4 minutes 28 seconds, near Nazas, Mexico'],['People living in the path','About 44 million'],['Safety','Never look at the Sun without special eclipse glasses']],
+ chart:{title:'Longest time in darkness (seconds of totality)', bars:[['USA eclipse, 2017',160],['North America eclipse, 2024',268]], unit:'seconds'},
+ chartNote:'The 2024 eclipse lasted longer because the Moon was a little closer to Earth, so it looked bigger in the sky.',
+ glossary:{'total solar eclipse':'When the Moon passes exactly between the Sun and the Earth and hides the whole Sun.','corona':'The Sun’s glowing outer layer, only seen during a total eclipse.','orbits':'Travels around another object in a curved path.'},
+ diaryNote:true,
+ q:[
+  {type:'Find the fact', q:'How long did totality last near Nazas?', o:['4 minutes 28 seconds','28 minutes','About 2 hours'], why:'This was the longest totality anywhere for this eclipse.'},
+  {type:'Word power', q:'What does orbits mean?', o:['Travels around another object in a curved path','Spins on the spot','Gives off light'], why:'The Moon orbits the Earth; the Earth orbits the Sun.'},
+  {type:'Read the chart', q:'How many more seconds of totality did the 2024 eclipse have than the 2017 eclipse?', o:['108 seconds','268 seconds','60 seconds'], why:'268 − 160 = 108 seconds.'},
+  {type:'Fact or opinion', q:'Which sentence is an OPINION?', o:['A total eclipse is the most beautiful sight in nature.','The eclipse happened on 8 April 2024.','The Moon orbits the Earth.'], why:'"Most beautiful" is a personal feeling.'},
+  {type:'Caption', q:'According to the caption, what is the corona?', o:['The Sun’s glowing outer layer','The Moon’s shadow','A planet'], why:'The caption says only the corona can be seen around the dark Moon.'},
+  {type:'Summarise', q:'Which sentence best sums up the diary?', o:['A girl watches the Moon pass between the Sun and Earth, turning day into night for over four minutes','A teacher gives out glasses','Mexico is in North America'], why:'That is the main idea.'},
+  {type:'Why it matters', q:'Why do the Sun and Moon look about the same size from Earth?', o:['The Sun is about 400 times wider but also about 400 times further away','They really are the same size','The Moon is bigger than the Sun'], why:'Distance makes the huge Sun look small.'}
+ ],
+ around:'Watch the Moon on a few evenings this month. Does its shape change? Draw what you see.'},
+
+{id:'w-feather', grade:'g4', topic:'forces', type:'news', art:['feather','rock','balloon'],
+ title:'A Hammer and a Feather on the Moon',
+ place:'The Moon (Hadley Rille)', continent:'The Moon', lat:null, lon:null, away:'🌕 This story happens on the Moon, about 384,000 km from Earth.', when:'2 August 1971',
+ sum:'An astronaut dropped a hammer and a feather on the Moon to test an idea from 400 years ago. Which landed first?',
+ photo:{src:'img/world/w-feather.webp', caption:'Astronaut David Scott on the Moon during the Apollo 15 mission in 1971. There is no air on the Moon, so there is no air resistance.'},
+ sections:[
+  {h:'An old question', t:'Drop a hammer and a feather at the same time. Which hits the ground first? On Earth, the answer seems easy: the hammer crashes down while the feather floats and drifts. But about 400 years ago, an Italian scientist called Galileo Galilei had a surprising idea. He said that if there were no air, all objects would fall at the same speed, whatever their mass. The feather is only slowed down because air pushes against it.'},
+  {h:'A test on live television', t:'On 2 August 1971, astronaut David Scott was standing on the Moon at the end of the Apollo 15 mission. Facing the TV camera, he held a geology hammer in one hand and a falcon feather in the other. Viewers on Earth watched as he let go of both at exactly the same moment. They fell side by side and hit the ground together! “How about that?” Scott said. He explained that the test showed Galileo had been right.'},
+  {h:'What is air resistance?', t:'[[Gravity]] is the force that pulls objects towards a planet or moon. On Earth, falling objects also meet [[air resistance]]: tiny particles of air push against them and slow them down. A feather is light and has a big, fluffy surface for its weight, so air resistance slows it a lot. A hammer is heavy and compact, so air hardly slows it. The Moon has almost no air at all, it is nearly a [[vacuum]], so there was no air resistance to slow the feather.'},
+  {h:'Gravity on the Moon', t:'The Moon is much smaller than the Earth, so its gravity is weaker, about one sixth as strong. That is why astronauts could bounce and hop around so easily. Both the hammer and the feather fell more slowly than they would on Earth, but they fell at the same speed as each other.'},
+  {h:'Using air resistance', t:'Engineers use air resistance all the time. Parachutes have huge surfaces to catch lots of air and slow people down. Racing cars, bikes and aeroplanes have smooth, pointed shapes so that air slides past them easily. When NASA lands robots on Mars, which has a thin atmosphere, it uses giant parachutes to slow them down too.'}
+ ],
+ fact:[['Mission','Apollo 15'],['Date','2 August 1971'],['Astronaut','David Scott'],['Objects dropped','A geology hammer and a falcon feather'],['Result','They hit the ground at the same time']],
+ chart:{title:'Pull of gravity on the 1.32 kg hammer (newtons)', bars:[['On the Moon',2],['On Earth',13]], unit:'newtons'},
+ chartNote:'Forces are measured in newtons (N). Gravity on the Moon is about one sixth as strong as on Earth.',
+ glossary:{'Gravity':'The force that pulls objects towards the centre of a planet or moon.','air resistance':'A force from air that pushes against moving objects and slows them down.','vacuum':'A space with no air or anything else in it.'},
+ q:[
+  {type:'Find the fact', q:'Which mission did the hammer and feather test happen on?', o:['Apollo 15','Apollo 11','Space Station'], why:'It was at the end of Apollo 15, in 1971.'},
+  {type:'Word power', q:'What is a vacuum?', o:['A space with no air or anything else in it','A very windy place','A kind of feather'], why:'The Moon has almost no air, so it is nearly a vacuum.'},
+  {type:'Read the chart', q:'How much stronger is the pull of gravity on the hammer on Earth than on the Moon?', o:['About 6 times stronger','About the same','About 2 times weaker'], why:'13 N is about 6 times 2 N.'},
+  {type:'Fact or opinion', q:'Which sentence is an OPINION?', o:['Being an astronaut is the best job in the world.','The test happened on 2 August 1971.','Gravity on the Moon is weaker than on Earth.'], why:'"The best job" is a feeling.'},
+  {type:'Caption', q:'Why is there no air resistance on the Moon, according to the caption?', o:['There is no air on the Moon','The Moon is very cold','The Moon is made of rock'], why:'The caption says there is no air.'},
+  {type:'Summarise', q:'Which sentence best sums up the article?', o:['On the Moon, with no air resistance, a hammer and a feather fell at the same speed, proving Galileo right','Feathers are light','David Scott was an astronaut'], why:'That is the main idea.'},
+  {type:'Why it matters', q:'Why does a feather fall slowly on Earth?', o:['Air resistance pushes against its large, light surface','Gravity does not pull on feathers','Feathers are magnetic'], why:'Air resistance, not gravity, slows the feather.'}
+ ],
+ around:'Drop a flat sheet of paper and a scrunched-up ball of paper at the same time. What happens? Why?'},
+
+{id:'w-monarch', grade:'g4', topic:'living', type:'diary', art:['caterpillar','chrysalis','daisy'],
+ title:'Millions of Butterflies in the Mountains',
+ place:'Monarch Butterfly Reserve, Michoacán, Mexico', continent:'North America', lat:19.6, lon:-100.3, when:'Every winter · imagined diary of a real event',
+ sum:'Each autumn, monarch butterflies fly thousands of kilometres from Canada and the USA to a few mountain forests in Mexico.',
+ photo:{src:'img/world/w-monarch.webp', caption:'Thousands of monarch butterflies cluster together on the branches of fir trees in the mountains of Mexico, keeping each other warm.'},
+ sections:[
+  {h:'November · The trees are moving!', t:'I am a butterfly scientist, and today I climbed high into the mountain forest in central Mexico. At first, the tall fir trees looked strangely orange and brown. Then the sun came out, the branches seemed to shiver, and thousands of butterflies took off into the air! Their wings sounded like soft rain. These are monarch butterflies, and millions of them spend the winter here, clustered together on the branches of oyamel fir trees.'},
+  {h:'An amazing journey', t:'These butterflies began their journey in Canada and the north of the USA, some of them up to about 4,800 kilometres away. Each one weighs less than a gram, about as much as a paper clip, yet it flew all that way to a few small patches of forest it had never seen before. Scientists think monarchs use the position of the Sun to find their way. The cool mountain forest is perfect for winter: cold enough for them to rest, but sheltered enough to keep them from freezing.'},
+  {h:'The monarch life cycle', t:'Like all butterflies, a monarch goes through four stages. A female lays a tiny egg on a milkweed plant. After a few days, a striped caterpillar hatches. Milkweed is the only food monarch caterpillars eat, and they eat a lot, growing fast. Then the caterpillar hangs upside down and forms a green [[chrysalis]]. Inside, its body completely changes. This change is called [[metamorphosis]]. About two weeks later, an adult butterfly crawls out and opens its orange and black wings.'},
+  {h:'A super generation', t:'Here is the strangest part. In spring and summer, most monarchs live for only about a month. They lay their eggs and die, and their children carry on further north. It can take four or five [[generations]] to get all the way back to Canada! But the butterflies that hatch at the end of summer are special. This “super generation” can live for up to eight months. They are the ones that fly all the way to Mexico and back to the southern USA in spring.'},
+  {h:'February · Goodbye!', t:'As the days grew warmer, the butterflies flew down to drink water and began heading north. My job is to count them and to protect the forest and the milkweed they need. Without milkweed, there would be no caterpillars, and without the forest, there would be nowhere to spend the winter.'}
+ ],
+ fact:[['Animal','Monarch butterfly (an insect)'],['Winter home','Oyamel fir forests in the mountains of Mexico'],['Journey','Up to about 4,800 km'],['Life cycle','Egg → caterpillar → chrysalis → adult'],['Caterpillar food','Only milkweed']],
+ chart:{title:'How long does a monarch butterfly live? (months)', bars:[['Summer monarch',1],['Super generation',8]], unit:'months'},
+ glossary:{'chrysalis':'The hard case a caterpillar forms while it changes into a butterfly.','metamorphosis':'A big change in body shape during an animal’s life cycle.','generations':'Parents, then their children, then their grandchildren, and so on.'},
+ diaryNote:true,
+ q:[
+  {type:'Find the fact', q:'What is the only food monarch caterpillars eat?', o:['Milkweed','Oyamel fir needles','Nectar from roses'], why:'Monarch caterpillars only eat milkweed.'},
+  {type:'Word power', q:'What is metamorphosis?', o:['A big change in body shape during an animal’s life cycle','A long journey','A kind of tree'], why:'A caterpillar changes into a butterfly through metamorphosis.'},
+  {type:'Read the chart', q:'How many times longer can a super-generation monarch live than a summer monarch?', o:['About 8 times longer','About 2 times longer','The same'], why:'8 months compared with 1 month.'},
+  {type:'Fact or opinion', q:'Which sentence is an OPINION?', o:['Monarchs are the prettiest butterflies in the world.','Monarchs fly up to about 4,800 km.','A monarch has four life cycle stages.'], why:'"Prettiest" is a feeling.'},
+  {type:'Caption', q:'According to the caption, why do the butterflies cluster together?', o:['To keep each other warm','To find milkweed','To lay eggs'], why:'The caption says they keep each other warm.'},
+  {type:'Summarise', q:'Which sentence best sums up the diary?', o:['Monarch butterflies have an amazing life cycle and fly thousands of kilometres to spend winter in Mexico','Mexico has mountains','Scientists climb trees'], why:'That is the main idea.'},
+  {type:'Why it matters', q:'Why is protecting milkweed important for monarchs?', o:['Without milkweed there would be no food for caterpillars','Milkweed keeps the butterflies warm','Milkweed shows them the way'], why:'Caterpillars can only eat milkweed.'}
+ ],
+ around:'Look for an insect near you. Which stage of its life cycle do you think it is in?'},
+
+{id:'w-deadsea', grade:'g4', topic:'materials', type:'news', art:['water','sun','spoon'],
+ title:'The Sea So Salty You Cannot Sink',
+ place:'The Dead Sea, Jordan Rift Valley', continent:'Asia', lat:31.5, lon:35.5, when:'Today',
+ sum:'At the lowest place on Earth’s land, a salty lake lets people float like corks, and leaves salt crystals on the rocks.',
+ photo:{src:'img/world/w-deadsea.webp', caption:'White salt crystals cover rocks at the edge of the Dead Sea. They form when the water evaporates and leaves the dissolved salt behind.'},
+ sections:[
+  {h:'The lowest place on land', t:'In the Middle East, in a deep valley called the Jordan Rift Valley, lies a lake called the Dead Sea. Its shore is about 430 metres below sea level, the lowest land anywhere on Earth. It is called “dead” because its water is far too salty for fish or plants to live in. Only a few tiny microbes can survive there.'},
+  {h:'Floating like a cork', t:'The Dead Sea is famous for one thing: you cannot sink in it! Its water is about one third salt, nearly ten times saltier than the ocean. All that salt makes the water heavy and thick, so swimmers bob up to the surface and float without even trying. Visitors lie back and read a newspaper on the water. But they must be careful not to splash, because the salty water stings badly if it gets in your eyes.'},
+  {h:'Dissolving and evaporating', t:'When salt mixes into water and seems to disappear, it has [[dissolved]]. The salt is still there; it has just broken into pieces too tiny to see, making a [[solution]]. The Dead Sea is in one of the hottest, driest places on Earth. The sun heats the water so much that lots of it [[evaporates]], turning into water vapour and rising into the air. But the salt cannot evaporate, so it stays behind. Along the shore, the water has evaporated so much that thick white salt crystals form on rocks and sticks, like frost.'},
+  {h:'Getting the salt back', t:'You can do the same thing in a classroom. Stir salt into warm water until it dissolves. Pour a little of the solution onto a dish and leave it on a sunny windowsill. After a few days, the water will have evaporated, and tiny salt crystals will be left on the dish. Dissolving is a [[reversible change]]: you can get the salt back again.'},
+  {h:'A shrinking sea', t:'The Dead Sea is getting smaller. Its main supply of fresh water is the Jordan River, but people now use much of that water for drinking and farming. The sun keeps evaporating the lake, so its surface is dropping by about one metre every year. Scientists are studying how to protect this unique place.'}
+ ],
+ fact:[['Where','Jordan Rift Valley, Middle East'],['Height of the shore','About 430 m below sea level, the lowest land on Earth'],['Saltiness','About one third salt; nearly 10 times saltier than the ocean'],['Main water supply','The Jordan River'],['Change each year','The surface drops by about 1 metre']],
+ chart:{title:'How salty is the water? (grams of salt in 100 g of water)', bars:[['Tap water',0],['Ocean',3.5],['Dead Sea',34]], unit:'grams'},
+ glossary:{'dissolved':'Mixed into a liquid so completely that it cannot be seen.','solution':'A liquid with something dissolved in it, such as salty water.','evaporates':'Changes from a liquid into a gas when heated.','reversible change':'A change that can be undone, so you can get the original materials back.'},
+ q:[
+  {type:'Find the fact', q:'How much lower is the Dead Sea shore than sea level?', o:['About 430 metres','About 4 metres','About 4,300 metres'], why:'The article says about 430 metres below sea level.'},
+  {type:'Word power', q:'What is a solution?', o:['A liquid with something dissolved in it','A frozen liquid','A kind of rock'], why:'Salty water is a solution.'},
+  {type:'Read the chart', q:'About how many times saltier than the ocean is the Dead Sea?', o:['About 10 times','About 2 times','About 100 times'], why:'34 g is about 10 times 3.5 g.'},
+  {type:'Fact or opinion', q:'Which sentence is an OPINION?', o:['Floating in the Dead Sea is the most relaxing thing you can do.','The Dead Sea is about one third salt.','The Dead Sea is getting smaller.'], why:'"Most relaxing" is a feeling.'},
+  {type:'Caption', q:'According to the caption, how do the salt crystals form?', o:['Water evaporates and leaves the salt behind','Salt falls from the sky','Fish make them'], why:'The caption explains evaporation.'},
+  {type:'Summarise', q:'Which sentence best sums up the article?', o:['The Dead Sea is so salty that people float, and evaporation leaves salt crystals behind','The Middle East is hot','Fish cannot swim'], why:'That is the main idea.'},
+  {type:'Why it matters', q:'Why is dissolving salt in water a reversible change?', o:['The salt can be got back by evaporating the water','The salt disappears forever','The water turns into salt'], why:'Evaporation recovers the dissolved salt.'}
+ ],
+ around:'Try dissolving sugar or salt in water at home with an adult. Can you get it back again?'},
+
+{id:'w-goodall', grade:'g4', topic:'living', type:'news', art:['leaf','beanpod','diary'],
+ title:'The Young Woman Who Lived Among Chimpanzees',
+ place:'Gombe, Tanzania', continent:'Africa', lat:-4.67, lon:29.63, when:'1960 to today',
+ sum:'In 1960, Jane Goodall began studying wild chimpanzees in Tanzania. Her discoveries changed how we see animals.',
+ photo:{src:'img/world/w-goodall.webp', caption:'A young chimpanzee uses a thin stick to “fish” for termites, just as Jane Goodall first saw in 1960.'},
+ sections:[
+  {h:'A dream comes true', t:'When Jane Goodall was a little girl in England, she loved animals and dreamed of going to Africa. In July 1960, when she was 26 years old, her dream came true. She arrived at Gombe, a forest beside Lake Tanganyika in Tanzania, to study wild chimpanzees. Because officials did not want her to live in the forest alone, her mother came with her for the first few months.'},
+  {h:'Patient watching', t:'At first, the chimpanzees ran away whenever they saw her. Jane did not give up. Every day, she climbed into the hills with her binoculars and notebook and sat quietly, watching. Slowly, the chimpanzees got used to her. She gave each one a name, like David Greybeard, Flo and Fifi, and wrote down everything they did. Careful [[observation]] like this is an important way of working scientifically.'},
+  {h:'An amazing discovery', t:'One day in 1960, Jane watched David Greybeard pick a long piece of grass and poke it into a termite mound. When he pulled it out, it was covered in termites, and he ate them. Later she saw chimpanzees strip the leaves off twigs to make better tools. At that time, scientists believed only humans made and used tools. Jane’s discovery surprised the whole world. She also saw that chimpanzees eat meat as well as fruit and leaves.'},
+  {h:'Chimpanzee families', t:'Jane learned that chimpanzees are [[mammals]] that live in family groups. A mother chimpanzee is pregnant for about eight months, a little less than a human mother. Her baby clings to her tummy, and later rides on her back. Young chimps drink their mother’s milk for several years and stay close to her for many more, learning how to find food, make tools and get along with others. This part of the [[life cycle]], where the young learn from adults, is very long in chimpanzees, just as in humans.'},
+  {h:'A lifetime of work', t:'The research Jane began at Gombe is still going on today, more than 65 years later. It is the longest study of any group of wild animals. Jane spent the rest of her life travelling the world to protect chimpanzees and their forests. She started a programme called Roots & Shoots so that young people could help animals and the environment. Jane Goodall died in October 2025, aged 91, but her work continues.'}
+ ],
+ fact:[['Scientist','Dr Jane Goodall (1934–2025)'],['Where','Gombe, Tanzania'],['Study began','July 1960'],['Famous discovery','Chimpanzees make and use tools'],['Record','The longest-running study of wild animals']],
+ chart:{title:'How long is a mother pregnant? (months)', bars:[['Chimpanzee',8],['Human',9],['Elephant',22]], unit:'months'},
+ glossary:{'observation':'Watching something carefully and recording what you notice.','mammals':'Animals with hair or fur that feed their babies milk.','life cycle':'The stages of life a living thing goes through, from birth to adult to having young.'},
+ q:[
+  {type:'Find the fact', q:'What did David Greybeard use to catch termites?', o:['A piece of grass','A spoon','His teeth only'], why:'He poked grass into the termite mound.'},
+  {type:'Word power', q:'What is observation?', o:['Watching carefully and recording what you notice','Doing a magic trick','Building a nest'], why:'Jane made careful observations every day.'},
+  {type:'Read the chart', q:'Which animal is pregnant for the longest time?', o:['Elephant','Human','Chimpanzee'], why:'The elephant bar is longest: 22 months.'},
+  {type:'Fact or opinion', q:'Which sentence is an OPINION?', o:['Chimpanzees are the cleverest animals on Earth.','Jane arrived at Gombe in 1960.','Chimpanzees are mammals.'], why:'"Cleverest" is a judgement, not a checked fact.'},
+  {type:'Caption', q:'What is the chimpanzee in the photo doing?', o:['Using a stick to fish for termites','Sleeping in a nest','Swimming in a lake'], why:'The caption describes termite fishing.'},
+  {type:'Summarise', q:'Which sentence best sums up the article?', o:['Jane Goodall’s patient study of wild chimpanzees revealed that they make tools and live in close families','Tanzania has forests','Termites live in mounds'], why:'That is the main idea.'},
+  {type:'Why it matters', q:'Why was Jane’s tool discovery so surprising?', o:['Scientists believed only humans made and used tools','Chimpanzees had never been seen before','Termites cannot be eaten'], why:'It changed how scientists thought about animals.'}
+ ],
+ around:'Choose an animal you can see often, like a bird or a cat. Watch it for 10 minutes and record what it does.'},
+
+/* =========================== GRADE 5 (Year 6) =========================== */
+{id:'w-finches', grade:'g5', topic:'evolution', type:'news', art:['chick','sunflower','rock'],
+ title:'Watching Evolution Happen on a Tiny Island',
+ place:'Daphne Major, Galápagos Islands, Ecuador', continent:'South America', lat:-0.42, lon:-90.37, when:'1973 to 2012 and beyond',
+ sum:'Two scientists spent forty years measuring finches on a tiny island, and saw beaks change in just a few years.',
+ photo:{src:'img/world/w-finches.webp', caption:'A medium ground finch on the Galápagos Islands. Its strong, thick beak can crack open seeds.'},
+ sections:[
+  {h:'A tiny volcanic island', t:'Far out in the Pacific Ocean, about 1,000 kilometres west of Ecuador, lie the Galápagos Islands. In 1835, a young naturalist called Charles Darwin visited them and collected some small brown birds, now known as Darwin’s finches. Different islands had finches with different beaks. Years later, those birds helped Darwin develop his theory of evolution by [[natural selection]]. But Darwin believed that evolution was far too slow for anyone to see happening.'},
+  {h:'Measuring every bird', t:'In 1973, two scientists called Peter and Rosemary Grant arrived on Daphne Major, a tiny, rocky volcanic island in the Galápagos. They camped there for months at a time, year after year, for about forty years. They caught, measured and ringed almost every finch on the island, recording each bird’s beak size, its parents and its chicks. They found that beaks vary, even within one species, and that chicks [[inherit]] beak size from their parents.'},
+  {h:'The great drought of 1977', t:'In 1977, almost no rain fell on Daphne Major. Plants produced very few seeds, and the small, soft seeds were soon all eaten. Only big, hard seeds were left, and only birds with large, strong beaks could crack them open. The population of medium ground finches crashed from about 1,400 birds to only about 200. Most of the survivors had larger beaks than average.'},
+  {h:'Evolution in action', t:'When the rains returned, the survivors bred. Because beak size is inherited, their chicks also had larger beaks. The Grants measured the next generation and found that the average beak was now measurably bigger. This was natural selection: the birds best [[adapted]] to the conditions survived and passed on their characteristics. A few years later, after very heavy rains brought lots of small seeds, the opposite happened, and smaller beaks became an advantage.'},
+  {h:'Why it matters', t:'The Grants showed that evolution is not always slow. When the environment changes, living things can change over just a few generations. Their careful records, kept for decades, are one of the best examples in the world of how [[variation]], inheritance and survival work together.'}
+ ],
+ fact:[['Where','Daphne Major, Galápagos Islands'],['Scientists','Peter and Rosemary Grant'],['Studied from','1973, for about 40 years'],['Key event','A severe drought in 1977'],['Result','Average beak size increased in the next generation']],
+ chart:{title:'Medium ground finches on Daphne Major', bars:[['Before the 1977 drought',1400],['After the drought',200]], unit:'birds (about)'},
+ glossary:{'natural selection':'The process in which living things best suited to their environment survive and pass on their characteristics.','inherit':'Receive a characteristic from your parents.','adapted':'Suited to living in a particular environment.','variation':'Differences between living things of the same kind.'},
+ q:[
+  {type:'Find the fact', q:'What happened on Daphne Major in 1977?', o:['A severe drought','A volcano erupted','Darwin visited'], why:'Almost no rain fell in 1977.'},
+  {type:'Word power', q:'What does inherit mean?', o:['Receive a characteristic from your parents','Lose your feathers','Move to a new island'], why:'Chicks inherit beak size from their parents.'},
+  {type:'Read the chart', q:'About how many medium ground finches were left after the drought?', o:['About 200','About 1,400','About 1,000'], why:'The population fell from about 1,400 to about 200.'},
+  {type:'Fact or opinion', q:'Which sentence is an OPINION?', o:['Finches are the most interesting birds to study.','The Grants began their study in 1973.','Beak size is inherited.'], why:'"Most interesting" is a personal view.'},
+  {type:'Caption', q:'According to the caption, what can the finch’s beak do?', o:['Crack open seeds','Catch fish','Dig tunnels'], why:'The caption says its strong beak cracks seeds.'},
+  {type:'Summarise', q:'Which sentence best sums up the article?', o:['By measuring finches for decades, the Grants saw natural selection change beak size within a few years','Darwin visited the Galápagos','Droughts are dry'], why:'That is the main idea.'},
+  {type:'Why it matters', q:'Why did finches with larger beaks survive the drought?', o:['Only large, strong beaks could crack the hard seeds that were left','They could fly further','They were hidden from predators'], why:'Their beaks were best adapted to the food available.'}
+ ],
+ around:'Look at the hands or feet of people in your family. What characteristics do you think are inherited?'},
+
+{id:'w-webb', grade:'g5', topic:'light', type:'news', art:['mirror','sun','torch'],
+ title:'A Golden Eye Looking Back in Time',
+ place:'Launched from French Guiana; now 1.5 million km from Earth', continent:'Space', lat:null, lon:null, away:'🔭 The telescope is 1.5 million km from Earth, about four times further than the Moon.', when:'Launched 25 December 2021',
+ sum:'The James Webb Space Telescope uses a giant golden mirror to catch light that has travelled for billions of years.',
+ photo:{src:'img/world/w-webb.webp', caption:'Engineers check the James Webb Space Telescope’s golden mirror, made of 18 hexagon-shaped segments, before launch.'},
+ sections:[
+  {h:'Launch day', t:'On 25 December 2021, a rocket blasted off from French Guiana, in South America. Folded up inside it, like origami, was the most powerful space telescope ever built: the James Webb Space Telescope. After a month-long journey, it reached its home about 1.5 million kilometres from Earth. There, in the cold and dark, it unfolded its huge mirror and sunshield, as big as a tennis court.'},
+  {h:'How do we see?', t:'We see things because light travels from them into our eyes. Light from the Sun or a lamp travels in straight lines. Some objects, like stars, are [[light sources]] that give out their own light. Others, like the Moon or this page, do not; we see them because light bounces off them and into our eyes. Light travels incredibly fast, about 300,000 kilometres every second. Even so, sunlight takes about eight minutes to reach the Earth.'},
+  {h:'A golden mirror', t:'Webb’s main mirror is 6.5 metres across, made of 18 hexagon-shaped pieces fitted together like a honeycomb. Each piece is coated with a very thin layer of gold, which is excellent at [[reflecting]] the kind of light Webb looks for. The curved mirror collects faint light from deep space and reflects it onto a smaller mirror, which reflects it again into the telescope’s cameras. The bigger the mirror, the more light it can collect, and the fainter and further away the objects it can see.'},
+  {h:'Looking back in time', t:'Some galaxies are so far away that their light has been travelling for billions of years. When Webb catches that light, it shows us the galaxy as it was when the light set off, long before the Earth even existed! In July 2022, the first pictures from Webb were shared with the world. They showed thousands of glittering galaxies, some never seen before.'},
+  {h:'Why infrared?', t:'Webb mostly sees [[infrared]] light, a kind of light our eyes cannot see but which we feel as warmth. Infrared light can pass through clouds of space dust that block ordinary light. That is why Webb must stay very cold, below minus 220 degrees Celsius, protected from the Sun’s heat by its five-layer sunshield. Otherwise its own warmth would hide the faint signals it is looking for.'}
+ ],
+ fact:[['Launched','25 December 2021, from French Guiana'],['Distance from Earth','About 1.5 million km'],['Main mirror','6.5 m across, 18 gold-coated hexagons'],['Sees mainly','Infrared light'],['First images','July 2022']],
+ chart:{title:'Width of the main mirror (metres)', bars:[['Hubble Space Telescope',2.4],['James Webb Space Telescope',6.5]], unit:'metres'},
+ glossary:{'light sources':'Objects that give out their own light, such as the Sun, stars and lamps.','reflecting':'Bouncing light off a surface.','infrared':'A kind of light that our eyes cannot see but that we feel as heat.'},
+ q:[
+  {type:'Find the fact', q:'How many segments make up Webb’s main mirror?', o:['18','6','100'], why:'The mirror is made of 18 hexagon-shaped segments.'},
+  {type:'Word power', q:'What is a light source?', o:['An object that gives out its own light','An object that reflects light','A dark shadow'], why:'Stars and lamps are light sources; the Moon is not.'},
+  {type:'Read the chart', q:'How much wider is Webb’s mirror than Hubble’s?', o:['4.1 metres wider','6.5 metres wider','2.4 metres wider'], why:'6.5 − 2.4 = 4.1 metres.'},
+  {type:'Fact or opinion', q:'Which sentence is an OPINION?', o:['Webb’s pictures are the most beautiful images ever made.','Webb launched on 25 December 2021.','Light travels in straight lines.'], why:'"Most beautiful" is a personal view.'},
+  {type:'Caption', q:'According to the caption, what shape are the mirror segments?', o:['Hexagons','Circles','Triangles'], why:'The caption says hexagon-shaped segments.'},
+  {type:'Summarise', q:'Which sentence best sums up the article?', o:['Webb uses a huge golden mirror to collect and reflect faint light from distant galaxies','Rockets are fast','Gold is expensive'], why:'That is the main idea.'},
+  {type:'Why it matters', q:'Why can Webb show us galaxies as they were long ago?', o:['Their light took billions of years to reach us','The telescope travels back in time','The galaxies are very close'], why:'Light from far away takes a very long time to arrive.'}
+ ],
+ around:'Use a torch and a mirror in a dark room. Can you make the light reflect onto a target? Draw the path of the light.'},
+
+{id:'w-eel', grade:'g5', topic:'electricity', type:'news', art:['battery','bolt','lightbulb'],
+ title:'The Fish That Inspired the First Battery',
+ place:'Xingu River, Amazon rainforest, Brazil', continent:'South America', lat:-3.5, lon:-52.0, when:'1800 and 2019',
+ sum:'An electric fish helped inspire the first battery. In 2019, scientists found an electric eel that makes 860 volts!',
+ photo:{src:'img/world/w-eel.webp', caption:'An electric eel in the water. Despite its name, it is not a true eel but a kind of knifefish.'},
+ sections:[
+  {h:'A living battery', t:'In the muddy rivers of the Amazon rainforest in South America lives an amazing animal: the electric eel. It can grow to over two metres long, and it has special organs packed with thousands of cells that work a little like tiny batteries. When it hunts or defends itself, these cells all fire together, sending a powerful electric shock through the water. Despite its name, the electric eel is not a true eel at all; it is a kind of knifefish, more closely related to catfish.'},
+  {h:'Volta’s big idea', t:'More than 200 years ago, scientists were fascinated by electric fish. An Italian scientist called Alessandro Volta wanted to copy how they made electricity. In 1800, he announced his invention: a tall stack of zinc and copper discs, separated by pieces of card or cloth soaked in salty water. When he connected the top and bottom with a wire, a steady electric current flowed. It was the world’s first electric [[battery]], and Volta called it an “artificial electric organ”. Today, the unit we use to measure the push of a battery, the [[volt]], is named after him.'},
+  {h:'A shocking discovery', t:'For about 250 years, scientists believed there was only one species of electric eel. But in 2019, a team of scientists studied hundreds of eels and their DNA and discovered there are actually three species. One of the new species was named Electrophorus voltai, after Volta. When the scientists measured its shock, they got a reading of 860 volts, much higher than the 650 volts recorded before. It is the strongest electricity made by any known animal.'},
+  {h:'Volts, cells and circuits', t:'The [[voltage]] of a battery tells us how hard it pushes electricity around a circuit. A single AA battery gives 1.5 volts. If you add more batteries to a series circuit, the voltage increases, so a bulb glows brighter and a buzzer sounds louder. Volta’s stack worked the same way: the more discs he added, the stronger the push. The electric eel lines up thousands of cells in a row for the same reason.'},
+  {h:'Stay safe!', t:'Mains electricity in our homes is about 230 volts, which is very dangerous. Never touch plug sockets or wires, and never use electrical things near water. Scientists who study electric eels wear thick rubber gloves, because rubber is an electrical insulator.'}
+ ],
+ fact:[['Animal','Electric eel (a knifefish)'],['Home','Rivers of the Amazon, South America'],['Record shock','860 volts, Electrophorus voltai (2019)'],['First battery','Alessandro Volta, 1800'],['Unit named after Volta','The volt (V)']],
+ chart:{title:'Voltage compared (volts)', bars:[['AA battery',1.5],['Car battery',12],['Mains electricity',230],['Electric eel record',860]], unit:'volts'},
+ glossary:{'battery':'A store of chemical energy that can push electricity around a circuit.','volt':'The unit used to measure voltage.','voltage':'How hard a battery or power supply pushes electricity around a circuit.'},
+ q:[
+  {type:'Find the fact', q:'When did Volta announce the first battery?', o:['1800','2019','1950'], why:'Volta announced his battery in 1800.'},
+  {type:'Word power', q:'What does voltage tell us?', o:['How hard electricity is pushed around a circuit','How long a wire is','How heavy a battery is'], why:'Higher voltage means a stronger push.'},
+  {type:'Read the chart', q:'How many times greater is the eel’s record voltage than a car battery’s?', o:['About 70 times','About 7 times','About 700 times'], why:'860 ÷ 12 is about 72.'},
+  {type:'Fact or opinion', q:'Which sentence is an OPINION?', o:['The electric eel is the most frightening animal in the Amazon.','The eel’s shock was measured at 860 volts.','Volta made the first battery.'], why:'"Most frightening" is a feeling.'},
+  {type:'Caption', q:'According to the caption, what kind of fish is the electric eel?', o:['A knifefish','A true eel','A shark'], why:'The caption says it is a kind of knifefish.'},
+  {type:'Summarise', q:'Which sentence best sums up the article?', o:['Electric fish inspired the first battery, and a newly found eel makes the strongest animal electricity known','Rivers are muddy','Batteries are useful'], why:'That is the main idea.'},
+  {type:'Why it matters', q:'What happens to a bulb if you add more batteries in series?', o:['It glows brighter because the voltage increases','It goes out','Nothing changes'], why:'More cells give a bigger push.'}
+ ],
+ around:'Look at batteries at home (with an adult). What voltage is written on each one? What does each power?'},
+
+{id:'w-bluewhale', grade:'g5', topic:'animals', type:'diary', art:['water','drum','trainer'],
+ title:'Listening to the Biggest Heart on Earth',
+ place:'Monterey Bay, California, USA', continent:'North America', lat:36.8, lon:-122.0, when:'2018 to 2019 · imagined diary of a real study',
+ sum:'Scientists stuck a sensor on a blue whale and recorded its heartbeat for the very first time.',
+ photo:{src:'img/world/w-bluewhale.webp', caption:'A blue whale comes up to breathe. It is the largest animal that has ever lived, and it has the biggest heart.'},
+ sections:[
+  {h:'The plan', t:'I am a marine biologist, and my team had a daring plan: to measure the heartbeat of a wild blue whale, something nobody had ever done. Blue whales are the largest animals that have ever lived, up to about 30 metres long. To record a heartbeat, we needed to attach a sensor to the whale’s skin, just behind its left flipper, using four suction cups. On a moving, diving whale!'},
+  {h:'Tagging day', t:'Out in Monterey Bay, a huge grey-blue back rose from the water with a loud whoosh of breath. My colleague reached out with a long pole and gently pressed the orange sensor tag onto the whale. It stuck! The whale dived and the tag went with it, recording its heart for several hours. When the suction cups finally let go, the tag floated to the surface and we picked it up. The data inside was priceless.'},
+  {h:'What we found', t:'At the surface, while the whale breathed, its heart beat up to about 37 times a minute. But when it dived deep to feed, its heart slowed down dramatically, to just four to eight beats a minute, and sometimes only two! Diving whales cannot breathe, so the heart slows down to save oxygen. A blue whale’s heart is enormous: a preserved one at the Royal Ontario Museum in Canada weighs about 180 kilograms, as big as a small bumper car.'},
+  {h:'How hearts work', t:'Every mammal, including you, has a [[circulatory system]]. The heart is a muscle that pumps blood around the body through tubes called [[blood vessels]]. Blood carries oxygen from the lungs and nutrients from food to every part of the body, and carries waste away. Your heart is about the size of your fist and beats about 70 to 100 times a minute when you rest. When you exercise, your muscles need more oxygen, so your [[pulse]] speeds up.'},
+  {h:'Why it matters', t:'Our results suggest that a blue whale’s heart is already working close to its limits. That may be one reason why blue whales have never grown even bigger. Learning how whales live and feed also helps us protect them, as blue whales are still endangered.'}
+ ],
+ fact:[['Animal','Blue whale, the largest animal ever'],['Where','Monterey Bay, California'],['Heart rate at the surface','Up to about 37 beats a minute'],['Lowest heart rate while diving','2 beats a minute'],['Heart weight','About 180 kg (museum specimen)']],
+ chart:{title:'Heartbeats per minute', bars:[['Blue whale, deep dive',2],['Blue whale, at surface',37],['Child at rest',85]], unit:'beats per minute'},
+ chartNote:'A resting child’s heart usually beats about 70 to 100 times a minute.',
+ glossary:{'circulatory system':'The heart, blood vessels and blood, which carry oxygen and nutrients around the body.','blood vessels':'Tubes that carry blood around the body.','pulse':'The beat of your heart that you can feel in your wrist or neck.'},
+ diaryNote:true,
+ q:[
+  {type:'Find the fact', q:'What was the lowest heart rate recorded?', o:['2 beats a minute','37 beats a minute','100 beats a minute'], why:'While diving, it sometimes fell to just two beats a minute.'},
+  {type:'Word power', q:'What does the circulatory system do?', o:['Carries oxygen and nutrients around the body in the blood','Helps you see','Digests food in the stomach'], why:'The heart pumps blood through blood vessels.'},
+  {type:'Read the chart', q:'How many more times a minute does a resting child’s heart beat than a blue whale’s at the surface?', o:['About 48 more','About 83 more','About 2 more'], why:'85 − 37 = 48.'},
+  {type:'Fact or opinion', q:'Which sentence is an OPINION?', o:['Studying whales is more exciting than studying any other animal.','A blue whale’s heart can beat just twice a minute.','The heart pumps blood.'], why:'"More exciting" is a personal view.'},
+  {type:'Caption', q:'According to the caption, what is special about the blue whale?', o:['It is the largest animal that has ever lived','It can fly','It lives on land'], why:'The caption says it is the largest animal ever.'},
+  {type:'Summarise', q:'Which sentence best sums up the diary?', o:['Scientists recorded a blue whale’s heartbeat for the first time and found it slows hugely when diving','Whales live in the sea','Suction cups are sticky'], why:'That is the main idea.'},
+  {type:'Why it matters', q:'Why does the whale’s heart slow down when it dives?', o:['To save oxygen, because it cannot breathe underwater','Because the water is warm','Because it is asleep'], why:'A slower heartbeat uses less oxygen.'}
+ ],
+ around:'Find your pulse on your wrist. Count the beats for one minute at rest, then after 1 minute of jumping. What changes?'},
+
+{id:'w-olinguito', grade:'g5', topic:'living', type:'news', art:['squirrel','leaf','diary'],
+ title:'A New Mammal Hiding in a Museum Drawer',
+ place:'Cloud forests of the Andes, Ecuador and Colombia', continent:'South America', lat:0.05, lon:-78.7, when:'Announced 15 August 2013',
+ sum:'The olinguito was mistaken for another animal for over 100 years, until a scientist looked closely at its skull.',
+ photo:{src:'img/world/w-olinguito.webp', caption:'The olinguito, a small, fluffy mammal from the cloud forests of the Andes, weighs about 900 grams.'},
+ sections:[
+  {h:'A surprise in a drawer', t:'Kristofer Helgen is a scientist who studies mammals. One day, at a museum in Chicago, he pulled open a drawer of old animal skins and skulls labelled as olingos, tree-climbing cousins of the raccoon. But something was wrong. Some of the skulls were smaller and shaped differently, with different teeth. Their fur was longer and thicker, too. “It was not anything I’d ever seen before,” he said. Could this be a new species?'},
+  {h:'Ten years of detective work', t:'Helgen and his team spent about ten years investigating. They examined hundreds of museum specimens, some more than 100 years old, and compared their bones, fur and DNA. They studied old notes about where each animal had been found. The mystery animals all came from [[cloud forests]] high in the Andes Mountains of Colombia and Ecuador, cool, misty forests between about 1,500 and 2,750 metres above sea level. Then the team travelled to Ecuador and, using cameras and patient searching, found the animal alive in the wild.'},
+  {h:'Meet the olinguito', t:'On 15 August 2013, scientists announced the new species: the olinguito, which means “little olingo”. Its scientific name is Bassaricyon neblina; neblina means “fog” in Spanish. The olinguito has a round, teddy-bear face, orange-brown fur and a long bushy tail. It weighs about 900 grams, lives in the treetops, comes out at night and mostly eats fruit. It was the first new [[carnivore]] species found in the Western Hemisphere for 35 years.'},
+  {h:'How do scientists classify it?', t:'Scientists sort living things into groups by looking at their shared [[characteristics]]. This is called [[classification]]. The olinguito is an animal, and it has a backbone, so it is a vertebrate. It has fur and feeds its babies milk, so it is a mammal. Its teeth and skull place it in the order Carnivora and in the raccoon family. Only by looking very closely could scientists see that it was different enough to be its own species.'},
+  {h:'Why it matters', t:'“The age of discovery is not over,” Helgen said. If a new mammal could hide in a museum drawer for a century, imagine how many plants, insects and other living things are still waiting to be discovered. Finding and naming species is the first step to protecting them and the habitats where they live.'}
+ ],
+ fact:[['Animal','Olinguito (Bassaricyon neblina)'],['Announced','15 August 2013'],['Home','Cloud forests of the Andes, Colombia and Ecuador'],['Weight','About 900 grams'],['Family','Raccoon family, order Carnivora']],
+ key:{title:'Classifying the olinguito', steps:[['Kingdom: Animal','It moves and eats food.'],['Vertebrate','It has a backbone.'],['Class: Mammal','It has fur and feeds its young milk.'],['Order: Carnivora','Its teeth and skull match this group.'],['Family: Raccoons','Its closest relatives are olingos and raccoons.'],['Species: Bassaricyon neblina','Its skull, teeth, fur and DNA are different from olingos.']]},
+ glossary:{'cloud forests':'Cool, misty mountain forests often covered in low cloud.','carnivore':'A member of the mammal group Carnivora (some, like the olinguito, eat mostly fruit).','characteristics':'Features that help us describe and identify a living thing.','classification':'Sorting living things into groups based on shared characteristics.'},
+ q:[
+  {type:'Find the fact', q:'When was the olinguito announced as a new species?', o:['15 August 2013','100 years ago','2025'], why:'It was announced on 15 August 2013.'},
+  {type:'Word power', q:'What is classification?', o:['Sorting living things into groups by shared characteristics','Counting animals in a forest','Drawing maps'], why:'Scientists classify living things to make sense of them.'},
+  {type:'Read the key', q:'Look at the classification key. Why is the olinguito a mammal?', o:['It has fur and feeds its young milk','It has a backbone','It lives in trees'], why:'Fur and milk are characteristics of mammals.'},
+  {type:'Fact or opinion', q:'Which sentence is an OPINION?', o:['The olinguito is the cutest animal ever discovered.','The olinguito weighs about 900 grams.','The olinguito lives in cloud forests.'], why:'"Cutest" is a personal view.'},
+  {type:'Caption', q:'According to the caption, how heavy is an olinguito?', o:['About 900 grams','About 9 kilograms','About 90 grams'], why:'The caption says about 900 grams.'},
+  {type:'Summarise', q:'Which sentence best sums up the article?', o:['By studying skulls, fur and DNA, scientists found that a mistaken animal was really a new species','Museums have drawers','Raccoons have tails'], why:'That is the main idea.'},
+  {type:'Why it matters', q:'Why is naming new species important?', o:['It is the first step to protecting them and their habitats','It makes them grow faster','It changes their DNA'], why:'We cannot protect what we do not know exists.'}
+ ],
+ around:'Choose five living things you can see. How could you sort them into groups? What characteristics did you use?'}
 ];

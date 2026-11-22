@@ -96,7 +96,7 @@
 <footer class="foot"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>True science from around the world, retold for children. Photos credited where used. Not affiliated with any publisher or exam board.</span></div></footer>
 
 <script src="js/art.js?v=42"></script>
-<script src="js/world.js?v=48"></script>
+<script src="js/world.js?v=49"></script>
 <script src="js/avatar.js?v=42"></script>
 <script src="js/store.js?v=42"></script>
 <script src="js/nav.js?v=42"></script>
@@ -104,10 +104,10 @@
 (function(){
   var S = SQ_STORE, A = SQ_ART, W = SQ_WORLD;
   var main = document.getElementById('main');
-  var GN = {kg2:'KG2 (Year 1)', g1:'Grade 1 (Year 2)', g2:'Grade 2 (Year 3)', g3:'Grade 3 (Year 4)'};
-  var TOPIC = {materials:'Materials', seasons:'Seasonal changes', plants:'Plants', animals:'Animals including humans', rocks:'Rocks and fossils', light:'Light', forces:'Forces and magnets', states:'States of matter', sound:'Sound', electricity:'Electricity', living:'Living things and their habitats'};
+  var GN = {kg2:'KG2 (Year 1)', g1:'Grade 1 (Year 2)', g2:'Grade 2 (Year 3)', g3:'Grade 3 (Year 4)', g4:'Grade 4 (Year 5)', g5:'Grade 5 (Year 6)'};
+  var TOPIC = {space:'Earth and space', evolution:'Evolution and inheritance', materials:'Materials', seasons:'Seasonal changes', plants:'Plants', animals:'Animals including humans', rocks:'Rocks and fossils', light:'Light', forces:'Forces and magnets', states:'States of matter', sound:'Sound', electricity:'Electricity', living:'Living things and their habitats'};
   var TYPE = {news:['📰','News report'], diary:['📔','Diary']};
-  var RANKS = [[1,'🗞️','Junior Science Reporter','You have read your first true science story!'],[3,'🎙️','Senior Science Reporter','Three true stories read. You are a real science reporter now.'],[5,'🌍','Chief Science Reporter','Five true stories! You know science from all around the world.'],[10,'🧭','World Science Explorer','Ten true stories! You have travelled the world with science.'],[20,'🏆','World Science Editor','Every true story read. Amazing reporting!']];
+  var RANKS = [[1,'🗞️','Junior Science Reporter','You have read your first true science story!'],[3,'🎙️','Senior Science Reporter','Three true stories read. You are a real science reporter now.'],[5,'🌍','Chief Science Reporter','Five true stories! You know science from all around the world.'],[10,'🧭','World Science Explorer','Ten true stories! You have travelled the world with science.'],[20,'🌟','Senior World Explorer','Twenty true stories read!'],[30,'🏆','World Science Editor','Every true story read. Amazing reporting!']];
   function store(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
   function load(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
   function esc(t){ return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
@@ -235,7 +235,7 @@
   }
 
   /* ---------- the list ---------- */
-  function myGrade(){ var me = S.me(); var g = qs('g') || (me && me.grade) || load('sq-wgrade') || 'g2'; return GN[g] ? g : (/g[45]/.test(g) ? 'g3' : 'g2'); }
+  function myGrade(){ var me = S.me(); var g = qs('g') || (me && me.grade) || load('sq-wgrade') || 'g2'; return GN[g] ? g : 'g2'; }
   function rank(n){ var r = null; RANKS.forEach(function(x){ if (n >= x[0]) r = x; }); return r; }
   function list(){
     stopTalk();
@@ -269,7 +269,7 @@
     h += '<div class="whero"><div><span class="stamp">TRUE STORY</span> <span class="wtype '+a.type+'" style="margin-left:10px">'+t[0]+' '+t[1]+'</span>'+
       '<h1>'+esc(a.title)+'</h1><p style="font-size:17px;color:var(--ink2);line-height:1.6;margin:0 0 12px">'+esc(a.sum)+'</p>'+
       '<div class="wwhere"><span>📍 '+esc(a.place)+'</span><span>🌍 '+esc(a.continent)+'</span><span>📅 '+esc(a.when)+'</span><span>🔬 '+esc(TOPIC[a.topic]||'')+'</span></div>'+
-      (a.lat==null ? '<div class="wmapbox" style="margin-top:14px;text-align:center;font-size:44px;padding:26px">🌍 🚀<p class="cnote">This story happens in space, about 400 km above the Earth.</p></div>' : '<div class="wmapbox" style="margin-top:14px">'+map([a])+'</div>')+'</div>'+
+      (a.lat==null ? '<div class="wmapbox" style="margin-top:14px;text-align:center;padding:26px"><p style="font-size:20px;font-weight:800;margin:0">'+esc(a.away||'This story happens in space.')+'</p></div>' : '<div class="wmapbox" style="margin-top:14px">'+map([a])+'</div>')+'</div>'+
       '<figure class="wphoto"><img'+(a.photo.fit?' style="object-fit:contain;background:#F4F1EA"':'')+' src="'+esc(a.photo.src)+'" alt="'+esc(a.photo.caption)+'" onerror="this.outerHTML=\'<div class=ph>'+a.art.map(function(k){ return A.icon(k,90).replace(/"/g,'&quot;'); }).join('')+'</div>\'">'+
       '<figcaption><b>Photo:</b> '+esc(a.photo.caption)+(a.photo.credit?' <small>('+esc(a.photo.credit)+')</small>':'')+'</figcaption></figure></div>';
     // the text and the side boxes
