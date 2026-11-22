@@ -502,7 +502,7 @@ window.SQ_WORLD = [
  title:'Four Minutes of Darkness at Midday',
  place:'Nazas, Durango, Mexico', continent:'North America', lat:25.3, lon:-104.1, when:'8 April 2024 · imagined diary of a real event',
  sum:'A girl in a small Mexican town watches the Moon cover the Sun for longer than anywhere else on Earth.',
- photo:{src:'img/world/w-eclipse.webp', caption:'During totality, the Moon covers the Sun completely. Only the Sun’s glowing outer layer, the corona, can be seen around the dark Moon.'},
+ photo:{src:'img/world/w-eclipse.webp', caption:'During totality, the Moon covers the Sun completely. Only the Sun’s glowing outer layer, the corona, can be seen around the dark Moon.', credit:'Wikimedia Commons'},
  sections:[
   {h:'Sunday, 7 April · The town fills up', t:'My town, Nazas, is usually quiet. But today it is full of visitors with cameras, telescopes and folding chairs. Scientists say that tomorrow, our town will be the best place on the whole planet to watch a [[total solar eclipse]]. Here, the Sun will be completely hidden for 4 minutes and 28 seconds, longer than anywhere else. Abuela says she has never seen anything like it in her life.'},
   {h:'Monday, 8 April · 11:00 am', t:'Mr Ruiz, my science teacher, gave everyone special eclipse glasses. He was very serious: “Never look at the Sun without proper eclipse glasses, not even for a second. It can damage your eyes forever.” Through the glasses, the Sun looked like an orange coin. Then, very slowly, a dark curve appeared on one side, as if someone had taken a bite out of it. That was the Moon beginning to pass in front of the Sun.'},
@@ -530,7 +530,7 @@ window.SQ_WORLD = [
  title:'A Hammer and a Feather on the Moon',
  place:'The Moon (Hadley Rille)', continent:'The Moon', lat:null, lon:null, away:'🌕 This story happens on the Moon, about 384,000 km from Earth.', when:'2 August 1971',
  sum:'An astronaut dropped a hammer and a feather on the Moon to test an idea from 400 years ago. Which landed first?',
- photo:{src:'img/world/w-feather.webp', caption:'Astronaut David Scott on the Moon during the Apollo 15 mission in 1971. There is no air on the Moon, so there is no air resistance.'},
+ photo:{src:'img/world/w-feather.webp', caption:'Astronaut David Scott at work on the Moon during the Apollo 15 mission in 1971. There is no air on the Moon, so there is no air resistance. (The small crosses were added by the camera to help scientists measure distances.)', credit:'NASA (public domain)'},
  sections:[
   {h:'An old question', t:'Drop a hammer and a feather at the same time. Which hits the ground first? On Earth, the answer seems easy: the hammer crashes down while the feather floats and drifts. But about 400 years ago, an Italian scientist called Galileo Galilei had a surprising idea. He said that if there were no air, all objects would fall at the same speed, whatever their mass. The feather is only slowed down because air pushes against it.'},
   {h:'A test on live television', t:'On 2 August 1971, astronaut David Scott was standing on the Moon at the end of the Apollo 15 mission. Facing the TV camera, he held a geology hammer in one hand and a falcon feather in the other. Viewers on Earth watched as he let go of both at exactly the same moment. They fell side by side and hit the ground together! “How about that?” Scott said. He explained that the test showed Galileo had been right.'},
@@ -557,7 +557,7 @@ window.SQ_WORLD = [
  title:'Millions of Butterflies in the Mountains',
  place:'Monarch Butterfly Reserve, Michoacán, Mexico', continent:'North America', lat:19.6, lon:-100.3, when:'Every winter · imagined diary of a real event',
  sum:'Each autumn, monarch butterflies fly thousands of kilometres from Canada and the USA to a few mountain forests in Mexico.',
- photo:{src:'img/world/w-monarch.webp', caption:'Thousands of monarch butterflies cluster together on the branches of fir trees in the mountains of Mexico, keeping each other warm.'},
+ photo:{src:'img/world/w-monarch.webp', caption:'Thousands of monarch butterflies cluster together on the branches of fir trees in the mountains of Mexico, keeping each other warm.', credit:'Wikimedia Commons'},
  sections:[
   {h:'November · The trees are moving!', t:'I am a butterfly scientist, and today I climbed high into the mountain forest in central Mexico. At first, the tall fir trees looked strangely orange and brown. Then the sun came out, the branches seemed to shiver, and thousands of butterflies took off into the air! Their wings sounded like soft rain. These are monarch butterflies, and millions of them spend the winter here, clustered together on the branches of oyamel fir trees.'},
   {h:'An amazing journey', t:'These butterflies began their journey in Canada and the north of the USA, some of them up to about 4,800 kilometres away. Each one weighs less than a gram, about as much as a paper clip, yet it flew all that way to a few small patches of forest it had never seen before. Scientists think monarchs use the position of the Sun to find their way. The cool mountain forest is perfect for winter: cold enough for them to rest, but sheltered enough to keep them from freezing.'},
@@ -610,7 +610,7 @@ window.SQ_WORLD = [
  title:'The Young Woman Who Lived Among Chimpanzees',
  place:'Gombe, Tanzania', continent:'Africa', lat:-4.67, lon:29.63, when:'1960 to today',
  sum:'In 1960, Jane Goodall began studying wild chimpanzees in Tanzania. Her discoveries changed how we see animals.',
- photo:{src:'img/world/w-goodall.webp', caption:'A young chimpanzee uses a thin stick to “fish” for termites, just as Jane Goodall first saw in 1960.'},
+ photo:{src:'img/world/w-goodall.webp', caption:'A chimpanzee pokes a thin stick into a termite mound to “fish” for food. Jane Goodall first saw wild chimpanzees using tools like this in 1960.'},
  sections:[
   {h:'A dream comes true', t:'When Jane Goodall was a little girl in England, she loved animals and dreamed of going to Africa. In July 1960, when she was 26 years old, her dream came true. She arrived at Gombe, a forest beside Lake Tanganyika in Tanzania, to study wild chimpanzees. Because officials did not want her to live in the forest alone, her mother came with her for the first few months.'},
   {h:'Patient watching', t:'At first, the chimpanzees ran away whenever they saw her. Jane did not give up. Every day, she climbed into the hills with her binoculars and notebook and sat quietly, watching. Slowly, the chimpanzees got used to her. She gave each one a name, like David Greybeard, Flo and Fifi, and wrote down everything they did. Careful [[observation]] like this is an important way of working scientifically.'},
@@ -637,7 +637,7 @@ window.SQ_WORLD = [
  title:'Watching Evolution Happen on a Tiny Island',
  place:'Daphne Major, Galápagos Islands, Ecuador', continent:'South America', lat:-0.42, lon:-90.37, when:'1973 to 2012 and beyond',
  sum:'Two scientists spent forty years measuring finches on a tiny island, and saw beaks change in just a few years.',
- photo:{src:'img/world/w-finches.webp', caption:'A medium ground finch on the Galápagos Islands. Its strong, thick beak can crack open seeds.'},
+ photo:{src:'img/world/w-finches.webp', caption:'A Darwin’s ground finch on the Galápagos Islands. Its strong, thick beak can crack open seeds.', credit:'Wikimedia Commons'},
  sections:[
   {h:'A tiny volcanic island', t:'Far out in the Pacific Ocean, about 1,000 kilometres west of Ecuador, lie the Galápagos Islands. In 1835, a young naturalist called Charles Darwin visited them and collected some small brown birds, now known as Darwin’s finches. Different islands had finches with different beaks. Years later, those birds helped Darwin develop his theory of evolution by [[natural selection]]. But Darwin believed that evolution was far too slow for anyone to see happening.'},
   {h:'Measuring every bird', t:'In 1973, two scientists called Peter and Rosemary Grant arrived on Daphne Major, a tiny, rocky volcanic island in the Galápagos. They camped there for months at a time, year after year, for about forty years. They caught, measured and ringed almost every finch on the island, recording each bird’s beak size, its parents and its chicks. They found that beaks vary, even within one species, and that chicks [[inherit]] beak size from their parents.'},
@@ -663,7 +663,7 @@ window.SQ_WORLD = [
  title:'A Golden Eye Looking Back in Time',
  place:'Launched from French Guiana; now 1.5 million km from Earth', continent:'Space', lat:null, lon:null, away:'🔭 The telescope is 1.5 million km from Earth, about four times further than the Moon.', when:'Launched 25 December 2021',
  sum:'The James Webb Space Telescope uses a giant golden mirror to catch light that has travelled for billions of years.',
- photo:{src:'img/world/w-webb.webp', caption:'Engineers check the James Webb Space Telescope’s golden mirror, made of 18 hexagon-shaped segments, before launch.'},
+ photo:{src:'img/world/w-webb.webp', caption:'Engineers check the James Webb Space Telescope’s golden mirror, made of 18 hexagon-shaped segments, before launch.', credit:'NASA (public domain)'},
  sections:[
   {h:'Launch day', t:'On 25 December 2021, a rocket blasted off from French Guiana, in South America. Folded up inside it, like origami, was the most powerful space telescope ever built: the James Webb Space Telescope. After a month-long journey, it reached its home about 1.5 million kilometres from Earth. There, in the cold and dark, it unfolded its huge mirror and sunshield, as big as a tennis court.'},
   {h:'How do we see?', t:'We see things because light travels from them into our eyes. Light from the Sun or a lamp travels in straight lines. Some objects, like stars, are [[light sources]] that give out their own light. Others, like the Moon or this page, do not; we see them because light bounces off them and into our eyes. Light travels incredibly fast, about 300,000 kilometres every second. Even so, sunlight takes about eight minutes to reach the Earth.'},
@@ -689,7 +689,7 @@ window.SQ_WORLD = [
  title:'The Fish That Inspired the First Battery',
  place:'Xingu River, Amazon rainforest, Brazil', continent:'South America', lat:-3.5, lon:-52.0, when:'1800 and 2019',
  sum:'An electric fish helped inspire the first battery. In 2019, scientists found an electric eel that makes 860 volts!',
- photo:{src:'img/world/w-eel.webp', caption:'An electric eel in the water. Despite its name, it is not a true eel but a kind of knifefish.'},
+ photo:{src:'img/world/w-eel.webp', caption:'An electric eel resting in an aquarium. Despite its name, it is not a true eel but a kind of knifefish.', credit:'Wikimedia Commons'},
  sections:[
   {h:'A living battery', t:'In the muddy rivers of the Amazon rainforest in South America lives an amazing animal: the electric eel. It can grow to over two metres long, and it has special organs packed with thousands of cells that work a little like tiny batteries. When it hunts or defends itself, these cells all fire together, sending a powerful electric shock through the water. Despite its name, the electric eel is not a true eel at all; it is a kind of knifefish, more closely related to catfish.'},
   {h:'Volta’s big idea', t:'More than 200 years ago, scientists were fascinated by electric fish. An Italian scientist called Alessandro Volta wanted to copy how they made electricity. In 1800, he announced his invention: a tall stack of zinc and copper discs, separated by pieces of card or cloth soaked in salty water. When he connected the top and bottom with a wire, a steady electric current flowed. It was the world’s first electric [[battery]], and Volta called it an “artificial electric organ”. Today, the unit we use to measure the push of a battery, the [[volt]], is named after him.'},
@@ -715,7 +715,7 @@ window.SQ_WORLD = [
  title:'Listening to the Biggest Heart on Earth',
  place:'Monterey Bay, California, USA', continent:'North America', lat:36.8, lon:-122.0, when:'2018 to 2019 · imagined diary of a real study',
  sum:'Scientists stuck a sensor on a blue whale and recorded its heartbeat for the very first time.',
- photo:{src:'img/world/w-bluewhale.webp', caption:'A blue whale comes up to breathe. It is the largest animal that has ever lived, and it has the biggest heart.'},
+ photo:{src:'img/world/w-bluewhale.webp', caption:'A blue whale, seen from above, comes up to breathe out a misty blow. It is the largest animal that has ever lived, and it has the biggest heart.', credit:'NOAA (public domain)'},
  sections:[
   {h:'The plan', t:'I am a marine biologist, and my team had a daring plan: to measure the heartbeat of a wild blue whale, something nobody had ever done. Blue whales are the largest animals that have ever lived, up to about 30 metres long. To record a heartbeat, we needed to attach a sensor to the whale’s skin, just behind its left flipper, using four suction cups. On a moving, diving whale!'},
   {h:'Tagging day', t:'Out in Monterey Bay, a huge grey-blue back rose from the water with a loud whoosh of breath. My colleague reached out with a long pole and gently pressed the orange sensor tag onto the whale. It stuck! The whale dived and the tag went with it, recording its heart for several hours. When the suction cups finally let go, the tag floated to the surface and we picked it up. The data inside was priceless.'},
@@ -743,7 +743,7 @@ window.SQ_WORLD = [
  title:'A New Mammal Hiding in a Museum Drawer',
  place:'Cloud forests of the Andes, Ecuador and Colombia', continent:'South America', lat:0.05, lon:-78.7, when:'Announced 15 August 2013',
  sum:'The olinguito was mistaken for another animal for over 100 years, until a scientist looked closely at its skull.',
- photo:{src:'img/world/w-olinguito.webp', caption:'The olinguito, a small, fluffy mammal from the cloud forests of the Andes, weighs about 900 grams.'},
+ photo:{src:'img/world/w-olinguito.webp', caption:'The olinguito, a small, fluffy mammal from the cloud forests of the Andes, weighs about 900 grams.', credit:'Mark Gurney, Smithsonian Institution'},
  sections:[
   {h:'A surprise in a drawer', t:'Kristofer Helgen is a scientist who studies mammals. One day, at a museum in Chicago, he pulled open a drawer of old animal skins and skulls labelled as olingos, tree-climbing cousins of the raccoon. But something was wrong. Some of the skulls were smaller and shaped differently, with different teeth. Their fur was longer and thicker, too. “It was not anything I’d ever seen before,” he said. Could this be a new species?'},
   {h:'Ten years of detective work', t:'Helgen and his team spent about ten years investigating. They examined hundreds of museum specimens, some more than 100 years old, and compared their bones, fur and DNA. They studied old notes about where each animal had been found. The mystery animals all came from [[cloud forests]] high in the Andes Mountains of Colombia and Ecuador, cool, misty forests between about 1,500 and 2,750 metres above sea level. Then the team travelled to Ecuador and, using cameras and patient searching, found the animal alive in the wild.'},
