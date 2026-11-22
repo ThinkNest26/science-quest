@@ -41,7 +41,7 @@
 <script src="js/g1.js?v=45"></script>
 <script src="js/g2.js?v=45"></script>
 <script src="js/g3.js?v=45"></script>
-<script src="js/challenges.js?v=45"></script>
+<script src="js/challenges.js?v=52"></script>
 <script src="js/avatar.js?v=52"></script>
 <script src="js/store.js?v=45"></script>
 <script>
@@ -50,6 +50,7 @@
   var GR = [['kg2','KG2','Year 1'],['g1','Grade 1','Year 2'],['g2','Grade 2','Year 3'],['g3','Grade 3','Year 4'],['g4','Grade 4','Year 5'],['g5','Grade 5','Year 6']];
   var me = S.me(), cur = (me && C[me.grade]) ? me.grade : 'kg2';
   var stage = document.getElementById('stage');
+  function TOP(g){ return (G[g] && G[g].topics) || (window.SQ_CHAL_TOPICS||{})[g] || []; }
   function esc(t){ return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
   function shuffle(a){ a = a.slice(); for (var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)), t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
   function starStr(n){ return '★★★'.slice(0,n) + '☆☆☆'.slice(0,3-n); }
@@ -74,7 +75,7 @@
       g.appendChild(b);
     });
     var t = document.getElementById('topics'); t.innerHTML = '';
-    G[cur].topics.forEach(function(tp){
+    TOP(cur).forEach(function(tp){
       var ch = C[cur][tp.id]; if (!ch) return;
       var qk = 'quiz-'+cur+'-'+tp.id, qs = d.stars[qk]||0;
       var ms = ch.mystery.reduce(function(a,m){ return a + (d.stars['myst-'+m.id]?1:0); }, 0);
@@ -90,7 +91,7 @@
   }
   function open(kind, tid){
     document.getElementById('home').hidden = true; document.getElementById('play').hidden = false;
-    var tp = G[cur].topics.filter(function(x){return x.id===tid;})[0];
+    var tp = TOP(cur).filter(function(x){return x.id===tid;})[0];
     document.getElementById('ptitle').textContent = tp.name + ': ' + (kind==='quiz'?'Topic quiz':kind==='myst'?'Mystery pictures':C[cur][tid].hands.title);
     ({quiz:quiz, myst:myst, hand:hand})[kind](tid);
     window.scrollTo({top:0,behavior:'smooth'});
