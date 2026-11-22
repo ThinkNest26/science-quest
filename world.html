@@ -96,7 +96,7 @@
 <footer class="foot"><div class="wrap"><span>Powered by <a href="https://thinknest.education">ThinkNest Education</a></span><span>True science from around the world, retold for children. Photos credited where used. Not affiliated with any publisher or exam board.</span></div></footer>
 
 <script src="js/art.js?v=42"></script>
-<script src="js/world.js?v=43"></script>
+<script src="js/world.js?v=44"></script>
 <script src="js/avatar.js?v=42"></script>
 <script src="js/store.js?v=42"></script>
 <script src="js/nav.js?v=42"></script>
@@ -104,10 +104,10 @@
 (function(){
   var S = SQ_STORE, A = SQ_ART, W = SQ_WORLD;
   var main = document.getElementById('main');
-  var GN = {g2:'Grade 2 (Year 3)', g3:'Grade 3 (Year 4)'};
-  var TOPIC = {plants:'Plants', animals:'Animals including humans', rocks:'Rocks and fossils', light:'Light', forces:'Forces and magnets', states:'States of matter', sound:'Sound', electricity:'Electricity', living:'Living things and their habitats'};
+  var GN = {kg2:'KG2 (Year 1)', g1:'Grade 1 (Year 2)', g2:'Grade 2 (Year 3)', g3:'Grade 3 (Year 4)'};
+  var TOPIC = {materials:'Materials', seasons:'Seasonal changes', plants:'Plants', animals:'Animals including humans', rocks:'Rocks and fossils', light:'Light', forces:'Forces and magnets', states:'States of matter', sound:'Sound', electricity:'Electricity', living:'Living things and their habitats'};
   var TYPE = {news:['📰','News report'], diary:['📔','Diary']};
-  var RANKS = [[1,'🗞️','Junior Science Reporter','You have read your first true science story!'],[3,'🎙️','Senior Science Reporter','Three true stories read. You are a real science reporter now.'],[5,'🌍','Chief Science Reporter','Five true stories! You know science from all around the world.'],[10,'🏆','World Science Editor','Every true story read. Amazing reporting!']];
+  var RANKS = [[1,'🗞️','Junior Science Reporter','You have read your first true science story!'],[3,'🎙️','Senior Science Reporter','Three true stories read. You are a real science reporter now.'],[5,'🌍','Chief Science Reporter','Five true stories! You know science from all around the world.'],[10,'🧭','World Science Explorer','Ten true stories! You have travelled the world with science.'],[20,'🏆','World Science Editor','Every true story read. Amazing reporting!']];
   function store(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
   function load(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
   function esc(t){ return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
@@ -210,6 +210,7 @@
     for (var x=0;x<=360;x+=30) s += '<path d="M'+x+' 0 V180" stroke="#C9E3F0" stroke-width=".4"/>';
     LAND.forEach(function(p){ s += '<path class="land" d="M'+p.map(function(c){ var q = xy(c[0],c[1]); return q[0].toFixed(1)+' '+q[1].toFixed(1); }).join(' L')+'Z"/>'; });
     pins.forEach(function(a){
+      if (a.lat == null) return;
       var q = xy(a.lon, a.lat), r = opts.big ? 4.5 : 3.6, lab = opts.big ? a.place.split(',')[0] : '';
       var done = (S.data().badges||{})[a.id];
       s += '<g class="pin" data-go="'+a.id+'"><title>'+esc(a.title)+' · '+esc(a.place)+'</title>'+
@@ -268,7 +269,7 @@
     h += '<div class="whero"><div><span class="stamp">TRUE STORY</span> <span class="wtype '+a.type+'" style="margin-left:10px">'+t[0]+' '+t[1]+'</span>'+
       '<h1>'+esc(a.title)+'</h1><p style="font-size:17px;color:var(--ink2);line-height:1.6;margin:0 0 12px">'+esc(a.sum)+'</p>'+
       '<div class="wwhere"><span>📍 '+esc(a.place)+'</span><span>🌍 '+esc(a.continent)+'</span><span>📅 '+esc(a.when)+'</span><span>🔬 '+esc(TOPIC[a.topic]||'')+'</span></div>'+
-      '<div class="wmapbox" style="margin-top:14px">'+map([a])+'</div></div>'+
+      (a.lat==null ? '<div class="wmapbox" style="margin-top:14px;text-align:center;font-size:44px;padding:26px">🌍 🚀<p class="cnote">This story happens in space, about 400 km above the Earth.</p></div>' : '<div class="wmapbox" style="margin-top:14px">'+map([a])+'</div>')+'</div>'+
       '<figure class="wphoto"><img'+(a.photo.fit?' style="object-fit:contain;background:#F4F1EA"':'')+' src="'+esc(a.photo.src)+'" alt="'+esc(a.photo.caption)+'" onerror="this.outerHTML=\'<div class=ph>'+a.art.map(function(k){ return A.icon(k,90).replace(/"/g,'&quot;'); }).join('')+'</div>\'">'+
       '<figcaption><b>Photo:</b> '+esc(a.photo.caption)+(a.photo.credit?' <small>('+esc(a.photo.credit)+')</small>':'')+'</figcaption></figure></div>';
     // the text and the side boxes
@@ -329,7 +330,7 @@
       var d = S.data(), before = W.filter(function(x){ return d.badges[x.id]; }).length, had = !!d.badges[a.id];
       S.read(a.id, first, a.q.length, types); S.badge(a.id);
       var after = W.filter(function(x){ return S.data().badges[x.id]; }).length, r = rank(after), newRank = !had && RANKS.some(function(x){ return x[0]===after; });
-      var stars = first>=7?3:first>=5?2:1;
+      var pr = first/a.q.length, stars = pr>=1?3:pr>=.7?2:1;
       box.innerHTML = '<div class="wq" style="text-align:center"><div class="pressbadge"><span class="em">'+(r?r[1]:'🗞️')+'</span><b>'+esc(r?r[2]:'Science Reporter')+'</b><small style="font-weight:700;color:var(--muted)">'+esc(a.place)+'</small></div>'+
         '<h2>You got '+first+' out of '+a.q.length+' right first time! '+'★★★'.slice(0,stars)+'☆☆☆'.slice(0,3-stars)+'</h2>'+
         (newRank ? '<p style="font-weight:800;color:var(--plum);font-size:18px">🎉 New press badge: '+esc(r[2])+'!</p>' : '')+
