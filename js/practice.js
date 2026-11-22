@@ -588,6 +588,174 @@ g3: [
    {q:'Why are electric wires covered in plastic?', o:['Plastic is an insulator, which keeps us safe','Plastic makes electricity flow faster','Plastic is a conductor'], why:'The plastic coating stops electricity reaching our hands.'},
    {q:'What is an electrical conductor?', o:['A material that lets electricity flow through it','A material that stops electricity','A kind of battery'], why:'Metals such as copper, iron and aluminium are good conductors.'}
   ]}
+],
+/* ===================== Grade 4 = Year 5 ===================== */
+g4: [
+ /* ---------- Living things and their habitats ---------- */
+ {id:'y5-lv-1', topic:'living', short:'Life cycles of mammals, amphibians, insects and birds',
+  nc:'Describe the differences in the life cycles of a mammal, an amphibian, an insect and a bird',
+  qs:[
+   {q:'Which animal’s life cycle is shown?', v:'cycle:frogspawn,tadpole,frog', o:['An amphibian (frog)','A bird','A mammal'], why:'Frogs hatch from spawn as tadpoles, then change into frogs.'},
+   {q:'Which animal’s life cycle is shown?', v:'cycle:eggs,caterpillar,chrysalis,butterfly', o:['An insect (butterfly)','An amphibian','A mammal'], why:'Butterflies go egg → caterpillar → chrysalis → adult.'},
+   {q:'How are most mammal babies born?', o:['Born alive, then fed milk by their mother','Hatched from eggs in water','From a chrysalis'], why:'Most mammals give birth to live young and feed them milk.'},
+   {q:'Which animal hatches from an egg with a hard shell?', o:['Bird|hen','Frog|frog','Rabbit|rabbit'], pic:true, why:'Birds lay eggs with hard shells, usually in a nest.'},
+   {q:'What is metamorphosis?', o:['A big change in body shape during the life cycle','Laying eggs','Feeding a baby milk'], why:'Tadpoles and caterpillars go through metamorphosis.'},
+   {q:'Which stage comes between a caterpillar and a butterfly?', o:['Chrysalis (pupa)','Egg','Tadpole'], why:'Inside the chrysalis, the caterpillar’s body is rebuilt into a butterfly.'}
+  ]},
+ {id:'y5-lv-2', topic:'living', short:'Reproduction in plants and animals',
+  nc:'Describe the life process of reproduction in some plants and animals',
+  qs:[
+   {q:'What do bees carry from flower to flower?', v:'i:sunflower', o:['Pollen','Seeds','Water'], why:'Moving pollen between flowers is called pollination.'},
+   {q:'Which part of a flowering plant becomes the seeds and fruit?', o:['The ovary, after fertilisation','The roots','The leaves'], why:'After pollination, the ovary grows into a fruit with seeds inside.'},
+   {q:'A strawberry plant sends out long stems called runners that grow into new plants. This is…', o:['Asexual reproduction','Sexual reproduction','Pollination'], why:'Only one parent plant is needed, so it is asexual reproduction.'},
+   {q:'How many parents are needed for sexual reproduction?', o:['Two','One','Three'], why:'Sexual reproduction joins cells from two parents.'},
+   {q:'Which of these grows a new plant from a bulb?', v:'i:bulb', o:['Daffodil','Oak','Sunflower'], why:'Daffodils and tulips grow from bulbs.'},
+   {q:'Why do living things reproduce?', o:['To make new living things so the species continues','To get bigger','To keep warm'], why:'Without reproduction, a species would die out.'}
+  ]},
+ /* ---------- Animals, including humans ---------- */
+ {id:'y5-an-1', topic:'animals', short:'Changes as humans grow to old age',
+  nc:'Describe the changes as humans develop to old age',
+  qs:[
+   {q:'Put these stages in order:', v:'cycle:baby,child,adult', o:['Baby → child → teenager → adult → old age','Child → baby → adult','Adult → teenager → baby'], why:'Humans develop through these stages in this order.'},
+   {q:'About how long does a human baby grow inside its mother before birth?', o:['About 9 months','About 9 days','About 9 years'], why:'Human pregnancy (gestation) lasts about 40 weeks.'},
+   {q:'At which stage do the body’s biggest changes towards being an adult happen?', o:['Puberty, during the teenage years','Old age','The first week of life'], why:'Puberty is when the body changes from a child’s to an adult’s.'},
+   {q:'Which change often happens in old age?', o:['Hair may turn grey and skin gets wrinkles','Milk teeth grow','People start to crawl'], why:'Older people’s skin becomes less stretchy and hair loses colour.'},
+   {q:'What can a baby NOT do yet?', v:'i:baby', o:['Walk and talk','Cry','Drink milk'], why:'Babies learn to walk and talk in their first years.'},
+   {q:'Which helps people stay healthy as they get older?', o:['Exercise and a balanced diet','Eating only sweets','Never moving'], why:'Healthy habits help bones and muscles stay strong.'}
+  ]},
+ /* ---------- Properties and changes of materials ---------- */
+ {id:'y5-mt-1', topic:'materials', short:'Compare materials by their properties',
+  nc:'Compare and group together everyday materials on the basis of their properties, including their hardness, solubility, transparency, conductivity (electrical and thermal), and response to magnets',
+  qs:[
+   {q:'Which material is transparent?', o:['Glass|glass','Wood|wood','Brick|brick'], pic:true, why:'You can see clearly through transparent glass.'},
+   {q:'Which material is attracted to a magnet?', v:'i:magnet', o:['An iron nail|nail','A copper coin|coin','A plastic button|button'], pic:true, why:'Iron and steel are magnetic. Most other metals, like copper and aluminium, are not.'},
+   {q:'Which material is soluble in water?', o:['Sugar','Sand','Wood'], why:'Sugar dissolves in water; sand does not.'},
+   {q:'Which is a good thermal insulator for a winter coat?', o:['Wool','Aluminium foil','Steel'], why:'Wool traps air and keeps heat in.'},
+   {q:'Why are saucepans usually made of metal?', o:['Metal is a good thermal conductor','Metal is transparent','Metal is soft'], why:'Heat travels quickly through metal to cook the food.'},
+   {q:'Which is the hardest material?', o:['Diamond','Chalk','Butter'], why:'Diamond is the hardest natural material.'}
+  ]},
+ {id:'y5-mt-2', topic:'materials', short:'Dissolving and recovering substances',
+  nc:'Know that some materials will dissolve in liquid to form a solution, and describe how to recover a substance from a solution',
+  qs:[
+   {q:'Salt is stirred into water until it disappears. What has it made?', o:['A solution','A solid','A gas'], why:'A solution is a liquid with something dissolved in it.'},
+   {q:'How can you get the salt back from salty water?', v:'separate:evaporate', o:['Evaporate the water','Use a sieve','Use a magnet'], why:'Heat makes the water evaporate, leaving the salt behind.'},
+   {q:'Which will dissolve in warm water?', o:['Sugar','Sand','Gravel'], why:'Sugar is soluble.'},
+   {q:'Which word describes sand in water?', o:['Insoluble','Soluble','Transparent'], why:'Sand does not dissolve, so it is insoluble.'},
+   {q:'How can you make sugar dissolve faster?', o:['Use warmer water and stir','Use colder water','Leave it in big lumps'], why:'Warm water and stirring speed up dissolving.'},
+   {q:'Where does the salt go when it dissolves?', o:['It breaks into pieces too tiny to see, spread through the water','It disappears forever','It sinks to the bottom as a lump'], why:'The salt is still there. You can taste it.'}
+  ]},
+ {id:'y5-mt-3', topic:'materials', short:'Separating mixtures',
+  nc:'Use knowledge of solids, liquids and gases to decide how mixtures might be separated, including through filtering, sieving and evaporating',
+  qs:[
+   {q:'Which method is shown?', v:'separate:filter', o:['Filtering','Sieving','Evaporating'], why:'Filter paper lets water through but traps solid bits.'},
+   {q:'Which method is shown?', v:'separate:sieve', o:['Sieving','Filtering','Evaporating'], why:'A sieve keeps the big pieces and lets small grains fall through.'},
+   {q:'How would you separate marbles from sand?', o:['Use a sieve','Use a magnet','Evaporate it'], why:'The marbles are too big to pass through the holes.'},
+   {q:'How would you separate sand from water?', o:['Filter it','Use a sieve with big holes','Use a magnet'], why:'Filter paper catches the sand and lets the water through.'},
+   {q:'How would you separate iron filings from sand?', v:'i:magnet', o:['Use a magnet','Filter it','Evaporate it'], why:'Iron is magnetic; sand is not.'},
+   {q:'Which mixture needs evaporating to separate?', o:['Salt dissolved in water','Rice and peas','Paper clips and sand'], why:'Dissolved salt passes through filters, so the water must be evaporated.'}
+  ]},
+ {id:'y5-mt-4', topic:'materials', short:'Choosing materials using fair tests',
+  nc:'Give reasons, based on evidence from comparative and fair tests, for the particular uses of everyday materials, including metals, wood and plastic',
+  qs:[
+   {q:'Why is a window made of glass?', o:['It is transparent and waterproof','It is soft and bendy','It is magnetic'], why:'We need to see through windows and keep the rain out.'},
+   {q:'Why are pan handles often made of plastic or wood?', o:['They are thermal insulators, so they stay cool','They conduct heat well','They are transparent'], why:'Insulating handles protect your hand from heat.'},
+   {q:'In a fair test of which fabric is most waterproof, what should change?', o:['Only the type of fabric','The amount of water each time','The size of each fabric'], why:'Change one thing; keep everything else the same.'},
+   {q:'Why are wires made of copper inside and plastic outside?', o:['Copper conducts electricity; plastic insulates','Copper is cheap; plastic is heavy','Both conduct'], why:'Each material is chosen for its property.'},
+   {q:'Why is wood used for many chairs and tables?', o:['It is strong and hard','It is transparent','It dissolves'], why:'Wood is strong enough to hold weight.'},
+   {q:'Results: cup A kept tea hot longest. What should the class conclude?', o:['Cup A’s material is the best thermal insulator they tested','Cup A is the biggest','All cups are the same'], why:'Evidence from the test supports the conclusion.'}
+  ]},
+ {id:'y5-mt-5', topic:'materials', short:'Reversible changes',
+  nc:'Demonstrate that dissolving, mixing and changes of state are reversible changes',
+  qs:[
+   {q:'Which is a reversible change?', v:'i:icecube', o:['Ice melting into water','Burning paper','Baking a cake'], why:'Water can be frozen back into ice.'},
+   {q:'Is dissolving salt in water reversible?', o:['Yes, by evaporating the water','No, never','Only with a magnet'], why:'Evaporation gets the salt back.'},
+   {q:'Sand and water are mixed. How can you reverse this?', o:['Filter the mixture','Burn it','You cannot'], why:'Mixing is reversible; filtering separates them.'},
+   {q:'Chocolate melts and then sets hard again in the fridge. This is…', v:'i:chocolate', o:['A reversible change','An irreversible change','Burning'], why:'Melting and freezing can be undone.'},
+   {q:'Which is NOT a reversible change?', o:['Frying an egg','Freezing juice','Melting butter'], why:'A cooked egg cannot be uncooked.'},
+   {q:'What does reversible mean?', o:['It can be changed back','It makes a new material','It cannot be undone'], why:'Reversible changes can be undone.'}
+  ]},
+ {id:'y5-mt-6', topic:'materials', short:'Irreversible changes make new materials',
+  nc:'Explain that some changes result in the formation of new materials, and that this kind of change is not usually reversible, including changes associated with burning and the action of acid on bicarbonate of soda',
+  qs:[
+   {q:'Vinegar is mixed with bicarbonate of soda. It fizzes. What is made?', o:['A new gas, carbon dioxide','Nothing new','Salt water'], why:'The bubbles are a new material, carbon dioxide gas.'},
+   {q:'Wood is burnt on a fire. Can you get the wood back?', o:['No, it has become ash, smoke and gases','Yes, by cooling it','Yes, by adding water'], why:'Burning makes new materials. It is irreversible.'},
+   {q:'Which is an irreversible change?', o:['Baking bread','Melting ice','Dissolving sugar'], why:'Baking changes the dough into new materials.'},
+   {q:'What happens to iron left outside in the rain?', o:['It rusts, making a new material','It melts','It dissolves'], why:'Rust forms when iron reacts with water and oxygen.'},
+   {q:'Which sign tells you a new material might have formed?', o:['Fizzing, a colour change or a smell','The material gets wet','It stays exactly the same'], why:'These are clues that a chemical change has happened.'},
+   {q:'Why must burning only be done with an adult?', o:['Fire is dangerous and can spread','Fire is cold','Burning is reversible'], why:'Always stay safe with heat and flames.'}
+  ]},
+ /* ---------- Earth and space ---------- */
+ {id:'y5-es-1', topic:'space', short:'The Earth and planets orbit the Sun',
+  nc:'Describe the movement of the Earth, and other planets, relative to the Sun in the solar system',
+  qs:[
+   {q:'What is at the centre of our solar system?', v:'orbit:earth', o:['The Sun','The Earth','The Moon'], why:'All the planets orbit the Sun.'},
+   {q:'How long does it take the Earth to orbit the Sun once?', o:['About 365 days (one year)','24 hours','About 1 month'], why:'One orbit of the Sun takes a year.'},
+   {q:'Which planet is ringed in the picture?', v:'planets:3', o:['Earth, the third planet from the Sun','Mars','Mercury'], why:'Mercury, Venus, then Earth.'},
+   {q:'Which planet is the biggest?', v:'planets:5', o:['Jupiter','Mercury','Earth'], why:'Jupiter is the largest planet in our solar system.'},
+   {q:'How many planets orbit our Sun?', o:['8','9','12'], why:'Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus and Neptune.'},
+   {q:'Which planet is closest to the Sun?', o:['Mercury','Neptune','Earth'], why:'Mercury is the closest and smallest planet.'}
+  ]},
+ {id:'y5-es-2', topic:'space', short:'The Moon orbits the Earth',
+  nc:'Describe the movement of the Moon relative to the Earth',
+  qs:[
+   {q:'What does the Moon orbit?', v:'orbit:moon', o:['The Earth','The Sun only','Mars'], why:'The Moon travels around the Earth.'},
+   {q:'About how long does the Moon take to orbit the Earth?', o:['About a month (about 27 days)','About a day','About a year'], why:'The Moon takes about 27 days to go round the Earth.'},
+   {q:'Why can we see the Moon?', o:['It reflects light from the Sun','It makes its own light','It is on fire'], why:'The Moon is not a light source.'},
+   {q:'Why does the Moon seem to change shape during the month?', o:['We see different amounts of its sunlit side as it orbits','It really changes shape','Clouds cover parts of it'], why:'These changing shapes are called phases.'},
+   {q:'What is a natural satellite?', o:['A moon orbiting a planet','A planet orbiting a star','A spacecraft'], why:'The Moon is Earth’s natural satellite.'},
+   {q:'Does the Moon always show the same face to Earth?', o:['Yes','No, it shows every side each night','Only in winter'], why:'The Moon spins once for each orbit, so we always see the same side.'}
+  ]},
+ {id:'y5-es-3', topic:'space', short:'The Sun, Earth and Moon are spheres',
+  nc:'Describe the Sun, Earth and Moon as approximately spherical bodies',
+  qs:[
+   {q:'What shape is the Earth (approximately)?', o:['A sphere','A flat disc','A cube'], why:'Photos from space show the Earth is round like a ball.'},
+   {q:'Which is the biggest?', o:['The Sun','The Earth','The Moon'], why:'The Sun is far bigger than the Earth; the Moon is smaller than the Earth.'},
+   {q:'What is the Sun?', o:['A star','A planet','A moon'], why:'The Sun is our nearest star.'},
+   {q:'What evidence shows the Earth is round?', o:['Photos from space and ships disappearing over the horizon','The ground looks flat','Clouds'], why:'Ships sink out of sight hull-first because the Earth curves.'},
+   {q:'Which shape is the Moon?', o:['Approximately a sphere','A crescent shape all the time','A flat circle'], why:'We see crescents, but the Moon itself is round like a ball.'},
+   {q:'Order from smallest to largest:', o:['Moon, Earth, Sun','Sun, Earth, Moon','Earth, Moon, Sun'], why:'The Moon is smallest; the Sun is largest.'}
+  ]},
+ {id:'y5-es-4', topic:'space', short:'Day, night and the Sun’s path',
+  nc:'Use the idea of the Earth’s rotation to explain day and night and the apparent movement of the sun across the sky',
+  qs:[
+   {q:'Is it day or night for the person at the red dot?', v:'daynight:day', o:['Day','Night','Neither'], why:'The red dot is on the side facing the Sun.'},
+   {q:'Is it day or night for the person at the red dot?', v:'daynight:night', o:['Night','Day','Midday'], why:'The red dot is on the side facing away from the Sun.'},
+   {q:'Why do we have day and night?', o:['The Earth spins on its axis','The Sun goes around the Earth every day','The Moon blocks the Sun at night'], why:'As the Earth rotates, places turn towards and away from the Sun.'},
+   {q:'How long does the Earth take to spin once?', o:['About 24 hours','About 365 days','About a month'], why:'One full spin is one day.'},
+   {q:'Where does the Sun appear to rise?', v:'sunpath:rise', o:['In the east','In the west','In the north'], why:'The Sun appears to rise in the east and set in the west.'},
+   {q:'Does the Sun really move across the sky?', o:['No, it seems to move because the Earth spins','Yes, it goes round the Earth','Yes, it bounces'], why:'The Sun’s movement is only apparent.'}
+  ]},
+ /* ---------- Forces ---------- */
+ {id:'y5-fo-1', topic:'forces', short:'Gravity',
+  nc:'Explain that unsupported objects fall towards the Earth because of the force of gravity acting between the Earth and the falling object',
+  qs:[
+   {q:'What force pulls the apple to the ground?', v:'forces:fall', o:['Gravity','Friction','Magnetism'], why:'Gravity pulls objects towards the centre of the Earth.'},
+   {q:'Which scientist is famous for explaining gravity?', o:['Isaac Newton','Charles Darwin','Mary Anning'], why:'Newton described gravity in the 1600s.'},
+   {q:'Forces are measured in…', o:['Newtons (N)','Kilograms (kg)','Metres (m)'], why:'The unit of force is named after Isaac Newton.'},
+   {q:'What is weight?', o:['The force of gravity pulling on an object','How big an object is','How long an object is'], why:'Weight is a force, measured in newtons.'},
+   {q:'In which direction does gravity pull on Earth?', o:['Down, towards the centre of the Earth','Up into the sky','Sideways'], why:'Everywhere on Earth, gravity pulls towards the centre.'},
+   {q:'Why would you weigh less on the Moon?', o:['The Moon’s gravity is weaker','You would be smaller','There is no air'], why:'The Moon’s gravity is about one sixth of Earth’s.'}
+  ]},
+ {id:'y5-fo-2', topic:'forces', short:'Air resistance, water resistance and friction',
+  nc:'Identify the effects of air resistance, water resistance and friction, that act between moving surfaces',
+  qs:[
+   {q:'Which force does the parachute use to slow down?', v:'forces:parachute', o:['Air resistance','Magnetism','Gravity'], why:'The big canopy catches lots of air.'},
+   {q:'Which force acts against the boat as it moves?', v:'forces:boat', o:['Water resistance','Air resistance only','Magnetism'], why:'Water pushes against objects moving through it.'},
+   {q:'Which force slows the box sliding across the carpet?', v:'forces:slide', o:['Friction','Gravity','Upthrust'], why:'Friction acts between two surfaces rubbing together.'},
+   {q:'Which shape moves through water most easily?', o:['A streamlined, pointed shape','A flat square','A wide cube'], why:'Streamlined shapes reduce water resistance.'},
+   {q:'Which surface has the most friction?', o:['Rough sandpaper','Smooth ice','Polished glass'], why:'Rough surfaces grip more.'},
+   {q:'Why do trainers have patterned soles?', v:'i:trainer', o:['To increase friction so you do not slip','To make you faster through the air','To make them lighter'], why:'Grip comes from friction.'}
+  ]},
+ {id:'y5-fo-3', topic:'forces', short:'Levers, pulleys and gears',
+  nc:'Recognise that some mechanisms, including levers, pulleys and gears, allow a smaller force to have a greater effect',
+  qs:[
+   {q:'Where should you push down to lift the box with the least force?', v:'lever:far', o:['Far from the pivot, as shown','Right next to the pivot','On the box'], why:'Pushing far from the pivot needs less force.'},
+   {q:'What is the pivot of a lever?', o:['The point it turns around','The heavy load','The handle'], why:'The pivot is also called the fulcrum.'},
+   {q:'What is this machine?', v:'pulley', o:['A pulley','A lever','A gear'], why:'A pulley is a wheel with a rope running around it.'},
+   {q:'What is this mechanism?', v:'gears', o:['Gears','Pulleys','Levers'], why:'Gears are wheels with teeth that fit together.'},
+   {q:'Which gear turns faster?', v:'gears', o:['B, the small gear','A, the big gear','Both the same'], why:'The small gear has fewer teeth, so it turns more times for each turn of the big gear.'},
+   {q:'Which of these is a lever?', o:['Scissors','A ball','A bowl'], why:'Scissors are two levers joined at a pivot.'}
+  ]}
 ]
 };
 /* topic names for each grade (practice uses the same topics as the story library where they exist) */
@@ -595,5 +763,6 @@ window.SQ_PRAC_TOPICS = {
   kg2: {plants:'Plants', animals:'Animals, including humans', materials:'Everyday materials', seasons:'Seasonal changes'},
   g1:  {living:'Living things and their habitats', plants:'Plants', animals:'Animals, including humans', materials:'Uses of everyday materials'},
   g2:  {plants:'Plants', animals:'Animals, including humans', rocks:'Rocks', light:'Light', forces:'Forces and magnets'},
-  g3:  {living:'Living things and their habitats', animals:'Animals, including humans', states:'States of matter', sound:'Sound', electricity:'Electricity'}
+  g3:  {living:'Living things and their habitats', animals:'Animals, including humans', states:'States of matter', sound:'Sound', electricity:'Electricity'},
+  g4:  {living:'Living things and their habitats', animals:'Animals, including humans', materials:'Properties and changes of materials', space:'Earth and space', forces:'Forces'}
 };

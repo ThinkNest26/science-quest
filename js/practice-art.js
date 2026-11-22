@@ -283,6 +283,81 @@
     return wrap(s, '#F7F9FB');
   }
 
+
+  /* ---------- Year 5 diagrams ---------- */
+  // the Sun and 8 planets in order; n (1-8) rings one planet
+  function planets(n){
+    var sizes = [4,7,7.5,5,16,14,10,10], cols = ['#9AA3AE','#E6C07B','#3D8BE0','#D9573A','#D9A066','#E8CF8F','#8FD3E0','#3B5BDB'], s = '<rect width="320" height="180" fill="#141827"/><circle cx="-40" cy="90" r="70" fill="#FFD966"/>';
+    var x = 46;
+    sizes.forEach(function(r, i){ x += (i ? sizes[i-1] : 0) + r + 9; s += '<circle cx="'+x+'" cy="90" r="'+r+'" fill="'+cols[i]+'"/>'; if (i===5) s += '<ellipse cx="'+x+'" cy="90" rx="'+(r+8)+'" ry="4" fill="none" stroke="#E8CF8F" stroke-width="2"/>'; if (+n===i+1) s += '<circle cx="'+x+'" cy="90" r="'+(r+8)+'" fill="none" stroke="#FF6B5E" stroke-width="3" stroke-dasharray="5 4"/>'; });
+    return '<svg viewBox="0 0 320 180" width="100%" role="img" aria-label="Question picture" style="display:block;max-width:440px;margin:0 auto;border-radius:16px">'+s+'</svg>';
+  }
+  // orbits: earth (Earth around the Sun) | moon (Moon around the Earth)
+  function orbit(kind){
+    var s = '<rect width="320" height="180" fill="#141827"/>';
+    if (kind==='moon') s += '<ellipse cx="160" cy="90" rx="110" ry="60" fill="none" stroke="#9AA3AE" stroke-width="2" stroke-dasharray="5 5"/><circle cx="160" cy="90" r="26" fill="#3D8BE0"/><path d="M146 80 q8 -8 16 2 q6 10 -4 14 M168 98 q8 2 6 10" stroke="#47A86A" stroke-width="6" fill="none"/><circle cx="270" cy="90" r="11" fill="#D8DCE3"/>'+arrow(214, 148, 250, 140);
+    else s += '<ellipse cx="160" cy="90" rx="128" ry="66" fill="none" stroke="#9AA3AE" stroke-width="2" stroke-dasharray="5 5"/><circle cx="160" cy="90" r="30" fill="#FFD966"/><circle cx="288" cy="90" r="11" fill="#3D8BE0"/><path d="M283 86 q4 -4 8 1" stroke="#47A86A" stroke-width="3" fill="none"/>'+arrow(224, 154, 262, 146);
+    return '<svg viewBox="0 0 320 180" width="100%" role="img" aria-label="Question picture" style="display:block;max-width:440px;margin:0 auto;border-radius:16px">'+s+'</svg>';
+  }
+  // day and night: Sun on the left lights half of the Earth. where: day | night
+  function daynight(where){
+    var s = '<rect width="320" height="180" fill="#141827"/><circle cx="20" cy="90" r="46" fill="#FFD966"/>'+
+      '<path d="M84 70 H130 M84 90 H130 M84 110 H130" stroke="#FFE58A" stroke-width="3" stroke-dasharray="6 5"/>'+
+      '<circle cx="210" cy="90" r="64" fill="#3D8BE0"/><path d="M180 60 q20 -14 40 4 q10 16 -8 26 M200 120 q16 -6 28 8" stroke="#47A86A" stroke-width="10" fill="none" stroke-linecap="round"/>'+
+      '<path d="M210 26 A64 64 0 0 1 210 154Z" fill="#0B1020" opacity=".72"/>';
+    var px = where==='night' ? 262 : 158;
+    s += '<circle cx="'+px+'" cy="90" r="7" fill="#FF6B5E" stroke="#fff" stroke-width="2"/>';
+    return '<svg viewBox="0 0 320 180" width="100%" role="img" aria-label="Question picture" style="display:block;max-width:440px;margin:0 auto;border-radius:16px">'+s+'</svg>';
+  }
+  // the Sun's path across the sky. pos: rise | noon | set (no compass letters shown)
+  function sunpath(pos){
+    var s = '<rect width="320" height="180" fill="#DCEFFF"/><path d="M30 150 Q160 -10 290 150" fill="none" stroke="#F6B93B" stroke-width="2" stroke-dasharray="6 6"/>'+
+      '<rect x="0" y="150" width="320" height="30" fill="#9AD27A"/><rect x="140" y="118" width="40" height="32" fill="#E0607E"/><path d="M134 120 L160 98 L186 120Z" fill="#8A3A52"/>';
+    var at = {rise:[40,138], noon:[160,48], set:[280,138]}[pos] || [160,48];
+    s += '<circle cx="'+at[0]+'" cy="'+at[1]+'" r="16" fill="#FFD966" stroke="#F6B93B" stroke-width="3"/>' + label(30, 172, 'East') + label(290, 172, 'West');
+    return wrap(s, '#DCEFFF');
+  }
+  // a lever (seesaw). where: near | far (where you push, relative to the pivot)
+  function lever(where){
+    var px = where==='near' ? 190 : 70;
+    var s = '<rect x="0" y="150" width="320" height="30" fill="#E9D3A1"/><path d="M200 150 L218 118 L236 150Z" fill="#4A5677"/>'+
+      '<rect x="30" y="110" width="270" height="10" rx="4" fill="#B7834A"/><rect x="250" y="76" width="40" height="34" rx="4" fill="#9AA3AE"/>'+
+      arrow(px, 60, px, 104);
+    return wrap(s, '#F7F9FB');
+  }
+  // a pulley lifting a load
+  function pulley(){
+    return wrap('<rect x="80" y="10" width="160" height="10" fill="#4A5677"/><path d="M160 20 V40" stroke="#4A5677" stroke-width="5"/><circle cx="160" cy="54" r="16" fill="#9AA3AE" stroke="#4A5677" stroke-width="4"/>'+
+      '<path d="M144 54 V130 M176 54 V100" stroke="#B7834A" stroke-width="3"/><rect x="126" y="130" width="36" height="30" rx="4" fill="#E0607E"/>'+arrow(176, 100, 176, 150)+
+      '<rect x="0" y="160" width="320" height="20" fill="#E9D3A1"/>', '#F7F9FB');
+  }
+  // two meshing gears, big and small
+  function gears(){
+    function gear(cx, cy, r, n, col){ var s = '', i; for (i=0;i<n;i++){ var a = i*2*Math.PI/n; s += '<rect x="'+(cx-5)+'" y="'+(cy-r-8)+'" width="10" height="12" fill="'+col+'" transform="rotate('+(a*180/Math.PI)+' '+cx+' '+cy+')"/>'; } return s + '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="'+col+'"/><circle cx="'+cx+'" cy="'+cy+'" r="6" fill="#fff"/>'; }
+    return wrap(gear(120, 90, 50, 20, '#3D8BE0') + gear(200, 90, 22, 9, '#F6B93B') + label(120, 170, 'A') + label(200, 170, 'B'), '#F7F9FB');
+  }
+  // forces on an object. kind: fall | parachute | boat | slide
+  function forces(kind){
+    var s = '';
+    if (kind==='fall') s = icon('apple', 120, 20, .6) + arrow(160, 100, 160, 160) + '<rect x="0" y="166" width="320" height="14" fill="#9AD27A"/>';
+    else if (kind==='parachute') s = '<path d="M100 60 Q160 -6 220 60Z" fill="#E0607E"/><path d="M100 60 L150 120 M220 60 L170 120 M160 60 V120" stroke="#4A5677" stroke-width="2"/><rect x="146" y="118" width="28" height="28" rx="6" fill="#3D8BE0"/>' + arrow(160, 146, 160, 176) + arrow(260, 110, 260, 60);
+    else if (kind==='boat') s = '<rect x="0" y="100" width="320" height="80" fill="#5BA9D6"/><path d="M100 100 H230 L210 124 H120Z" fill="#E0607E"/><path d="M165 100 V40 L210 92Z" fill="#fff" stroke="#9AA3AE"/>' + arrow(120, 140, 240, 140) + arrow(300, 112, 250, 112);
+    else s = '<rect x="0" y="130" width="320" height="50" fill="#B8536B"/><rect x="120" y="90" width="70" height="40" rx="6" fill="#F6B93B"/>' + arrow(200, 110, 280, 110) + arrow(110, 124, 60, 124);
+    return wrap(s, '#F7F9FB');
+  }
+  // separating mixtures. kind: filter | sieve | evaporate
+  function separate(kind){
+    var s = '';
+    if (kind==='filter') s = '<path d="M110 30 H210 L170 90 V110 H150 V90Z" fill="#fff" stroke="#9AA3AE" stroke-width="3"/><path d="M118 36 H202 L160 92Z" fill="#F7F1E3" stroke="#C9C1AE" stroke-width="2"/><path d="M130 42 H190 L160 80Z" fill="#B7834A" opacity=".7"/>'+
+      '<path d="M130 112 V170 H190 V112" fill="none" stroke="#9AA3AE" stroke-width="3"/><rect x="132" y="146" width="56" height="22" fill="#8FC9E8"/>';
+    else if (kind==='sieve') s = '<ellipse cx="160" cy="70" rx="80" ry="18" fill="#fff" stroke="#4A5677" stroke-width="3"/><path d="M80 70 Q160 140 240 70" fill="#D8DCE3" stroke="#4A5677" stroke-width="3"/><path d="M110 92 l100 0 M100 80 l120 0 M126 104 l70 0" stroke="#9AA3AE" stroke-width="1.5"/>'+
+      [[120,64],[150,58],[176,66],[204,60]].map(function(p){ return '<circle cx="'+p[0]+'" cy="'+p[1]+'" r="9" fill="#9AA3AE" stroke="#6B7591"/>'; }).join('')+'<path d="M140 130 v10 M160 134 v12 M180 128 v10" stroke="#E6CF96" stroke-width="4" stroke-dasharray="2 4"/><ellipse cx="160" cy="162" rx="50" ry="10" fill="#E6CF96"/>';
+    else s = '<ellipse cx="160" cy="80" rx="70" ry="16" fill="#fff" stroke="#9AA3AE" stroke-width="3"/><path d="M90 80 Q160 120 230 80" fill="#8FC9E8" stroke="#9AA3AE" stroke-width="3"/>'+
+      [[130,92],[150,96],[172,94],[190,90]].map(function(p){ return '<rect x="'+p[0]+'" y="'+p[1]+'" width="6" height="6" fill="#fff" stroke="#9AA3AE" transform="rotate(20 '+p[0]+' '+p[1]+')"/>'; }).join('')+
+      '<path d="M140 70 q-6 -12 0 -24 t0 -24 M180 70 q-6 -12 0 -24 t0 -24" stroke="#8FC9E8" stroke-width="3" fill="none" stroke-dasharray="4 4"/><path d="M110 104 L120 150 M210 104 L200 150" stroke="#4A5677" stroke-width="4"/><path d="M148 160 q6 -16 12 -4 q6 -16 12 0 q-6 8 -24 4Z" fill="#E2873A"/>';
+    return wrap(s, '#F7F9FB');
+  }
+
   window.SQ_VIS = function(spec){
     if (!spec) return '';
     var p = spec.split(':'), k = p[0], a = p[1] || '';
@@ -293,6 +368,8 @@
       case 'shadow': return shadow(a); case 'magnets': return magnets(a); case 'soil': return soil(a); case 'flower': return flower(a);
       case 'circuit': return circuit(a); case 'gut': return gut(a); case 'jaw': return jaw(a); case 'thermo': return thermo(a); case 'wcycle': return wcycle(a);
       case 'particles': return particles(a); case 'bottles': return bottles(); case 'drums': return drums(); case 'soundpath': return soundpath(a);
+      case 'planets': return planets(a); case 'orbit': return orbit(a); case 'daynight': return daynight(a); case 'sunpath': return sunpath(a); case 'lever': return lever(a);
+      case 'pulley': return pulley(); case 'gears': return gears(); case 'forces': return forces(a); case 'separate': return separate(a);
       case 'celery': return celery(a); case 'bars': return bars(a.split(',')); case 'see': return see(a); case 'ramp': return ramp(a); case 'scene': return scene(a);
     }
     return '';

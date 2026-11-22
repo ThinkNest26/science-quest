@@ -827,5 +827,214 @@ window.SQ_PRAC_MORE = {
   {q:'A coin conducts, but a coin covered in sticky tape does not. Why?', o:['The tape is an insulator and stops contact with the metal','The coin stops being metal','Tape is magnetic'], why:'The insulating tape blocks the flow.'},
   {q:'Which test is fair when testing materials for conductivity?', o:['Use the same circuit and change only the material','Use a new cell for some materials','Use different bulbs each time'], why:'Only the material should change.'},
   {q:'Why should you never fly a kite near overhead power lines?', o:['Electricity could travel through the kite string to you','Kites block the wires','Power lines are magnets'], why:'Damp string can conduct, and power lines carry very high voltages.'}
+ ]},
+/* ---------- Grade 4 = Year 5 ---------- */
+'y5-lv-1': {m:[
+  {q:'What is a young frog with legs and a tail called?', o:['A froglet','A caterpillar','A chick'], why:'Tadpoles grow legs and become froglets before losing their tails.'},
+  {q:'Which stage of the butterfly life cycle eats the most?', v:'i:caterpillar', o:['The caterpillar (larva)','The egg','The chrysalis'], why:'Caterpillars eat and grow quickly.'},
+  {q:'Where does a tadpole live?', o:['In water','In a nest','Underground'], why:'Tadpoles breathe with gills in ponds.'},
+  {q:'How does a mother rabbit feed her babies?', v:'i:rabbit', o:['With milk','With seeds she carries','With nectar'], why:'Rabbits are mammals and feed their young milk.'},
+  {q:'Which animal does NOT go through metamorphosis?', o:['A dog','A frog','A butterfly'], why:'Puppies look like small dogs and just grow bigger.'},
+  {q:'Who keeps bird eggs warm?', v:'i:eggs', o:['The parent birds, sitting on them','Nobody','The Sun only'], why:'Birds incubate their eggs by sitting on them.'}
+ ], s:[
+  {q:'Grasshoppers hatch as nymphs that look like small adults. How is this different from a butterfly?', o:['There is no chrysalis stage','Grasshoppers are mammals','Butterflies have no eggs'], why:'This is called incomplete metamorphosis.'},
+  {q:'Most frogs lay hundreds of eggs, but elephants have one calf at a time. Why might frogs lay so many?', o:['Many eggs and tadpoles are eaten, so lots are needed for some to survive','Frogs are bigger','Elephants cannot have babies'], why:'Animals that give little care tend to have more young.'},
+  {q:'Which is true of BOTH birds and amphibians?', o:['They hatch from eggs','They feed their young milk','They go through a chrysalis'], why:'Both lay eggs, though bird eggs have hard shells.'},
+  {q:'A naturalist like David Attenborough studies life cycles. Why is it useful to compare them?', o:['It shows how different animals survive and grow','It makes animals live longer','It changes the animals'], why:'Comparing life cycles helps us understand and protect animals.'}
+ ]},
+'y5-lv-2': {m:[
+  {q:'What is pollination?', o:['Moving pollen from one flower to another','Watering a plant','Planting a seed'], why:'Insects, birds and the wind can pollinate flowers.'},
+  {q:'Which plant can grow from a cutting?', o:['A geranium stem placed in water','A rock','A pebble'], why:'Many plants grow new roots from cut stems.'},
+  {q:'How are dandelion seeds spread?', v:'i:dandelion', o:['By the wind','By magnets','By fish'], why:'Their fluffy parachutes float in the wind.'},
+  {q:'A potato sprouts new shoots. This is…', o:['Asexual reproduction from a tuber','Pollination','Metamorphosis'], why:'One potato can grow a new plant.'},
+  {q:'Why do many flowers have bright petals and sweet smells?', v:'i:rose', o:['To attract insects for pollination','To scare animals','To keep warm'], why:'Insects carry pollen while visiting.'},
+  {q:'After fertilisation, what grows inside a fruit?', v:'i:apple', o:['Seeds','Leaves','Roots'], why:'Seeds can grow into new plants.'}
+ ], s:[
+  {q:'Why are plants grown from cuttings exactly like the parent plant?', o:['They come from one parent (asexual reproduction)','They come from two parents','They are grown in the dark'], why:'Asexual reproduction makes copies of one parent.'},
+  {q:'Why is it useful for a species to reproduce sexually?', o:['Offspring are a mix of two parents, so they vary','It is faster','It needs only one parent'], why:'Variation can help a species survive changes.'},
+  {q:'Spider plants make baby plantlets on long stems. Which word describes this?', o:['Asexual reproduction','Pollination','Germination'], why:'Only one parent is involved.'},
+  {q:'Why might falling bee numbers worry farmers?', o:['Fewer bees means fewer flowers are pollinated, so fewer fruits grow','Bees eat crops','Bees make soil'], why:'Many crops depend on insect pollination.'}
+ ]},
+'y5-an-1': {m:[
+  {q:'What is the stage between childhood and adulthood called?', o:['Adolescence (the teenage years)','Infancy','Old age'], why:'Adolescence is when puberty happens.'},
+  {q:'A toddler is usually aged about…', o:['1 to 3 years','13 to 19 years','70 years'], why:'Toddlers are learning to walk and talk.'},
+  {q:'Which stage comes after adulthood?', o:['Old age','Childhood','Babyhood'], why:'Old age is the last stage of life.'},
+  {q:'What happens to a child’s milk teeth?', o:['They fall out and adult teeth grow','They grow bigger','They turn into molars at birth'], why:'Children lose 20 milk teeth.'},
+  {q:'Which of these mammals has the longest gestation?', v:'bars:Human=9,Hamster=0.5,Cat=2', o:['Human (about 9 months)','Hamster','Cat'], why:'Bigger mammals usually have longer gestation periods.'},
+  {q:'What is gestation?', o:['The time a baby grows inside its mother','The time spent at school','A type of food'], why:'Gestation is how long pregnancy lasts.'}
+ ], s:[
+  {q:'An elephant’s gestation is about 22 months. A mouse’s is about 3 weeks. What pattern might this suggest?', o:['Larger mammals often have longer gestation','Smaller mammals take longer','There is never any pattern'], why:'Size and gestation are often linked in mammals.'},
+  {q:'Why do older people often need glasses?', o:['The lens in the eye becomes less flexible with age','Eyes get bigger','Light changes'], why:'Many bodily changes happen with age.'},
+  {q:'Why are babies born with soft spots on their skulls?', o:['The skull bones have not joined yet, allowing growth','Babies have no bones','To help them hear'], why:'The bones join as the baby grows.'},
+  {q:'Life expectancy is how long people are likely to live. Which can increase it?', o:['Good healthcare, food and exercise','Smoking','Never sleeping'], why:'Healthy lifestyles and medicine help people live longer.'}
+ ]},
+'y5-mt-1': {m:[
+  {q:'Which material is opaque?', o:['Wood','Clear glass','Clear plastic wrap'], why:'Light cannot pass through wood.'},
+  {q:'Which metal is NOT magnetic?', o:['Aluminium','Iron','Steel'], why:'Aluminium cans are not attracted to magnets.'},
+  {q:'Frosted glass lets some light through but you cannot see clearly. It is…', o:['Translucent','Transparent','Opaque'], why:'Translucent materials let some light through.'},
+  {q:'Which is an electrical conductor?', o:['Copper','Rubber','Wood'], why:'Metals conduct electricity.'},
+  {q:'Which would you test with a magnet?', o:['Response to magnets','Transparency','Solubility'], why:'Different tests show different properties.'},
+  {q:'Which property makes rubber good for wellington boots?', o:['It is waterproof and flexible','It is transparent','It is magnetic'], why:'Rubber keeps water out and bends as you walk.'}
+ ], s:[
+  {q:'Why is a metal spoon a bad choice for stirring very hot soup for a long time?', o:['Metal conducts heat to your hand','Metal is transparent','Metal dissolves'], why:'Thermal conductors carry heat.'},
+  {q:'How could you test which material is hardest fairly?', o:['Scratch each with the same object and compare the marks','Look at them','Weigh them'], why:'Harder materials scratch less.'},
+  {q:'Steel cans are recycled using magnets. Why does this separate them from aluminium cans?', o:['Steel is magnetic; aluminium is not','Aluminium is heavier','Steel dissolves'], why:'Recycling plants use this property.'},
+  {q:'Which property is most important for a teapot?', o:['Waterproof and heat-resistant','Magnetic','Transparent'], why:'It must hold hot water safely.'}
+ ]},
+'y5-mt-2': {m:[
+  {q:'In salty water, what is the solvent?', o:['The water','The salt','The spoon'], why:'The solvent is the liquid that does the dissolving.'},
+  {q:'In salty water, what is the solute?', o:['The salt','The water','The cup'], why:'The solute is what dissolves.'},
+  {q:'Which does NOT dissolve in water?', o:['Flour (it makes a cloudy mixture)','Sugar','Salt'], why:'Flour is insoluble and makes the water cloudy.'},
+  {q:'What happens when no more sugar will dissolve?', o:['The solution is saturated','The water boils','The sugar disappears'], why:'A saturated solution cannot dissolve any more.'},
+  {q:'Which makes a solution?', o:['Coffee granules in hot water','Sand in water','Pebbles in water'], why:'Coffee granules dissolve.'},
+  {q:'You leave salty water on a sunny windowsill. What is left after a few days?', o:['Salt crystals','Sand','Nothing'], why:'The water evaporates and the salt stays.'}
+ ], s:[
+  {q:'Why does more sugar dissolve in hot tea than in iced tea?', o:['Warmer water can dissolve more solute','Ice makes sugar bigger','Hot tea has less water'], why:'Temperature affects solubility.'},
+  {q:'You want to test whether stirring makes salt dissolve faster. What must stay the same?', o:['The amount of salt, water and the temperature','The stirring','Nothing'], why:'Only stirring should change.'},
+  {q:'Can you recover sugar from sugar water by filtering?', o:['No, dissolved sugar passes through the filter paper','Yes, easily','Only with a sieve'], why:'Filtering only traps undissolved solids.'},
+  {q:'Seawater is about 3.5% salt. How might people get salt from it?', o:['Let the Sun evaporate it in shallow pools','Freeze it','Filter it'], why:'Salt pans use evaporation.'}
+ ]},
+'y5-mt-3': {m:[
+  {q:'Which method is shown?', v:'separate:evaporate', o:['Evaporating','Sieving','Filtering'], why:'Heating makes the water evaporate.'},
+  {q:'How would you separate rice from flour?', o:['Use a sieve','Use a magnet','Evaporate it'], why:'Flour grains are smaller than rice grains.'},
+  {q:'Which mixture can a magnet separate?', o:['Paper clips and sand','Salt and water','Rice and flour'], why:'Steel paper clips are magnetic.'},
+  {q:'Muddy water is filtered. What stays in the filter paper?', o:['The soil','The water','Nothing'], why:'The solid bits are too big to pass through.'},
+  {q:'Which mixture needs TWO steps to separate: sand, salt and water?', o:['Filter out the sand, then evaporate the water','Use only a magnet','Use only a sieve'], why:'Filtering removes sand; evaporating recovers salt.'},
+  {q:'Why does a sieve not separate salt from water?', o:['Dissolved salt pieces are far too small','Salt is magnetic','Water is solid'], why:'Dissolved particles pass through any sieve.'}
+ ], s:[
+  {q:'A mixture contains iron filings, sand, salt and water. What is the best order of methods?', o:['Magnet, then filter, then evaporate','Evaporate, then magnet','Sieve only'], why:'Remove each part using its own property.'},
+  {q:'Why are coffee filters made of paper with tiny holes?', o:['Water passes through, but coffee grounds are trapped','To make coffee magnetic','To dissolve the grounds'], why:'Filtering separates insoluble solids from liquids.'},
+  {q:'Gold panners swirl river gravel in water. What property helps separate the gold?', o:['Gold is very heavy for its size, so it sinks','Gold is magnetic','Gold dissolves'], why:'Heavy gold settles at the bottom of the pan.'},
+  {q:'Why is it safer to evaporate salty water on a sunny windowsill rather than over a flame?', o:['There is no risk of burns or fire','The salt changes','It is quicker'], why:'Heat sources need care and adult supervision.'}
+ ]},
+'y5-mt-4': {m:[
+  {q:'Why are many bottles made of plastic?', o:['Plastic is light, waterproof and does not break easily','Plastic is magnetic','Plastic is very heavy'], why:'These properties suit carrying drinks.'},
+  {q:'Why are bridges often made of steel?', o:['Steel is very strong','Steel is transparent','Steel dissolves'], why:'Bridges must hold heavy loads.'},
+  {q:'A class tests materials for a coat. Which result would show the best material?', o:['Least water passes through it','It is the most colourful','It is the heaviest'], why:'A coat needs to be waterproof.'},
+  {q:'In a fair test, why do you repeat measurements?', o:['To check the results are reliable','To make it longer','To change the results'], why:'Repeats help spot mistakes.'},
+  {q:'Why is cardboard used for cereal boxes?', o:['It is light, cheap, and can be recycled','It is transparent','It conducts electricity'], why:'Cardboard suits packaging.'},
+  {q:'Why are electrical plugs covered in plastic?', o:['Plastic is an electrical insulator','Plastic is a conductor','Plastic is heavy'], why:'Insulators protect us from electric shocks.'}
+ ], s:[
+  {q:'Spencer Silver made a weak glue by accident; it became the glue on sticky notes. What does this show?', o:['A material’s properties can suit an unexpected use','Weak glue is useless','Glue is always strong'], why:'Scientists and inventors look for uses for properties.'},
+  {q:'Results: foam kept ice frozen 3 hours, foil 1 hour, cotton 2 hours. Which is the best thermal insulator?', o:['Foam','Foil','Cotton'], why:'The longest-lasting ice shows the best insulator.'},
+  {q:'Why might a scientist test a new material many times before it is used in a plane?', o:['To be sure it is strong and safe in every condition','Because tests are fun','To make it heavier'], why:'Evidence from repeated tests matters for safety.'},
+  {q:'Which variable is the one you measure in a test of how fast ice melts in different cups?', o:['The time for the ice to melt','The type of cup','The size of the ice'], why:'You change the cup and measure the melting time.'}
+ ]},
+'y5-mt-5': {m:[
+  {q:'Which change can be reversed?', o:['Freezing water into ice','Burning a match','Cooking pasta'], why:'Ice can melt back into water.'},
+  {q:'Wax melts in a candle and sets again. Is this reversible?', o:['Yes','No','Only with a magnet'], why:'Melting and solidifying are reversible.'},
+  {q:'Raisins and nuts are mixed in a bowl. Can you separate them?', o:['Yes, by picking them out','No','Only by burning'], why:'Mixing is reversible.'},
+  {q:'Water evaporates from a puddle and later falls as rain. What does this show?', o:['Evaporation and condensation are reversible','Water is destroyed','Rain is a new material'], why:'Water changes state but is still water.'},
+  {q:'Which is reversible: dissolving sugar, or burning sugar?', o:['Dissolving sugar','Burning sugar','Both'], why:'Burning makes new materials.'},
+  {q:'Butter melts in a hot pan, then cools. It becomes…', o:['Solid again','A new material','A gas'], why:'Melting is a reversible change of state.'}
+ ], s:[
+  {q:'Why is melting chocolate reversible but toasting bread is not?', o:['Melting only changes state; toasting makes new materials','Bread is a liquid','Chocolate is magnetic'], why:'Reversible changes make no new materials.'},
+  {q:'Is boiling water to make steam a reversible change?', o:['Yes, the steam can condense back into water','No','Only in space'], why:'Condensation reverses evaporation.'},
+  {q:'Which is the best evidence that dissolving salt is reversible?', o:['After evaporation, salt crystals are left','The water looks clear','The water tastes salty'], why:'Getting the original material back proves it.'},
+  {q:'Clay is shaped into a pot. Is this reversible?', o:['Yes, if the clay has not been fired in a kiln','No, never','Only if it is painted'], why:'Wet clay can be reshaped; firing changes it permanently.'}
+ ]},
+'y5-mt-6': {m:[
+  {q:'Which is an irreversible change?', o:['Burning a candle wick','Melting ice','Mixing sand and water'], why:'Burning makes new materials.'},
+  {q:'Cooking an egg is irreversible because…', o:['The heat makes new materials inside the egg','The egg melts','The shell dissolves'], why:'You cannot uncook an egg.'},
+  {q:'Which word means “cannot be changed back”?', o:['Irreversible','Soluble','Transparent'], why:'Irreversible changes make new materials.'},
+  {q:'What are the bubbles when vinegar and bicarbonate of soda mix?', o:['Carbon dioxide gas','Air from the spoon','Water vapour'], why:'The reaction makes a new gas.'},
+  {q:'A cake rises in the oven. What helps it rise?', o:['Gas bubbles made by the raising agent','Magnetism','Freezing'], why:'Baking powder makes carbon dioxide gas.'},
+  {q:'Which is a safety rule when investigating burning?', o:['Only with an adult, with safety goggles, away from things that burn','Use a big fire indoors','Touch the flame'], why:'Fire is dangerous.'}
+ ], s:[
+  {q:'Why is rusting a problem for bridges and cars?', o:['Rust is weaker than iron and flakes away','Rust makes them stronger','Rust is magnetic and pulls cars'], why:'Paint and coatings help stop rusting.'},
+  {q:'Burning wood makes ash, smoke and gases. Why can’t you put them back together into wood?', o:['They are new materials, and the change is irreversible','You can, with glue','Wood is not a material'], why:'New materials have been formed.'},
+  {q:'A balloon on a bottle of vinegar fills up when bicarbonate of soda is added. Why?', o:['The new carbon dioxide gas fills the balloon','Vinegar evaporates','Air is sucked in'], why:'The gas made by the reaction inflates the balloon.'},
+  {q:'Which is evidence that a NEW material has formed?', o:['A gas is given off and you cannot get the starting materials back','The material changes shape','The material gets wet'], why:'New materials and irreversibility go together.'}
+ ]},
+'y5-es-1': {m:[
+  {q:'Which planet is ringed?', v:'planets:5', o:['Jupiter','Saturn','Earth'], why:'Jupiter is the fifth planet from the Sun and the biggest.'},
+  {q:'Which planet has large rings that can be seen clearly through a telescope?', o:['Saturn','Mercury','Mars'], why:'Saturn’s rings are made of ice and rock.'},
+  {q:'Which planet is known as the Red Planet?', o:['Mars','Venus','Neptune'], why:'Mars has reddish dust.'},
+  {q:'Which planet is furthest from the Sun?', o:['Neptune','Mercury','Earth'], why:'Neptune is the eighth planet.'},
+  {q:'What shape is the path of the Earth around the Sun?', v:'orbit:earth', o:['Almost a circle (an orbit)','A straight line','A zigzag'], why:'Planets travel in nearly circular orbits.'},
+  {q:'What holds the planets in orbit around the Sun?', o:['Gravity','Wind','Magnets'], why:'The Sun’s gravity keeps the planets in orbit.'}
+ ], s:[
+  {q:'Why does Neptune take about 165 Earth years to orbit the Sun?', o:['It is much further away, so its orbit is much longer','It is bigger','It spins slower'], why:'Planets further out have longer orbits.'},
+  {q:'Long ago, many people believed the Sun went round the Earth. Who argued that the Earth goes round the Sun?', o:['Nicolaus Copernicus','Isaac Newton','Charles Darwin'], why:'Copernicus suggested a Sun-centred model in 1543; Galileo found evidence for it.'},
+  {q:'Why do we have a leap year every four years?', o:['An orbit takes about 365¼ days, so an extra day is added','The Moon slows down','The Sun moves'], why:'Four quarter days add up to one extra day.'},
+  {q:'Which planets are mainly made of gas?', o:['Jupiter, Saturn, Uranus and Neptune','Mercury and Mars','Earth and Venus'], why:'The outer planets are gas and ice giants.'}
+ ]},
+'y5-es-2': {m:[
+  {q:'In which direction does the Moon move around the Earth in the picture?', v:'orbit:moon', o:['Around the Earth, following the dotted path','Away from the Earth in a straight line','It does not move'], why:'The Moon follows a near-circular orbit.'},
+  {q:'What is a full moon?', o:['When we see the whole sunlit side of the Moon','When the Moon is biggest','When the Moon makes light'], why:'At full moon, the sunlit side faces Earth.'},
+  {q:'What is a new moon?', o:['When the sunlit side faces away from us, so we can hardly see it','A moon made last week','A second moon'], why:'At new moon, the dark side faces Earth.'},
+  {q:'Who were the first people to walk on the Moon?', o:['Neil Armstrong and Buzz Aldrin (1969)','Isaac Newton','Galileo'], why:'Apollo 11 landed in July 1969.'},
+  {q:'Is the Moon a light source?', o:['No, it reflects sunlight','Yes','Only at night'], why:'Light sources make their own light.'},
+  {q:'What makes the Moon’s craters?', o:['Rocks from space crashing into it','Rivers','Volcanoes made of ice'], why:'Most craters come from impacts.'}
+ ], s:[
+  {q:'Why do we see the same side of the Moon all the time?', o:['The Moon spins once in the same time it takes to orbit the Earth','The Moon does not spin at all','The Earth blocks the other side'], why:'This is called being tidally locked.'},
+  {q:'A crescent moon is visible. Over the next week it grows bigger. What is it called when it grows?', o:['Waxing','Waning','Eclipsing'], why:'Waxing means growing; waning means shrinking.'},
+  {q:'The Moon’s gravity pulls on Earth’s oceans. What does this cause?', o:['Tides','Earthquakes','Seasons'], why:'The rise and fall of the sea is caused mainly by the Moon.'},
+  {q:'About how many times does the Moon orbit the Earth in a year?', o:['About 13','About 365','About 1'], why:'365 ÷ 27 is about 13.'}
+ ]},
+'y5-es-3': {m:[
+  {q:'Which is a star?', o:['The Sun','The Moon','Mars'], why:'Stars make their own light and heat.'},
+  {q:'Why does the Sun look small in the sky even though it is huge?', o:['It is very far away','It is shrinking','It is behind clouds'], why:'Distance makes things look smaller.'},
+  {q:'Which is smallest?', o:['The Moon','The Earth','The Sun'], why:'The Moon is about a quarter of Earth’s width.'},
+  {q:'What shape is the shadow of the Earth on the Moon during a lunar eclipse?', o:['Curved','Square','Triangular'], why:'A curved shadow shows the Earth is round.'},
+  {q:'Which word describes the shape of the Sun, Earth and Moon?', o:['Spherical','Flat','Cubic'], why:'They are all roughly spheres.'},
+  {q:'What is the Sun mainly made of?', o:['Very hot gases','Rock','Ice'], why:'The Sun is a giant ball of hot gas.'}
+ ], s:[
+  {q:'Why do ships disappear hull-first over the horizon?', o:['The Earth’s surface curves','Ships sink','The sea is a hill'], why:'This evidence was used long ago to show the Earth is round.'},
+  {q:'About how many Earths could fit across the Sun’s width?', o:['About 109','About 2','About 1 million'], why:'The Sun is about 109 times wider than the Earth.'},
+  {q:'Why is the Earth not a perfect sphere?', o:['It bulges slightly at the equator because it spins','It is a cube','It is flat'], why:'Scientists say it is approximately spherical.'},
+  {q:'Why is it dangerous to look straight at the Sun?', o:['Its light can damage your eyes','It is too far away','It is cold'], why:'Never look directly at the Sun.'}
+ ]},
+'y5-es-4': {m:[
+  {q:'Where is the Sun around midday?', v:'sunpath:noon', o:['High in the sky','Near the eastern horizon','Below the ground'], why:'The Sun is highest around midday.'},
+  {q:'Where does the Sun appear to set?', o:['In the west','In the east','In the south'], why:'The Sun sets in the west.'},
+  {q:'When are shadows shortest?', o:['Around midday','Early morning','Late evening'], why:'The Sun is highest, so shadows are shortest.'},
+  {q:'When it is daytime in the UAE, it is night-time in…', o:['Places on the other side of the Earth','Every country','Only the Moon'], why:'Only half the Earth faces the Sun at a time.'},
+  {q:'What is the imaginary line the Earth spins around called?', o:['Its axis','Its orbit','Its equator only'], why:'The Earth spins on its axis.'},
+  {q:'Which way does the Earth spin, making the Sun appear to rise in the east?', o:['West to east','East to west','North to south'], why:'Because Earth spins towards the east, the Sun appears in the east first.'}
+ ], s:[
+  {q:'Why do countries have different time zones?', o:['Different places face the Sun at different times as the Earth spins','Clocks are wrong','The Sun moves around'], why:'Midday happens at different times around the world.'},
+  {q:'A shadow stick shows a long shadow pointing west. What time of day is it likely to be?', o:['Morning','Midday','Midnight'], why:'In the morning, the Sun is in the east, so shadows point west.'},
+  {q:'If the Earth stopped spinning, what would happen to day and night?', o:['One side would have very long day and the other very long night','Nothing would change','It would always be midday everywhere'], why:'Rotation causes day and night.'},
+  {q:'Sundials tell the time using…', o:['The changing position of a shadow','Electricity','The Moon'], why:'The shadow moves as the Earth turns.'}
+ ]},
+'y5-fo-1': {m:[
+  {q:'Which way would a ball fall in Australia?', o:['Down, towards the centre of the Earth','Up into space','Sideways'], why:'Gravity pulls towards the Earth’s centre everywhere.'},
+  {q:'What instrument measures force?', o:['A newton meter (forcemeter)','A thermometer','A ruler'], why:'Newton meters use a spring to measure force.'},
+  {q:'Mass is measured in…', o:['Kilograms','Newtons','Degrees'], why:'Mass is how much matter is in an object.'},
+  {q:'On Earth, a 1 kg bag of sugar weighs about…', o:['10 newtons','1 newton','100 newtons'], why:'Each kilogram weighs about 10 N on Earth.'},
+  {q:'What stops a book on a table from falling?', o:['The table pushes up on it','Gravity switches off','Air holds it'], why:'The table supports the book.'},
+  {q:'Which is pulled by gravity?', o:['Everything with mass','Only heavy things','Only things outside'], why:'Gravity acts on all objects.'}
+ ], s:[
+  {q:'An astronaut has a mass of 70 kg on Earth. What is her mass on the Moon?', o:['70 kg','About 12 kg','0 kg'], why:'Mass stays the same; only weight changes.'},
+  {q:'Why do objects on Earth fall but the Moon does not crash into Earth?', o:['The Moon is moving sideways so fast that it keeps falling around the Earth','The Moon has no mass','Gravity does not reach the Moon'], why:'An orbit is a kind of continuous falling.'},
+  {q:'Galileo is said to have dropped balls from a tower. What did he show?', o:['Heavy and light balls fall at the same rate (ignoring air resistance)','Heavy objects fall much faster','Light objects do not fall'], why:'Without air resistance, all objects fall at the same rate.'},
+  {q:'A 5 kg mass weighs about how much on Earth?', o:['About 50 N','About 5 N','About 500 N'], why:'About 10 N per kilogram.'}
+ ]},
+'y5-fo-2': {m:[
+  {q:'Which would fall slowest through the air?', o:['An open sheet of paper','A screwed-up ball of paper','A pebble'], why:'The open sheet has the largest surface, so more air resistance.'},
+  {q:'Why are racing cars a smooth, low shape?', o:['To reduce air resistance','To increase friction with the air','To look heavy'], why:'Streamlined shapes cut through air.'},
+  {q:'Why do fish have streamlined bodies?', v:'i:trout', o:['To move easily through water','To float in air','To stay still'], why:'Less water resistance means less energy needed.'},
+  {q:'Which reduces friction?', o:['Oil on a bicycle chain','Sand on ice','Rubber soles'], why:'Lubricants make surfaces slide.'},
+  {q:'Why do cyclists crouch low on their bikes?', o:['To reduce air resistance','To increase gravity','To see better'], why:'A smaller front area meets less air.'},
+  {q:'When is friction useful?', o:['When your brakes stop your bike','When you want to slide easily','When skating on ice'], why:'Brakes use friction to slow wheels.'}
+ ], s:[
+  {q:'A parachute with a bigger canopy lands more slowly. Why?', o:['A bigger canopy creates more air resistance','It is lighter','Gravity is weaker'], why:'More surface area means more air resistance.'},
+  {q:'Why do spacecraft returning to Earth get very hot?', o:['Friction with the air as they rush through it','The Sun heats them','The engines'], why:'Air resistance turns movement energy into heat.'},
+  {q:'Pupils drop the same plasticine shapes in water. Which falls fastest?', o:['The pointed, streamlined shape','The flat pancake shape','They all fall at the same speed'], why:'Streamlined shapes meet less water resistance.'},
+  {q:'Why are ice-skating blades thin and smooth?', o:['To reduce friction so skaters glide','To increase friction','To make noise'], why:'Low friction lets skaters slide.'}
+ ]},
+'y5-fo-3': {m:[
+  {q:'Where should you push to lift the box most easily?', v:'lever:near', o:['Further from the pivot than shown','Exactly where shown, near the pivot','On top of the pivot'], why:'The arrow is close to the pivot, which needs more force; push further away.'},
+  {q:'A single fixed pulley at the top of a flagpole lets you…', o:['Pull down to lift the flag up','Make the flag lighter','Push the pole over'], why:'A single pulley changes the direction of the force.'},
+  {q:'Which uses gears?', o:['A bicycle','A spoon','A ruler'], why:'Bike gears connect the pedals to the back wheel.'},
+  {q:'Why is a long spanner easier to use than a short one?', o:['A longer lever needs less force','It is heavier','It is shinier'], why:'Longer handles give more turning effect.'},
+  {q:'What is a mechanism?', o:['A device that changes the size or direction of a force','A type of animal','A planet'], why:'Levers, pulleys and gears are mechanisms.'},
+  {q:'What does a lever turn around?', v:'lever:far', o:['The pivot (fulcrum)','The load','The handle'], why:'The triangle shows the pivot.'}
+ ], s:[
+  {q:'A big gear with 40 teeth turns a small gear with 10 teeth. How many times does the small gear turn for each turn of the big gear?', o:['4','10','40'], why:'40 ÷ 10 = 4.'},
+  {q:'Using several pulleys together to lift a heavy load means…', o:['You need less force, but you pull more rope','You need more force','It is impossible'], why:'More pulleys share the load.'},
+  {q:'Archimedes said: “Give me a place to stand and I will move the Earth.” What idea was he talking about?', o:['A long enough lever can move a huge load','Gravity is weak','Pulleys are heavy'], why:'Long levers multiply force.'},
+  {q:'Why does a bike use a low gear to go up a steep hill?', o:['Pedalling is easier, even though the bike moves slower','The bike goes faster','It stops friction'], why:'Gears trade speed for force.'}
  ]}
 };
