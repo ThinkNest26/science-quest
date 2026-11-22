@@ -48,7 +48,7 @@
 (function(){
   var S = SQ_STORE, C = SQ_CHAL, G = SQ_GRADE;
   var GR = [['kg2','KG2','Year 1'],['g1','Grade 1','Year 2'],['g2','Grade 2','Year 3'],['g3','Grade 3','Year 4'],['g4','Grade 4','Year 5'],['g5','Grade 5','Year 6']];
-  var me = S.me(), cur = (me && C[me.grade]) ? me.grade : 'kg2';
+  var me = S.me(), qg = new URLSearchParams(location.search).get('g'), cur = (qg && C[qg]) ? qg : (me && C[me.grade]) ? me.grade : 'kg2';
   var stage = document.getElementById('stage');
   function TOP(g){ return (G[g] && G[g].topics) || (window.SQ_CHAL_TOPICS||{})[g] || []; }
   function esc(t){ return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
@@ -60,7 +60,7 @@
   function sayBtn(t){ return canSpeak ? '<button class="chipbtn" data-say="'+esc(t)+'">🔊 Read it to me</button>' : ''; }
   function bindSay(){ stage.querySelectorAll('[data-say]').forEach(function(b){ b.onclick = function(){ say(b.getAttribute('data-say')); }; }); }
 
-  S.chip(document.getElementById('who'), function(){ var m = S.me(); if (m && C[m.grade]) cur = m.grade; if (!document.getElementById('home').hidden) home(); });
+  S.chip(document.getElementById('who'), function(){ var m = S.me(); if (!qg && m && C[m.grade]) cur = m.grade; if (!document.getElementById('home').hidden) home(); });
 
   /* ---------------- home ---------------- */
   function home(){

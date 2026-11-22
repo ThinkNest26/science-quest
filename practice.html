@@ -82,7 +82,7 @@
 <script src="js/practice-more.js?v=45"></script>
 <script src="js/avatar.js?v=52"></script>
 <script src="js/store.js?v=45"></script>
-<script src="js/report.js?v=45"></script>
+<script src="js/report.js?v=53"></script>
 <script>
 (function(){
   var S = SQ_STORE, P = SQ_PRAC, T = SQ_PRAC_TOPICS, R = SQ_REPORT, M = window.SQ_PRAC_MORE || {}, main = document.getElementById('main');
@@ -282,6 +282,10 @@
 
   S.chip(document.getElementById('who'), function(){ var m = S.me(); if (m && P[m.grade]) grade = m.grade; if (!sess) home(); });
   home();
+  /* practice.html?o=<objective> opens that objective straight away (used by My Progress) */
+  (function(){ var id = new URLSearchParams(location.search).get('o'), o = id && objById(id); if (!o) return;
+    Object.keys(P).forEach(function(g){ if (P[g].indexOf(o) > -1) grade = g; });
+    start(shuffle(o.qs).slice(0, PER).map(function(q){ return {q:q, o:o}; }), o.short, 'practice'); })();
 })();
 </script>
 <script src="js/nav.js?v=45"></script>

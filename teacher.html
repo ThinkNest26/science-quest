@@ -49,7 +49,7 @@ table.pt th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:v
 <script src="js/practice.js?v=45"></script>
 <script src="js/practice-more.js?v=45"></script>
 <script src="js/world.js?v=51"></script>
-<script src="js/report.js?v=45"></script>
+<script src="js/report.js?v=53"></script>
 <script>
 (function(){
   var sb = supabase.createClient('https://xpbkdnkfufkahaszfycd.supabase.co','sb_publishable_QIAV_9tLUBbDCu7FHqaTEw_zYQ0teEG');
@@ -88,13 +88,14 @@ table.pt th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:v
     classes = a.data||[]; kids = b.data||[]; prog = {}; (c.data||[]).forEach(function(p){ prog[p.student_id] = p; });
   }
 
+  function ready(g){ return !!(window.SQ_GRADE[g] || (window.SQ_PRAC||{})[g]); }
   function home(){
     var h = '<div class="lhead"><h1>My classes</h1><p>Create a class, add your children’s first names, and give each child their code card. Their badges, challenge stars, journals, science knowledge and reading appear here.</p></div>';
     h += '<div class="tbox"><h2>Classes</h2>'+(classes.length?'<div class="cls">'+classes.map(function(c){ var n = kids.filter(function(k){return k.class_id===c.id;}).length;
         return '<button class="grade'+(cur===c.id?' on':'')+'" data-c="'+c.id+'">'+esc(c.name)+'<small>'+GR[c.grade]+' · '+n+' children</small></button>'; }).join('')+'</div>':'<p style="color:var(--muted);font-weight:700">No classes yet.</p>')+
       '<details style="margin-top:14px"><summary style="cursor:pointer;font-weight:900;color:var(--teal)">+ New class</summary>'+
       '<label class="jl" for="cn">Class name</label><input class="fld" id="cn" placeholder="For example: 1B">'+
-      '<label class="jl" for="cg">Grade</label><select class="fld" id="cg">'+Object.keys(GR).map(function(g){return '<option value="'+g+'"'+(window.SQ_GRADE[g]?'':' disabled')+'>'+GR[g]+(window.SQ_GRADE[g]?'':' (coming soon)')+'</option>';}).join('')+'</select>'+
+      '<label class="jl" for="cg">Grade</label><select class="fld" id="cg">'+Object.keys(GR).map(function(g){return '<option value="'+g+'"'+(ready(g)?'':' disabled')+'>'+GR[g]+(ready(g)?'':' (coming soon)')+'</option>';}).join('')+'</select>'+
       '<button class="btn pri" id="mk">Create class</button></details></div>';
     if (cur) h += classView();
     main.innerHTML = h;
@@ -110,7 +111,7 @@ table.pt th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:v
 
   function classView(){
     var c = classes.filter(function(x){return x.id===cur;})[0]; if (!c) return '';
-    var G = window.SQ_GRADE[c.grade], CH = (window.SQ_CHAL||{})[c.grade] || {};
+    var G = window.SQ_GRADE[c.grade] || {topics:(window.SQ_CHAL_TOPICS||{})[c.grade] || [], stories:[]}, CH = (window.SQ_CHAL||{})[c.grade] || {};
     var ks = kids.filter(function(k){return k.class_id===cur;});
     var h = '<div class="tbox"><h2>'+esc(c.name)+' · '+GR[c.grade]+'</h2>'+
       '<label class="jl" for="nm">Add children (one first name per line)</label><textarea class="jt" id="nm" placeholder="Amira&#10;Noah&#10;Priya"></textarea>'+
@@ -147,7 +148,24 @@ table.pt th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:v
         return '<td style="text-align:center;font-size:12px;font-weight:800;color:var(--muted)">'+(n ? s+'/'+n : '')+'</td>'; }).join('')+'<td colspan="4" style="font-size:12px;color:var(--muted);font-weight:700">children secure / children who have tried</td></tr>';
     h += '</table></div><p style="margin-top:12px"><button class="btn sec" id="allrep">🖨 Print reports for every child</button></p>';
     if (objs.length) h += '<details style="margin-top:10px"><summary style="cursor:pointer;font-weight:900;color:var(--teal)">Show the objectives</summary><ol style="font-weight:700;color:var(--ink2)">'+objs.map(function(o){ return '<li><b>'+esc(o.short)+'</b>: '+esc(o.nc)+'</li>'; }).join('')+'</ol></details>';
-    h += '</div><div id="jview"></div>';
+    h += '</div>';
+    // where the class needs the most support
+    if (objs.length) {
+      var rows = objs.map(function(o){ var tried = [], sec = 0, a = 0, need = [], near = [];
+        ks.forEach(function(k){ var r = ((prog[k.id]||{}).skills||{})[o.id]; if (!r || !r.n) return; var l = R.level(r); tried.push(k); a += R.acc(r); if (l===3) sec++; else if (l===1) need.push(k.first_name); else near.push(k.first_name); });
+        return {o:o, n:tried.length, sec:sec, acc:tried.length ? a/tried.length : 0, need:need, near:near}; });
+      var focus = rows.filter(function(x){ return x.n && x.sec < x.n; }).sort(function(p,q){ return (p.sec/p.n - q.sec/q.n) || (p.acc - q.acc); }).slice(0,8);
+      var none = rows.filter(function(x){ return !x.n; });
+      h += '<div class="tbox"><h2>🎯 Areas to support</h2><p style="color:var(--ink2);font-weight:700;margin:0 0 10px">The objectives the class finds hardest, starting with the biggest need. Use the names to plan small-group support.</p>';
+      if (!focus.length) h += '<p style="color:var(--muted);font-weight:700">'+(rows.some(function(x){return x.n;}) ? 'Every child who has practised is secure so far. Brilliant!' : 'No Science Practice yet. Areas to support will appear once children start practising.')+'</p>';
+      else h += '<div class="scroll"><table class="pt"><tr><th>Objective</th><th>Class accuracy</th><th>Secure</th><th>Needs support</th><th>Nearly there</th></tr>'+focus.map(function(x){ var p = Math.round(x.acc*100), col = x.acc>=.8?'#47A86A':x.acc>=.5?'#F6B93B':'#E0607E';
+          return '<tr><td><b>'+esc(x.o.short)+'</b><br><span style="font-size:12px;color:var(--muted);font-weight:600">'+esc(x.o.nc)+'</span></td>'+
+            '<td style="min-width:130px"><span style="display:block;height:10px;background:#EEF1F5;border-radius:99px;overflow:hidden"><b style="display:block;height:100%;width:'+p+'%;background:'+col+'"></b></span><span style="font-size:12px;font-weight:800">'+p+'%</span></td>'+
+            '<td>'+x.sec+' / '+x.n+'</td><td style="color:#9B2C4A;font-weight:800">'+(esc(x.need.join(', '))||'–')+'</td><td style="color:#8A5A00;font-weight:800">'+(esc(x.near.join(', '))||'–')+'</td></tr>'; }).join('')+'</table></div>';
+      if (none.length && none.length < objs.length) h += '<p style="font-weight:700;font-size:13px;color:var(--ink2);margin:10px 0 0"><b>Not practised by anyone yet:</b> '+none.map(function(x){ return esc(x.o.short); }).join(', ')+'</p>';
+      h += '</div>';
+    }
+    h += '<div id="jview"></div>';
     return h;
   }
 

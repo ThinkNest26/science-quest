@@ -21,7 +21,7 @@
 <main class="wrap">
   <div class="lhead noprint">
     <h1>My Progress</h1>
-    <p>See how your science knowledge and your reading are growing. You can print a report to share at home.</p>
+    <p>See how your science knowledge and your reading are growing, and find out what to work on next. You can print a report to share at home.</p>
   </div>
   <div class="pgrades noprint" id="grades" style="display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 4px"></div>
   <p class="noprint" style="margin:14px 0 0"><button class="btn pri" id="print">🖨 Print a report for home</button></p>
@@ -36,16 +36,17 @@
 <script src="js/g2.js?v=45"></script>
 <script src="js/g3.js?v=45"></script>
 <script src="js/practice.js?v=45"></script>
+<script src="js/challenges.js?v=53"></script>
 <script src="js/avatar.js?v=52"></script>
 <script src="js/store.js?v=45"></script>
 <script src="js/world.js?v=51"></script>
-<script src="js/report.js?v=45"></script>
+<script src="js/report.js?v=53"></script>
 <script>
 (function(){
-  var S = SQ_STORE, GR = [['kg2','KG2','Year 1'],['g1','Grade 1','Year 2'],['g2','Grade 2','Year 3'],['g3','Grade 3','Year 4']];
+  var S = SQ_STORE, GR = [['kg2','KG2','Year 1'],['g1','Grade 1','Year 2'],['g2','Grade 2','Year 3'],['g3','Grade 3','Year 4'],['g4','Grade 4','Year 5'],['g5','Grade 5','Year 6']];
   var grade = null, parents = false;
   function draw(){
-    var m = S.me(); if (!grade) grade = (m && window.SQ_GRADE[m.grade]) ? m.grade : 'kg2';
+    var m = S.me(); if (!grade) grade = (m && GR.some(function(g){ return g[0]===m.grade; })) ? m.grade : 'kg2';
     document.getElementById('grades').innerHTML = GR.map(function(g){ return '<button class="grade'+(g[0]===grade?' on':'')+'" data-g="'+g[0]+'">'+g[1]+'<small>'+g[2]+'</small></button>'; }).join('');
     document.querySelectorAll('[data-g]').forEach(function(b){ b.onclick = function(){ grade = b.getAttribute('data-g'); draw(); }; });
     document.getElementById('rep').innerHTML = (m ? '' : '<p class="noprint" style="font-weight:800;color:var(--muted)">You are not signed in, so this shows the progress saved on this device. Sign in with your code to keep it everywhere.</p>') +
