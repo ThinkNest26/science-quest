@@ -29,7 +29,7 @@ window.SQ_WORLD = [
  title:'The Biggest Tree in the World',
  place:'Sequoia National Park, USA', continent:'North America', lat:36.58, lon:-118.75, when:'About 2,200 years old',
  sum:'A giant tree in California is taller than a 20-storey building and older than almost anything alive.',
- photo:{src:'img/world/w-sequoia.webp', caption:'The General Sherman Tree. Look how small the people look next to its huge trunk!'},
+ photo:{src:'img/world/w-sequoia.webp', caption:'The General Sherman Tree, from its roots all the way up to its top. It is so tall that this photo was made by joining lots of photos together!', credit:'Wikimedia Commons', fit:'contain'},
  sections:[
   {h:'Meet General Sherman', t:'In a forest in California, in the USA, there is a giant tree. Its name is General Sherman. It is a [[giant sequoia]] tree. It is the biggest tree in the world! It is about 84 metres tall. That is as tall as about 17 giraffes standing on top of each other.'},
   {h:'Parts of a tree', t:'Like all trees, General Sherman has roots, a [[trunk]], branches and leaves. The roots hold it in the ground and drink up water. The trunk is very, very wide. It would take more than 20 children holding hands to go all the way around it. Its leaves are small and look like tiny green scales.'},
@@ -42,7 +42,7 @@ window.SQ_WORLD = [
   {type:'Find the fact', q:'How old is General Sherman?', o:['About 2,200 years','About 10 years','About 100 years'], why:'The story says about 2,200 years.'},
   {type:'Word power', q:'What is an evergreen tree?', o:['A tree that keeps its leaves all year','A tree with no leaves','A tree made of plastic'], why:'Evergreen trees keep their leaves.'},
   {type:'Read the chart', q:'Which is the tallest?', o:['General Sherman','The school','The giraffe'], why:'Its bar is the longest: 84 metres.'},
-  {type:'Caption', q:'What does the photo show?', o:['People looking small next to a huge tree','A tiny plant in a pot','A tree with no trunk'], why:'The caption says the people look small.'},
+  {type:'Caption', q:'What does the photo show?', o:['A huge tree, from its roots to its top','A tiny plant in a pot','A tree with no trunk'], why:'The caption says the photo shows the tree from its roots to its top.'},
   {type:'Summarise', q:'What is this story about?', o:['The biggest tree in the world','A small flower','A giraffe'], why:'That is the big idea.'}
  ],
  around:'Find a tree near you. Can you see its trunk, branches and leaves? Is it evergreen?'},
@@ -73,7 +73,7 @@ window.SQ_WORLD = [
  title:'A Night with the Baby Turtles',
  place:'Ras Al Jinz, Oman', continent:'Asia', lat:22.42, lon:59.83, when:'Diary based on real nights at the reserve',
  sum:'On a beach in Oman, a ranger watches mother turtles lay eggs, and tiny baby turtles race to the sea.',
- photo:{src:'img/world/w-turtles.webp', caption:'A baby green turtle crawls across the sand towards the sea.'},
+ photo:{src:'img/world/w-turtles.webp', caption:'A baby green turtle at Ras Al Jinz crawls across the sand towards the sea.', credit:'Wikimedia Commons'},
  sections:[
   {h:'9 o’clock at night', t:'I am a ranger at Ras Al Jinz, a beach in Oman. Every night, I watch the sea turtles. Tonight is dark and quiet. A big green turtle comes out of the waves. She pulls herself slowly up the sand with her strong [[flippers]].'},
   {h:'Laying eggs', t:'The mother turtle digs a deep hole in the sand. She lays about 100 round, white eggs in it. They look like ping-pong balls! Then she covers them with sand and goes back to the sea. Turtles are [[reptiles]]. They have scaly skin and they lay eggs.'},
@@ -119,7 +119,7 @@ window.SQ_WORLD = [
  title:'Diving on the Great Barrier Reef',
  place:'Great Barrier Reef, Australia', continent:'Australia', lat:-18.3, lon:147.7, when:'Diary based on real reef science',
  sum:'A marine scientist dives on the world’s biggest coral reef, a busy underwater habitat full of living things.',
- photo:{src:'img/world/w-reef.webp', caption:'Fish swim around colourful corals on the Great Barrier Reef. The corals are alive!'},
+ photo:{src:'img/world/w-reef.webp', caption:'Corals of many shapes on the Great Barrier Reef: round brain coral, bushy branching coral and flat plate coral. The corals are alive!', credit:'Wikimedia Commons'},
  sections:[
   {h:'Monday · Into the blue', t:'Splash! I rolled backwards off the boat and sank into the warm, clear water. I am a marine scientist, which means I study living things in the sea. Today I am diving on the Great Barrier Reef, off the coast of Australia. It is the biggest coral reef in the world. It stretches for about 2,300 kilometres and it is so big that astronauts can see it from space!'},
   {h:'Is coral a rock?', t:'Many people think coral is a rock or a plant. But coral is made of tiny animals! Each one is soft, with a ring of little arms around its mouth. They build hard skeletons around themselves, and millions of them together make a reef. So the reef is [[alive]]. The empty shells I found on the sand were once alive too, but now they are dead. The sand and the water have never been alive at all.'},
@@ -193,7 +193,7 @@ window.SQ_WORLD = [
  title:'The Bumpy Ride That Changed the World',
  place:'Belfast, Northern Ireland, UK', continent:'Europe', lat:54.6, lon:-5.93, when:'1887 to 1888',
  sum:'A dad in Belfast wanted to make his son’s bumpy tricycle ride smoother, and invented the air-filled rubber tyre.',
- photo:{src:'img/world/w-dunlop.webp', caption:'John Boyd Dunlop on a bicycle with his new air-filled rubber tyres.'},
+ photo:{src:'img/world/w-dunlop.webp', caption:'John Boyd Dunlop as an old man, standing with a bicycle that has air-filled rubber tyres.'},
  sections:[
   {h:'Ouch, that’s bumpy!', t:'In 1887, a boy called Johnnie lived in Belfast. He loved riding his tricycle. But the streets were made of bumpy cobblestones, and his tricycle had hard, solid tyres. Bump, bump, bump! The ride was so shaky that it gave him a headache.'},
   {h:'Dad has an idea', t:'Johnnie’s dad, John Boyd Dunlop, was an animal doctor. He knew a lot about [[rubber]], a material that can be squashed, bent, twisted and stretched, and then springs back into shape. He made a tube out of thin sheets of rubber, glued the ends together and filled it with air using a football pump. Then he fixed the tube around a wheel.'},
@@ -208,7 +208,7 @@ window.SQ_WORLD = [
   {type:'Word power', q:'What is rubber like?', o:['Bendy, stretchy and waterproof','Hard and see-through','Soft and fluffy'], why:'Rubber can squash and stretch, then spring back.'},
   {type:'Read the timeline', q:'When did factories begin making the tyres?', o:['1890','1887','Today'], why:'The timeline says 1890.'},
   {type:'Fact or opinion', q:'Which sentence is an OPINION?', o:['Riding a bike is better than riding a car.','Dunlop got a patent in 1888.','Tyres are made of rubber.'], why:'"Better" is a feeling.'},
-  {type:'Caption', q:'What does the photo show?', o:['Dunlop on a bike with air-filled tyres','A car with no wheels','A cobblestone street'], why:'The caption describes Dunlop on his bicycle.'},
+  {type:'Caption', q:'What does the photo show?', o:['Dunlop standing with a bicycle with air-filled tyres','A car with no wheels','A cobblestone street'], why:'The caption describes Dunlop with a bicycle.'},
   {type:'Why it matters', q:'Why are tyres made of rubber?', o:['It is bendy, strong, waterproof and grips the road','It is see-through','It is very heavy and hard'], why:'Rubber’s properties make it good for tyres.'}
  ],
  around:'Find three things made of rubber at home or school. What job does the rubber do?'},
@@ -217,7 +217,7 @@ window.SQ_WORLD = [
  title:'How Astronauts Stay Healthy in Space',
  place:'International Space Station', continent:'Space', lat:null, lon:null, when:'Diary based on real life on the space station',
  sum:'On the International Space Station, astronauts must exercise, eat well and keep clean, just like us, but in a very floaty way!',
- photo:{src:'img/world/w-space.webp', caption:'An astronaut runs on the space station’s treadmill. Straps hold her down so she does not float away.'},
+ photo:{src:'img/world/w-space.webp', caption:'An astronaut runs on the space station’s treadmill. Straps hold her down so she does not float away.', credit:'NASA (public domain)'},
  sections:[
   {h:'Morning · Floating out of bed', t:'Good morning from space! I live on the International Space Station, high above the Earth. There is almost no [[gravity]] pulling on us here, so everything floats: pencils, crumbs and even me! I sleep in a sleeping bag tied to the wall, so I do not drift around in the night.'},
   {h:'Exercise time', t:'On Earth, your muscles and bones work hard all day just to hold you up against gravity. Up here, they hardly have to work, so they can get weak. That is why astronauts exercise for about two hours every day! I run on a treadmill with straps over my shoulders to hold me down, ride an exercise bike and lift weights on a special machine. [[Exercise]] keeps my heart, muscles and bones strong.'},
