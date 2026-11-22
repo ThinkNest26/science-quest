@@ -175,6 +175,114 @@
     return wrap(s, '#FFFFFF');
   }
 
+
+  /* ---------- Year 4 diagrams ---------- */
+  // series circuits. spec: complete | gap | open | closed | nocell | buzzer | two | test-<object>
+  function circuit(kind){
+    var W = '#3B4664', sw = 'stroke="'+W+'" stroke-width="5" stroke-linecap="round" fill="none"', s = '';
+    var buzz = kind==='buzzer', test = kind.indexOf('test-')===0, obj = test ? kind.slice(5) : '';
+    // top: bulb or buzzer at (160,40)
+    s += '<path d="M60 40 H142 M178 40 H260" '+sw+'/>';
+    if (buzz) s += '<rect x="142" y="24" width="36" height="32" rx="8" fill="#2B2E34"/><circle cx="160" cy="40" r="8" fill="#4A5677"/><circle cx="160" cy="40" r="3" fill="#9AA3AE"/>';
+    else s += '<circle cx="160" cy="30" r="17" fill="#FFFFFF" stroke="#9AA3AE" stroke-width="3"/><path d="M153 34 q7 -14 14 0" stroke="#C99A3B" stroke-width="2" fill="none"/><rect x="150" y="44" width="20" height="12" rx="2" fill="#B8BEC8"/><path d="M142 40 H150 M170 40 H178" '+sw+'/>';
+    // right side: wire, or a gap, or a test object
+    if (kind==='gap') s += '<path d="M260 40 V78 M260 108 V140" '+sw+'/><circle cx="260" cy="78" r="5" fill="'+W+'"/><circle cx="260" cy="108" r="5" fill="'+W+'"/>';
+    else if (test) s += '<path d="M260 40 V64 M260 124 V140" '+sw+'/><rect x="252" y="62" width="16" height="10" rx="2" fill="#E2453A"/><rect x="252" y="116" width="16" height="10" rx="2" fill="#2B2E34"/>' + icon(obj, 228, 66, .52);
+    else s += '<path d="M260 40 V140" '+sw+'/>';
+    // bottom: cell(s) or plain wire
+    if (kind==='nocell') s += '<path d="M60 140 H260" '+sw+'/>';
+    else {
+      var cells = kind==='two' ? [108,164] : [136];
+      s += '<path d="M60 140 H'+cells[0]+' M'+(cells[cells.length-1]+48)+' 140 H260" '+sw+'/>';
+      if (kind==='two') s += '<path d="M156 140 H164" '+sw+'/>';
+      cells.forEach(function(x){ s += '<rect x="'+x+'" y="128" width="40" height="24" rx="4" fill="#2B2E34"/><rect x="'+(x+28)+'" y="128" width="12" height="24" rx="3" fill="#C99A3B"/><rect x="'+(x+40)+'" y="134" width="5" height="12" rx="1" fill="#9AA3AE"/>'; });
+    }
+    // left side: wire or switch
+    if (kind==='open' || kind==='closed') {
+      s += '<path d="M60 140 V110 M60 72 V40" '+sw+'/><circle cx="60" cy="110" r="5" fill="'+W+'"/><circle cx="60" cy="72" r="5" fill="'+W+'"/>';
+      s += kind==='open' ? '<path d="M60 110 L34 80" '+sw+'/>' : '<path d="M60 110 V72" '+sw+'/>';
+    } else s += '<path d="M60 140 V40" '+sw+'/>';
+    return wrap(s, '#F7F9FB');
+  }
+  // digestive system. part: mouth | oesophagus | stomach | small | large | rectum
+  function gut(part){
+    var sk = '#F4D6B8', s = '<path d="M120 178 V92 C120 74 134 66 160 66 C186 66 200 74 200 92 V178Z" fill="'+sk+'" stroke="#D9B08C" stroke-width="2"/><circle cx="160" cy="34" r="24" fill="'+sk+'" stroke="#D9B08C" stroke-width="2"/><rect x="150" y="54" width="20" height="16" fill="'+sk+'"/>'+
+      '<path d="M152 44 q8 5 16 0" stroke="#B5794C" stroke-width="3" fill="none"/>'+
+      '<path d="M160 46 V96" stroke="#E0607E" stroke-width="5"/>'+
+      '<path d="M160 96 C190 88 196 112 178 120 C168 124 160 114 158 108Z" fill="#E0607E"/>'+
+      '<path d="M138 124 V168 H182 V124 H138" stroke="#9C6B3D" stroke-width="9" fill="none" stroke-linejoin="round"/>'+
+      '<path d="M146 134 q8 -8 14 0 t14 0 M146 146 q8 -8 14 0 t14 0 M146 158 q8 -8 14 0 t14 0" stroke="#F2A0A8" stroke-width="5" fill="none"/>'+
+      '<path d="M160 168 V178" stroke="#9C6B3D" stroke-width="7"/>';
+    var at = {mouth:[160,46,[260,30]], oesophagus:[160,74,[80,60]], stomach:[180,104,[268,92]], small:[160,146,[80,130]], large:[182,130,[270,150]], rectum:[160,174,[80,172]]}[part];
+    if (at) s += point(at[0], at[1], at[2]);
+    return wrap(s, '#FFF5E3');
+  }
+  // teeth in an upper jaw, seen from below. type: incisor | canine | molar
+  function jaw(type){
+    var s = '<path d="M60 170 C60 60 100 20 160 20 C220 20 260 60 260 170" fill="#F28B9B" stroke="#D9557C" stroke-width="3"/><path d="M92 170 C92 84 120 52 160 52 C200 52 228 84 228 170" fill="#E0607E"/>';
+    var pos = [[146,34,'i'],[174,34,'i'],[126,40,'i'],[194,40,'i'],[108,52,'c'],[212,52,'c'],[96,70,'p'],[224,70,'p'],[88,92,'p'],[232,92,'p'],[82,116,'m'],[238,116,'m'],[78,140,'m'],[242,140,'m'],[76,162,'m'],[244,162,'m']];
+    pos.forEach(function(t){ var x = t[0], y = t[1];
+      if (t[2]==='i') s += '<rect x="'+(x-9)+'" y="'+(y-10)+'" width="18" height="20" rx="4" fill="#fff" stroke="#C9C1AE" stroke-width="2"/>';
+      else if (t[2]==='c') s += '<path d="M'+(x-9)+' '+(y+9)+' L'+x+' '+(y-12)+' L'+(x+9)+' '+(y+9)+'Z" fill="#fff" stroke="#C9C1AE" stroke-width="2" stroke-linejoin="round"/>';
+      else s += '<rect x="'+(x-12)+'" y="'+(y-10)+'" width="24" height="20" rx="7" fill="#fff" stroke="#C9C1AE" stroke-width="2"/><path d="M'+(x-6)+' '+y+' h12 M'+x+' '+(y-6)+' v12" stroke="#DCD5C4" stroke-width="2"/>'; });
+    var at = {incisor:[146,34,[146,110]], canine:[108,52,[180,120]], molar:[82,116,[170,130]]}[type];
+    if (at) s += ring(at[0], at[1], 15) + arrow(at[2][0], at[2][1], at[0] + (at[2][0]>at[0]?16:-16), at[1] + 14);
+    return wrap(s, '#FFF5E3');
+  }
+  // thermometer reading. n = temperature in degrees Celsius (-20 to 110)
+  function thermo(n){
+    n = +n; var top = 22, bot = 150, lo = -20, hi = 110, y = function(t){ return bot - (t-lo)/(hi-lo)*(bot-top); };
+    var s = '<rect x="146" y="12" width="28" height="150" rx="14" fill="#fff" stroke="#9AA3AE" stroke-width="3"/><circle cx="160" cy="160" r="16" fill="#E2453A"/>'+
+      '<rect x="155" y="'+y(n)+'" width="10" height="'+(152-y(n))+'" fill="#E2453A"/>';
+    for (var t = -20; t <= 110; t += 10) { var yy = y(t); s += '<path d="M174 '+yy+' h'+(t%20===0?14:8)+'" stroke="#4A5677" stroke-width="2"/>' + (t%20===0 ? '<text x="196" y="'+(yy+4)+'" font-family="Nunito,Arial" font-weight="800" font-size="11" fill="'+INK+'">'+t+'</text>' : ''); }
+    s += label(240, 100, '\u00B0C');
+    return wrap(s, '#F7F9FB');
+  }
+  // water cycle. stage: evaporation | condensation | precipitation | collection | none
+  function wcycle(stage){
+    var s = '<rect x="0" y="0" width="320" height="180" fill="#DCEFFF"/><circle cx="282" cy="30" r="18" fill="#FFD966"/>'+
+      '<path d="M0 150 Q40 140 80 150 T160 150 V180 H0Z" fill="#2E8BC9"/><path d="M150 180 L220 70 L300 180Z" fill="#9AA3AE"/><path d="M205 92 L220 70 L236 94 Q220 88 205 92Z" fill="#fff"/>'+
+      '<path d="M236 180 C220 160 200 158 160 162" stroke="#3D8BE0" stroke-width="7" fill="none"/>'+
+      '<g fill="#fff" stroke="#C9D6E3" stroke-width="2"><ellipse cx="120" cy="40" rx="34" ry="16"/><ellipse cx="146" cy="32" rx="24" ry="16"/><ellipse cx="200" cy="46" rx="26" ry="12"/></g>'+
+      '<path d="M190 64 l-4 10 M202 62 l-4 10 M214 64 l-4 10 M196 80 l-4 10 M208 80 l-4 10" stroke="#3D8BE0" stroke-width="3" stroke-linecap="round"/>'+
+      '<path d="M50 136 q-6 -12 0 -24 t0 -24 M74 136 q-6 -12 0 -24 t0 -24" stroke="#8FC9E8" stroke-width="3" fill="none" stroke-dasharray="4 4"/>';
+    var at = {evaporation:[62,108,[30,40]], condensation:[130,40,[60,70]], precipitation:[202,74,[280,100]], collection:[200,162,[290,150]]}[stage];
+    if (at) s += point(at[0], at[1], at[2]);
+    return '<svg viewBox="0 0 320 180" width="100%" role="img" aria-label="Question picture" style="display:block;max-width:440px;margin:0 auto;border-radius:16px">'+s+'</svg>';
+  }
+  // particles in a box. state: solid | liquid | gas
+  function particles(state){
+    var s = '<rect x="100" y="20" width="120" height="140" rx="6" fill="#fff" stroke="#4A5677" stroke-width="3"/>', pts = [], i, j;
+    if (state==='solid') for (i=0;i<5;i++) for (j=0;j<5;j++) pts.push([122+i*19, 82+j*17]);
+    else if (state==='liquid') [[116,150],[134,152],[152,150],[170,152],[188,150],[206,148],[124,136],[142,134],[160,136],[178,134],[196,136],[132,118],[150,120],[168,118],[186,120],[204,122],[116,124]].forEach(function(p){ pts.push(p); });
+    else [[120,40],[180,50],[150,80],[200,96],[126,110],[176,132],[140,150],[204,150]].forEach(function(p){ pts.push(p); });
+    pts.forEach(function(p){ s += '<circle cx="'+p[0]+'" cy="'+p[1]+'" r="8.5" fill="#7559D1" stroke="#4A3A9C" stroke-width="1.5"/>'; });
+    return wrap(s, '#F1EDFC');
+  }
+  // three bottles with different water levels, labelled A B C
+  function bottles(){
+    var s = '';
+    [[70,40],[160,80],[250,120]].forEach(function(b, i){ var x = b[0], h = b[1];
+      s += '<path d="M'+(x-22)+' 160 V80 Q'+(x-22)+' 62 '+(x-8)+' 56 V30 H'+(x+8)+' V56 Q'+(x+22)+' 62 '+(x+22)+' 80 V160Z" fill="#E8F4FB" stroke="#7FA9C4" stroke-width="3"/>'+
+           '<rect x="'+(x-20)+'" y="'+(160-h*0.8)+'" width="40" height="'+(h*0.8-2)+'" fill="#3D8BE0" opacity=".75"/>' + label(x, 176, 'ABC'.charAt(i)); });
+    return wrap(s, '#F7F9FB');
+  }
+  // three drums of different sizes, labelled A B C
+  function drums(){
+    var s = '';
+    [[70,34],[160,24],[250,14]].forEach(function(d, i){ var x = d[0], r = d[1];
+      s += '<rect x="'+(x-r)+'" y="'+(110-r*0.6)+'" width="'+(2*r)+'" height="'+(r*1.4)+'" fill="#E0607E"/><ellipse cx="'+x+'" cy="'+(110-r*0.6)+'" rx="'+r+'" ry="'+(r*0.35)+'" fill="#F7F1E3" stroke="#C9C1AE" stroke-width="2"/>'+
+           '<ellipse cx="'+x+'" cy="'+(110+r*0.8)+'" rx="'+r+'" ry="'+(r*0.35)+'" fill="#B33F5E"/>' + label(x, 172, 'ABC'.charAt(i)); });
+    return wrap(s, '#F7F9FB');
+  }
+  // sound travelling from a drum to an ear
+  function soundpath(dist){
+    var far = dist==='far', ex = far ? 270 : 170, s = icon('drum', 20, 60, .55);
+    for (var k=0;k<(far?6:3);k++) s += '<path d="M'+(100+k*26)+' 70 q12 20 0 40" stroke="#7559D1" stroke-width="3" fill="none" opacity="'+(1-k*0.13)+'"/>';
+    s += '<g transform="translate('+(ex-20)+' 60) scale(.45)">'+EXTRA.ear+'</g>';
+    return wrap(s, '#F7F9FB');
+  }
+
   window.SQ_VIS = function(spec){
     if (!spec) return '';
     var p = spec.split(':'), k = p[0], a = p[1] || '';
@@ -183,6 +291,8 @@
       case 'plant': return plant(a); case 'tree': return tree(a); case 'body': return body(a); case 'skel': return skeleton(a);
       case 'chain': return chain(a.split(',')); case 'cycle': return cycle(a.split(',')); case 'season': return season(a);
       case 'shadow': return shadow(a); case 'magnets': return magnets(a); case 'soil': return soil(a); case 'flower': return flower(a);
+      case 'circuit': return circuit(a); case 'gut': return gut(a); case 'jaw': return jaw(a); case 'thermo': return thermo(a); case 'wcycle': return wcycle(a);
+      case 'particles': return particles(a); case 'bottles': return bottles(); case 'drums': return drums(); case 'soundpath': return soundpath(a);
       case 'celery': return celery(a); case 'bars': return bars(a.split(',')); case 'see': return see(a); case 'ramp': return ramp(a); case 'scene': return scene(a);
     }
     return '';

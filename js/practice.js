@@ -390,11 +390,210 @@ g2: [
    {q:'A south pole faces a south pole. What will happen?', v:'magnets:SS', o:['They repel','They attract','They stick forever'], why:'Two south poles are alike, so they push apart.'},
    {q:'Which rule is correct?', o:['Opposite poles attract, like poles repel','Like poles attract, opposite poles repel','All poles attract'], why:'This rule works for every pair of magnets.'}
   ]}
+],
+/* ===================== Grade 3 = Year 4 ===================== */
+g3: [
+ /* ---------- Living things and their habitats ---------- */
+ {id:'y4-lv-1', topic:'living', short:'Group living things in different ways',
+  nc:'Recognise that living things can be grouped in a variety of ways',
+  qs:[
+   {q:'Which group could these animals go in?', v:'i:trout,shark', o:['Animals that live in water','Animals that fly','Animals with fur'], why:'Trout and sharks are fish, and both live in water.'},
+   {q:'Which animal has a backbone?', o:['Frog|frog','Worm|worm','Ladybird|ladybird'], pic:true, why:'Frogs are vertebrates: they have a backbone. Worms and insects are invertebrates.'},
+   {q:'An animal with no backbone is called…', o:['An invertebrate','A vertebrate','A mammal'], why:'Invertebrates, like insects, snails and worms, have no backbone.'},
+   {q:'Which of these is a flowering plant?', o:['Daisy|daisy','Moss|moss','Pine tree|pine'], pic:true, why:'Daisies make flowers. Moss does not flower, and pine trees make cones instead of flowers.'},
+   {q:'Sara sorts animals into “has legs” and “no legs”. Where does a snake go?', o:['No legs','Has legs','It cannot be sorted'], why:'Snakes have no legs, so they go in the “no legs” group.'},
+   {q:'Which question would sort a cow, a parrot and a frog into two groups?', o:['Does it have feathers?','Is it alive?','Does it need food?'], why:'Only the parrot has feathers. All three are alive and need food, so those questions would not split them.'}
+  ]},
+ {id:'y4-lv-2', topic:'living', short:'Use classification keys',
+  nc:'Explore and use classification keys to help group, identify and name a variety of living things in their local and wider environment',
+  qs:[
+   {q:'A key asks: “Does it have six legs?” Yes → insect. No → go on. Which animal is an insect?', o:['Ladybird|ladybird','Woodlouse|woodlouse','Worm|worm'], pic:true, why:'A ladybird has six legs, so it is an insect. A woodlouse has 14 legs.'},
+   {q:'What is a classification key?', o:['A set of questions that helps you identify a living thing','A key that opens a science lab','A list of animals in alphabetical order'], why:'A key asks questions, usually yes or no, to lead you to the name of a living thing.'},
+   {q:'Which is the best question to use in a key?', o:['Does it have wings?','Is it pretty?','Do I like it?'], why:'Good key questions can be answered the same way by everyone. “Pretty” is an opinion.'},
+   {q:'Key: 1. Does it have a shell? Yes → snail. No → go to 2. 2. Does it have legs? Yes → beetle. No → worm. What is an animal with no shell and no legs?', o:['Worm','Snail','Beetle'], why:'No shell takes you to question 2; no legs leads to worm.'},
+   {q:'Key: Does the leaf have prickly edges? Yes → holly. No → oak. Which tree has a leaf with smooth, wavy edges?', v:'i:leaf', o:['Oak','Holly','You cannot tell'], why:'Smooth edges mean “No”, which leads to oak.'},
+   {q:'Why do scientists use classification keys?', o:['To identify and name living things they find','To make animals move','To count how old a tree is'], why:'Keys help scientists put a name to living things.'}
+  ]},
+ {id:'y4-lv-3', topic:'living', short:'Changing environments can be dangerous',
+  nc:'Recognise that environments can change and that this can sometimes pose dangers to living things',
+  qs:[
+   {q:'A forest is cut down to build houses. What happens to the animals that lived there?', v:'i:squirrel,kiki', o:['They lose their homes and food','Nothing happens','They get more food'], why:'Animals that lived in the forest lose their habitat.'},
+   {q:'Which change could harm fish in a river?', v:'i:trout', o:['Pollution from a factory','Planting trees by the bank','Cleaning litter from the water'], why:'Pollution can poison the water fish need to live.'},
+   {q:'Which change is good for wildlife?', o:['Making a nature reserve','Building a car park on a meadow','Dropping litter'], why:'Nature reserves protect habitats for plants and animals.'},
+   {q:'Why is plastic in the sea dangerous for sea turtles?', v:'i:tortoise', o:['They can eat it or get tangled in it','It makes the water warmer','It helps them float'], why:'Turtles can mistake plastic bags for jellyfish and swallow them.'},
+   {q:'A pond dries up in a very hot summer. Which animal is in most danger?', v:'scene:pond', o:['Frog','Squirrel','Pigeon'], why:'Frogs need water to breed and keep their skin moist.'},
+   {q:'Which is a natural change to an environment?', o:['A storm knocking down trees','A new road','A factory'], why:'Storms, floods and droughts are natural changes. Roads and factories are made by people.'}
+  ]},
+ /* ---------- Animals, including humans ---------- */
+ {id:'y4-an-1', topic:'animals', short:'The digestive system',
+  nc:'Describe the simple functions of the basic parts of the digestive system in humans',
+  qs:[
+   {q:'Which part is the arrow pointing to?', v:'gut:stomach', o:['Stomach','Oesophagus','Small intestine'], why:'The stomach is a stretchy bag that churns food and mixes it with digestive juices.'},
+   {q:'Which part is the arrow pointing to?', v:'gut:oesophagus', o:['Oesophagus','Large intestine','Stomach'], why:'The oesophagus is the tube that carries food from the mouth to the stomach.'},
+   {q:'Where does digestion begin?', v:'gut:mouth', o:['In the mouth','In the stomach','In the large intestine'], why:'Teeth break food up and saliva starts to soften it.'},
+   {q:'Which part is the arrow pointing to?', v:'gut:small', o:['Small intestine','Stomach','Oesophagus'], why:'The small intestine is a long, coiled tube.'},
+   {q:'Where do useful nutrients from food pass into the blood?', o:['Small intestine','Oesophagus','Mouth'], why:'Nutrients pass through the walls of the small intestine into the blood.'},
+   {q:'What does the large intestine mainly do?', v:'gut:large', o:['Takes water back into the body','Chews food','Makes saliva'], why:'The large intestine absorbs water from what is left of the food.'}
+  ]},
+ {id:'y4-an-2', topic:'animals', short:'Types of teeth',
+  nc:'Identify the different types of teeth in humans and their simple functions',
+  qs:[
+   {q:'What type of tooth is the arrow pointing to?', v:'jaw:incisor', o:['Incisor','Canine','Molar'], why:'Incisors are the flat, sharp teeth at the front.'},
+   {q:'What type of tooth is the arrow pointing to?', v:'jaw:canine', o:['Canine','Incisor','Molar'], why:'Canines are the pointed teeth next to the incisors.'},
+   {q:'What type of tooth is the arrow pointing to?', v:'jaw:molar', o:['Molar','Canine','Incisor'], why:'Molars are the wide, bumpy teeth at the back.'},
+   {q:'Which teeth grind and chew food?', o:['Molars','Incisors','Canines'], why:'Molars have wide, flat tops for grinding.'},
+   {q:'Which teeth do you use to bite into an apple?', v:'i:apple', o:['Incisors','Molars','Canines'], why:'Incisors cut and bite.'},
+   {q:'Which teeth are pointed for tearing and gripping food?', o:['Canines','Molars','Incisors'], why:'Canines are pointed. Lions have very long canines for gripping meat.'}
+  ]},
+ {id:'y4-an-3', topic:'animals', short:'Food chains: producers, predators and prey',
+  nc:'Construct and interpret a variety of food chains, identifying producers, predators and prey',
+  qs:[
+   {q:'Look at the food chain. What is the producer?', v:'chain:leaf,caterpillar,kiki', o:['The leaf','The caterpillar','The bird'], why:'A food chain always starts with a plant, the producer, which makes its own food using sunlight.'},
+   {q:'In this food chain, which animal is the predator?', v:'chain:leaf,caterpillar,kiki', o:['The bird','The caterpillar','The leaf'], why:'The bird hunts and eats the caterpillar, so it is a predator.'},
+   {q:'In this food chain, which animal is the prey?', v:'chain:clover,rabbit,badger', o:['The rabbit','The badger','The clover'], why:'The rabbit is eaten by the badger, so it is prey.'},
+   {q:'What does the arrow in a food chain mean?', o:['“is eaten by”','“eats”','“lives next to”'], why:'Arrows point from the food to the animal that eats it. They show which way energy moves.'},
+   {q:'Which food chain is in the right order?', o:['Grass → rabbit → fox','Fox → rabbit → grass','Rabbit → grass → fox'], why:'Chains start with the producer (grass) and end with the top predator.'},
+   {q:'Why does every food chain start with a plant?', o:['Plants make their own food using sunlight','Plants are the biggest living things','Plants can move'], why:'Plants are producers. Animals cannot make their own food.'}
+  ]},
+ /* ---------- States of matter ---------- */
+ {id:'y4-st-1', topic:'states', short:'Solids, liquids and gases',
+  nc:'Compare and group materials together, according to whether they are solids, liquids or gases',
+  qs:[
+   {q:'Which is a solid?', o:['Ice cube|icecube','Juice|juice','Steam|steam'], pic:true, why:'An ice cube keeps its own shape, so it is a solid.'},
+   {q:'Which is a liquid?', o:['Honey|honey','Brick|brick','Air in a balloon|balloon'], pic:true, why:'Honey flows and takes the shape of its container, so it is a liquid.'},
+   {q:'Which is a gas?', o:['The air inside a balloon|balloon','Milk|milk','Chocolate bar|chocolate'], pic:true, why:'Air is a gas. It spreads out to fill its container.'},
+   {q:'Look at the particles in the box. What state is this?', v:'particles:solid', o:['Solid','Liquid','Gas'], why:'In a solid, particles are packed tightly in rows and only wobble in place.'},
+   {q:'Look at the particles in the box. What state is this?', v:'particles:gas', o:['Gas','Solid','Liquid'], why:'Gas particles are spread far apart and move quickly in all directions.'},
+   {q:'Which is true of all liquids?', o:['They flow and take the shape of their container','They keep their own shape','They can be squashed easily'], why:'Liquids flow and fill the bottom of their container.'}
+  ]},
+ {id:'y4-st-2', topic:'states', short:'Changing state when heated or cooled',
+  nc:'Observe that some materials change state when they are heated or cooled, and measure or research the temperature at which this happens in degrees Celsius (°C)',
+  qs:[
+   {q:'What temperature does this thermometer show?', v:'thermo:40', o:['40 °C','20 °C','60 °C'], why:'The red line stops at 40.'},
+   {q:'At what temperature does pure water freeze?', o:['0 °C','100 °C','10 °C'], why:'Water freezes into ice at 0 °C.'},
+   {q:'At what temperature does pure water boil?', o:['100 °C','0 °C','50 °C'], why:'Water boils at 100 °C (at sea level).'},
+   {q:'An ice lolly is left in the sun. What happens?', v:'i:icecube,sun', o:['It melts from solid to liquid','It freezes','It turns into a gas straight away'], why:'Heating makes the solid ice melt into liquid.'},
+   {q:'What is it called when a liquid turns into a solid?', o:['Freezing','Melting','Evaporating'], why:'Liquid water freezes into solid ice when it is cooled.'},
+   {q:'Chocolate melts in your hand. What does that tell you about its melting point?', v:'i:chocolate', o:['It is lower than the temperature of your hand','It is higher than 100 °C','It is below 0 °C'], why:'Your hand is warm enough to melt chocolate, so its melting point must be lower than hand temperature.'}
+  ]},
+ {id:'y4-st-3', topic:'states', short:'Evaporation, condensation and the water cycle',
+  nc:'Identify the part played by evaporation and condensation in the water cycle and associate the rate of evaporation with temperature',
+  qs:[
+   {q:'What is happening where the arrow points?', v:'wcycle:evaporation', o:['Evaporation','Condensation','Precipitation'], why:'The Sun heats the sea and water evaporates into water vapour.'},
+   {q:'What is happening where the arrow points?', v:'wcycle:condensation', o:['Condensation','Evaporation','Collection'], why:'Water vapour cools high in the sky and condenses into tiny droplets that make clouds.'},
+   {q:'What is happening where the arrow points?', v:'wcycle:precipitation', o:['Precipitation','Evaporation','Condensation'], why:'Precipitation is water falling from clouds as rain, snow, sleet or hail.'},
+   {q:'Two puddles are the same size. On which day will a puddle dry up fastest?', o:['A hot, sunny day','A cold day','A cloudy, cold night'], why:'Water evaporates faster when it is warmer.'},
+   {q:'Why do drops of water appear on a cold can taken out of the fridge?', v:'i:can', o:['Water vapour in the air condenses on the cold can','The can is leaking','Ice is melting inside the can'], why:'Water vapour cools when it touches the cold can and condenses into liquid.'},
+   {q:'What is evaporation?', o:['A liquid changing into a gas','A gas changing into a liquid','A solid changing into a liquid'], why:'When water evaporates, it turns into water vapour, a gas.'}
+  ]},
+ /* ---------- Sound ---------- */
+ {id:'y4-sd-1', topic:'sound', short:'Sounds are made by vibrations',
+  nc:'Identify how sounds are made, associating some of them with something vibrating',
+  qs:[
+   {q:'What makes a sound when you hit a drum?', v:'i:drum', o:['The drum skin vibrates','The drum gets hot','The drum changes colour'], why:'All sounds are made by something vibrating.'},
+   {q:'What vibrates when you pluck a guitar or violin?', v:'i:violin', o:['The strings','The wooden pegs only','Nothing'], why:'The strings vibrate backwards and forwards.'},
+   {q:'What vibrates when you speak?', o:['Your vocal cords in your throat','Your teeth','Your hair'], why:'Air from your lungs makes your vocal cords vibrate.'},
+   {q:'What does vibrate mean?', o:['Move backwards and forwards very quickly','Stay completely still','Get bigger'], why:'Vibrations are tiny, fast movements.'},
+   {q:'Rice grains on a drum jump when you bang it. Why?', o:['The drum skin is vibrating','The rice is alive','The air is hot'], why:'The vibrating drum skin makes the rice bounce.'},
+   {q:'You blow into a whistle. What vibrates?', v:'i:whistle', o:['The air inside it','The metal melts','Your feet'], why:'In wind instruments and whistles, the air inside vibrates.'}
+  ]},
+ {id:'y4-sd-2', topic:'sound', short:'Sound travels through a medium to the ear',
+  nc:'Recognise that vibrations from sounds travel through a medium to the ear',
+  qs:[
+   {q:'How does the sound of the drum reach the ear?', v:'soundpath:near', o:['Vibrations travel through the air','Light carries it','It jumps straight into the ear without travelling'], why:'The drum makes the air vibrate, and the vibrations travel to your ear.'},
+   {q:'Can sound travel through water?', o:['Yes','No','Only in the dark'], why:'Sound travels through liquids. Whales hear each other under water.'},
+   {q:'Can sound travel through solids, such as a wooden table?', o:['Yes','No','Only if the table is wet'], why:'Put your ear on a table and tap it: the sound travels through the wood.'},
+   {q:'Why can’t astronauts hear each other talk in space without radios?', o:['There is no air for the sound to travel through','Space is too cold','Space is too bright'], why:'Sound needs a medium. Space is almost empty, a vacuum.'},
+   {q:'A string telephone works best when the string is…', o:['Pulled tight','Loose and floppy','Cut in half'], why:'The vibrations travel along a tight string to the other cup.'},
+   {q:'What do we call the material that sound travels through?', o:['A medium','A magnet','A vacuum'], why:'Air, water and solids are all mediums for sound.'}
+  ]},
+ {id:'y4-sd-3', topic:'sound', short:'Pitch',
+  nc:'Find patterns between the pitch of a sound and features of the object that produced it',
+  qs:[
+   {q:'Which drum makes the highest-pitched sound?', v:'drums', o:['C, the smallest','A, the biggest','They all sound the same'], why:'Smaller drums make higher-pitched sounds.'},
+   {q:'Which makes a lower pitch on a guitar?', o:['A thicker, looser string','A thinner, tighter string','A shorter string'], why:'Thick, loose and long strings vibrate more slowly, making low notes.'},
+   {q:'What does pitch mean?', o:['How high or low a sound is','How loud a sound is','How far a sound travels'], why:'A mouse squeak is high-pitched; a tuba note is low-pitched.'},
+   {q:'Which makes a higher-pitched sound?', o:['Mouse|mouse','Tuba|tuba','Big bell|bigbell'], pic:true, why:'A mouse’s squeak is very high-pitched.'},
+   {q:'You blow across the tops of these bottles. Which makes the highest note?', v:'bottles', o:['C, the bottle with the most water','A, the bottle with the least water','B'], why:'Bottle C has the shortest column of air above the water, which vibrates fastest and makes the highest note.'},
+   {q:'Faster vibrations make a…', o:['Higher pitch','Lower pitch','Quieter sound'], why:'The faster something vibrates, the higher the pitch.'}
+  ]},
+ {id:'y4-sd-4', topic:'sound', short:'Volume',
+  nc:'Find patterns between the volume of a sound and the strength of the vibrations that produced it',
+  qs:[
+   {q:'How can you make a drum sound louder?', v:'i:drum', o:['Hit it harder','Hit it more gently','Hold it upside down'], why:'Hitting harder makes bigger vibrations, which make a louder sound.'},
+   {q:'Bigger, stronger vibrations make a sound…', o:['Louder','Quieter','Higher'], why:'Volume depends on the strength of the vibrations.'},
+   {q:'What does volume mean?', o:['How loud or quiet a sound is','How high or low a sound is','How long a sound lasts'], why:'A whisper has a low volume; a shout has a high volume.'},
+   {q:'Which would make the quietest sound?', o:['Tapping a triangle gently','Hitting a cymbal hard','Banging a drum hard'], why:'Gentle taps make small vibrations and quiet sounds.'},
+   {q:'Which instrument measures volume in decibels?', o:['A sound meter (data logger)','A thermometer','A ruler'], why:'Sound meters measure volume in decibels (dB).'},
+   {q:'You pluck a guitar string very gently. How will it sound?', v:'i:violin', o:['Quiet','Very loud','Silent forever'], why:'A gentle pluck makes small vibrations.'}
+  ]},
+ {id:'y4-sd-5', topic:'sound', short:'Sounds get fainter with distance',
+  nc:'Recognise that sounds get fainter as the distance from the sound source increases',
+  qs:[
+   {q:'The ear moves further from the drum. What happens to the sound?', v:'soundpath:far', o:['It gets fainter','It gets louder','It gets higher'], why:'Sound spreads out and loses energy as it travels, so it is fainter further away.'},
+   {q:'Where would a school bell sound loudest?', v:'i:bell', o:['Standing right next to it','At the far end of the field','Inside your house down the road'], why:'The closer you are to the source, the louder the sound.'},
+   {q:'Why do ear defenders help workers near loud machines?', o:['They stop some vibrations reaching the ears','They make sounds higher','They make the machine quieter'], why:'Ear defenders are made of materials that absorb sound vibrations.'},
+   {q:'A sound meter reads 80 dB near a speaker and 60 dB further away. What does this show?', v:'bars:Near=80,Far=60', o:['Sound gets fainter with distance','Sound gets louder with distance','Distance makes no difference'], why:'The reading is lower further away.'},
+   {q:'What is the sound source?', o:['The object that makes the sound','The ear that hears it','The air between them'], why:'The source is where the vibrations start.'},
+   {q:'Your friend shouts from very far away. Why is it hard to hear?', o:['The sound has spread out and become faint','Sound cannot travel through air','Your friend is whispering'], why:'Sound gets fainter the further it travels.'}
+  ]},
+ /* ---------- Electricity ---------- */
+ {id:'y4-el-1', topic:'electricity', short:'Appliances that use electricity',
+  nc:'Identify common appliances that run on electricity',
+  qs:[
+   {q:'Which of these needs electricity to work?', o:['Torch|torch','Spoon|spoon','Ruler|ruler'], pic:true, why:'A torch uses electricity from batteries to light its bulb.'},
+   {q:'Which appliance plugs into the mains?', o:['Fridge','Bicycle','Pencil'], why:'A fridge uses mains electricity from a socket.'},
+   {q:'Which uses batteries?', o:['A TV remote control','A kettle','A washing machine'], why:'Remote controls are portable, so they use batteries.'},
+   {q:'Which does NOT need electricity?', o:['A skipping rope','A laptop','A hair dryer'], why:'A skipping rope works by your own movement.'},
+   {q:'Why is mains electricity dangerous?', o:['It is very powerful and can kill','It is quiet','It is invisible so it cannot hurt'], why:'Mains electricity is much more powerful than batteries. Never touch sockets or wires.'},
+   {q:'A lamp (light bulb) changes electricity into…', v:'i:lightbulb', o:['Light','Sound','Movement'], why:'Bulbs turn electrical energy into light.'}
+  ]},
+ {id:'y4-el-2', topic:'electricity', short:'Build a series circuit and name its parts',
+  nc:'Construct a simple series electrical circuit, identifying and naming its basic parts, including cells, wires, bulbs, switches and buzzers',
+  qs:[
+   {q:'What is the part at the bottom of this circuit called?', v:'circuit:complete', o:['A cell (battery)','A switch','A buzzer'], why:'The cell pushes electricity around the circuit.'},
+   {q:'What is the black part at the top of this circuit?', v:'circuit:buzzer', o:['A buzzer','A bulb','A cell'], why:'A buzzer makes a sound when electricity flows through it.'},
+   {q:'Which part can turn a circuit on and off?', o:['A switch','A wire','A bulb'], why:'A switch opens and closes the circuit.'},
+   {q:'What connects all the parts of a circuit together?', o:['Wires','String','Paper'], why:'Metal wires carry electricity between the parts.'},
+   {q:'What is the job of the cell in a circuit?', v:'i:battery', o:['To push electricity around the circuit','To make light','To break the circuit'], why:'The cell (battery) is the energy source.'},
+   {q:'What part is at the top of this circuit?', v:'circuit:complete', o:['A bulb (lamp)','A buzzer','A switch'], why:'A bulb lights up when electricity flows through it.'}
+  ]},
+ {id:'y4-el-3', topic:'electricity', short:'Will the bulb light? Complete circuits',
+  nc:'Identify whether or not a lamp will light in a simple series circuit, based on whether or not the lamp is part of a complete loop with a battery',
+  qs:[
+   {q:'Will the bulb light?', v:'circuit:complete', o:['Yes, the circuit is a complete loop','No, there is a gap','No, there is no cell'], why:'Electricity can flow all the way round a complete loop.'},
+   {q:'Will the bulb light?', v:'circuit:gap', o:['No, there is a gap in the circuit','Yes','Yes, but only dimly'], why:'Electricity cannot jump across a gap, so the loop is broken.'},
+   {q:'Will the bulb light?', v:'circuit:nocell', o:['No, there is no cell','Yes','Yes, very brightly'], why:'Without a cell, nothing pushes electricity around the circuit.'},
+   {q:'What must a circuit be for a bulb to light?', o:['A complete loop with a cell','A straight line','Very long'], why:'Electricity needs a complete path from the cell, through the bulb and back.'},
+   {q:'A wire has come loose from the bulb. What happens?', o:['The bulb goes out','The bulb gets brighter','The cell gets bigger'], why:'A loose wire breaks the loop.'},
+   {q:'Will the buzzer sound?', v:'circuit:buzzer', o:['Yes, it is a complete loop','No, buzzers never work','No, there is a gap'], why:'The buzzer is part of a complete loop with a cell.'}
+  ]},
+ {id:'y4-el-4', topic:'electricity', short:'Switches open and close a circuit',
+  nc:'Recognise that a switch opens and closes a circuit and associate this with whether or not a lamp lights in a simple series circuit',
+  qs:[
+   {q:'The switch is open. Will the bulb light?', v:'circuit:open', o:['No, the circuit is broken','Yes','Yes, but it will buzz'], why:'An open switch makes a gap, so electricity cannot flow.'},
+   {q:'The switch is closed. Will the bulb light?', v:'circuit:closed', o:['Yes, the circuit is complete','No','Only at night'], why:'A closed switch completes the loop.'},
+   {q:'What does a switch do?', o:['Opens or closes a gap in a circuit','Makes the cell stronger','Changes the colour of the light'], why:'Switches let us turn things on and off safely.'},
+   {q:'When you turn a light “off”, the switch is…', o:['Open','Closed','Melted'], why:'Turning off opens the switch and breaks the circuit.'},
+   {q:'Why are switches useful?', o:['We can turn things on and off without taking the circuit apart','They make batteries last forever','They make wires longer'], why:'Switches control whether electricity flows.'},
+   {q:'Which material should the moving part of a switch be made of?', o:['Metal','Plastic','Wood'], why:'The part that touches to close the circuit must conduct electricity, so it is metal.'}
+  ]},
+ {id:'y4-el-5', topic:'electricity', short:'Conductors and insulators',
+  nc:'Recognise some common conductors and insulators, and associate metals with being good conductors',
+  qs:[
+   {q:'A coin is put in the gap. Will the bulb light?', v:'circuit:test-coin', o:['Yes, metal is a conductor','No, it is an insulator','No, coins block light'], why:'Metal coins let electricity flow through them.'},
+   {q:'An eraser is put in the gap. Will the bulb light?', v:'circuit:test-eraser', o:['No, rubber is an insulator','Yes, rubber is a conductor','Yes, very brightly'], why:'Rubber does not let electricity pass through.'},
+   {q:'Which material is a good electrical conductor?', o:['Metal paper clip|paperclip','Wooden block|wood','Plastic|plastic'], pic:true, why:'Metals are good conductors.'},
+   {q:'Which material is an electrical insulator?', o:['Plastic','Copper','Steel'], why:'Plastic does not let electricity flow through it.'},
+   {q:'Why are electric wires covered in plastic?', o:['Plastic is an insulator, which keeps us safe','Plastic makes electricity flow faster','Plastic is a conductor'], why:'The plastic coating stops electricity reaching our hands.'},
+   {q:'What is an electrical conductor?', o:['A material that lets electricity flow through it','A material that stops electricity','A kind of battery'], why:'Metals such as copper, iron and aluminium are good conductors.'}
+  ]}
 ]
 };
 /* topic names for each grade (practice uses the same topics as the story library where they exist) */
 window.SQ_PRAC_TOPICS = {
   kg2: {plants:'Plants', animals:'Animals, including humans', materials:'Everyday materials', seasons:'Seasonal changes'},
   g1:  {living:'Living things and their habitats', plants:'Plants', animals:'Animals, including humans', materials:'Uses of everyday materials'},
-  g2:  {plants:'Plants', animals:'Animals, including humans', rocks:'Rocks', light:'Light', forces:'Forces and magnets'}
+  g2:  {plants:'Plants', animals:'Animals, including humans', rocks:'Rocks', light:'Light', forces:'Forces and magnets'},
+  g3:  {living:'Living things and their habitats', animals:'Animals, including humans', states:'States of matter', sound:'Sound', electricity:'Electricity'}
 };
