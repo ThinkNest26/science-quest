@@ -73,7 +73,7 @@
 <script src="js/art.js?v=45"></script>
 <script src="js/practice-art.js?v=45"></script>
 <script src="js/practice-photos.js?v=54"></script>
-<script src="js/gl.js?v=55"></script>
+<script src="js/gl.js?v=57"></script>
 <script src="js/avatar.js?v=52"></script>
 <script src="js/store.js?v=45"></script>
 <script>
@@ -85,7 +85,9 @@
   function esc(t){ return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;'); }
   function shuffle(a){ a = a.slice(); for (var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)), t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
   function mmss(s){ s = Math.max(0, s|0); return Math.floor(s/60)+':'+('0'+(s%60)).slice(-2); }
-  function rec(){ return (S.data().skills || {})['gl-'+grade] || null; }
+  function key(f){ return 'gl-'+grade+(f==='B'?'-B':''); }
+  function rec(f){ return (S.data().skills || {})[key(f)] || null; }
+  function test(f){ var A = GL[grade]; if (f!=='B') return A; var B = (window.SQ_GLB||{})[grade]; return B ? {name:A.name, year:A.year, mins:A.mins, intro:A.intro, qs:B.qs} : null; }
 
   /* read aloud with the friendliest lady's voice the device has */
   var canSpeak = 'speechSynthesis' in window;
@@ -98,24 +100,26 @@
   /* ---------------- home ---------------- */
   function home(){
     T = null; if (canSpeak) speechSynthesis.cancel();
-    var G = GL[grade], r = rec();
+    var G = GL[grade];
     var h = '<div class="lhead"><h1>📝 GL Test Practice</h1><p>Get ready for your science test. Each practice test is set out like the real thing, with questions on biology, chemistry, physics and working scientifically.</p></div>';
     h += '<div class="pgrades">'+GR.map(function(g){ var ok = !!GL[g[0]]; return '<button class="grade'+(g[0]===grade?' on':'')+(ok?'':' soon')+'" '+(ok?'data-g="'+g[0]+'"':'disabled')+'>'+g[1]+'<small>'+g[2]+(ok?'':' · coming soon')+'</small></button>'; }).join('')+'</div>';
     if (G) {
-      h += '<div class="tcard"><div><h2>'+esc(G.name)+' practice test</h2><p>'+G.qs.length+' questions · about '+G.mins+' minutes · '+esc(G.intro)+'</p>'+
-        (r ? '<p class="best">Best score: '+r.best+' / '+r.of+' · Last try: '+r.s+' / '+r.of+' on '+esc(r.d)+'</p>' : '<p class="best">Not tried yet</p>')+'</div><button class="go" id="start">Start the test</button></div>';
+      ['A','B'].forEach(function(f){ var X = test(f); if (!X) return; var r = rec(f);
+        h += '<div class="tcard"><div><h2>'+esc(G.name)+' practice test '+f+'</h2><p>'+X.qs.length+' questions · about '+X.mins+' minutes · '+esc(G.intro)+'</p>'+
+          (r ? '<p class="best">Best score: '+r.best+' / '+r.of+' · Last try: '+r.s+' / '+r.of+' on '+esc(r.d)+'</p>' : '<p class="best">Not tried yet</p>')+'</div><button class="go" data-start="'+f+'">Start test '+f+'</button></div>'; });
+      h += '<p style="font-weight:700;color:var(--ink2);margin:10px 0 0">Tests A and B have different questions on the same topics, like the two GL test forms.</p>';
       h += '<div class="tips"><b>💡 Test tips</b><ul><li>Read every question carefully. Look closely at pictures, tables and charts.</li><li>Look for the instruction under each question: <b>Tick one</b>, <b>Tick two</b> or <b>Number the boxes</b>.</li><li>If you are stuck, skip it and come back later using the question numbers.</li><li>You will see your score and the right answers at the end.</li></ul></div>';
       h += '<div class="glinfo"><div><b>🧬 Biology</b>Living things, plants, animals and the human body.</div><div><b>⚗️ Chemistry</b>Materials, rocks, soils and changes.</div><div><b>⚡ Physics</b>Forces, light, sound, electricity, Earth and space.</div><div><b>🔬 Working scientifically</b>Fair tests, tables, charts, patterns and conclusions.</div></div>';
     }
     main.innerHTML = h;
     main.querySelectorAll('[data-g]').forEach(function(b){ b.onclick = function(){ grade = b.getAttribute('data-g'); home(); }; });
-    var st = document.getElementById('start'); if (st) st.onclick = start;
+    main.querySelectorAll('[data-start]').forEach(function(b){ b.onclick = function(){ start(b.getAttribute('data-start')); }; });
   }
 
   /* ---------------- test ---------------- */
-  function start(){
-    var G = GL[grade];
-    T = {G:G, i:0, t0:Date.now(), items:G.qs.map(function(q){
+  function start(f){
+    f = f==='B' ? 'B' : 'A'; var G = test(f);
+    T = {G:G, f:f, i:0, t0:Date.now(), items:G.qs.map(function(q){
       var t = q.t || 'mc', idx = q.o.map(function(_,k){ return k; });
       return {q:q, t:t, show: shuffle(idx), ans: t==='mc' ? null : []};
     })};
@@ -190,9 +194,9 @@
     var secs = Math.round((Date.now()-T.t0)/1000), n = T.items.length, ok = 0, by = {};
     T.items.forEach(function(it){ var c = correct(it); it.ok = c; if (c) ok++;
       [it.q.d, it.q.s].forEach(function(k){ by[k] = by[k] || [0,0]; by[k][1]++; if (c) by[k][0]++; }); });
-    var old = rec(), today = new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+    var old = rec(T.f), today = new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
     var save = {s:ok, of:n, d:today, secs:secs, best:Math.max(ok, old ? old.best||0 : 0), by:by, tries:(old ? old.tries||0 : 0)+1};
-    if (S.mark) S.mark('gl-'+grade, save);
+    if (S.mark) S.mark(key(T.f), save);
     var pc = ok/n, msg = pc >= .85 ? 'Outstanding! You are really well prepared. 🌟' : pc >= .7 ? 'Great work! You know lots of science. 👏' : pc >= .5 ? 'Good effort! Look at the areas below to see what to practise next. 💪' : 'Keep going! Practise the areas below, then try again. 🌱';
     function row(k, name){ var x = by[k]; if (!x) return ''; var p = x[0]/x[1], col = p>=.8?'#47A86A':p>=.5?'#F6B93B':'#E0607E';
       return '<div class="br"><span>'+name+'</span><span class="bar"><b style="width:'+Math.round(p*100)+'%;background:'+col+'"></b></span><span>'+x[0]+' / '+x[1]+'</span></div>'; }
@@ -205,7 +209,7 @@
                A:'Try the Challenges: they ask you to use what you know in new situations.',
                W:'Practise reading tables and bar charts, spotting patterns and saying what makes a test fair.'};
     var NM = {B:'Biology', C:'Chemistry', P:'Physics', K:SN.K, A:SN.A, W:SN.W};
-    var h = '<div class="res"><div class="score"><div style="font-size:14px;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.06em">'+esc(T.G.name)+' practice test</div><div class="big">'+ok+' / '+n+'</div><p>'+Math.round(pc*100)+'% · Time: '+mmss(secs)+' (suggested '+T.G.mins+' minutes)</p><p style="font-size:18px">'+msg+'</p>'+
+    var h = '<div class="res"><div class="score"><div style="font-size:14px;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.06em">'+esc(T.G.name)+' practice test '+T.f+'</div><div class="big">'+ok+' / '+n+'</div><p>'+Math.round(pc*100)+'% · Time: '+mmss(secs)+' (suggested '+T.G.mins+' minutes)</p><p style="font-size:18px">'+msg+'</p>'+
       '<p style="margin-top:14px"><button class="go" id="again">Try again</button> <button class="go2" id="hm">Back to GL Test Practice</button></p></div>';
     h += '<div class="breaks"><div class="bk"><h3>Science areas</h3>'+row('B','Biology')+row('C','Chemistry')+row('P','Physics')+'</div><div class="bk"><h3>Science skills</h3>'+row('K',SN.K)+row('A',SN.A)+row('W',SN.W)+'</div></div>';
     if (weak.length) h += '<div class="focus"><b>🎯 What to practise next</b>'+weak.map(function(k){ return '<p style="margin:6px 0 0"><b>'+NM[k]+':</b> '+ADV[k]+'</p>'; }).join('')+'</div>';
@@ -216,7 +220,7 @@
     });
     h += '</div>';
     main.innerHTML = h; window.scrollTo({top:0});
-    document.getElementById('again').onclick = start;
+    document.getElementById('again').onclick = function(){ start(T.f); };
     document.getElementById('hm').onclick = home;
   }
 
