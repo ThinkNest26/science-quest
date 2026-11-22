@@ -1,6 +1,6 @@
 /* Science Quest: one menu bar for every children's page (shown under the header, scrolls sideways on small screens) */
 (function(){
-  var ITEMS = [['learn.html','📚','Library'],['practice.html','🧠','Practice'],['challenges.html','🧪','Challenges'],['lab.html','🥼','My Scientist'],['mylab.html','🏗️','My Lab'],['progress.html','📈','My Progress'],['discoveries.html','⭐','Discoveries']];
+  var ITEMS = [['learn.html','📚','Library'],['world.html','🌍','Around the World'],['practice.html','🧠','Practice'],['challenges.html','🧪','Challenges'],['lab.html','🥼','My Scientist'],['mylab.html','🏗️','My Lab'],['progress.html','📈','My Progress'],['discoveries.html','⭐','Discoveries']];
   var here = (location.pathname.split('/').pop() || 'index.html'), hdr = document.querySelector('header.top');
   if (here === 'story.html') here = 'learn.html';
   if (!hdr) return;

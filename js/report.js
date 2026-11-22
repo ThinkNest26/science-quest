@@ -63,6 +63,16 @@
         h += '<tr><td><b>'+esc(s.title)+'</b>'+(b?' <span class="rbadge">★ '+esc(s.badge)+'</span>':'')+'</td><td>'+esc(tp)+'</td><td>'+(r ? r.s+' / '+r.of : (b?'Read':'Not read yet'))+'</td><td>'+(r ? r.n : (b?1:'–'))+'</td></tr>'; });
       h += '</table>';
     }
+    // true stories (Science Around the World)
+    var WL = (window.SQ_WORLD||[]).filter(function(x){ return x.grade===grade; });
+    if (WL.length) {
+      var wr = WL.filter(function(x){ return rd[x.id] || (data.badges||{})[x.id]; });
+      h += '<h3>Science Around the World</h3><p class="rnote">True news reports and diaries about real science, with non-fiction questions (finding facts, word meanings, reading charts, fact or opinion, captions, summarising). '+wr.length+' of '+WL.length+' read.</p>';
+      h += '<table class="rtab rstories"><tr><th>True story</th><th>Place</th><th>First-time score</th><th>Times read</th></tr>';
+      WL.forEach(function(x){ var r = rd[x.id], b = (data.badges||{})[x.id];
+        h += '<tr><td><b>'+esc(x.title)+'</b></td><td>'+esc(x.place)+'</td><td>'+(r ? r.s+' / '+r.of : (b?'Read':'Not read yet'))+'</td><td>'+(r ? r.n : (b?1:'–'))+'</td></tr>'; });
+      h += '</table>';
+    }
     // strengths and next steps
     var secure = objs.filter(function(x){ return level(sk[x.id])===3; }), next = objs.filter(function(x){ var l = level(sk[x.id]); return l===1 || l===2; });
     h += '<h3>Strengths and next steps</h3><div class="rnext"><div><h4>⭐ Strengths</h4>'+(secure.length ? '<ul>'+secure.slice(0,5).map(function(x){ return '<li>'+esc(x.short)+'</li>'; }).join('')+'</ul>' : '<p>Keep practising to build secure knowledge.</p>')+'</div>'+
