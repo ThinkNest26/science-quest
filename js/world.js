@@ -96,7 +96,7 @@ window.SQ_WORLD = [
  title:'Pink Flowers Say Spring Is Here!',
  place:'Tokyo, Japan', continent:'Asia', lat:35.68, lon:139.7, when:'Every spring, January to May',
  sum:'In Japan, people watch the news to find out when the cherry trees will burst into pink flowers.',
- photo:{src:'img/world/w-sakura.webp', caption:'Cherry trees in full bloom in spring. The branches are covered with pale pink flowers.'},
+ photo:{src:'img/world/w-sakura.webp', caption:'Cherry trees in full bloom beside a river in Tokyo in spring. The branches are covered with pale pink flowers, and families have picnics underneath.', credit:'Wikimedia Commons'},
  sections:[
   {h:'Waiting for the flowers', t:'In Japan, there are lots of cherry trees. In winter, the branches are bare. There are no leaves and no flowers. But in spring, the weather gets warmer and the days get longer. Little [[buds]] on the branches start to open.'},
   {h:'A blossom weather report', t:'The flowers are called cherry [[blossom]]. In Japan, the weather news makes a special report. It tells people when the blossom will open in each town! It opens first in the warm south of Japan, and last in the cold north.'},
@@ -321,7 +321,7 @@ window.SQ_WORLD = [
  title:'The Town Where the Sun Takes a Holiday',
  place:'Tromsø, Norway', continent:'Europe', lat:69.65, lon:18.96, when:'Every year, late November to mid-January',
  sum:'In the far north of Norway, the sun does not rise for weeks in winter, and does not set for weeks in summer.',
- photo:{src:'img/world/w-polarnight.webp', caption:'Snowy houses glow under a deep blue sky during the polar night. There is no sun, but a soft twilight lasts for a few hours around midday.'},
+ photo:{src:'img/world/w-polarnight.webp', caption:'Tromsø in the afternoon during the polar night. Snowy houses and street lamps glow under a purple-blue sky. There is no sun, but a soft twilight lasts for a few hours around midday.', credit:'Wikimedia Commons'},
  sections:[
   {h:'No sunrise for seven weeks', t:'In Tromsø, a city in the far north of Norway, something amazing happens every winter. From about 27 November to 15 January, the sun does not rise at all. This is called the [[polar night]]. It is not completely black all day: around lunchtime, the sky glows deep blue and pink for a few hours, a soft light called [[twilight]]. But the sun itself stays hidden below the horizon.'},
   {h:'Living without sunlight', t:'We need light to see. With so little daylight, people in Tromsø switch on street lamps, shop lights and candles, and children walk to school in the dark. Many children wear shiny [[reflectors]] on their coats and bags. When car headlights shine on them, the reflectors bounce the light straight back, so drivers can see the children. Snow helps too: white snow reflects light from the moon and the street lamps, making the streets much brighter than they would be without it.'},
