@@ -32,6 +32,7 @@
 <script src="js/g1.js?v=45"></script>
 <script src="js/g2.js?v=45"></script>
 <script src="js/g3.js?v=61"></script>
+<script src="js/g4.js?v=1"></script>
 <script src="js/avatar.js?v=52"></script>
 <script src="js/store.js?v=45"></script>
 <script>
@@ -92,7 +93,7 @@
     [/\bb+z{2,}\b/gi, 'buzzzz'], [/\bz{3,}\b/gi, 'snore, snore'], [/\bh+m{2,}\b/gi, 'hmmm'], [/\bsh{2,}\b/gi, 'shhhh'],
     [/\bgr{2,}\b/gi, 'grrrrr'], [/\bbr{2,}\b/gi, 'brrrrr'], [/\bm{3,}\b/gi, 'mmmm'], [/\bpsst\b/gi, 'pssst'],
     [/\bt+h?w+a+n+g+\b/gi, 'twang'], [/\bthw+i+p+\b/gi, 'thwip'], [/\bb+o+n+g+\b/gi, 'bong'], [/\bt+i+n+g+\b/gi, 'ting'],
-    [/\bw+h+o+o+s+h+\b/gi, 'whoosh'], [/\b([a-z])\1{3,}\b/gi, function(w){ return w.charAt(0) + w.charAt(0) + w.charAt(0); }]
+    [/\bw+h+o+o+s+h+\b/gi, 'whoosh'], [/\bt+s{3,}\b/gi, 'tssss'], [/\bf+i+z{3,}\b/gi, 'fizzz'], [/\b([a-z])\1{3,}\b/gi, function(w){ return w.charAt(0) + w.charAt(0) + w.charAt(0); }]
   ];
   function speakable(t){
     SOUNDS.forEach(function(p){ t = t.replace(p[0], p[1]); });
